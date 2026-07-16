@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 6.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 6</div>
+        <div style="font-size: 12px; color: #666;">La ropa y las compras</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 6.04 &middot; Day 4 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Comparatives in use + reading</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Clothing &amp; Shopping</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 6.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Comparatives in Use &mdash; Shopping and Comparing</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Yesterday you built the comparison. Today you take it shopping.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>No new rules and no new words today &mdash; just putting the comparison to work.</strong> You already know how to say something is <em>m&aacute;s caro que</em>, <em>menos caro que</em>, or <em>tan caro como</em> something else. Now we use those exact frames in a real store: comparing two garments, weighing two prices, choosing between two sizes. At the end you'll read a short market conversation from Bolivia. Watch for one thing that's <em>coming</em>, not being taught: a few <em>superlatives</em> (<em>la m&aacute;s fina</em>, <em>el precio m&aacute;s bajo</em> &mdash; "the finest," "the lowest price"). Just recognize what they mean today; you'll build them yourself tomorrow.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> compare two garments by price, size, and quality using <em>m&aacute;s/menos + adjective + que</em> and <em>tan + adjective + como</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> rank three prices from most to least expensive by chaining comparatives in a real shopping situation.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> read a short shopping conversation and understand which item is cheaper, better, or the best &mdash; recognizing comparatives and superlatives.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Warm-up + check-in ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">You already compare things all day</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Every time you pick one thing over another, you're comparing. Picture two jackets on a rack: one costs $80, the other costs $35. In your head, finish the sentence in Spanish before you read on: <em>La primera chaqueta es <strong>m&aacute;s cara que</strong>&hellip;</em> Notice you didn't need a new word &mdash; you already own the frame <em>m&aacute;s&hellip; que</em>. Today we just aim it at clothes and prices.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">When you shop for clothes, what matters most to you?</div>
+            <div class="widget-options">
+                <button data-response="Cazador/a de ofertas: para ti lo barato gana. Hoy vas a comparar precios &mdash; 'esta camiseta es m&aacute;s barata que aquella' es tu frase perfecta.">The price &mdash; I always look for the cheapest option</button>
+                <button data-response="&iexcl;La calidad primero! You'll love the irregular word mejor ('better') in Part 3 &mdash; 'esta chaqueta es mejor que esa' says exactly what you mean.">The quality &mdash; I'd rather pay more for something that lasts</button>
+                <button data-response="El estilo manda. Comparing look and fit is still a comparison: 'este vestido es tan bonito como ese, pero me queda mejor.' You'll use tan&hellip; como all lesson.">The style and the fit &mdash; it has to look right on me</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Vocab review with audio ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; REPASO R&Aacute;PIDO <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Nothing new &mdash; just the words you'll compare</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">These are the clothing and shopping words you already met earlier this week. Click the <strong>&#128266;</strong> and say each one back once, so they're ready when you compare. Remember the adjectives change to match the noun: <em>car<strong>o</strong> / car<strong>a</strong></em>, <em>barat<strong>o</strong> / barat<strong>a</strong></em>.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-camisa.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la camisa</span><span class="v-en">shirt</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-camiseta.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la camiseta</span><span class="v-en">t-shirt</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/los-pantalones.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">los pantalones</span><span class="v-en">pants</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-chaqueta.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la chaqueta</span><span class="v-en">jacket</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-vestido.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el vestido</span><span class="v-en">dress</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/los-zapatos.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">los zapatos</span><span class="v-en">shoes</span></li>
+        </ul>
+        <p style="font-size: 15px; color: #6b7a99; line-height: 1.6; margin: 12px 0 6px 0;">And the shopping words that give you something to compare &mdash; price, size, and value:</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-precio.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el precio</span><span class="v-en">price</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/caro.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">caro / cara</span><span class="v-en">expensive</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/barato.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">barato / barata</span><span class="v-en">cheap, inexpensive</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-talla.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la talla</span><span class="v-en">size (clothing)</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +5 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Look around your room and compare two things you can see, out loud: <em>Mi camiseta azul es m&aacute;s c&oacute;moda que mi camisa blanca.</em> Say three comparisons like that, changing the adjective each time. You're rehearsing the exact shape of today's practice.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar applied: the comparison frames ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; LAS COMPARACIONES, EN LA TIENDA <span class="pill-time">9 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The three frames you already own</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Every comparison of two things fits one of three frames. Nothing here is new &mdash; this is the toolkit from Lesson 6.03, lined up next to real clothing examples so you can grab the right one fast.</p>
+        <table class="gtable">
+            <thead><tr><th>Meaning</th><th>Frame</th><th>Example (clothing)</th></tr></thead>
+            <tbody>
+                <tr><td>more &hellip; than</td><td><span class="pron">m&aacute;s</span> + adj + <span class="pron">que</span></td><td>La chaqueta es <span class="pron">m&aacute;s</span> cara <span class="pron">que</span> la camiseta.</td></tr>
+                <tr><td>less &hellip; than</td><td><span class="pron">menos</span> + adj + <span class="pron">que</span></td><td>Los zapatos son <span class="pron">menos</span> caros <span class="pron">que</span> las botas.</td></tr>
+                <tr><td>as &hellip; as</td><td><span class="pron">tan</span> + adj + <span class="pron">como</span></td><td>Esta falda es <span class="pron">tan</span> bonita <span class="pron">como</span> aquella.</td></tr>
+                <tr><td>as much / as many &hellip; as</td><td><span class="pron">tanto/a/os/as</span> + noun + <span class="pron">como</span></td><td>Tengo <span class="pron">tanta</span> ropa <span class="pron">como</span> mi hermana.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 14px;">The adjective still agrees with the first noun: <em>la chaqueta es m&aacute;s car<strong>a</strong></em> but <em>los zapatos son m&aacute;s car<strong>os</strong></em>. With <em>tan&hellip; como</em>, the adjective agrees too; with <em>tanto&hellip; como</em>, it's <em>tanto/tanta/tantos/tantas</em> to match the noun that follows.</p>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Two irregulars worth remembering &mdash; they replace "m&aacute;s bueno / m&aacute;s malo":</strong> use <em><span class="pron">mejor</span> que</em> (better than) and <em><span class="pron">peor</span> que</em> (worse than). So a jacket of finer quality is <em>mejor que</em> the other one &mdash; never <em>m&aacute;s bueno que</em>.</p>
+    </div>
+
+    <!-- ===== PART 4 · Practice ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">12 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Compare it out loud, then check</h3>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; more &hellip; than</div>
+            <div class="widget-question">La chaqueta cuesta $90. La camiseta cuesta $15. Which sentence is true?</div>
+            <div class="widget-options">
+                <button data-correct="false">La camiseta es m&aacute;s cara que la chaqueta.</button>
+                <button data-correct="true">La chaqueta es m&aacute;s cara que la camiseta.</button>
+                <button data-correct="false">La chaqueta es tan cara como la camiseta.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; as &hellip; as</div>
+            <div class="widget-question">Two shirts cost exactly the same &mdash; both 25 euros. How do you say they're equally expensive?</div>
+            <div class="widget-options">
+                <button data-correct="false">La camisa azul es m&aacute;s cara que la blanca.</button>
+                <button data-correct="false">La camisa azul es menos cara que la blanca.</button>
+                <button data-correct="true">La camisa azul es tan cara como la blanca.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; the irregular one</div>
+            <div class="widget-question">This jacket is <em>better</em> quality than that one. Which is correct Spanish?</div>
+            <div class="widget-options">
+                <button data-correct="true">Esta chaqueta es mejor que esa.</button>
+                <button data-correct="false">Esta chaqueta es m&aacute;s buena que esa.</button>
+                <button data-correct="false">Esta chaqueta es tan buena que esa.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Commit-then-reveal -->
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: you see three items &mdash; <em>unos zapatos</em> ($60), <em>unos pantalones</em> ($40), and <em>una gorra</em> (a cap, $12). Rank them out loud from most to least expensive by <strong>chaining two comparatives</strong>. Say it first, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Los zapatos son m&aacute;s caros que los pantalones, y los pantalones son m&aacute;s caros que la gorra.</strong> Two comparatives chained together give a full ranking &mdash; no new grammar needed. (Tomorrow you'll compress this into one superlative: <em>la gorra es la m&aacute;s barata</em>.)</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · Reading + comprehension ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">En el mercado de La Paz</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        &mdash;Buenas tardes. Busco una chompa de alpaca. &iquest;Cu&aacute;nto cuesta esta?<br>
+        &mdash;Esa chompa cuesta 180 bolivianos. Es <strong>m&aacute;s cara que</strong> la de lana, pero la alpaca es <strong>m&aacute;s suave y m&aacute;s caliente</strong>.<br>
+        &mdash;&iquest;Y aquella roja?<br>
+        &mdash;Aquella es <strong>m&aacute;s barata</strong>: 120 bolivianos. Pero no es <strong>tan fina como</strong> esta. Esta es <strong>la chompa m&aacute;s fina</strong> del puesto &mdash; <strong>la mejor</strong> calidad.<br>
+        &mdash;Quiero una talla <strong>m&aacute;s grande</strong>. &iquest;Tiene una mediana?<br>
+        &mdash;Claro. Y mire este chal tejido a mano: es <strong>tan bonito como</strong> la chompa y cuesta menos. Es <strong>el regalo m&aacute;s popular</strong> para los turistas.<br>
+        &mdash;&iexcl;Perfecto! Y es <strong>el precio m&aacute;s bajo</strong> del mercado. Me llevo la chompa y el chal. Muchas gracias.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Underline every <em>m&aacute;s&hellip; que</em>, <em>menos&hellip; que</em>, and <em>tan&hellip; como</em> &mdash; those are the comparatives you own. Then notice the four <em>superlatives</em>: <em>la&hellip; m&aacute;s fina del puesto</em>, <em>la mejor calidad</em>, <em>el&hellip; m&aacute;s popular</em>, <em>el precio m&aacute;s bajo del mercado</em>. The pattern <em>el/la m&aacute;s&hellip; de</em> means "the most&hellip; of/in." You'll build these yourself in Lesson 6.05 &mdash; for now, just read them and get the meaning.</div>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; &iquest;COMPRENDES? &middot; check the reading</div>
+            <div class="widget-question">According to the vendor, which statement is true?</div>
+            <div class="widget-options">
+                <button data-correct="false">La chompa roja es m&aacute;s fina que la primera.</button>
+                <button data-correct="true">La chompa de alpaca es la m&aacute;s fina del puesto.</button>
+                <button data-correct="false">El chal cuesta m&aacute;s que la chompa.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; BOLIVIA</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El aguayo y los tejidos andinos</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">The <em>chompa de alpaca</em> the shopper compares is part of one of the world's oldest living weaving traditions. In the Bolivian highlands, Aymara and Quechua weavers still make the <strong>aguayo</strong> &mdash; a rectangular cloth of brilliant stripes used to carry babies, food, and goods on the back &mdash; on backstrap looms, using wool from <strong>llamas and alpacas</strong>. Every region has its own patterns and colors, so a trained eye can tell where a textile was woven; the town of <strong>Tarabuco</strong>, near Sucre, is famous for its intricate designs and holds the yearly <em>Pujllay</em> festival. When a vendor calls one piece <em>la m&aacute;s fina</em>, she's judging the tightness of the weave and the softness of the fiber &mdash; skills passed down for centuries. Prices are quoted in <strong>bolivianos</strong> (Bs), Bolivia's currency. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short photo tour of aguayo patterns and a market listening clip.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; HONESTY</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Jaime Escalante</strong> (La Paz, Bolivia, 1930&ndash;2010) taught his students that honest self-assessment &mdash; knowing exactly where you stand, not where you wish you stood &mdash; was the first real step toward progress. Today you take your comparative sentences into the market itself, deciding <em>cu&aacute;l chompa es m&aacute;s barata</em> or <em>cu&aacute;l tienda es mejor</em>. Shop with Escalante's honesty: compare what's actually true about price and quality, and say so plainly instead of talking yourself into a bad deal.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">5</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 6.05</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll turn comparisons into <em>superlatives</em> &mdash; <em>el m&aacute;s caro</em>, <em>la mejor</em> &mdash; to say which item is the most, least, best, or worst of all, exactly like the phrases you just met in the market reading. Graded work in this module begins on Day 7 (Vocabulary Check + Lengua en acci&oacute;n), with the Tarea oral and Grammar Quiz later &mdash; this week is for building the habit.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then compare two things you're wearing right now out loud &mdash; one sentence with <em>m&aacute;s&hellip; que</em> and one with <em>tan&hellip; como</em> (<em>Mis zapatos son m&aacute;s c&oacute;modos que&hellip; Mi camiseta es tan vieja como&hellip;</em>).</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You didn't learn a new rule today &mdash; you learned to <em>shop</em> with the one you had. You can compare two garments by price, size, and quality, chain comparisons to rank three prices, and follow a real market conversation from La Paz, superlatives and all. That's the interpretive and interpersonal work of a real buyer. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 6.04 &middot; Comparatives in use + reading</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 2.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 2</div>
+        <div style="font-size: 12px; color: #666;">Mi horario y la hora</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 2.03 &middot; Day 3 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Verbos con cambio de ra&iacute;z &laquo;de bota&raquo;: e&rarr;ie y o&rarr;ue</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Mi horario y la hora</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 2.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Los verbos &laquo;de bota&raquo; &mdash; cuando la ra&iacute;z cambia de sonido</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">The middle of the verb changes its sound &mdash; but not in every person, and there's a reason why.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">We're still in the <strong>present tense</strong> you consolidated in the <em>repaso</em>, and still using verbs you already know from Spanish 1 &mdash; <em>querer, poder, dormir, empezar&hellip;</em> Today we name a pattern you've been half-hearing all along: in many common verbs, the vowel in the <strong>stem</strong> (the middle of the verb) shifts &mdash; <strong>e&rarr;ie</strong> (<em>quiero</em>) or <strong>o&rarr;ue</strong> (<em>puedo</em>). Teachers call these <strong>&laquo;boot&raquo; verbs</strong> (<em>verbos de bota</em>) because of where the change happens. The one idea to hold onto: the stem changes in every form <strong>except <em>nosotros</em> and <em>vosotros</em></strong> &mdash; and today you'll see exactly why. No new vocabulary; just a pattern getting a name.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain the &laquo;boot&raquo; pattern &mdash; that the stem vowel changes in every form <em>except nosotros/vosotros</em>, because those are the two forms where the stress moves off the stem.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> conjugate <strong>e&rarr;ie</strong> verbs (<em>querer, empezar, pensar, preferir, entender, cerrar</em>) and <strong>o&rarr;ue</strong> verbs (<em>poder, dormir, volver, almorzar, contar</em>) across all persons.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use these verbs to talk about my daily schedule (<em>Empiezo las clases a las ocho, prefiero estudiar por la tarde, no puedo dormir&hellip;</em>).</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Warm-up + check-in ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Trust your ear first</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">You've said <em>&iquest;<strong>Quieres</strong> ir al cine?</em> and <em>No <strong>puedo</strong></em> since Spanish 1 &mdash; those little sound shifts in the middle (<em>quer</em>&rarr;<em>quier</em>, <em>pod</em>&rarr;<em>pued</em>) are already in your mouth. You just haven't had a name for them yet. Before we explain the rule, let your ear vote.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">You want to say &ldquo;I can&rdquo; from <em>poder</em>. You already know <em>t&uacute; puedes</em>. Which <em>yo</em> form sounds right to your ear?</div>
+            <div class="widget-options">
+                <button data-response="Great ear! 'Yo puedo' is exactly right — the o turns into ue whenever the stress lands on the stem. Part 3 shows why that happens.">Yo puedo</button>
+                <button data-response="Reasonable guess — 'podo' keeps the original o, but poder is a boot verb: the stressed stem forces o&rarr;ue, so 'yo puedo.' Part 3 makes the pattern clear.">Yo podo</button>
+                <button data-response="Totally fair to be unsure — that's what today is for. The answer is 'yo puedo,' and by Part 3 the o&rarr;ue shift will feel logical, not random.">I'm not sure yet</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · The verbs (recycled vocab) with audio ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; VERBOS QUE YA CONOCES <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The two families &mdash; hear the shift</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">All of these infinitives are review from Spanish 1. Click the <strong>&#128266;</strong> to hear the <strong>infinitive</strong>, then the <strong>yo</strong> form beside it, where the change shows up loudest. Say each pair aloud and listen for the vowel that grows a diphthong.</p>
+
+        <div style="font-size:13px;color:#1B6A94;letter-spacing:.3px;margin:14px 0 4px;"><strong>Familia 1 &middot; e &rarr; ie</strong></div>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/empezar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">empezar</span><span class="v-en">to begin / start &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/empiezo.mp3" aria-label="Escuchar empiezo" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo empiezo</strong></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/querer.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">querer</span><span class="v-en">to want &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/quiero.mp3" aria-label="Escuchar quiero" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo quiero</strong></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/pensar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">pensar</span><span class="v-en">to think &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/pienso.mp3" aria-label="Escuchar pienso" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo pienso</strong></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/preferir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">preferir</span><span class="v-en">to prefer &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/prefiero.mp3" aria-label="Escuchar prefiero" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo prefiero</strong></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/entender.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">entender</span><span class="v-en">to understand &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/entiendo.mp3" aria-label="Escuchar entiendo" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo entiendo</strong></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/cerrar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">cerrar</span><span class="v-en">to close &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/cierro.mp3" aria-label="Escuchar cierro" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo cierro</strong></span></li>
+        </ul>
+
+        <div style="font-size:13px;color:#1B6A94;letter-spacing:.3px;margin:16px 0 4px;"><strong>Familia 2 &middot; o &rarr; ue</strong></div>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/poder.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">poder</span><span class="v-en">to be able / can &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/puedo.mp3" aria-label="Escuchar puedo" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo puedo</strong></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/dormir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">dormir</span><span class="v-en">to sleep &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/duermo.mp3" aria-label="Escuchar duermo" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo duermo</strong></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/volver.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">volver</span><span class="v-en">to return / come back &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/vuelvo.mp3" aria-label="Escuchar vuelvo" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo vuelvo</strong></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/almorzar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">almorzar</span><span class="v-en">to have lunch &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/almuerzo.mp3" aria-label="Escuchar almuerzo" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo almuerzo</strong></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/contar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">contar</span><span class="v-en">to count / to tell &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/cuento.mp3" aria-label="Escuchar cuento" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo cuento</strong></span></li>
+        </ul>
+
+        <div class="opt-strip">
+            <div class="lbl">&#11088; F&Iacute;JATE &middot; the shared clue</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">The <strong>ending</strong> is completely normal in all of these &mdash; <em>empiez<u>o</u>, quier<u>o</u>, pued<u>o</u></em> take the same <em>-o</em> as any regular <em>yo</em>. The only thing that moved is the vowel in the <strong>middle</strong>: <em>e&rarr;ie</em> or <em>o&rarr;ue</em>. That's the whole pattern &mdash; a change to the <em>stem</em>, never to the endings you already know.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar: the boot ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; EL PATR&Oacute;N DE LA BOTA <span class="pill-time">12 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Why the shape is a boot</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Write the six present-tense forms in two columns &mdash; singular on the left, plural on the right. Now shade every form whose stem <strong>changes</strong>. The shaded cells trace the outline of a <strong>boot</strong> (<em>una bota</em>): straight down the left side, then a kick out to the bottom-right. The two forms that stay <em>outside</em> the boot &mdash; up in the top-right corner &mdash; are <strong>nosotros</strong> and <strong>vosotros</strong>. They never change.</p>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 16px 0 8px 0;">Boot #1 &mdash; <em>querer</em> (e&rarr;ie)</h3>
+        <table class="gtable">
+            <thead><tr><th>Person (singular)</th><th>querer</th><th>Person (plural)</th><th>querer</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td>yo</td><td style="background:#FBEFCF;font-weight:700;">qu<span style="color:#AA1E2D;">ie</span>ro</td>
+                    <td>nosotros/as</td><td>queremos</td>
+                </tr>
+                <tr>
+                    <td>t&uacute;</td><td style="background:#FBEFCF;font-weight:700;">qu<span style="color:#AA1E2D;">ie</span>res</td>
+                    <td>vosotros/as</td><td>quer&eacute;is</td>
+                </tr>
+                <tr>
+                    <td>usted / &eacute;l / ella</td><td style="background:#FBEFCF;font-weight:700;">qu<span style="color:#AA1E2D;">ie</span>re</td>
+                    <td>ustedes / ellos / ellas</td><td style="background:#FBEFCF;font-weight:700;">qu<span style="color:#AA1E2D;">ie</span>ren</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Shaded = stem changes (<em>e&rarr;ie</em>). Unshaded = <em>nosotros queremos</em>, <em>vosotros quer&eacute;is</em> keep the original <em>e</em>. Four forms change; two don't &mdash; that's the boot.</p>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 20px 0 8px 0;">Boot #2 &mdash; <em>poder</em> (o&rarr;ue)</h3>
+        <table class="gtable">
+            <thead><tr><th>Person (singular)</th><th>poder</th><th>Person (plural)</th><th>poder</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td>yo</td><td style="background:#FBEFCF;font-weight:700;">p<span style="color:#AA1E2D;">ue</span>do</td>
+                    <td>nosotros/as</td><td>podemos</td>
+                </tr>
+                <tr>
+                    <td>t&uacute;</td><td style="background:#FBEFCF;font-weight:700;">p<span style="color:#AA1E2D;">ue</span>des</td>
+                    <td>vosotros/as</td><td>pod&eacute;is</td>
+                </tr>
+                <tr>
+                    <td>usted / &eacute;l / ella</td><td style="background:#FBEFCF;font-weight:700;">p<span style="color:#AA1E2D;">ue</span>de</td>
+                    <td>ustedes / ellos / ellas</td><td style="background:#FBEFCF;font-weight:700;">p<span style="color:#AA1E2D;">ue</span>den</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Same shape, different vowel: <em>o&rarr;ue</em>. And notice again &mdash; <em>nosotros podemos</em>, <em>vosotros pod&eacute;is</em> keep the plain <em>o</em>.</p>
+
+        <div class="opt-strip">
+            <div class="lbl">&#127919; THE WHY &middot; it's about stress, not luck</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Say the forms out loud and feel where your voice pushes hardest. In <em><strong>QUIE</strong>ro, <strong>QUIE</strong>res, <strong>QUIE</strong>re, <strong>QUIE</strong>ren</em>, the stress lands on the <strong>stem</strong> &mdash; and a stressed <em>e</em>/<em>o</em> in Spanish naturally breaks into <em>ie</em>/<em>ue</em>. But in <em>que<strong>RE</strong>mos</em> and <em>que<strong>R&Eacute;IS</strong></em>, the stress jumps to the <strong>ending</strong>, leaving the stem vowel quiet &mdash; so it stays a plain <em>e</em>. The boot isn't a random list to memorize; it's simply <em>&ldquo;the stem changes wherever the stem is stressed.&rdquo;</em></div>
+        </div>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 20px 0 8px 0;">The rest of today's verbs, at a glance</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 8px 0;">Every verb below follows one of the two boots exactly. Learn the <em>yo</em> form and the whole boot falls into place:</p>
+        <table class="gtable">
+            <thead><tr><th>e&rarr;ie</th><th>yo form</th><th>o&rarr;ue</th><th>yo form</th></tr></thead>
+            <tbody>
+                <tr><td>empezar (to begin)</td><td><span class="pron">empiezo</span></td><td>poder (can)</td><td><span class="pron">puedo</span></td></tr>
+                <tr><td>pensar (to think)</td><td><span class="pron">pienso</span></td><td>dormir (to sleep)</td><td><span class="pron">duermo</span></td></tr>
+                <tr><td>preferir (to prefer)</td><td><span class="pron">prefiero</span></td><td>volver (to return)</td><td><span class="pron">vuelvo</span></td></tr>
+                <tr><td>entender (to understand)</td><td><span class="pron">entiendo</span></td><td>almorzar (to eat lunch)</td><td><span class="pron">almuerzo</span></td></tr>
+                <tr><td>cerrar (to close)</td><td><span class="pron">cierro</span></td><td>contar (to count/tell)</td><td><span class="pron">cuento</span></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:8px 0 0;"><strong>Spiral reminder:</strong> you already met one boot verb in the <em>repaso</em> &mdash; <em>tener</em> stem-changes <em>e&rarr;ie</em> (<em>t&uacute; tienes, &eacute;l tiene</em>) even though its <em>yo</em> is the irregular <em>tengo</em>. Same boot shape, and same escape hatch: <em>nosotros tenemos</em> stays regular.</p>
+    </div>
+
+    <!-- ===== PART 4 · Practice ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">9 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.6;margin:0 0 4px 0;">First decide the <strong>subject</strong>: is it inside the boot (change the stem) or is it <em>nosotros/vosotros</em> (leave it alone)? Commit to an answer, then read the feedback.</p>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; querer, yo</div>
+            <div class="widget-question">&ldquo;Yo ___ empezar la tarea temprano hoy.&rdquo; (I want to start the homework early today.)</div>
+            <div class="widget-options">
+                <button data-correct="false">quere</button>
+                <button data-correct="true">quiero</button>
+                <button data-correct="false">queremos</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; poder, t&uacute;</div>
+            <div class="widget-question">&ldquo;&iquest;___ (t&uacute;) volver a casa a las cuatro?&rdquo; (Can you come home at four?)</div>
+            <div class="widget-options">
+                <button data-correct="true">Puedes</button>
+                <button data-correct="false">Podes</button>
+                <button data-correct="false">Podemos</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; dormir, ellos</div>
+            <div class="widget-question">&ldquo;Mis hermanos ___ ocho horas cada noche.&rdquo; (My brothers sleep eight hours every night.)</div>
+            <div class="widget-options">
+                <button data-correct="false">dormimos</button>
+                <button data-correct="false">dormo</button>
+                <button data-correct="true">duermen</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; careful &mdash; who's the subject?</div>
+            <div class="widget-question">&ldquo;Nosotros ___ el almuerzo a mediod&iacute;a.&rdquo; (We eat lunch at noon.) Which form fits <em>nosotros</em>?</div>
+            <div class="widget-options">
+                <button data-correct="false">almuerzan</button>
+                <button data-correct="true">almorzamos</button>
+                <button data-correct="false">almuerzo</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Commit-then-reveal -->
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: say <em>&ldquo;I want to sleep, but I can't&rdquo;</em> in Spanish. Two boot verbs are hiding in there &mdash; and one infinitive that stays untouched. Say it out loud first, then reveal.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Quiero dormir, pero no puedo.</strong> The two <em>yo</em> verbs are inside the boot, so both change: <em>querer &rarr; quiero</em> (e&rarr;ie) and <em>poder &rarr; puedo</em> (o&rarr;ue). But <em>dormir</em> here is an <strong>infinitive</strong> after <em>quiero</em> &mdash; it isn't conjugated, so it keeps its plain <em>o</em>. (If we said &ldquo;we can't,&rdquo; it would be <em>no podemos</em> &mdash; outside the boot, no change.)</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · Reading ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">4 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        &laquo;Hola, me llamo <strong>Marisol</strong> y vivo en Tegucigalpa, Honduras. Mi horario es intenso. Las clases <strong>empiezan</strong> a las siete y media, as&iacute; que <strong>prefiero</strong> levantarme temprano. A mediod&iacute;a <strong>almuerzo</strong> con mis amigas y <strong>contamos</strong> los planes del fin de semana. Por la tarde <strong>vuelvo</strong> a casa, pero no <strong>puedo</strong> descansar todav&iacute;a: <strong>pienso</strong> estudiar dos horas m&aacute;s. Mi hermano y yo <strong>queremos</strong> ver una serie por la noche, pero primero <strong>cerramos</strong> los libros. Yo casi siempre <strong>duermo</strong> ocho horas &mdash; sin dormir bien, no <strong>entiendo</strong> nada en clase.&raquo;</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find the boot verbs that <em>changed</em> (like <em>empiezan, prefiero, almuerzo, vuelvo, puedo, pienso, duermo, entiendo</em>) and the two that <em>didn't</em>: <em>contamos</em> and <em>cerramos</em> &mdash; both <em>nosotros</em>. Why do <em>almuerzo</em> and <em>contamos</em> behave differently? Same kind of verb, different subject: only forms inside the boot change.</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; HONDURAS</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Cop&aacute;n: los mayas que med&iacute;an el tiempo</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">This module is about <em>el horario</em> &mdash; schedules and telling time &mdash; and few peoples in history kept time more precisely than the Maya of <strong>Cop&aacute;n</strong>, in western Honduras. More than a thousand years ago, Cop&aacute;n's astronomers tracked the sun, moon, and Venus so accurately that their calculation of the solar year was off by only minutes. They carved their observations into towering stone <em>estelas</em> and into the famous <strong>Escalinata de los Jerogl&iacute;ficos</strong> &mdash; a staircase of more than 2,000 glyphs, the longest Maya text ever found. Their calendar didn't just count days; it organized planting, ceremony, and daily life &mdash; a <em>horario</em> written in stone. Today the ruins of Cop&aacute;n are a UNESCO World Heritage Site. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short clip touring the Cop&aacute;n stelae.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; COURAGE</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>&Oacute;scar Romero</strong> (El Salvador, 1917&ndash;1980), archbishop of San Salvador, <em>quer&iacute;a</em> &mdash; wanted &mdash; only safety and dignity for the poor and oppressed, and every Sunday he <em>pod&iacute;a</em> have stayed silent but chose not to. He kept speaking from the pulpit even after threats on his life, and was assassinated in 1980 while saying Mass; the Church declared him a saint in 2018. His courage shows that <em>quiero</em> and <em>puedo</em> are not just verbs to conjugate &mdash; they are choices we make when something matters.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">4</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 2.04 &mdash; Los verbos de bota en acci&oacute;n</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll put <em>quiero, puedo, empiezo,</em> and the rest to work describing a full daily schedule in a longer reading. Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7 &mdash; these early days are for making the boot automatic.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say three true sentences about your own day out loud &mdash; one with <em>empiezo</em>, one with <em>prefiero</em>, and one with <em>puedo</em> or <em>no puedo</em>. Feel the stem change when the stress lands on the middle.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You've named the boot: <strong>e&rarr;ie</strong> and <strong>o&rarr;ue</strong> in every form except <em>nosotros</em> and <em>vosotros</em>. And you know <em>why</em> &mdash; the stem changes wherever the stem is stressed. The verbs were never new; you just gave an old sound a shape and a reason. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 2.03 &middot; Verbos con cambio de ra&iacute;z &laquo;de bota&raquo; (e&rarr;ie, o&rarr;ue)</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 1.09</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 1</div>
+        <div style="font-size: 12px; color: #666;">La tecnolog&iacute;a y la comunicaci&oacute;n</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 1.09 &middot; Day 9 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Reading + culture/virtue consolidation: Justice &mdash; Rigoberta Mench&uacute;</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">La tecnolog&iacute;a y la comunicaci&oacute;n</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 1.09</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> La voz de Rigoberta Mench&uacute;</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A reading day &mdash; because this whole module has been about communication, and no one communicated more bravely than she did.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today there is <strong>no new grammar and no new vocabulary</strong> &mdash; just a longer reading and some time to think. All module you studied how <em>you</em> use technology and your voice to communicate. Now you'll meet someone who used <em>her</em> voice to change history: <strong>Rigoberta Mench&uacute; Tum</strong>, the Guatemalan Maya activist and Nobel Peace laureate who is this module's model of the virtue of <strong>Justice</strong>. Read slowly &mdash; you already know enough Spanish to follow her story. At the end we'll do a quick <em>repaso</em> of your <em>yo</em>-irregular verbs, because tomorrow you take the <strong>Grammar Quiz</strong>.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> read an extended Spanish text about Rigoberta Mench&uacute; and understand its main ideas.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how Guatemala connects to the virtue of <em>justice</em> through Mench&uacute;'s defense of indigenous rights.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> review this module's <em>yo</em>-irregular verbs (<em>tengo, hago, pongo, salgo, traigo, digo</em>) in preparation for the Grammar Quiz.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Para empezar ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Before you read &mdash; one question</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This whole module you've practiced <em>communicating</em>: sending, posting, calling, telling. Today's reading is about a woman who had none of today's technology &mdash; no phone, no social media &mdash; and yet made her voice reach the whole world. Before you meet her, take thirty seconds with this: when something is unfair and you feel small against it, what can one ordinary person actually <em>do</em>? There's no wrong answer &mdash; just notice what you believe.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">When people are treated unfairly, what is the most powerful thing an ordinary person can do?</div>
+            <div class="widget-options">
+                <button data-response="S&iacute; &mdash; tell the truth. That is exactly what Rigoberta does: 'digo la verdad.' Watch for that phrase in the reading.">Speak up and tell the truth</button>
+                <button data-response="Absolutely &mdash; steady, quiet help matters. In Spanish: 'hago lo que puedo' (I do what I can). Rigoberta says something very close to this.">Help quietly, day after day</button>
+                <button data-response="A great instinct &mdash; bring people together. Rigoberta does this too, carrying her people's story to the world so others will listen ('traigo la historia de mi gente').">Bring people together so they're heard</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Palabras para la lectura (recycled/support, with audio) ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; PALABRAS PARA LA LECTURA <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">A few words to unlock the reading</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">These aren't new grammar or a new vocabulary set to memorize &mdash; they're just the handful of words you'll want to recognize so the reading flows. Several are near-cognates you can almost guess. Click the <strong>&#128266;</strong> and say each aloud once so it's familiar when you hit it in the text.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-justicia.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la justicia</span><span class="v-en">justice</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/los-derechos.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">los derechos</span><span class="v-en">rights</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/indigena.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">ind&iacute;gena</span><span class="v-en">indigenous</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-pueblo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el pueblo</span><span class="v-en">the people / community</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-paz.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la paz</span><span class="v-en">peace</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-voz.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la voz</span><span class="v-en">the voice</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/defender.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">defender</span><span class="v-en">to defend / stand up for</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/maya-kiche.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">maya k&#39;iche&#39;</span><span class="v-en">K'iche' Maya (people / language)</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PISTA &middot; optional</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Notice how many of these look like English: <em>justicia &rarr; justice, derechos &rarr; rights (think &ldquo;directed&rdquo;), ind&iacute;gena &rarr; indigenous, paz &rarr; peace, defender &rarr; defend.</em> When you read, guess first from the cognate before you reach for a dictionary &mdash; you'll be right most of the time.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · A leer (the extended reading) ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 3 &middot; A LEER <span class="pill-time">13 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">La voz de Rigoberta Mench&uacute;</h3>
+        <p style="font-size:14px;color:#6b7a99;line-height:1.6;margin:0 0 12px 0;">Read it once all the way through for the gist, then a second time more slowly. A quick note: in Spanish, storytellers often tell true history in the <em>present tense</em> to make it feel alive and close &mdash; so you'll see present-tense verbs describing events from decades ago. That's on purpose; just read them as &ldquo;and then this happens.&rdquo;</p>
+
+        <p style="font-size:17px;color:#1a2340;line-height:1.75;margin:0 0 12px 0;">
+        Rigoberta Mench&uacute; Tum es una mujer <strong>maya k&#39;iche&#39;</strong> de Guatemala. Es hija de una familia campesina de las monta&ntilde;as, una familia que trabaja mucho pero vive en la pobreza. Rigoberta habla espa&ntilde;ol y tambi&eacute;n <strong>k&#39;iche&#39;</strong>, la lengua de su <strong>pueblo</strong>. Para millones de personas, ella es hoy un s&iacute;mbolo de la <strong>justicia</strong>.
+        </p>
+        <p style="font-size:17px;color:#1a2340;line-height:1.75;margin:0 0 12px 0;">
+        En Guatemala, los pueblos <strong>ind&iacute;genas</strong> no siempre tienen los mismos <strong>derechos</strong> que otras personas. Muchas familias trabajan la tierra, pero no reciben justicia. Rigoberta ve este problema de cerca y decide actuar. No usa armas &mdash; usa su <strong>voz</strong>. Habla, escribe y viaja por el mundo para <strong>defender</strong> los derechos de su gente.
+        </p>
+        <p style="font-size:17px;color:#1a2340;line-height:1.75;margin:0 0 12px 0;">
+        En su famoso libro <em>Me llamo Rigoberta Mench&uacute;</em>, ella cuenta la historia de su vida y de su comunidad, y el mundo por fin la escucha. En <strong>1992</strong> recibe el <strong>Premio Nobel de la Paz</strong>: es la primera mujer ind&iacute;gena que gana este premio. Con el dinero del premio, crea una fundaci&oacute;n para ayudar a los pueblos ind&iacute;genas de las Am&eacute;ricas.
+        </p>
+        <p style="font-size:17px;color:#1a2340;line-height:1.75;margin:0 0 4px 0;">
+        Cuando Rigoberta habla con los j&oacute;venes, su mensaje es sencillo. En un espa&ntilde;ol simple, dice algo as&iacute;:
+        </p>
+        <p style="font-size:17px;color:#1a2340;line-height:1.75;margin:0 0 4px 0;font-style:italic;padding-left:14px;border-left:3px solid #C7922C;">
+        &laquo;Yo <strong><span style="color:#C7922C;">digo</span></strong> la verdad. <strong><span style="color:#C7922C;">Hago</span></strong> lo que puedo por mi pueblo. <strong><span style="color:#C7922C;">Pongo</span></strong> mi voz al servicio de la justicia, y <strong><span style="color:#C7922C;">traigo</span></strong> la historia de mi gente a todo el mundo.&raquo;
+        </p>
+        <p style="font-size:13px;color:#6b7a99;line-height:1.6;margin:6px 0 0;">(A simplified paraphrase in the spirit of her message &mdash; not a word-for-word quotation.)</p>
+
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Two things to notice before you move on. <strong>(1) Meaning:</strong> Rigoberta's weapon is her <em>voz</em> &mdash; she communicates, exactly the theme of this whole module. <strong>(2) Grammar:</strong> her four-verb quote is a gift for tomorrow's quiz &mdash; <em>digo, hago, pongo, traigo</em> are four of your six <em>yo</em>-irregulars. Circle them and say the sentence aloud.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 4 · Repaso exprés para el Grammar Quiz ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; REPASO EXPR&Eacute;S PARA EL GRAMMAR QUIZ <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Your six <em>yo</em>-irregulars, one last time</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Nothing new &mdash; this is the pattern the Grammar Quiz will test. Each of these verbs is regular for every subject <em>except</em> <em>yo</em>, where it takes a surprise <strong>-go</strong> (and <em>traer</em> adds an extra <em>-i-</em>: <em>traigo</em>). Rigoberta used four of them in her quote. Click each and say it aloud once more.</p>
+        <table class="gtable">
+            <thead><tr><th>Verb</th><th>yo form</th><th>Hear it</th><th>From today's reading</th></tr></thead>
+            <tbody>
+                <tr><td>tener (to have)</td><td><span class="pron">tengo</span></td><td><button class="say" data-audio="grammar/tengo.mp3" aria-label="Escuchar">&#128266;</button></td><td>Tengo una voz, como Rigoberta.</td></tr>
+                <tr><td>hacer (to do / make)</td><td><span class="pron">hago</span></td><td><button class="say" data-audio="grammar/hago.mp3" aria-label="Escuchar">&#128266;</button></td><td>Hago lo que puedo por mi pueblo.</td></tr>
+                <tr><td>poner (to put / place)</td><td><span class="pron">pongo</span></td><td><button class="say" data-audio="grammar/pongo.mp3" aria-label="Escuchar">&#128266;</button></td><td>Pongo mi voz al servicio de la justicia.</td></tr>
+                <tr><td>salir (to go out / leave)</td><td><span class="pron">salgo</span></td><td><button class="say" data-audio="grammar/salgo.mp3" aria-label="Escuchar">&#128266;</button></td><td>Salgo a defender los derechos.</td></tr>
+                <tr><td>traer (to bring)</td><td><span class="pron">traigo</span></td><td><button class="say" data-audio="grammar/traigo.mp3" aria-label="Escuchar">&#128266;</button></td><td>Traigo la historia de mi gente al mundo.</td></tr>
+                <tr><td>decir (to say / tell)</td><td><span class="pron">digo</span></td><td><button class="say" data-audio="grammar/digo.mp3" aria-label="Escuchar">&#128266;</button></td><td>Digo la verdad.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Quiz-day habit: whenever the subject is <em>yo</em>, pause and ask &mdash; is this one of the six? If yes, it ends in <em>-go</em>. Every other subject (<em>t&uacute;, ella, nosotros&hellip;</em>) stays regular: <em>tienes, hace, ponemos.</em></p>
+    </div>
+
+    <!-- ===== PART 5 · Practícalo ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 5 &middot; PRACT&Iacute;CALO <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Check the reading &mdash; and warm up for the quiz</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 10px 0;">One comprehension check, then two <em>yo</em>-form checks in exactly the style of tomorrow's Grammar Quiz.</p>
+
+        <!-- Widget 1 · reading comprehension · correct = position 3 -->
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; check your reading</div>
+            <div class="widget-question">According to the reading, how does Rigoberta Mench&uacute; fight for justice?</div>
+            <div class="widget-options">
+                <button data-correct="false">With weapons and force</button>
+                <button data-correct="false">By staying silent and waiting</button>
+                <button data-correct="true">With her voice &mdash; speaking, writing, and traveling to defend her people</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Widget 2 · yo-irregular (decir) · correct = position 1 -->
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; choose the yo form</div>
+            <div class="widget-question">&laquo;Yo siempre ___ la verdad&raquo;, dice Rigoberta. (I always tell the truth.) &mdash; the <em>yo</em> form of <em>decir</em> is&hellip;</div>
+            <div class="widget-options">
+                <button data-correct="true">digo</button>
+                <button data-correct="false">dice</button>
+                <button data-correct="false">dices</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Widget 3 · yo-irregular (traer) · correct = position 2 -->
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; choose the yo form</div>
+            <div class="widget-question">&laquo;Yo ___ la historia de mi pueblo a todo el mundo.&raquo; (I bring my people's story&hellip;) &mdash; the <em>yo</em> form of <em>traer</em> is&hellip;</div>
+            <div class="widget-options">
+                <button data-correct="false">trao</button>
+                <button data-correct="true">traigo</button>
+                <button data-correct="false">traes</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Commit-then-reveal · reflection tied to the reading + a yo-irregular -->
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Now make it yours. Think of one true thing <em>you</em> stand for, then say <strong>one Spanish sentence</strong> out loud using a <em>yo</em>-irregular verb (<em>digo, hago,</em> or <em>pongo</em>). Say it first, <em>then</em> reveal a model.</p>
+            <button class="reveal-btn">Reveal a model sentence</button>
+            <div class="reveal-body"><strong>Yo <span class="pron">digo</span> la verdad a mis amigos y <span class="pron">hago</span> mi trabajo con honestidad. Cuando veo algo injusto, <span class="pron">pongo</span> mi voz al servicio de los dem&aacute;s.</strong> &mdash; Yours will name your own value; what matters is the correct <em>yo</em>-form ending in <em>-go</em>. That is exactly what the quiz rewards tomorrow.</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; GUATEMALA</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El quetzal &mdash; el ave que no vive sin libertad</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Guatemala's national bird is the <strong>quetzal</strong>, a brilliant green-and-crimson bird sacred to the ancient Maya. A famous legend says the quetzal <em>cannot live in a cage</em> &mdash; held captive, it dies &mdash; so Guatemalans made it their symbol of <strong>freedom</strong>. It flies on the national flag, and the country even named its money after it: prices are counted in <em>quetzales</em>. The image fits today's reading perfectly: just as the quetzal must be free to live, Rigoberta Mench&uacute; insists that her people must be free to speak, to keep their languages, and to receive justice. A bird, a coin, and an activist &mdash; all carrying the same idea of <em>libertad</em>. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with an image of the quetzal on the Guatemalan flag and a one-quetzal coin.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; SERVICE</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Rigoberta Mench&uacute; Tum</strong> (Guatemala, b.&nbsp;1959) is this module's model of <em>service</em> &mdash; giving her time, her testimony, and her voice to people who had none. She could not vote or be heard in her own country, so she made her voice travel: through testimony, books, and speeches carried across the world, work recognized with the <strong>Nobel Peace Prize in 1992</strong>. Notice how service, for her, begins with <em>communication</em> &mdash; the very theme of this module. <em>Ella <strong>dice</strong> la verdad, <strong>hace</strong> lo que puede, y <strong>pone</strong> su voz al servicio de los dem&aacute;s.</em> The lesson for you is small but real: every time you use your Spanish to help someone, include them, or carry a message on their behalf, you are practicing the same virtue on a human scale.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">10</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 1.10 &mdash; Repaso del m&oacute;dulo + Grammar Quiz</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow is the last day of the module: a full self-check that pulls together the vocabulary, the present-tense spiral, and the <em>yo</em>-irregulars &mdash; and then you take the <strong>Grammar Quiz</strong> (auto-graded, 2 attempts). Make sure your <em>Vocabulary Check</em>, <em>Lengua en acci&oacute;n</em>, and <em>Tarea oral</em> are all submitted before you begin.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then, as your quiz warm-up, read Rigoberta's four-verb quote aloud one more time &mdash; <em>&ldquo;Digo&hellip; Hago&hellip; Pongo&hellip; traigo&hellip;&rdquo;</em> &mdash; and say each verb's meaning. If those four feel automatic, tomorrow's quiz is already half done.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You read a full paragraph-length story in Spanish and understood it, connected Guatemala to the virtue of justice, and refreshed the exact verbs your quiz will test. This module studied how we communicate; Rigoberta Mench&uacute; shows what communication is <em>for</em> &mdash; one clear voice, telling the truth, so that others can finally be heard. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 1.09 &middot; Reading + culture/virtue consolidation: Justice &mdash; Rigoberta Mench&uacute;</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

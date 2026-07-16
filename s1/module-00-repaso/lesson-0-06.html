@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 0.06</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 0</div>
+        <div style="font-size: 12px; color: #666;">Repaso &middot; Re-entry</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 0.06 &middot; Day 6 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Tener y las expresiones con tener</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Repaso &middot; Re-entry</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 0.06</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Tener y las expresiones con tener</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Sometimes Spanish <em>has</em> what English simply <em>is</em>.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">You already know <strong>tener</strong> means <em>to have</em> &mdash; <em>tengo un perro</em>, <em>tienes dos clases</em>. Today we spiral it back and add its most useful trick. In a whole family of everyday phrases, Spanish uses <strong>tener + a noun</strong> exactly where English uses <em>&ldquo;to be&rdquo; + an adjective</em>: you don't say &ldquo;I <em>am</em> hungry&rdquo; &mdash; you say <em>&ldquo;I <strong>have</strong> hunger&rdquo;</em> (<em>tengo hambre</em>). We'll also refresh <strong>tener que + infinitivo</strong> for saying what you <em>have to</em> do. No brand-new grammar &mdash; just <em>tener</em>, put to work.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> conjugate <em>tener</em> in the present for every subject (<em>tengo, tienes, tiene, tenemos, tienen</em>).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use <em>tener</em> expressions (<em>tener hambre, sed, fr&iacute;o, sue&ntilde;o, &hellip; a&ntilde;os</em>) where English would use <em>&ldquo;to be.&rdquo;</em></div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> say what I &mdash; and others &mdash; <em>have to</em> do, using <em>tener que + infinitivo</em>.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Para empezar ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">&ldquo;I have hunger&rdquo;?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Here's a difference worth noticing. In English you say you <em>are</em> hungry, <em>are</em> cold, <em>are</em> 16 years old. Spanish sees these as things you <strong>have</strong>: <em>tengo hambre</em> (I have hunger), <em>tengo fr&iacute;o</em> (I have cold), <em>tengo diecis&eacute;is a&ntilde;os</em> (I have sixteen years). Same idea, different verb. Once you expect <strong>tener</strong> here, a dozen everyday phrases fall into place at once.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Right now, as you sit down to study &mdash; which is most true for you?</div>
+            <div class="widget-options">
+                <button data-response="Tengo hambre = I'm hungry (literally 'I have hunger'). Notice you don't say 'estoy hambre' — hunger is something you have. You'll meet the whole family in Part 2.">I could eat something</button>
+                <button data-response="Tengo sueño = I'm sleepy (literally 'I have sleepiness'). Again it's tener, not ser or estar. Grab some water and let's wake your Spanish up.">I'm a little sleepy</button>
+                <button data-response="¡Perfecto! Tengo ganas de aprender = I feel like learning (literally 'I have desire to learn'). That's tener + ganas de — one of today's most useful phrases.">Honestly, ready to learn</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Vocab with audio ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; LAS EXPRESIONES CON TENER <span class="pill-time">11 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Listen, then say each one back</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Every phrase below is <strong>tener + a noun</strong> &mdash; and every one translates into English with <em>&ldquo;to be.&rdquo;</em> Click the <strong>&#128266;</strong> and repeat each aloud. Say them with feeling; these are the phrases you'll reach for daily.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener</span><span class="v-en">to have <span style="color:#9a7b1e;">(the verb itself)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener-hambre.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener hambre</span><span class="v-en">to be hungry <span style="color:#9a7b1e;">(lit. to have hunger)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener-sed.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener sed</span><span class="v-en">to be thirsty</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener-frio.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener fr&iacute;o</span><span class="v-en">to be cold</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener-calor.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener calor</span><span class="v-en">to be hot / warm</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener-sueno.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener sue&ntilde;o</span><span class="v-en">to be sleepy</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener-miedo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener miedo</span><span class="v-en">to be afraid</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener-prisa.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener prisa</span><span class="v-en">to be in a hurry</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener-razon.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener raz&oacute;n</span><span class="v-en">to be right</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener-anos.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener &hellip; a&ntilde;os</span><span class="v-en">to be &hellip; years old</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener-ganas-de.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener ganas de</span><span class="v-en">to feel like (doing something)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener-que.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener que</span><span class="v-en">to have to (do something)</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +5 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">To say <em>very</em> hungry, thirsty, cold&hellip; use <strong>mucho/mucha</strong> &mdash; and it must agree with the noun: <em>tengo <strong>mucha</strong> hambre</em> (hambre is feminine), but <em>tengo <strong>mucho</strong> fr&iacute;o</em> (fr&iacute;o is masculine). For age it's <strong>muchos</strong>: <em>mi abuelo tiene <strong>muchos</strong> a&ntilde;os</em>.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar: tener + tener que ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; EL VERBO TENER (REPASO) <span class="pill-time">9 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Conjugate it once, use it everywhere</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Every phrase from Part 2 rides on the conjugated verb. <strong>Tener</strong> is a familiar friend from Spanish 1: it has an irregular <em>yo</em> form (<em>tengo</em>) and an <strong>e&rarr;ie</strong> stem change in the &ldquo;boot&rdquo; forms. Here it is, warm and ready:</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>tener</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">tengo</span></td><td>Yo <span class="pron">tengo</span> quince a&ntilde;os.</td></tr>
+                <tr><td>t&uacute;</td><td><span class="pron">tienes</span></td><td>&iquest;<span class="pron">Tienes</span> hambre?</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td><span class="pron">tiene</span></td><td>Ella <span class="pron">tiene</span> prisa.</td></tr>
+                <tr><td>nosotros/as</td><td><span class="pron">tenemos</span></td><td>Nosotros <span class="pron">tenemos</span> sed.</td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td><span class="pron">tienen</span></td><td>Ellos <span class="pron">tienen</span> sue&ntilde;o.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 14px;">Notice the boot: <em>tengo, tienes, tiene &hellip; tienen</em> change the stem to <em>tie-</em>, but <em>tenemos</em> keeps <em>te-</em>. Same pattern you saw with other e&rarr;ie verbs.</p>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 14px 0 8px 0;">Tener que + infinitivo &mdash; what you <em>have to</em> do</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 8px 0;">To say something is an obligation, use <strong>tener que</strong> followed by a verb in the <strong>infinitive</strong> (the plain <em>-ar / -er / -ir</em> form &mdash; you don't conjugate the second verb):</p>
+        <table class="gtable">
+            <thead><tr><th>Formula</th><th>Example</th><th>English</th></tr></thead>
+            <tbody>
+                <tr><td>tengo que + <em>infinitivo</em></td><td>Tengo que <span class="pron">estudiar</span>.</td><td>I have to study.</td></tr>
+                <tr><td>tienes que + <em>infinitivo</em></td><td>Tienes que <span class="pron">comer</span> algo.</td><td>You have to eat something.</td></tr>
+                <tr><td>tenemos que + <em>infinitivo</em></td><td>Tenemos que <span class="pron">salir</span> ya.</td><td>We have to leave now.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Only <em>tener</em> changes with the subject; the action verb stays in its plain infinitive form. <em>Tener ganas de</em> works the same way: <em>Tengo ganas de <strong>viajar</strong></em> (I feel like traveling).</p>
+    </div>
+
+    <!-- ===== PART 4 · Práctica ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">9 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; choose the form of tener</div>
+            <div class="widget-question">&ldquo;Mi hermana ___ ocho a&ntilde;os.&rdquo; (My sister is eight years old.)</div>
+            <div class="widget-options">
+                <button data-correct="true">tiene</button>
+                <button data-correct="false">tienes</button>
+                <button data-correct="false">tengo</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; pick the right expression</div>
+            <div class="widget-question">Son las tres de la ma&ntilde;ana y quieres dormir. Dices: &ldquo;Tengo ___.&rdquo;</div>
+            <div class="widget-options">
+                <button data-correct="false">prisa</button>
+                <button data-correct="true">sue&ntilde;o</button>
+                <button data-correct="false">calor</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; tener que + infinitivo</div>
+            <div class="widget-question">&ldquo;Para sacar buenas notas, nosotros ___ que estudiar todos los d&iacute;as.&rdquo;</div>
+            <div class="widget-options">
+                <button data-correct="false">tengo</button>
+                <button data-correct="false">tienen</button>
+                <button data-correct="true">tenemos</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Commit-then-reveal -->
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: how would you say <em>&ldquo;I'm really hungry and I have to eat now&rdquo;</em>? Say it out loud first, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Tengo mucha hambre y tengo que comer ahora.</strong> &ldquo;I'm hungry&rdquo; &rarr; <em>tengo hambre</em> (with <em>mucha</em> for &ldquo;really,&rdquo; agreeing with feminine <em>hambre</em>); &ldquo;I have to eat&rdquo; &rarr; <em>tengo que</em> + the infinitive <em>comer</em>.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · A leer ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">4 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        &laquo;Hola, me llamo <strong>Valentina</strong> y <strong>tengo</strong> quince a&ntilde;os. Vivo en Quito, Ecuador. Los lunes siempre <strong>tengo prisa</strong> por la ma&ntilde;ana porque mi colegio empieza temprano. Cuando llego a casa, <strong>tengo mucha hambre</strong> y como con mi familia. Mi hermano peque&ntilde;o solo <strong>tiene</strong> seis a&ntilde;os y, por la noche, siempre <strong>tiene sue&ntilde;o</strong> muy pronto. Yo <strong>tengo que</strong> estudiar un poco m&aacute;s, pero este fin de semana <strong>tengo ganas de</strong> descansar. &iexcl;Creo que <strong>tengo raz&oacute;n</strong> &mdash; lo necesito!&raquo;</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find all seven <em>tener</em> phrases in the paragraph. How old is Valentina, and how old is her brother? Which sentence tells you what she <em>has to</em> do, and which tells you what she <em>feels like</em> doing?</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; EL MUNDO HISPANO</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Tener quince a&ntilde;os</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">In much of the Spanish-speaking world, turning fifteen is a milestone. The <strong>quincea&ntilde;era</strong> &mdash; the celebration for a girl who <em>tiene quince a&ntilde;os</em> &mdash; marks the passage from childhood toward adulthood, and is honored from Mexico to Ecuador to the Mexican-American communities of the United States. A traditional <em>fiesta de quince</em> can include a special Mass, a formal dress, a waltz with family, and the symbolic <em>&uacute;ltima mu&ntilde;eca</em> (last doll). Notice that the whole idea lives inside today's grammar: to say your age in Spanish is literally to say how many years you <em>have</em>. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short clip and a reflection on coming-of-age traditions across the Hispanic world.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; LAS SIETE VIRTUDES</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><em>Tener que</em> is the grammar of obligation &mdash; and living up to your obligations is exactly <em>responsabilidad</em>, one of <strong>las siete virtudes</strong> that run through this whole course. Saying <em>tengo que estudiar</em> is easy; actually studying is the virtue. Notice today how naming a responsibility out loud, in Spanish or English, is often the first step toward keeping it.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">7</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 0.07 &mdash; Gustar y los intereses</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll spiral back <em>gustar</em> to say what you like &mdash; and the module's graded work opens: the <strong>Vocabulary Check</strong> and <strong>Lengua en acci&oacute;n</strong>. These first six days were for waking your Spanish up; now you'll start putting it on the record.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say three true sentences about yourself out loud &mdash; your age (<em>tengo &hellip; a&ntilde;os</em>), one thing you feel right now (<em>tengo &hellip;</em>), and one thing you have to do today (<em>tengo que &hellip;</em>).</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You've turned one familiar verb into a dozen everyday sentences. You can give your age, say how you feel, and name what you have to do &mdash; all with <em>tener</em>, exactly where English would reach for &ldquo;to be.&rdquo; <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 0.06 &middot; Tener y las expresiones con tener</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

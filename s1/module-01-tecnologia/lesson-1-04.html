@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 1.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 1</div>
+        <div style="font-size: 12px; color: #666;">La tecnolog&iacute;a y la comunicaci&oacute;n</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 1.04 &middot; Day 4 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Grammar 1 in use + reading (mi rutina digital)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Technology &amp; Communication</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 1.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Mi rutina digital &mdash; los verbos &laquo;-go&raquo; en acci&oacute;n</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Yesterday you learned the rule. Today you <em>live in it</em> &mdash; in the first person.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">No new grammar and no new words today &mdash; this is a <strong>use-it</strong> day. You already met the four <strong>-go</strong> verbs (<em>tengo, hago, pongo, salgo</em>) in Lesson 1.03, and you already have a bank of technology vocabulary from Lessons 1.01&ndash;1.02. Now we put them together to do one real thing: <strong>describe your own digital routine</strong> &mdash; talking about yourself, so everything lands in the <em>yo</em> form. We'll practice with quick checks and then read how a teenager in Guatemala describes her connected day.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe my own daily tech routine in the first person using <em>tengo, hago, pongo,</em> and <em>salgo</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> choose the right form of a <em>-go</em> verb by first checking who the subject is (<em>yo</em> vs. everyone else).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> read a short first-person text about someone's digital routine and understand it without translating word by word.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Warm-up + check-in ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Think about your own morning</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Before you touch any grammar, picture the first fifteen minutes of your day. What technology do you <em>have</em> in your hand? What do you <em>do</em> with it? Where do you <em>put</em> your phone before you <em>leave</em> the house? Every one of those four verbs &mdash; <em>tener, hacer, poner, salir</em> &mdash; is about to describe <strong>you</strong>, so every one will take that little <strong>-go</strong> tail. Warm up your ear first.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Which of these is closest to <em>your</em> real first move in the morning? (No right answer &mdash; just notice the verb in each option.)</div>
+            <div class="widget-options">
+                <button data-response="Nice — 'reviso el celular' uses a regular -ar verb (revisar). Later today you'll wrap that same idea in the -go verbs: 'Tengo el celular en la mano y hago…' Hold on to that image.">Reviso el celular en la cama.</button>
+                <button data-response="Great — and you just used a -go verb naturally! 'Hago' (from hacer) is exactly today's target, and 'salgo' is right behind it. You'll build a whole routine out of forms like these.">Hago la cama y luego salgo r&aacute;pido.</button>
+                <button data-response="Perfectly honest — mornings are slow for a lot of people. When you're ready, today gives you the words: 'Salgo tarde' (salir → salgo) is the -go form you'll practice.">Salgo de casa medio dormido/a.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Recycled phrase bank with audio ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; FRASES PARA TU RUTINA DIGITAL <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Ready-made pieces &mdash; all words you already know</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Nothing here is new: these are your <strong>-go</strong> yo-forms from Lesson 1.03 attached to the <strong>technology vocabulary</strong> from Lessons 1.01&ndash;1.02. Click the <strong>&#128266;</strong>, repeat each chunk aloud, and picture yourself saying it. Think of them as building blocks you'll snap together in Part 4.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="grammar/tengo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tengo&hellip;</span><span class="v-en">I have &mdash; <em>Tengo un celular y una computadora port&aacute;til.</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="grammar/hago.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">hago&hellip;</span><span class="v-en">I do / make &mdash; <em>Hago la tarea en l&iacute;nea.</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="grammar/pongo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">pongo&hellip;</span><span class="v-en">I put / place &mdash; <em>Pongo la contrase&ntilde;a en la aplicaci&oacute;n.</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="grammar/salgo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">salgo&hellip;</span><span class="v-en">I go out / leave &mdash; <em>Salgo de casa con el celular cargado.</em></span></li>
+        </ul>
+        <p style="font-size: 15px; color: #6b7a99; line-height: 1.6; margin: 12px 0 6px;">And the tech words those sentences lean on &mdash; hear them again:</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-celular.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el celular</span><span class="v-en">cell phone</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/en-linea.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">en l&iacute;nea</span><span class="v-en">online</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-aplicacion.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la aplicaci&oacute;n</span><span class="v-en">app</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/mandar-un-mensaje.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">mandar un mensaje</span><span class="v-en">to send a message / text</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; F&Iacute;JATE &middot; the silent <em>yo</em></div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Notice each verb chunk really begins with a hidden word: <em>(yo)</em>. In Spanish you usually drop the <em>yo</em> because the <strong>-go</strong> ending already announces &ldquo;this is about me.&rdquo; That's the whole reason today matters &mdash; the ending, not a separate word, carries the person.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar in use: patterns for talking about yourself ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; C&Oacute;MO SE USA <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">From rule to routine</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">You proved the pattern yesterday: <strong>only <em>yo</em> takes the <em>-go</em></strong>; everyone else is regular. Today we just aim it at a purpose &mdash; a whole day, from waking up to logging off. Here is the same set of verbs, each shown the way you'll actually use it to talk about your own tech habits:</p>
+        <table class="gtable">
+            <thead><tr><th>To say&hellip;</th><th>yo form</th><th>A full sentence (recycled vocab)</th></tr></thead>
+            <tbody>
+                <tr><td>I <em>have</em> a device</td><td><span class="pron">tengo</span></td><td>Yo <span class="pron">tengo</span> un celular y una computadora port&aacute;til.</td></tr>
+                <tr><td>I <em>do / make</em> something</td><td><span class="pron">hago</span></td><td><span class="pron">Hago</span> la tarea en l&iacute;nea y <span class="pron">hago</span> videollamadas con mi familia.</td></tr>
+                <tr><td>I <em>put / place</em> something</td><td><span class="pron">pongo</span></td><td><span class="pron">Pongo</span> la contrase&ntilde;a y luego <span class="pron">pongo</span> el tel&eacute;fono a cargar.</td></tr>
+                <tr><td>I <em>go out / leave</em></td><td><span class="pron">salgo</span></td><td><span class="pron">Salgo</span> de casa a las siete con el celular en la mochila.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:15px;color:#6b7a99;margin:8px 0 0;"><strong>The one move that never fails:</strong> before you pick a form, ask <em>&iquest;qui&eacute;n?</em> &mdash; who is doing it? If the answer is <strong>I / yo</strong>, reach for the <strong>-go</strong> form. If it's a friend, a class, or &ldquo;we,&rdquo; the verb goes back to its regular ending (<em>hace, pone, sale&hellip; hacemos, ponemos, salimos</em>). You'll practice exactly that decision next.</p>
+    </div>
+
+    <!-- ===== PART 4 · Practice ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">11 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.6;margin:0 0 4px 0;">Each item is about a real digital routine. First ask <em>who</em> is doing the action, then commit to a form and read the feedback.</p>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; describe your own routine</div>
+            <div class="widget-question">You're telling a classmate about your morning: &ldquo;Por la ma&ntilde;ana yo ___ la tarea en l&iacute;nea antes de salir.&rdquo; (In the morning I do my homework online before leaving.)</div>
+            <div class="widget-options">
+                <button data-correct="false">haces</button>
+                <button data-correct="true">hago</button>
+                <button data-correct="false">hacemos</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; two blanks, one subject</div>
+            <div class="widget-question">&ldquo;Antes de dormir, yo ___ el celular a cargar y ___ la alarma.&rdquo; Both blanks are about <em>you</em> and both use <em>poner</em>. Which form fills them?</div>
+            <div class="widget-options">
+                <button data-correct="false">pone</button>
+                <button data-correct="false">pones</button>
+                <button data-correct="true">pongo</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; careful &mdash; who is the subject?</div>
+            <div class="widget-question">&ldquo;Yo salgo temprano, pero mi hermano ___ tarde porque hace videollamadas.&rdquo; What goes in the blank for <em>mi hermano</em> (salir)?</div>
+            <div class="widget-options">
+                <button data-correct="true">sale</button>
+                <button data-correct="false">salgo</button>
+                <button data-correct="false">salimos</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Commit-then-reveal -->
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn to build a real sentence: describe three true things about your own tech morning, in order &mdash; what you <em>have</em>, what you <em>do</em> online, and when you <em>leave</em>. Use <em>tengo&hellip;, hago&hellip;, salgo&hellip;</em> Say it out loud first, then reveal a model to compare.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Tengo un celular y una computadora port&aacute;til. Por la ma&ntilde;ana hago la tarea en l&iacute;nea y mando un mensaje a mis amigos. Salgo de casa a las siete y media.</strong> All three verbs describe <em>me</em>, so all three take <strong>-go</strong>: <em>tengo, hago, salgo</em>. Yours will use your own devices and times &mdash; keep the frame, change the details.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · Reading ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER &middot; &laquo;Mi rutina digital&raquo; <span class="pill-time">7 min</span></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 10px 0;"><strong>Sof&iacute;a, 16 a&ntilde;os, vive en Antigua, Guatemala.</strong> Read her post once for the gist, then again hunting for every <em>-go</em> verb. Don't translate word by word &mdash; you already know these words.</p>
+        <p style="font-size:17px;color:#1a2340;line-height:1.75;">
+        &laquo;&iexcl;Hola! Me llamo <strong>Sof&iacute;a</strong> y les cuento mi rutina digital. Cada ma&ntilde;ana <strong>tengo</strong> el celular al lado de la cama, as&iacute; que primero <strong>pongo</strong> la contrase&ntilde;a y reviso las redes sociales. Antes del desayuno <strong>hago</strong> la tarea en l&iacute;nea; mi clase de matem&aacute;ticas usa una aplicaci&oacute;n y all&iacute; <strong>pongo</strong> mis respuestas.<br><br>
+        Cuando <strong>salgo</strong> de casa, siempre llevo el celular cargado porque en el bus mando mensajes a mis amigas. En la escuela nosotros <strong>tenemos</strong> un grupo de chat: yo <strong>pongo</strong> fotos de mis proyectos y mis compa&ntilde;eros <strong>ponen</strong> preguntas. Por la tarde <strong>hago</strong> una videollamada con mi abuela, que vive lejos, en Cob&aacute;n. Ella no <strong>sale</strong> mucho, pero con la videollamada estamos juntas igual.<br><br>
+        Por la noche <strong>pongo</strong> el tel&eacute;fono a cargar y no lo <strong>tengo</strong> en la cama &mdash; as&iacute; duermo mejor. &iexcl;Esa es mi rutina!&raquo;</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; F&Iacute;JATE &middot; same verb, two endings</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Sof&iacute;a says <em>pongo</em> four times but her classmates <em>ponen</em>. Why the different endings? Same verb, different subject: <em>yo &rarr; pongo</em>, <em>ellos &rarr; ponen</em>. The question below checks whether you caught who does what.</div>
+        </div>
+
+        <div class="optima-widget ow-eval" style="margin-top:14px;">
+            <div class="widget-kicker">&#9989; &iquest;COMPRENDISTE? &middot; reading check</div>
+            <div class="widget-question">According to the text, what does Sof&iacute;a do <strong>at night</strong> with her phone?</div>
+            <div class="widget-options">
+                <button data-correct="true">She puts it to charge and does <em>not</em> keep it in bed.</button>
+                <button data-correct="false">She does her homework and sends messages to her friends.</button>
+                <button data-correct="false">She makes a video call with her grandmother in Cob&aacute;n.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; GUATEMALA</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Antigua, Cob&aacute;n y la se&ntilde;al que sube la monta&ntilde;a</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Sof&iacute;a's video calls to her grandmother in <strong>Cob&aacute;n</strong> cross real geography. Guatemala is a country of highlands and volcanoes, and a cell signal that reaches the colonial city of <strong>Antigua</strong> easily may struggle to climb into the coffee-growing mountains of Alta Verapaz. Over the last decade, mobile phones have leapfrogged older landline networks: for many rural Guatemalan families the first phone in the house was a <em>celular</em>, not a home phone, and a weekly <strong>videollamada</strong> is how grandparents in the mountains stay part of a grandchild's daily life in the city. Technology here is measured less by the newest gadget than by a simple, human question &mdash; <em>&iquest;llega la se&ntilde;al?</em> (does the signal reach?). <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short map of Guatemala's departments.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; SERVICE</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Rigoberta Mench&uacute; Tum</strong> (Guatemala, b.&nbsp;1959), the K'iche' Maya activist and 1992 <strong>Nobel Peace Prize</strong> laureate, spent her life making sure isolated communities were not forgotten. <em>Service</em> means reaching the people technology too often skips, and that's exactly what happens when Sof&iacute;a's grandmother in the mountains joins a videollamada: a small act of service, using a device to make sure someone isn't left out. The everyday routine you're reading about today &mdash; calling, connecting, checking in &mdash; is one of the simplest ways this virtue shows up in ordinary life.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">5</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 1.05 &mdash; M&aacute;s verbos &laquo;-go&raquo;: <em>traigo</em> y <em>digo</em></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow the <em>-go</em> club gains two more members &mdash; <em>traer &rarr; traigo</em> and <em>decir &rarr; digo</em> (the &laquo;-igo&raquo; pair) &mdash; so you can say what you <em>bring</em> and what you <em>say</em> online. Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7; keep building the pattern until it's automatic.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then, out loud, describe your own real digital routine from morning to night in four sentences &mdash; one each with <em>tengo, hago, pongo,</em> and <em>salgo</em>. Say it a second time, a little faster.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You didn't just recite <em>tengo, hago, pongo, salgo</em> &mdash; you used them to describe a whole real day, and you followed Sof&iacute;a through hers. The habit to keep: ask <em>&iquest;qui&eacute;n?</em> first, and when the answer is <em>yo</em>, reach for the <strong>-go</strong>. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 1.04 &middot; Mi rutina digital &mdash; los verbos &laquo;-go&raquo; en acci&oacute;n</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

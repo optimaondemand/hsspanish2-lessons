@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 5.06</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 5</div>
+        <div style="font-size: 12px; color: #666;">La gente y las cosas</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 5.06 &middot; Day 6 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Grammar 3: indirect object pronouns + culture-rich reading (Chile)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">La gente y las cosas</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5.06</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Me, te, le, nos, les &mdash; &iquest;a qui&eacute;n? &iquest;para qui&eacute;n?</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Yesterday you pointed at the <em>thing</em>. Today you point at the <em>person you do it for</em>.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">On Day 5 you learned <strong>direct object pronouns</strong> &mdash; <em>lo, la, los, las</em> for the person or thing an action lands on (the <em>what</em>). Today is <strong>grammar point 3</strong>, a short extension: <strong>indirect object pronouns</strong> &mdash; <em>me, te, le, nos, les</em> &mdash; for the person you do something <strong>to</strong> or <strong>for</strong>. When you <em>give</em> a gift, <em>send</em> a message, or <em>write</em> a letter, there's a receiver: <em>I write a letter <strong>to my friend</strong></em>. That receiver is the indirect object. You'll also meet the little <strong>a + noun</strong> tag that keeps <em>le</em> and <em>les</em> from being ambiguous. This is a <strong>grammar day</strong> &mdash; no new theme vocabulary, just five pronouns, one clarifier, and a reading set in Chile.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> find the indirect object (the <em>to whom / for whom</em>) and replace it with the right pronoun &mdash; <em>me, te, le, nos,</em> or <em>les</em> &mdash; placed right before the conjugated verb.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> add the <strong>a + noun</strong> clarifier (<em>Le escribo a mi abuela</em>) so <em>le</em> and <em>les</em> are never ambiguous &mdash; even when the person is already named.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> tell an <strong>indirect</strong> object pronoun from a <strong>direct</strong> one &mdash; the person you give it <em>to</em> vs. the thing you give &mdash; and read both woven through a passage about daily life in Chile.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Every gift has a receiver</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Read this aloud: <em>Yo escribo una carta <strong>a mi amiga</strong>.</em> Two things get affected here. The <strong>letter</strong> is what I write &mdash; that's the <em>direct</em> object you handled yesterday (<em>la</em> escribo). But <strong>my friend</strong> is the one I write it <em>to</em> &mdash; that's the <em>indirect</em> object, and it gets its own pronoun: <em><strong>Le</strong> escribo una carta.</em> English hides this receiver inside little words like &ldquo;to&rdquo; and &ldquo;for&rdquo;; Spanish gives it a pronoun of its own.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">&ldquo;I send my grandmother a photo.&rdquo; Who or what <em>receives</em> the photo &mdash; who is it sent <em>to</em>?</div>
+            <div class="widget-options">
+                <button data-response="&iexcl;Exacto! Your grandmother is the receiver &mdash; the one you send it *to*. That's the indirect object, and in Spanish it becomes 'le': Le mando una foto a mi abuela. You'll build the full set in Part 3.">My grandmother</button>
+                <button data-response="Careful &mdash; the photo is *what* you send (the direct object, 'la'). The question is who you send it *to*: your grandmother, the indirect object &rarr; 'le'. Part 3 lines the two up side by side.">The photo</button>
+                <button data-response="Fair instinct &mdash; you're the sender (the subject). The *receiver* is your grandmother, the one you send it to &rarr; the indirect object 'le'. That's exactly what today sorts out.">Me, the sender</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; LOS CINCO PRONOMBRES &middot; VERBOS DE DAR <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Five pronouns &mdash; listen and repeat</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">This isn't a new theme &mdash; it's a small set of <strong>grammar words</strong>, and the verbs beneath them are ones you already own from earlier this module. Click the <strong>&#128266;</strong> and say each one aloud. Notice how close they are to the direct set from Day 5: only the third person changes &mdash; <em>lo/la/los/las</em> become <strong>le</strong> and <strong>les</strong>.</p>
+        <p style="font-size:14px;color:#6b7a99;margin:0 0 4px 0;font-weight:600;">Los pronombres de objeto indirecto</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/pron-me.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">me</span><span class="v-en">to / for me</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/pron-te.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">te</span><span class="v-en">to / for you (informal)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/pron-le.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">le</span><span class="v-en">to / for him, her, you (formal)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/pron-nos.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">nos</span><span class="v-en">to / for us</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/pron-les.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">les</span><span class="v-en">to / for them, you all</span></li>
+        </ul>
+        <p style="font-size:14px;color:#6b7a99;margin:10px 0 4px 0;font-weight:600;">Verbos que suelen llevar un objeto indirecto &middot; giving, sending &amp; telling (repaso)</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/dar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">dar</span><span class="v-en">to give <span style="color:#9a7b1e;">(doy, das, da&hellip;)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/prestar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">prestar</span><span class="v-en">to lend</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/mandar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">mandar</span><span class="v-en">to send</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/escribir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">escribir</span><span class="v-en">to write</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/explicar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">explicar</span><span class="v-en">to explain</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +4 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Say each verb with a matching pronoun and picture the receiver: <em>me da</em> (gives to me), <em>te presto</em> (I lend to you), <em>le mando</em> (I send to him/her), <em>nos escribe</em> (writes to us), <em>les explico</em> (I explain to them). Feeling the receiver <em>before</em> the verb is the whole habit of this lesson.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; C&Oacute;MO FUNCIONAN &mdash; LAS DOS IDEAS <span class="pill-time">11 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Idea 1 &mdash; the pronoun matches the <em>receiver</em>, not a gender</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Good news: indirect pronouns are simpler than direct ones. They do <strong>not</strong> change for masculine or feminine &mdash; <em>le</em> covers &ldquo;to him,&rdquo; &ldquo;to her,&rdquo; and &ldquo;to you (formal)&rdquo; alike. You only choose by <strong>who</strong> receives the action and <strong>how many</strong>. Like all object pronouns, it sits <strong>right before the conjugated verb</strong>.</p>
+        <table class="gtable">
+            <thead><tr><th>Receiver (to / for whom)</th><th>Pronoun</th><th>In a sentence</th></tr></thead>
+            <tbody>
+                <tr><td>to / for me</td><td><span class="pron">me</span></td><td>Mi madre <span class="pron">me</span> da dinero.</td></tr>
+                <tr><td>to / for you (informal)</td><td><span class="pron">te</span></td><td>Yo <span class="pron">te</span> presto mi libro.</td></tr>
+                <tr><td>to / for him, her, you (formal)</td><td><span class="pron">le</span></td><td><span class="pron">Le</span> escribo un mensaje.</td></tr>
+                <tr><td>to / for us</td><td><span class="pron">nos</span></td><td>El profesor <span class="pron">nos</span> explica la tarea.</td></tr>
+                <tr><td>to / for them, you all</td><td><span class="pron">les</span></td><td><span class="pron">Les</span> mando fotos.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 14px;">Same placement rule you learned yesterday: before the conjugated verb (<em>le doy</em>), and with a verb + infinitive you may attach it instead (<em>voy a escribir<strong>le</strong></em> = <em><strong>le</strong> voy a escribir</em>).</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 16px 0 8px 0;">Idea 2 &mdash; the <em>a + noun</em> clarifier</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Here's the twist: <em>le</em> and <em>les</em> are vague on their own &mdash; <em>Le doy un regalo</em> could mean to him, to her, or to you. So Spanish adds a short tag, <strong>a + the person</strong>, to make it clear. Two things surprise English speakers:</p>
+        <table class="gtable">
+            <thead><tr><th>Rule</th><th>Example</th><th>English</th></tr></thead>
+            <tbody>
+                <tr><td>Add <em>a + noun</em> to clarify <em>le / les</em></td><td><span class="pron">Le</span> doy un regalo <span class="pron">a Valentina</span>.</td><td>I give Valentina a gift.</td></tr>
+                <tr><td>Keep the pronoun <strong>even when</strong> the person is named (doubling)</td><td><span class="pron">Les</span> escribo <span class="pron">a mis abuelos</span>.</td><td>I write to my grandparents.</td></tr>
+                <tr><td>Use it for stress too (<em>a m&iacute;, a ti</em>)</td><td><span class="pron">A m&iacute; me</span> gusta; &iquest;y <span class="pron">a ti</span>?</td><td>*I* like it; and you?</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 14px;">That doubling feels redundant in English (&ldquo;I write to my grandparents <em>to them</em>&rdquo;), but in Spanish it's completely normal &mdash; the pronoun stays <em>and</em> the <em>a + noun</em> spells out who. You've actually seen this pattern before, in <em>gustar</em>: <em>A Ana <strong>le</strong> gusta la m&uacute;sica.</em></p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 16px 0 8px 0;">Direct vs. indirect &mdash; one question tells them apart</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Both sets share <em>me, te, nos</em>. They only split in the third person &mdash; and the way to choose is to ask <em>what?</em> vs. <em>to/for whom?</em></p>
+        <table class="gtable">
+            <thead><tr><th>Ask&hellip;</th><th>Direct (the thing/person acted on)</th><th>Indirect (the receiver)</th></tr></thead>
+            <tbody>
+                <tr><td>Question it answers</td><td>&iquest;qu&eacute;? &mdash; <em>what?</em></td><td>&iquest;a qui&eacute;n? / &iquest;para qui&eacute;n? &mdash; <em>to/for whom?</em></td></tr>
+                <tr><td>3rd-person pronouns</td><td><span class="pron">lo, la, los, las</span></td><td><span class="pron">le, les</span></td></tr>
+                <tr><td>Example</td><td>&iquest;El regalo? <span class="pron">Lo</span> compro. (I buy <em>it</em>.)</td><td>&iquest;A Valentina? <span class="pron">Le</span> compro un regalo. (I buy <em>her</em> one.)</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:8px 0 0;">Shortcut: the <strong>thing given</strong> is direct (<em>lo/la/los/las</em>); the <strong>person you give it to</strong> is indirect (<em>le/les</em>). We use them <em>one at a time</em> for now &mdash; stacking both in one sentence is a next-semester move.</p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">10 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; pick the indirect pronoun</div>
+            <div class="widget-question">&ldquo;A mis abuelos ___ mando fotos cada mes.&rdquo; (to my grandparents)</div>
+            <div class="widget-options">
+                <button data-correct="false">le</button>
+                <button data-correct="false">nos</button>
+                <button data-correct="true">les</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; direct or indirect?</div>
+            <div class="widget-question">&ldquo;Veo a Ana todos los d&iacute;as.&rdquo; &rarr; &ldquo;I see <em>her</em> every day.&rdquo; Which pronoun replaces <em>a Ana</em> here?</div>
+            <div class="widget-options">
+                <button data-correct="true">la</button>
+                <button data-correct="false">le</button>
+                <button data-correct="false">les</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; which sentence is correct?</div>
+            <div class="widget-question">Which one correctly says &ldquo;I give my sister a gift,&rdquo; with the pronoun in the right spot?</div>
+            <div class="widget-options">
+                <button data-correct="false">Doy un regalo a mi hermana le.</button>
+                <button data-correct="true">Le doy un regalo a mi hermana.</button>
+                <button data-correct="false">La doy un regalo a mi hermana.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: how would you say <em>&ldquo;I write a letter to my friends&rdquo;</em>? Include the indirect pronoun <strong>and</strong> the <em>a + noun</em> clarifier. Say it out loud first, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Les escribo una carta a mis amigos.</strong> The receivers are &ldquo;my friends&rdquo; (plural) &rarr; <em>les</em> before the verb; the letter is the direct object (<em>una carta</em>); and <em>a mis amigos</em> spells out exactly who &mdash; the doubling that sounds redundant in English but is normal in Spanish.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        Me llamo <strong>Mat&iacute;as</strong> y vivo en <strong>Valpara&iacute;so</strong>, un puerto de casas de colores en la costa de Chile. Mi familia est&aacute; repartida por todo el pa&iacute;s largo y delgado: mis abuelos viven en <strong>Santiago</strong>, la capital, al pie de los Andes. Cada domingo <strong>les</strong> escribo un mensaje <strong>a ellos</strong> y siempre <strong>me</strong> responden con fotos de la cordillera. Mi hermana estudia en el sur, y yo <strong>le</strong> mando dinero cuando puedo. En el colegio, la profesora <strong>nos</strong> explica la geograf&iacute;a de Chile: del desierto en el norte a los glaciares en el sur. Por la tarde subo en un <em>ascensor</em> antiguo hasta mi casa; desde arriba veo el mar. Si alg&uacute;n d&iacute;a vienes a Valpara&iacute;so, yo <strong>te</strong> muestro la ciudad.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find all five indirect object pronouns in Mat&iacute;as's paragraph (<em>les, me, le, nos, te</em>) and name the receiver of each. Which one is doubled with an <em>a + noun</em> clarifier (<em>les&hellip; a ellos</em>)? And why is it <em>le mando dinero</em> but the money itself would be <em>lo</em>? (The sister receives &rarr; indirect; the money is the thing given &rarr; direct.)</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; CHILE</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Valpara&iacute;so y Santiago: el puerto y la capital</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Chile packs its life into a narrow strip between the Andes and the Pacific, and two cities anchor everyday life. <strong>Santiago</strong>, the capital, sits inland in a valley ringed by snow-capped mountains &mdash; on a clear day the cordillera towers over the skyline. About an hour and a half west lies <strong>Valpara&iacute;so</strong>, a UNESCO World Heritage port famous for houses painted every color, steep hills climbed by century-old funiculars called <em>ascensores</em>, and walls covered in murals. The poet <strong>Pablo Neruda</strong> kept a house here, <em>La Sebastiana</em>, because he loved the view of the bay. Chileans speak a quick, musical Spanish full of their own words &mdash; <em>&iquest;cachai?</em> for &ldquo;you get it?&rdquo; and <em>al tiro</em> for &ldquo;right away.&rdquo; When Mat&iacute;as writes to his grandparents in Santiago from his hillside in Valpara&iacute;so, he's crossing the two poles of ordinary Chilean life: the mountains and the sea. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short photo tour of the <em>ascensores</em> and a map of Chile north to south.)</span></p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; RESPONSIBILITY</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Gabriela Mistral</strong> (Chile, 1889&ndash;1957), the first Latin American to win the Nobel Prize in Literature, spent years as a teacher writing letters &mdash; to students, fellow poets, and governments across the Americas &mdash; and took responsibility for making sure each one reached exactly the right person. Today's grammar is a small rehearsal of that same responsibility: when you add <em>a mi abuela</em> after <em>le</em>, you're doing what Mistral did in every letter &mdash; taking ownership of who receives your words. Responsibility means the person you're speaking <em>to</em> or <em>for</em> is never left in doubt.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">7</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 5.07 &mdash; Todo junto: la gente y las cosas</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll snap the whole module together &mdash; <em>saber</em> vs. <em>conocer</em> and both kinds of object pronoun in mixed practice &mdash; and your <strong>graded work opens</strong>: the Vocabulary Check (listening) and Lengua en acci&oacute;n (writing) for Module 5 unlock on Day 7. These first days build the toolkit you'll be graded on.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say three true sentences out loud about people in your life &mdash; each with a verb of giving, sending, or telling and an indirect pronoun, plus the <em>a + noun</em> clarifier (for example: <em>Le escribo mensajes a mi mejor amigo</em>).</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You can now point at the <em>receiver</em>, not just the thing: <em>me, te, le, nos, les</em> before the verb, and the <em>a + noun</em> tag that makes <em>le</em> and <em>les</em> perfectly clear. You've also learned to tell the direct pronoun (the <em>what</em>) from the indirect one (the <em>to/for whom</em>) &mdash; and you read both at work in a Chilean port town. Tomorrow it all comes together. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 5.06 &middot; Indirect object pronouns (me, te, le, nos, les) + a-clarifier</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

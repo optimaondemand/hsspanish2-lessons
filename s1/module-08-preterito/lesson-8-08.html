@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 8.08</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 8</div>
+        <div style="font-size: 12px; color: #666;">Lo que hice &mdash; recent past (GATE)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 8.08 &middot; Day 8 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Cuenta lo que hiciste (producci&oacute;n)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">El pret&eacute;rito (GATE) &middot; S&iacute;ntesis</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 8.08</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Cuenta lo que hiciste</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">You've built the forms &mdash; now put them to work telling your own story.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">All week you've assembled the pieces of the pret&eacute;rito: the regular endings and the <strong>-car/-gar/-zar</strong> spelling changes. Today is a <strong>synthesis</strong> day &mdash; you stop conjugating verbs in isolation and start <em>narrating</em>. You'll review the forms one more time, draft a short spoken account of what you did recently, and rehearse it out loud. That draft becomes the script for your <strong>Tarea oral</strong> recording.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> narrate recent past activities using regular pret&eacute;rito verbs (-ar/-er/-ir) in the <em>yo</em> and <em>t&uacute;</em> forms.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> correctly apply the <strong>-car/-gar/-zar</strong> spelling changes in the <em>yo</em> form (busqu&eacute;, llegu&eacute;, empec&eacute;).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> draft and rehearse a short spoken narration of what I did, as the script for my Tarea oral recording.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">De la gram&aacute;tica a la historia</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">All week the pret&eacute;rito has lived in tables and drills. Today it moves into a real sentence about <em>your</em> weekend. Before you look at anything else, think of one thing you did yesterday or over the weekend &mdash; just one verb, in your head, in Spanish.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Which best describes how confident you feel narrating in the pret&eacute;rito right now?</div>
+            <div class="widget-options">
+                <button data-response="¡Genial! Today is exactly the day to prove it — draft your narration with confidence and lean on the review table if a form slips.">Bastante seguro/a &mdash; creo que puedo narrar sin mirar la tabla</button>
+                <button data-response="That's completely normal on a synthesis day. Part 3 gives you a quick reference table, and the widgets in Part 4 let you check yourself before you draft anything.">Un poco inseguro/a &mdash; necesito repasar las formas primero</button>
+                <button data-response="Good instinct — the spelling-change verbs (buscar, llegar, empezar…) are the trickiest part of this module. Part 3 puts them side by side so you can see the pattern clearly.">Me confunden todav&iacute;a los verbos -car/-gar/-zar</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; REPASO DE VOCABULARIO &middot; VERBOS DE LA SEMANA <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Escucha y repite &mdash; en pret&eacute;rito</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">These are verbs you've already met this module, now in their <em>yo</em>-form pret&eacute;rito. Click the <strong>&#128266;</strong> and say each one aloud &mdash; you'll want several of them ready for your own narration.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/hable.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">habl&eacute;</span><span class="v-en">I talked (hablar)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/estudie.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">estudi&eacute;</span><span class="v-en">I studied (estudiar)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/trabaje.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">trabaj&eacute;</span><span class="v-en">I worked (trabajar)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/compre.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">compr&eacute;</span><span class="v-en">I bought (comprar)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/comi.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">com&iacute;</span><span class="v-en">I ate (comer)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/escribi.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">escrib&iacute;</span><span class="v-en">I wrote (escribir)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/sali.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">sal&iacute;</span><span class="v-en">I went out (salir)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/busque.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">busqu&eacute;</span><span class="v-en">I looked for (buscar &mdash; c&rarr;qu)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/llegue.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">llegu&eacute;</span><span class="v-en">I arrived (llegar &mdash; g&rarr;gu)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/jugue.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">jugu&eacute;</span><span class="v-en">I played (jugar &mdash; g&rarr;gu)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/empece.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">empec&eacute;</span><span class="v-en">I started (empezar &mdash; z&rarr;c)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/saque.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">saqu&eacute;</span><span class="v-en">I took (out) (sacar &mdash; c&rarr;qu)</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +5 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Say all four spelling-change verbs in a row &mdash; <em>busqu&eacute;, llegu&eacute;, jugu&eacute;, empec&eacute;</em> &mdash; and notice the pattern: only the <em>yo</em> form changes its spelling, and only so the sound stays the same as the infinitive.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; REPASO R&Aacute;PIDO &middot; EL PRET&Eacute;RITO REGULAR <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">One table, all the forms you need today</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">You built this table piece by piece earlier in the module. Here it is complete, as a reference while you draft &mdash; keep it open in another tab if that helps.</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>-AR: hablar</th><th>-ER: comer</th><th>-IR: escribir</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">habl&eacute;</span></td><td><span class="pron">com&iacute;</span></td><td><span class="pron">escrib&iacute;</span></td></tr>
+                <tr><td>t&uacute;</td><td><span class="pron">hablaste</span></td><td><span class="pron">comiste</span></td><td><span class="pron">escribiste</span></td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td><span class="pron">habl&oacute;</span></td><td><span class="pron">comi&oacute;</span></td><td><span class="pron">escribi&oacute;</span></td></tr>
+                <tr><td>nosotros/as</td><td><span class="pron">hablamos</span></td><td><span class="pron">comimos</span></td><td><span class="pron">escribimos</span></td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td><span class="pron">hablaron</span></td><td><span class="pron">comieron</span></td><td><span class="pron">escribieron</span></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:10px 0 6px;">And the spelling-change family &mdash; <strong>only the <em>yo</em> form changes</strong>, and only in spelling (never in sound):</p>
+        <table class="gtable">
+            <thead><tr><th>Infinitive</th><th>Change</th><th>yo form</th></tr></thead>
+            <tbody>
+                <tr><td>bus<strong>c</strong>ar</td><td>c &rarr; qu</td><td><span class="pron">bus<strong>qu</strong>&eacute;</span></td></tr>
+                <tr><td>lle<strong>g</strong>ar</td><td>g &rarr; gu</td><td><span class="pron">lle<strong>gu</strong>&eacute;</span></td></tr>
+                <tr><td>empe<strong>z</strong>ar</td><td>z &rarr; c</td><td><span class="pron">empe<strong>c</strong>&eacute;</span></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Every other form of these three verbs (t&uacute;, &eacute;l/ella, nosotros, ellos) is completely regular &mdash; only <em>yo</em> needs the spelling fix, to protect the sound.</p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO &middot; PREPARA TU TAREA ORAL <span class="pill-time">13 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; regular -ar preterite</div>
+            <div class="widget-question">&ldquo;Ayer yo ___ (estudiar) para el examen de historia.&rdquo;</div>
+            <div class="widget-options">
+                <button data-correct="false">estudi&oacute;</button>
+                <button data-correct="true">estudi&eacute;</button>
+                <button data-correct="false">estudiaste</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; regular -ir preterite</div>
+            <div class="widget-question">&ldquo;Anoche yo ___ (escribir) un mensaje a mi amiga en Espa&ntilde;a.&rdquo;</div>
+            <div class="widget-options">
+                <button data-correct="true">escrib&iacute;</button>
+                <button data-correct="false">escribiste</button>
+                <button data-correct="false">escribi&oacute;</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; spelling-change verb (-car)</div>
+            <div class="widget-question">&ldquo;El viernes yo ___ (buscar) informaci&oacute;n para mi proyecto sobre Espa&ntilde;a.&rdquo;</div>
+            <div class="widget-options">
+                <button data-correct="false">busc&oacute;</button>
+                <button data-correct="false">buscaste</button>
+                <button data-correct="true">busqu&eacute;</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Now draft your script. Write (or say aloud) <strong>three to four sentences</strong> recounting what you did recently &mdash; use at least one regular verb and at least one -car/-gar/-zar verb. This is the script you'll rehearse and record for your Tarea oral. When you've drafted it, reveal a model to compare.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>El s&aacute;bado pasado busqu&eacute; un restaurante en Madrid con mi familia. Comimos tapas y hablamos toda la noche. Despu&eacute;s caminamos por el Parque del Retiro y saqu&eacute; muchas fotos. &iexcl;Fue un d&iacute;a perfecto!</strong> Notice the mix &mdash; <em>busqu&eacute;</em> and <em>saqu&eacute;</em> (spelling-change), <em>comimos</em> and <em>hablamos</em> and <em>caminamos</em> (regular). Yours will use your own weekend and your own verbs &mdash; the frame is simply <em>one sentence per activity, in order.</em></div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        &mdash;&iexcl;Hola, Marta! &iquest;Qu&eacute; tal el fin de semana?<br>
+        &mdash;&iexcl;Genial! El s&aacute;bado <strong>trabaj&eacute;</strong> por la ma&ntilde;ana y despu&eacute;s <strong>qued&eacute;</strong> con mis amigas en el centro de Madrid.<br>
+        &mdash;&iquest;Y qu&eacute; hiciste?<br>
+        &mdash;<strong>Llegu&eacute;</strong> tarde, como siempre, pero <strong>busqu&eacute;</strong> un bar de tapas cerca de la Plaza Mayor. <strong>Comimos</strong> patatas bravas y <strong>hablamos</strong> durante horas &mdash; la sobremesa aqu&iacute; nunca termina.<br>
+        &mdash;&iexcl;Qu&eacute; envidia! Yo <strong>empec&eacute;</strong> a estudiar el s&aacute;bado y no <strong>sal&iacute;</strong> para nada.<br>
+        &mdash;Pues el pr&oacute;ximo fin de semana, &iexcl;sales con nosotras!</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find all four spelling-change verbs in Marta's lines. Then notice how differently the two friends spent their Saturday &mdash; that contrast is exactly the culture note below.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; ESPA&Ntilde;A</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>La sobremesa: cuando la conversaci&oacute;n es la actividad</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">In Marta's story, &ldquo;hablamos durante horas&rdquo; isn't an exaggeration &mdash; it's a real Spanish institution called <strong>la sobremesa</strong>: the time spent talking at the table <em>after</em> a meal is finished, sometimes for an hour or more. Meal times themselves run later than in the U.S. &mdash; lunch (<em>la comida</em>) around 2:00&ndash;3:00 p.m. and dinner (<em>la cena</em>) as late as 9:00&ndash;10:00 p.m. &mdash; which is why Spaniards often <em>quedan</em> (meet up) with friends in the evening rather than after school. When you narrate your own weekend for your Tarea oral, notice which of your activities are solitary and which ones, like Marta's, are really about time spent with other people.</p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; LAS SIETE, JUNTAS</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Las siete, juntas</strong> &mdash; speaking your own true story out loud, for Tarea oral, takes real <strong>valor</strong> (courage): the willingness to be heard even before every verb form is perfect. It also takes <strong>honestidad</strong>, telling what you actually did, and <strong>responsabilidad</strong>, showing up prepared to record it. None of Optima's seven virtues stands alone here &mdash; courage to speak, honesty to speak truly, and responsibility to follow through all have to work together, exactly the way M&oacute;dulo 8 asks every grammar piece you've learned to work together in one spoken story.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">9</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 8.09 &mdash; Lectura y cultura: Espa&ntilde;a</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll read a longer pret&eacute;rito passage set in Spain and consolidate the module's culture before Grammar Quiz prep on Day 10. First, finish today: record your Tarea oral in Canvas using the script you just drafted &mdash; and keep it, since these same narration skills carry straight into this semester's VR project.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then rehearse your narration out loud two more times &mdash; a little smoother each time &mdash; before you record your Tarea oral.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You turned a week of conjugation practice into your own spoken story. You can narrate regular pret&eacute;rito verbs, handle the -car/-gar/-zar spelling changes without hesitating, and you've got a rehearsed script ready to record. <em>&iexcl;Muy bien hecho!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 8.08 &middot; Cuenta lo que hiciste (producci&oacute;n)</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

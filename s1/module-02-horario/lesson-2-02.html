@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 2.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 2</div>
+        <div style="font-size: 12px; color: #666;">Mi horario y la hora</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 2.02 &middot; Day 2 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Mi horario escolar</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Mi horario y la hora</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 2.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Mi horario escolar &mdash; Las materias y el d&iacute;a</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Every school day already has a shape &mdash; today you get the Spanish words to describe it.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">On <strong>Day 1</strong> you refreshed how to tell time &mdash; <em>&iquest;qu&eacute; hora es?</em> and <em>a la(s)&hellip;</em> Today you add the other half of a schedule: the <strong>subjects</strong> you study (<em>las materias</em>) and the little words that put a day <strong>in order</strong> (<em>primero, luego, despu&eacute;s, finalmente</em>). This is a <strong>vocabulary</strong> day &mdash; no new grammar. You'll lean on present-tense verbs you already own, especially <em>tener</em> (<em>tengo la clase de&hellip;</em>), so you can spend your energy on the words and on building a real <em>horario</em>.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> name the main school subjects (<em>las materias</em>) in Spanish and say which classes I have with <em>tengo la clase de&hellip;</em></div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> put the parts of my school day in order using <em>primero, luego, despu&eacute;s, finalmente</em>, plus <em>el recreo</em> and <em>el almuerzo</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> read a simple schedule and build my own <em>horario</em>, slotting in the times I learned on Day 1.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Para empezar ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Your day, in Spanish already</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Picture the last school day you had. You went from one class to the next in a certain order, you had a break, you ate. Spanish has one word for that whole map of your day: <strong>el horario</strong> &mdash; the schedule. Today you'll fill it in.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Of everything in your school day, which class would you most enjoy naming in Spanish?</div>
+            <div class="widget-options">
+                <button data-response="&iexcl;Buena elecci&oacute;n! Math is 'las matem&aacute;ticas' &mdash; always plural, like in English 'maths.' You'll hear it in Part 2.">A math class</button>
+                <button data-response="Nice &mdash; art is 'el arte,' and a class where you draw or paint. Watch for it in the vocab list below.">Something creative, like art or music</button>
+                <button data-response="Great &mdash; that's 'la educaci&oacute;n f&iacute;sica' (P.E.). A long name, but you'll say it smoothly by the end of today.">Gym / P.E.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Vocab with audio ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; LAS MATERIAS Y EL D&Iacute;A ESCOLAR <span class="pill-time">12 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Listen, then say each one back</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Click the <strong>&#128266;</strong> and repeat aloud. First, the school subjects &mdash; <em>las materias</em> (also called <em>las asignaturas</em>). Notice each one carries its article (<em>el / la / las</em>); learn the article <em>with</em> the word.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/las-matematicas.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">las matem&aacute;ticas</span><span class="v-en">math (always plural)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/las-ciencias.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">las ciencias</span><span class="v-en">science</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-historia.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la historia</span><span class="v-en">history</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-arte.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el arte</span><span class="v-en">art</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-educacion-fisica.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la educaci&oacute;n f&iacute;sica</span><span class="v-en">physical education (P.E.)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-musica.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la m&uacute;sica</span><span class="v-en">music</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-literatura.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la literatura</span><span class="v-en">literature</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-idioma.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el idioma</span><span class="v-en">language (e.g. <em>el espa&ntilde;ol, el ingl&eacute;s</em>)</span></li>
+        </ul>
+        <p style="font-size: 15px; color: #6b7a99; line-height: 1.6; margin: 12px 0 6px 0;">Next, the words that frame the school day &mdash; <em>el d&iacute;a escolar</em>:</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-horario.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el horario</span><span class="v-en">schedule</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-materia.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la materia</span><span class="v-en">(school) subject</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-asignatura.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la asignatura</span><span class="v-en">subject (synonym of <em>materia</em>)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-clase-de.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la clase de&hellip;</span><span class="v-en">the &hellip; class (<em>la clase de arte</em>)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-recreo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el recreo</span><span class="v-en">recess / break</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-almuerzo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el almuerzo</span><span class="v-en">lunch</span></li>
+        </ul>
+        <p style="font-size: 15px; color: #6b7a99; line-height: 1.6; margin: 12px 0 6px 0;">And the connectors that put your day <em>in order</em> &mdash; <em>para poner el d&iacute;a en orden</em>:</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/primero.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">primero</span><span class="v-en">first</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/luego.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">luego</span><span class="v-en">then / next</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/despues.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">despu&eacute;s</span><span class="v-en">after / afterward</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/finalmente.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">finalmente</span><span class="v-en">finally</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +5 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Walk through your own subjects in the order you have them, out loud: <em>Primero, la clase de&hellip; luego, la clase de&hellip;</em> Don't worry about times yet &mdash; just chain the subjects with the four connectors until the sequence feels natural.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar (spiral review) ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; REPASO &middot; TENER + LA CLASE DE&hellip; <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Nothing new &mdash; just a verb you already have</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">To say what classes you have, you reach for <strong>tener</strong> &mdash; the same verb you reviewed in Module 0. Here it is again, so you can pair it with today's vocabulary:</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>tener</th><th>Example with a class</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">tengo</span></td><td>Yo <span class="pron">tengo</span> la clase de historia a las nueve.</td></tr>
+                <tr><td>t&uacute;</td><td><span class="pron">tienes</span></td><td>&iquest;Qu&eacute; clase <span class="pron">tienes</span> primero?</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td><span class="pron">tiene</span></td><td>Ella <span class="pron">tiene</span> educaci&oacute;n f&iacute;sica despu&eacute;s del recreo.</td></tr>
+                <tr><td>nosotros/as</td><td><span class="pron">tenemos</span></td><td>Nosotros <span class="pron">tenemos</span> el almuerzo al mediod&iacute;a.</td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td><span class="pron">tienen</span></td><td>Ellos <span class="pron">tienen</span> la clase de m&uacute;sica finalmente.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">The pattern is simple: <em>tener</em> + <em>la clase de</em> + subject + <em>a la(s)</em> + time (from Day 1). Example: <em>Tengo la clase de ciencias a las diez y media.</em> You'll build a whole schedule this way &mdash; and the boot-verb stem changes that give this module its name arrive tomorrow, in 2.03.</p>
+    </div>
+
+    <!-- ===== PART 4 · Practícalo ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">9 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; match the class</div>
+            <div class="widget-question">In this class you solve equations and work with numbers. &iquest;Qu&eacute; materia es?</div>
+            <div class="widget-options">
+                <button data-correct="false">el arte</button>
+                <button data-correct="false">la educaci&oacute;n f&iacute;sica</button>
+                <button data-correct="true">las matem&aacute;ticas</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; label the connector</div>
+            <div class="widget-question">To say what you do <em>first</em> in your day, which word do you use? &ldquo;___ tengo matem&aacute;ticas, luego ciencias.&rdquo;</div>
+            <div class="widget-options">
+                <button data-correct="true">Primero</button>
+                <button data-correct="false">Despu&eacute;s</button>
+                <button data-correct="false">Finalmente</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; match the moment</div>
+            <div class="widget-question">It's 12:30 and you sit down to eat at school. En el horario, eso es&hellip;</div>
+            <div class="widget-options">
+                <button data-correct="false">el recreo</button>
+                <button data-correct="true">el almuerzo</button>
+                <button data-correct="false">el horario</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: put three of your own classes in order with the connectors, and slot in a time for the first one. Say it out loud, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Primero tengo la clase de matem&aacute;ticas a las ocho, luego tengo ciencias y despu&eacute;s tengo historia.</strong> Yours will use your own subjects and times &mdash; the frame is <em>Primero tengo la clase de&hellip; a la(s)&hellip;, luego&hellip;, despu&eacute;s&hellip;</em></div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · A leer ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        &laquo;&iexcl;Hola! Me llamo <strong>Sof&iacute;a</strong> y estudio en San Salvador, El Salvador. Mi <strong>horario</strong> es muy completo. <strong>Primero</strong>, a las siete y media, tengo la <strong>clase de</strong> matem&aacute;ticas. <strong>Luego</strong> tengo ciencias e historia. A las diez tenemos el <strong>recreo</strong> &mdash; mi parte favorita. <strong>Despu&eacute;s</strong> del recreo tengo la clase de arte y educaci&oacute;n f&iacute;sica. Al mediod&iacute;a es el <strong>almuerzo</strong>; normalmente como pupusas con mis amigos. <strong>Finalmente</strong>, por la tarde, tengo la clase de idiomas: estudio ingl&eacute;s. &iexcl;Me gusta mucho mi horario!&raquo;</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Sof&iacute;a orders her whole day with the four connectors. Which subject comes right <em>after</em> the recreo? And what time is her first class? (Reread &mdash; the times come straight from Day 1.)</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; HONDURAS Y EL SALVADOR</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Dos jornadas, un horario</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">In many public schools across <strong>Honduras</strong> and <strong>El Salvador</strong>, the building serves two sets of students a day &mdash; a <em>doble jornada</em>. One group attends the <strong>jornada matutina</strong> (morning, roughly 7:00 a.m. to noon) and another the <strong>jornada vespertina</strong> (afternoon). Because the space is shared, a student's whole <em>horario</em> &mdash; classes, <em>recreo</em>, and <em>almuerzo</em> &mdash; is packed into a single half-day. At break you might find friends sharing <strong>baleadas</strong> in Honduras or <strong>pupusas</strong> in El Salvador. So when you read a Central American schedule, the times you learned on Day 1 also tell you <em>which jornada</em> a student belongs to. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a real sample schedule to compare with your own.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; COURAGE</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>&Oacute;scar Romero</strong> (El Salvador, 1917&ndash;1980), archbishop of San Salvador, kept his own weekly <em>horario</em>: a Sunday radio homily defending the poor and oppressed, broadcast even after threats made clear the danger. He was assassinated in 1980 while saying Mass and was declared a saint in 2018. As you build your own <em>horario de clases</em> this week, remember that his courage was really just keeping a difficult appointment, again and again.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 2.03 &mdash; Los verbos con cambio de ra&iacute;z (e&rarr;ie)</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow the module's real grammar arrives: the stem-changing &ldquo;boot&rdquo; verbs. You'll start with the <em>e&rarr;ie</em> family (<em>empezar, querer, preferir</em>) and use them to say when classes <em>begin</em>. Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7 &mdash; these early days build the habit.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say your real morning out loud: <em>Primero tengo la clase de&hellip; a la(s)&hellip;, luego&hellip;, despu&eacute;s&hellip;</em> &mdash; naming at least three subjects and one time.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You can now name your school subjects, mark the <em>recreo</em> and the <em>almuerzo</em>, and put a whole day in order with <em>primero, luego, despu&eacute;s,</em> and <em>finalmente</em> &mdash; times and all. Your <em>horario</em> finally speaks Spanish. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 2.02 &middot; Mi horario escolar</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

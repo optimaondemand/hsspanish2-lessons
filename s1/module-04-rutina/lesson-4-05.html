@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 4.05</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 4</div>
+        <div style="font-size: 12px; color: #666;">La rutina diaria</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 4.05 &middot; Day 5 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Adverbs of frequency</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">La rutina diaria &middot; Per&uacute;</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 4.05</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> &iquest;Con qu&eacute; frecuencia? &mdash; Adverbs of Frequency</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">You can already name what you do. Today you learn to say <em>how often</em> you do it.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is the module's <strong>second grammar point</strong>, and it's a friendly one &mdash; a small set of words called <strong>adverbs of frequency</strong> (<em>siempre, a veces, nunca, todos los d&iacute;as, una vez por semana&hellip;</em>) that answer the question <em>&iquest;con qu&eacute; frecuencia?</em> (&ldquo;how often?&rdquo;). No new verbs today &mdash; you'll keep using the routine verbs you already own. The two moves to master: <strong>where</strong> the frequency word sits in the sentence, and the two correct ways to say <strong>&ldquo;never&rdquo;</strong> &mdash; <em>nunca</em> and <em>no&hellip;nunca</em>.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use adverbs and expressions of frequency (<em>siempre, casi siempre, a menudo, a veces, casi nunca, nunca, todos los d&iacute;as, una&nbsp;/&nbsp;dos veces por semana</em>) to say how often something happens.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> place a frequency word correctly &mdash; at the start of the sentence, right before the verb, or at the end &mdash; without splitting a reflexive <em>pronoun&nbsp;+ verb</em> pair.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> say &ldquo;never&rdquo; in the two correct ways: <em>nunca</em> before the verb, or <em>no&hellip;nunca</em> wrapped around it (the Spanish double negative).</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Warm-up + check-in ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">How often is &ldquo;often&rdquo;?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In English you already stretch a sentence with words like <em>always, usually, sometimes, never</em>. Spanish does exactly the same thing, and you've heard most of these words before. Read this aloud and feel how natural it already is: <em>&mdash;Yo <strong>siempre</strong> me despierto temprano, pero <strong>casi nunca</strong> me levanto enseguida.</em> Today we make that precision yours on purpose.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Think about your phone in the morning. How often do you check it before you even get out of bed?</div>
+            <div class="widget-options">
+                <button data-response="&iexcl;Qu&eacute; honesto! 'Siempre reviso el m&oacute;vil primero.' Siempre (always) sits at the very top of today's frequency scale &mdash; you'll place it in a real sentence in Part 3.">Siempre &mdash; it's the first thing I do</button>
+                <button data-response="Muy com&uacute;n: 'A veces reviso el m&oacute;vil, a veces no.' A veces (sometimes) lands right in the middle of the scale &mdash; one of the most useful frequency words there is.">A veces &mdash; depends on the day</button>
+                <button data-response="&iexcl;Disciplina! 'Casi nunca reviso el m&oacute;vil antes de levantarme.' Notice casi nunca keeps a 'no' feeling &mdash; we'll line that up with nunca in Part 3.">Casi nunca &mdash; I try not to</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Frequency set with audio ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; LA ESCALA DE FRECUENCIA <span class="pill-time">9 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The full scale, from <em>always</em> to <em>never</em></h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Here is the whole toolkit, ordered from <strong>most often</strong> to <strong>least often</strong>. Click the <strong>&#128266;</strong> and say each one back &mdash; hearing them in order builds an instant mental ruler you can reach for when you speak.</p>
+        <p style="font-size:14px;color:#6b7a99;margin:12px 0 4px 0;font-weight:600;">Adverbios de frecuencia &middot; the sliding scale</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/siempre.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">siempre</span><span class="v-en">always</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/casi-siempre.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">casi siempre</span><span class="v-en">almost always</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/generalmente.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">generalmente</span><span class="v-en">generally</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/normalmente.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">normalmente</span><span class="v-en">normally, usually</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/a-menudo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">a menudo</span><span class="v-en">often</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/a-veces.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">a veces</span><span class="v-en">sometimes</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/casi-nunca.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">casi nunca</span><span class="v-en">almost never</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/nunca.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">nunca</span><span class="v-en">never</span></li>
+        </ul>
+        <p style="font-size:14px;color:#6b7a99;margin:10px 0 4px 0;font-weight:600;">Expresiones de frecuencia &middot; fixed time phrases</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/todos-los-dias.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">todos los d&iacute;as</span><span class="v-en">every day</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/cada-dia.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">cada d&iacute;a</span><span class="v-en">each day</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/una-vez-por-semana.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">una vez por semana</span><span class="v-en">once a week</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/dos-veces-por-semana.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">dos veces por semana</span><span class="v-en">twice a week</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +4 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">A quick note on the two &ldquo;-mente&rdquo; words: Spanish builds many adverbs the way English adds <em>-ly</em>. <em>General &rarr; generalmente</em>, <em>normal &rarr; normalmente</em>. That's the same <em>-mente</em> ending you already see on <em>finalmente</em> &mdash; a pattern worth recognizing, not memorizing today.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar: placement + nunca vs no...nunca ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; D&Oacute;NDE VA LA PALABRA <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Rule 1 &mdash; where the frequency word sits</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Spanish is flexible, but there are natural homes for these words. The safest, most native-sounding spots are <strong>the start of the sentence</strong> or <strong>right before the conjugated verb</strong>. Time phrases like <em>todos los d&iacute;as</em> also love the very <strong>end</strong>. The one thing to protect: a reflexive verb keeps its pronoun glued to its front (<em><span class="pron">me</span> levanto</em>), and the frequency word wraps <em>around</em> that pair &mdash; it never slips between them.</p>
+        <table class="gtable">
+            <thead><tr><th>Word / expression</th><th>Natural position</th><th>Example (present tense)</th></tr></thead>
+            <tbody>
+                <tr><td>siempre / nunca</td><td>start, or right before the verb</td><td><span class="pron">Siempre</span> me despierto temprano. / Nunca llego tarde.</td></tr>
+                <tr><td>casi siempre / casi nunca</td><td>start, or right before the verb</td><td><span class="pron">Casi siempre</span> desayuno en casa.</td></tr>
+                <tr><td>generalmente / normalmente</td><td>usually the start (or the end)</td><td><span class="pron">Normalmente</span> me ducho por la ma&ntilde;ana.</td></tr>
+                <tr><td>a menudo / a veces</td><td>the start or the end</td><td><span class="pron">A veces</span> me acuesto tarde. / Estudio <span class="pron">a menudo</span>.</td></tr>
+                <tr><td>todos los d&iacute;as / cada d&iacute;a</td><td>the start or the end (a time phrase)</td><td><span class="pron">Todos los d&iacute;as</span> me lavo los dientes. / Corro <span class="pron">cada d&iacute;a</span>.</td></tr>
+                <tr><td>una&nbsp;/&nbsp;dos veces por semana</td><td>the start or the end</td><td>Voy al mercado <span class="pron">dos veces por semana</span>.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 18px;">The order that <em>never</em> breaks: <strong>pronoun&nbsp;+ verb</strong> stay together &mdash; <em>me&nbsp;levanto</em>, not <span style="text-decoration:line-through;">me siempre levanto</span>. Put the frequency word in front of the pair (<em>siempre me levanto</em>) or after it (<em>me levanto temprano siempre</em>), never inside it.</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Rule 2 &mdash; two correct ways to say &ldquo;never&rdquo;</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Here is a place where Spanish and English politely disagree. English forbids the &ldquo;double negative&rdquo; (<em>I don't never&hellip;</em>). Spanish <strong>requires</strong> it. If <em>nunca</em> comes <strong>before</strong> the verb, it stands alone. But if <em>nunca</em> comes <strong>after</strong> the verb, you must also put <em>no</em> before the verb. Both versions mean exactly the same thing.</p>
+        <table class="gtable">
+            <thead><tr><th>Structure</th><th>Example</th><th>Meaning</th></tr></thead>
+            <tbody>
+                <tr><td><span class="pron">nunca</span> + verb</td><td><span class="pron">Nunca</span> me acuesto tarde.</td><td>I never go to bed late.</td></tr>
+                <tr><td><span class="pron">no</span> + verb &hellip; <span class="pron">nunca</span></td><td><span class="pron">No</span> me acuesto tarde <span class="pron">nunca</span>.</td><td>I never go to bed late. <em>(same meaning)</em></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:6px 0 0;"><strong>The trap to avoid:</strong> you cannot say <span style="text-decoration:line-through;">no me acuesto tarde</span> and mean &ldquo;never&rdquo; &mdash; that only means &ldquo;I don't go to bed late.&rdquo; The word <em>nunca</em> has to be present. And you never need <em>no</em> when <em>nunca</em> already comes first: <em>Nunca me acuesto tarde</em> is complete on its own. The very same pattern works for <em>casi nunca</em>: <em>Casi nunca me acuesto tarde</em>, or <em>No me acuesto tarde casi nunca</em>.</p>
+    </div>
+
+    <!-- ===== PART 4 · Practice ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">9 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Place it, don't split it</h3>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; keep the pair together</div>
+            <div class="widget-question">&ldquo;Normally I wake up at six.&rdquo; Which sentence places <em>normalmente</em> naturally <em>and</em> keeps the reflexive pair intact?</div>
+            <div class="widget-options">
+                <button data-correct="false">Me normalmente despierto a las seis.</button>
+                <button data-correct="true">Normalmente me despierto a las seis.</button>
+                <button data-correct="false">Me despierto normalmente me a las seis.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; the double negative</div>
+            <div class="widget-question">You want <em>nunca</em> to come <strong>after</strong> the verb: &ldquo;___ por la noche nunca.&rdquo; (I never shower at night.) What must the sentence include?</div>
+            <div class="widget-options">
+                <button data-correct="true"><em>No me ducho</em> &mdash; you need <em>no</em> before the verb: <em>No me ducho por la noche nunca.</em></button>
+                <button data-correct="false"><em>Me ducho</em> &mdash; <em>nunca</em> after the verb can stand alone.</button>
+                <button data-correct="false"><em>Nunca me ducho</em> &mdash; add a second <em>nunca</em> at the start too.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; match the meaning</div>
+            <div class="widget-question">Your friend showers <em>every single day</em>. Which expression completes &ldquo;Mi amigo se ducha ___&rdquo;?</div>
+            <div class="widget-options">
+                <button data-correct="false">una vez por semana</button>
+                <button data-correct="false">casi nunca</button>
+                <button data-correct="true">todos los d&iacute;as</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Commit-then-reveal -->
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: say <strong>three</strong> true sentences about your week &mdash; one with <em>siempre</em>, one with <em>a veces</em>, and one &ldquo;never&rdquo; sentence (using <em>nunca</em> or <em>no&hellip;nunca</em>). Use a reflexive verb in at least one. Say them out loud, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Siempre me levanto temprano entre semana. A veces me acuesto tarde los viernes. Nunca desayuno en el coche</strong> &mdash; or, with the double negative, <strong>no desayuno en el coche nunca.</strong> Yours will use your own habits &mdash; the frame is <em>[frecuencia] + (pronombre) + verbo + detalle</em>, with the frequency word wrapped around the verb, never inside <em>me&nbsp;levanto</em>.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · Reading ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER &middot; LA SEMANA DE SOF&Iacute;A <span class="pill-time">5 min</span></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.7;margin:0 0 10px 0;">Read it once for the gist, then again and underline every frequency word. Everything is present tense; new place-words are glossed in parentheses.</p>
+        <div style="background:#F4F9FC;border:1px solid #D0D9E8;border-radius:8px;padding:16px 20px;font-size:17px;color:#1a2340;line-height:1.75;">
+        <p style="margin:0 0 10px 0;">Sof&iacute;a vive en <strong>Trujillo</strong>, una ciudad en la costa norte del Per&uacute;. De lunes a viernes <strong>siempre</strong> se levanta a las seis y media. <strong>Casi todos los d&iacute;as</strong> desayuna un pan con palta <em>(aguacate)</em> y camina al colegio.</p>
+        <p style="margin:0 0 10px 0;">Por la tarde <strong>generalmente</strong> estudia, y <strong>a menudo</strong> juega v&oacute;ley con sus amigas &mdash;el v&oacute;ley es muy popular en el Per&uacute;&mdash;. <strong>Una vez por semana</strong>, los s&aacute;bados, va al mercado con su abuela para comprar fruta fresca.</p>
+        <p style="margin:0;">Entre semana Sof&iacute;a <strong>nunca</strong> se acuesta muy tarde. Ella dice: &laquo;<strong>No</strong> me duermo tarde <strong>nunca</strong> los d&iacute;as de colegio, porque me gusta despertarme con energ&iacute;a&raquo;. Los domingos, en cambio, la familia <strong>casi siempre</strong> se re&uacute;ne para un almuerzo largo, y ese d&iacute;a <strong>casi nunca</strong> tienen prisa.</p>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#128214; &iquest;COMPRENDES? &middot; interpretive reading</div>
+            <div class="widget-question">According to the text, how often does Sof&iacute;a go to the market (<em>al mercado</em>)?</div>
+            <div class="widget-options">
+                <button data-correct="false">Todos los d&iacute;as (every day)</button>
+                <button data-correct="true">Una vez por semana, los s&aacute;bados (once a week)</button>
+                <button data-correct="false">Nunca (never)</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find Sof&iacute;a's sentence with <em>nunca</em> used both ways: <em>&laquo;nunca se acuesta muy tarde&raquo;</em> (<em>nunca</em> before the verb) and <em>&laquo;no me duermo tarde nunca&raquo;</em> (the double negative). Two structures, one meaning &mdash; exactly Rule 2 from Part 3.</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; EL PER&Uacute;</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El cebiche: casi siempre a mediod&iacute;a, casi nunca de noche</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Per&uacute;'s national dish, <strong>cebiche</strong> &mdash; fresh raw fish &ldquo;cooked&rdquo; in lime juice with onion and <em>aj&iacute;</em> &mdash; comes with its own rule of frequency built right into the culture. Traditional <em>cevicher&iacute;as</em> serve it at <strong>lunch</strong> and <strong>casi nunca</strong> at dinner, because the fish must arrive that same morning from the boats; by evening it is no longer considered fresh enough. Peruvians will tell you <em>&laquo;el cebiche se come de d&iacute;a&raquo;</em> &mdash; you eat cebiche in the daytime. So a limeño <strong>casi siempre</strong> orders it at midday and <strong>casi nunca</strong> after dark: a genuine daily-life habit told entirely in the frequency words you learned today. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short photo of a coastal <em>cevicher&iacute;a</em> and its lunch-only hours.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; SELF-GOVERNMENT</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Santa Rosa de Lima</strong> (Per&uacute;, 1586&ndash;1617), patroness of Per&uacute; and the first person born in the Americas to be canonized a saint, is remembered for the almost unbreakable regularity of her days &mdash; the same hours of prayer, work, and care for the poor of Lima, <em>cada d&iacute;a</em>, for years. That's the quiet secret hiding inside today's grammar: self-government lives in the frequency word. Anyone can rule themselves <em>a veces</em>; real <em>self-government</em> is doing it <em>siempre</em> &mdash; <em>todos los d&iacute;as</em> &mdash; until the good habit becomes who you are. When you say how often you do something, you're not just describing your week; you're choosing to command it.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">6</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 4.06 &mdash; Rutinas de todos los d&iacute;as: un viaje al Per&uacute;</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll snap today's two skills together &mdash; reflexive verbs + frequency words &mdash; inside an authentic reading about daily life across Per&uacute;, from the coast of Lima to the mountains of Cusco. Graded work in this module opens on Day 7 (Vocabulary Check + Lengua en acci&oacute;n); this week is still for building the habit.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say three sentences about yourself out loud &mdash; one with <em>siempre</em>, one with <em>todos los d&iacute;as</em>, and one &ldquo;never&rdquo; sentence using <em>no&hellip;nunca</em> &mdash; keeping the reflexive <em>pronoun&nbsp;+ verb</em> pair glued together each time.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You added a whole layer of precision today without learning a single new verb. You can slide a frequency word to the front of a sentence or the end, protect the <em>me&nbsp;levanto</em> pair, and say &ldquo;never&rdquo; two correct ways. You even read a real week in Trujillo and learned why Peruvians eat cebiche <em>de d&iacute;a</em>. Now your Spanish can say not just <em>what</em> you do, but <em>how often</em>. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 4.05 &middot; Adverbs of frequency</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

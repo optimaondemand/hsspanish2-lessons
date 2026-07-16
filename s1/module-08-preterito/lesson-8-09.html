@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 8.09</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 8</div>
+        <div style="font-size: 12px; color: #666;">Pret&eacute;rito &middot; Gate</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 8.09 &middot; Day 9 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Lectura + cultura: Espa&ntilde;a + proyecto VR</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Lo que hice &mdash; recent past (GATE)</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 8.09</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Espa&ntilde;a de cerca &mdash; y tu pr&oacute;ximo reto en VR</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Read it, live it, then perform it &mdash; the pret&eacute;rito is about to leave the page.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you'll read a short account of a Saturday morning at <strong>El Rastro</strong>, Madrid's legendary flea market, spotting the pret&eacute;rito forms you've been building all module. Then you'll get your first look at this semester's <strong>VR project</strong> &mdash; <em>De compras en el mercado</em> &mdash; where you'll step into a market yourself. We'll close with a fast, organized review of regular and spelling-change pret&eacute;rito (<em>-car/-gar/-zar</em>) to get you ready for tomorrow's Grammar Quiz &mdash; the module's gate.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> read a short authentic-style text about El Rastro in Madrid and identify pret&eacute;rito verb forms within it.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> preview the market vocabulary and etiquette I'll need for the VR project <em>De compras en el mercado</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> self-check my command of regular and spelling-change (<em>-car/-gar/-zar</em>) pret&eacute;rito forms before tomorrow's Grammar Quiz.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Antes de leer: repasa tu pret&eacute;rito</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Say two things you did yesterday out loud, in Spanish, using the pret&eacute;rito &mdash; <em>Ayer yo hablé por tel&eacute;fono. Comí pizza con mi familia.</em> Notice how automatic those <em>-é</em> and <em>-í</em> endings are starting to feel. That's exactly the muscle today's review sharpens.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">&iquest;C&oacute;mo te sientes con el pret&eacute;rito en este momento?</div>
+            <div class="widget-options">
+                <button data-response="¡Qué bien! Hoy es el momento perfecto para poner esa confianza a prueba con busqué, llegué y empecé en la Parte 3.">Bastante seguro/a &mdash; controlo -ar/-er/-ir</button>
+                <button data-response="Totalmente normal. La Parte 3 organiza las terminaciones en una sola tabla para que dejen de mezclarse.">M&aacute;s o menos &mdash; a veces mezclo las terminaciones</button>
+                <button data-response="Perfecto lugar para estar hoy — la Parte 3 se enfoca exactamente en busqué, llegué y empecé, y por qué cambian.">Los verbos -car/-gar/-zar todav&iacute;a me cuestan</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 2 &middot; VOCABULARIO: EN EL MERCADO ESPA&Ntilde;OL <span class="pill-time">9 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Palabras para hoy &mdash; y para tu pr&oacute;ximo proyecto</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Click the <strong>&#128266;</strong> and repeat aloud. These words appear in today's reading about El Rastro, and you'll use them again when you step into the market yourself in the VR project.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-rastro.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el rastro / el mercadillo</span><span class="v-en">flea market</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-precio.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el precio</span><span class="v-en">price</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/cuanto-cuesta.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">&iquest;cu&aacute;nto cuesta?</span><span class="v-en">how much does it cost?</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/caro.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">caro/a</span><span class="v-en">expensive</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/barato.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">barato/a</span><span class="v-en">cheap / inexpensive</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/regatear.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">regatear</span><span class="v-en">to bargain / haggle</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-vendedor.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el vendedor / la vendedora</span><span class="v-en">vendor / seller</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/probarse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">probarse (algo)</span><span class="v-en">to try (something) on</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-ganga.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la ganga</span><span class="v-en">a bargain / good deal</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/de-acuerdo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">de acuerdo</span><span class="v-en">agreed / deal</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +4 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Using <em>gustar</em> (spiral from Repaso), describe an item you'd like to find at a market: <em>Me gustar&iacute;a encontrar una chaqueta barata.</em> Then say whether you'd expect it to be <em>caro</em> or <em>barato</em> &mdash; and whether you'd try to <em>regatear</em>.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; REPASO: EL PRET&Eacute;RITO REGULAR + CAMBIOS ORTOGR&Aacute;FICOS <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Lo que ya sabes &mdash; organizado para el examen</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Nothing new here &mdash; just the whole module's grammar in one place, the way you'll want it in your head tomorrow.</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>-AR (hablar)</th><th>-ER / -IR (comer / vivir)</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">habl&eacute;</span></td><td><span class="pron">com&iacute;</span> / <span class="pron">viv&iacute;</span></td></tr>
+                <tr><td>t&uacute;</td><td><span class="pron">hablaste</span></td><td><span class="pron">comiste</span> / <span class="pron">viviste</span></td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td><span class="pron">habl&oacute;</span></td><td><span class="pron">comi&oacute;</span> / <span class="pron">vivi&oacute;</span></td></tr>
+                <tr><td>nosotros/as</td><td><span class="pron">hablamos</span></td><td><span class="pron">comimos</span> / <span class="pron">vivimos</span></td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td><span class="pron">hablaron</span></td><td><span class="pron">comieron</span> / <span class="pron">vivieron</span></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:10px 0 6px;">The three spelling-change families only change the <strong>yo</strong> form &mdash; everyone else is completely regular:</p>
+        <table class="gtable">
+            <thead><tr><th>Infinitive</th><th>yo</th><th>Why it changes</th></tr></thead>
+            <tbody>
+                <tr><td>bus<strong>c</strong>ar</td><td><span class="pron">bus<strong>qu</strong>é</span></td><td>c &rarr; qu before e (keeps the hard /k/ sound)</td></tr>
+                <tr><td>lle<strong>g</strong>ar</td><td><span class="pron">lle<strong>gu</strong>é</span></td><td>g &rarr; gu before e (keeps the hard /g/ sound)</td></tr>
+                <tr><td>empe<strong>z</strong>ar</td><td><span class="pron">empe<strong>c</strong>é</span></td><td>z &rarr; c before e (Spanish spelling rule)</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO &mdash; REPASO PARA EL EXAMEN <span class="pill-time">10 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; regular -ar in the pret&eacute;rito</div>
+            <div class="widget-question">Ayer yo ___ (hablar) con la vendedora sobre el precio.</div>
+            <div class="widget-options">
+                <button data-correct="true">habl&eacute;</button>
+                <button data-correct="false">hablaste</button>
+                <button data-correct="false">habl&oacute;</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; spelling-change: -car</div>
+            <div class="widget-question">El s&aacute;bado pasado, yo ___ (buscar) un regalo especial en el Rastro.</div>
+            <div class="widget-options">
+                <button data-correct="false">busc&oacute;</button>
+                <button data-correct="true">busqu&eacute;</button>
+                <button data-correct="false">busco</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; regular -ar, nosotros</div>
+            <div class="widget-question">Nosotros ___ (llegar) temprano para conseguir las mejores gangas.</div>
+            <div class="widget-options">
+                <button data-correct="false">llegu&eacute;</button>
+                <button data-correct="false">llegaste</button>
+                <button data-correct="true">llegamos</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: write one sentence about something you bought or found recently, in the pret&eacute;rito. Try to use a spelling-change verb (<em>buscar, llegar,</em> or <em>empezar</em>). Say it aloud, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>El s&aacute;bado pasado, busqu&eacute; una chaqueta en la tienda. Empec&eacute; a regatear con la vendedora y, al final, pagu&eacute; mucho menos. &iexcl;Fue una ganga!</strong> Yours can use any market, any item &mdash; the frame is just <em>pret&eacute;rito + lo que compraste</em>.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Un s&aacute;bado en El Rastro</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        El s&aacute;bado pasado, mis amigos y yo visitamos El Rastro, el mercadillo m&aacute;s famoso de Madrid. <strong>Llegu&eacute;</strong> a las nueve de la ma&ntilde;ana, pero ya hab&iacute;a mucha gente entre los puestos. <strong>Busqu&eacute;</strong> una chaqueta de cuero durante casi una hora, y por fin encontr&eacute; una perfecta.<br><br>
+        Le pregunt&eacute; a la vendedora: &mdash;&iquest;Cu&aacute;nto cuesta?<br>
+        Ella me dijo un precio, pero me pareci&oacute; un poco caro. <strong>Empec&eacute;</strong> a regatear &mdash; &iexcl;fue mi primera vez! Al final, ella baj&oacute; el precio y yo <strong>pagu&eacute;</strong> mucho menos. &iexcl;Qu&eacute; ganga!<br><br>
+        Mis amigos <strong>compraron</strong> un mapa antiguo y unas gafas de sol. Despu&eacute;s, <strong>comimos</strong> churros con chocolate en un caf&eacute; cerca de la Plaza Mayor y <strong>volvimos</strong> a casa muy contentos.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Find all six bold pret&eacute;rito verbs. Which ones are regular, and which show a spelling change? Notice how naturally <em>regatear</em> and <em>la ganga</em> from Part 2 show up here &mdash; that's exactly the scene you'll step into in the VR project.</div>
+        </div>
+    </div>
+
+    <!-- VR PROJECT INTRO -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129437; TU PR&Oacute;XIMO RETO &middot; PROYECTO VR: DE COMPRAS EN EL MERCADO</div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Soon you'll step into a Spanish-speaking market yourself &mdash; not read about one. In the semester's VR project, <strong>De compras en el mercado</strong>, you'll greet a vendor with the right register (<em>t&uacute;</em> vs. <em>usted</em>), ask prices, compare items, respond to a vendor's offer, and &mdash; using exactly what you reviewed today &mdash; <strong>recount a recent purchase in the pret&eacute;rito</strong>.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:6px;">
+            <div style="flex:1; min-width:220px; background:#F4F9FC; border:1px solid #D0D9E8; border-radius:6px; padding:10px 14px;"><strong style="color:#0e1c42;">Part 1 &middot; Prep (20 pts)</strong><div style="font-size:14px;color:#1a2340;margin-top:4px;">A cultural briefing on market etiquette, bargaining, and <em>t&uacute;/usted</em>.</div></div>
+            <div style="flex:1; min-width:220px; background:#F4F9FC; border:1px solid #D0D9E8; border-radius:6px; padding:10px 14px;"><strong style="color:#0e1c42;">Part 2 &middot; VR performance (60 pts)</strong><div style="font-size:14px;color:#1a2340;margin-top:4px;">Live the scene: greet, ask prices, compare, bargain, and narrate a recent purchase.</div></div>
+            <div style="flex:1; min-width:220px; background:#F4F9FC; border:1px solid #D0D9E8; border-radius:6px; padding:10px 14px;"><strong style="color:#0e1c42;">Part 3 &middot; Reflection (20 pts)</strong><div style="font-size:14px;color:#1a2340;margin-top:4px;">A short written reflection on how it went.</div></div>
+        </div>
+        <p style="font-size:15px;color:#6b7a99;margin:12px 0 0;">Nothing to submit today &mdash; just start noticing today's vocabulary (<em>el precio, regatear, la ganga, caro/barato</em>) as the toolkit you'll bring with you.</p>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; ESPA&Ntilde;A, DE CERCA</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El Rastro y la tradici&oacute;n del mercado espa&ntilde;ol</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Every Sunday morning, the streets around Madrid's <strong>La Latina</strong> neighborhood fill with hundreds of stalls selling everything from antiques to vintage vinyl &mdash; this is <strong>El Rastro</strong>, tracing its roots back centuries and thriving in its current form since the 1800s. Bargaining (<em>regatear</em>) is expected here, part of the social theater of the market. But Spain's market culture isn't only flea markets: covered <em>mercados municipales</em> like the <strong>Mercado de San Miguel</strong> in Madrid or the <strong>Mercado Central</strong> in Valencia are historic iron-and-glass buildings where fixed-price stalls sell fresh seafood, jam&oacute;n, and produce &mdash; and where regateo would be out of place. Knowing which kind of market you're in, and what behavior it calls for, is itself a piece of cultural fluency &mdash; exactly what the VR project will ask you to practice.</p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; LAS SIETE, JUNTAS</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Las siete, juntas</strong> &mdash; today's reading and the VR project ahead both ask you to bring separate skills into one shared experience, the same way Optima's seven virtues only reach their full purpose together. Reading about Espa&ntilde;a with real attention takes <strong>autogobierno</strong>, and preparing for a shared project like <em>de compras en el mercado</em> takes <strong>servicio</strong> &mdash; showing up ready to contribute to something bigger than yourself. M&oacute;dulo 8's capstone is built on that same idea: seven virtues, joined.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">10</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 8.10 &mdash; M&oacute;dulo review + self-check</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow is a full module review and self-check, followed by the <strong>Grammar Quiz</strong> &mdash; the Module 8 gate. Bring today's two tables with you.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then reread the two grammar tables in Part 3 once more, out loud, before tomorrow.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You read an authentic-style Spanish text and pulled pret&eacute;rito verbs right out of it, got your first look at the market you'll step into for the VR project, and organized this whole module's grammar into two clean tables. Tomorrow, you put it all together. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 8.09 &middot; Lectura + cultura: Espa&ntilde;a + proyecto VR</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

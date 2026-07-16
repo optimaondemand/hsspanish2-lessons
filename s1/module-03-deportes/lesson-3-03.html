@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 3.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 3</div>
+        <div style="font-size: 12px; color: #666;">Deportes y pasatiempos</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 3.03 &middot; Day 3 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Grammar 1: irregular <em>yo</em> -zco verbs (conocer / conducir / ofrecer)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Deportes y pasatiempos</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 3.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Yo <span class="pron">conozco</span> &mdash; when only <em>yo</em> changes</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">One tiny sound change, and only in the <em>yo</em> form &mdash; everything else you already know stays exactly the same.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">A whole family of verbs whose infinitive ends in <strong>-cer</strong> or <strong>-cir</strong> does something quirky: in the <strong>yo</strong> form the <em>c</em> becomes <strong>-zco</strong>. So <em>conocer</em> &rarr; <strong>yo conozco</strong>, <em>conducir</em> &rarr; <strong>yo conduzco</strong>, <em>ofrecer</em> &rarr; <strong>yo ofrezco</strong>. The good news: <em>t&uacute;, &eacute;l, nosotros, ellos</em> &mdash; all completely regular. Our anchor verb is <strong>conocer</strong>, &ldquo;to be acquainted with&rdquo; people and places &mdash; the verb you reach for to say who and where you know.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> form the <em>yo</em> ending <strong>-zco</strong> on <em>conocer, conducir,</em> and <em>ofrecer</em> (conozco, conduzco, ofrezco).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> keep every other person (<em>t&uacute;, &eacute;l/ella, nosotros, ellos/ellas</em>) fully regular.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use <em>conocer</em> to say which people and places I am acquainted with.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">You already know most of this verb</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In Spanish 1 you met <em>conocer</em> next to <em>saber</em>: <em>conocer</em> is knowing in the sense of being <strong>acquainted with</strong> &mdash; a person, a city, a team. Read this aloud: <em>&mdash;&iquest;<strong>Conoces</strong> a Mariano Rivera? &mdash;S&iacute;, yo <strong>conozco</strong> su historia.</em> Notice how <em>conoces</em> (you) looks totally normal &mdash; and <em>conozco</em> (I) sneaks in an extra <em>z</em>. That single change is the whole lesson.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Which sentence sounds right to your ear for &ldquo;I know this park well&rdquo;?</div>
+            <div class="widget-options">
+                <button data-response="&iexcl;Buen o&iacute;do! 'Yo conozco este parque bien.' The yo form takes -zco. That instinct is exactly what Part 3 will make explicit.">Yo <em>conozco</em> este parque bien.</button>
+                <button data-response="That's the t&uacute; form ('conoces' = you know). For 'I' you need the yo form, which changes to 'conozco.' Trust your ear &mdash; you'll confirm it in Part 3.">Yo <em>conoces</em> este parque bien.</button>
+                <button data-response="Close instinct &mdash; you sensed the yo form is different. The standard yo form is 'conozco' (with -zco). 'Conoco' isn't used. Part 3 lines it up.">Yo <em>conoco</em> este parque bien.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; REPASO &mdash; DEPORTES Y PASATIEMPOS <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Warm up the words you'll use today</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">No new vocabulary today &mdash; just the sports and pastimes words from Days 1 and 2, so your example sentences have something to talk about. Click the <strong>&#128266;</strong> and repeat each one aloud.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-equipo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el equipo</span><span class="v-en">the team</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-partido.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el partido</span><span class="v-en">the game / match</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-cancha.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la cancha</span><span class="v-en">the court / field</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-gimnasio.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el gimnasio</span><span class="v-en">the gym</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/entrenar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">entrenar</span><span class="v-en">to train / practice</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-jugador.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el jugador / la jugadora</span><span class="v-en">the player</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +3 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Say one true sentence out loud that pairs a word above with a verb you already know: <em>Yo practico deportes en el gimnasio.</em> / <em>Mi equipo favorito juega hoy.</em> You'll plug today's new verbs into frames just like these.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; LA GRAM&Aacute;TICA &mdash; VERBOS -ZCO <span class="pill-time">12 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The pattern: <em>c</em> &rarr; <span class="pron">-zco</span>, but only in <em>yo</em></h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">When a verb ends in a <strong>vowel + <em>-cer</em></strong> or <strong>vowel + <em>-cir</em></strong>, its <strong>yo</strong> form swaps the <em>c</em> for <strong>-zco</strong>. Think of it as the same &ldquo;only-<em>yo</em>-is-weird&rdquo; habit you saw with the <em>-go</em> verbs (<em>tengo, hago</em>) &mdash; a different sound, but the same rule: <strong>one form changes, the rest behave.</strong> Click the <strong>&#128266;</strong> on each <em>yo</em> form and say it back:</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/conocer.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">conocer</span><span class="v-en">to be acquainted with (people/places) &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/conozco.mp3" aria-label="Escuchar conozco" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo conozco</strong></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/conducir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">conducir</span><span class="v-en">to drive &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/conduzco.mp3" aria-label="Escuchar conduzco" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo conduzco</strong></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/ofrecer.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">ofrecer</span><span class="v-en">to offer &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/ofrezco.mp3" aria-label="Escuchar ofrezco" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo ofrezco</strong></span></li>
+        </ul>
+
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:14px 0 4px;">Here is the full paradigm for our anchor verb, <strong>conocer</strong>. Look how <em>only the first row</em> is special &mdash; the rest are ordinary <em>-er</em> endings:</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>conocer</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">conozco</span> &nbsp;&larr; irregular</td><td>Yo <span class="pron">conozco</span> a todo el equipo.</td></tr>
+                <tr><td>t&uacute;</td><td>conoces</td><td>&iquest;<strong>Conoces</strong> la cancha nueva?</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td>conoce</td><td>Ella <strong>conoce</strong> bien Panam&aacute;.</td></tr>
+                <tr><td>nosotros/as</td><td>conocemos</td><td>Nosotros <strong>conocemos</strong> al entrenador.</td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td>conocen</td><td>Ellos <strong>conocen</strong> a los jugadores.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">See it? <em>Yo</em> = <strong>conozco</strong>; everyone else keeps the plain <em>-er</em> endings (<em>-es, -e, -emos, -en</em>). One row changes, four rows stay home.</p>
+
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:16px 0 4px;">The same pattern carries the other two verbs &mdash; only the <em>yo</em> form is different:</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>conducir <span style="font-weight:400;">(to drive)</span></th><th>ofrecer <span style="font-weight:400;">(to offer)</span></th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">conduzco</span></td><td><span class="pron">ofrezco</span></td></tr>
+                <tr><td>t&uacute;</td><td>conduces</td><td>ofreces</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td>conduce</td><td>ofrece</td></tr>
+                <tr><td>nosotros/as</td><td>conducimos</td><td>ofrecemos</td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td>conducen</td><td>ofrecen</td></tr>
+            </tbody>
+        </table>
+        <div style="background:#FDF7E9;border:1px dashed #C7922C;border-radius:8px;padding:12px 16px;margin-top:12px;">
+            <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#128161; PISTA &middot; personal <em>a</em></div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">When you use <em>conocer</em> with a <strong>person</strong>, add the little <strong>a</strong>: <em>Conozco <strong>a</strong> Mariano.</em> With a <strong>place</strong>, no <em>a</em> is needed: <em>Conozco Panam&aacute;.</em> You already used this personal <em>a</em> in Spanish 1 &mdash; here it is again.</div>
+        </div>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">10 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; pick the <em>yo</em> form</div>
+            <div class="widget-question">&ldquo;Yo ___ a todos los jugadores del equipo.&rdquo; (I know all the players on the team.)</div>
+            <div class="widget-options">
+                <button data-correct="false">conoces</button>
+                <button data-correct="true">conozco</button>
+                <button data-correct="false">conoce</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; <em>yo</em> or someone else?</div>
+            <div class="widget-question">&ldquo;Mi hermana ___ muy bien la ciudad de Panam&aacute;.&rdquo; (My sister knows Panama City well.)</div>
+            <div class="widget-options">
+                <button data-correct="true">conoce</button>
+                <button data-correct="false">conozco</button>
+                <button data-correct="false">conozca</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; the other -zco verbs</div>
+            <div class="widget-question">&ldquo;Yo ___ el coche de mi familia al gimnasio.&rdquo; (I drive my family's car to the gym.)</div>
+            <div class="widget-options">
+                <button data-correct="false">conduce</button>
+                <button data-correct="false">conduces</button>
+                <button data-correct="true">conduzco</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: say <em>&ldquo;I know a great athlete, and I offer help to my team&rdquo;</em> in Spanish. Two <em>-zco</em> verbs are hiding in there (<em>conocer</em>, <em>ofrecer</em>). Say it out loud first, then reveal.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Yo conozco a un deportista excelente, y ofrezco ayuda a mi equipo.</strong> Notice both <em>yo</em> forms take <strong>-zco</strong> (<em>conozco</em>, <em>ofrezco</em>) &mdash; and <em>conozco</em> keeps its personal <em>a</em> before the person.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        Me llamo <strong>Sof&iacute;a</strong> y vivo en la Ciudad de Panam&aacute;. Yo <strong>conozco</strong> a muchos deportistas porque mi pap&aacute; es entrenador de b&eacute;isbol. Cada s&aacute;bado yo <strong>conduzco</strong> con &eacute;l a la cancha &mdash; bueno, todav&iacute;a no tengo licencia, &iexcl;pero pronto! En el equipo, yo siempre <strong>ofrezco</strong> ayuda con el agua y los bates. Mi hermano <strong>conoce</strong> a los jugadores mayores, y nosotros <strong>conocemos</strong> cada rinc&oacute;n del estadio. Para m&iacute;, el b&eacute;isbol no es solo un partido: es mi familia.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find the three <strong>yo</strong> forms that end in <em>-zco</em> (<em>conozco, conduzco, ofrezco</em>) and the two forms that do <strong>not</strong> change (<em>conoce, conocemos</em>). Why does Sof&iacute;a say <em>conozco</em> but her brother <em>conoce</em>? Same verb &mdash; different subject, so only <em>yo</em> takes the <strong>-zco</strong>.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; PANAM&Aacute;</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El b&eacute;isbol, la pasi&oacute;n del istmo</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Panam&aacute; sits at the narrow bridge between two continents &mdash; the same geography that made the <strong>Canal de Panam&aacute;</strong> one of the world's great crossroads. Its national sporting passion isn't soccer but <strong>b&eacute;isbol</strong>, carried in through the Canal Zone over a century ago and now woven into everyday life. Panama has sent dozens of players to the U.S. major leagues from a country of just over four million people &mdash; among them <strong>Rod Carew</strong> and <strong>Mariano Rivera</strong>, names any Panamanian fan <em>conoce</em> by heart. On a Saturday you'll find neighborhood <em>canchas</em> full of kids who dream of the same path. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short listening clip &mdash; <em>Voces del estadio</em>.)</span></p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; PERSEVERANCE</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Mariano Rivera</strong> (Panam&aacute;, b. 1969) grew up in the fishing town of Puerto Caimito, catching a ball with a glove made from a milk carton and a bat carved from tree branches. He was signed for a few thousand dollars, spent years grinding through the minor leagues, and refined a single pitch &mdash; the cutter &mdash; until it became the most feared in baseball. In 2019 he became the first player <em>ever</em> elected to the Hall of Fame unanimously. His story is <em>perseverancia</em> itself: not one dramatic leap, but thousands of ordinary repetitions. Learning a language works the same way &mdash; today's <em>-zco</em> forms become effortless the same way Rivera's cutter did: one honest practice at a time.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">4</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 3.04 &mdash; -zco verbs in use + reading</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll put <em>conocer, conducir,</em> and <em>ofrecer</em> to work in real sentences about sports and pastimes, and read a longer passage about weekend life in Panam&aacute;. Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say three true sentences about yourself out loud &mdash; one with each verb: <em>Conozco a&hellip; / Conduzco&hellip; (o: No conduzco todav&iacute;a) / Ofrezco&hellip;</em> Feel the <strong>-zco</strong> each time.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You've cracked a whole verb family with one small move: in the <em>yo</em> form, the <em>c</em> becomes <strong>-zco</strong> &mdash; <em>conozco, conduzco, ofrezco</em> &mdash; while every other person stays regular. And you can use <em>conocer</em> to say exactly who and where you know. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 3.03 &middot; Verbos <em>yo</em> -zco (conocer / conducir / ofrecer)</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

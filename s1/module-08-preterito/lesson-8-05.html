@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 8.05</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 8</div>
+        <div style="font-size: 12px; color: #666;">Pret&eacute;rito</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 8.05 &middot; Day 5 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Cambios ortogr&aacute;ficos: -car, -gar, -zar (busqu&eacute;, llegu&eacute;, empec&eacute;)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Lo que hice &mdash; recent past (GATE)</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 8.05</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Busqu&eacute;, llegu&eacute;, empec&eacute;: los cambios ortogr&aacute;ficos</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Busqu&eacute;, no buscé. Llegu&eacute;, no llegé. Empec&eacute;, no empezé. Same verb, same yo &mdash; one small spelling shift.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">You already know the regular pret&eacute;rito endings from earlier in this m&oacute;dulo &mdash; <strong>-&eacute;, -aste, -&oacute;, -amos, -aron</strong> for -ar verbs. Today you meet a pattern that isn't really an exception: verbs ending in <strong>-car, -gar,</strong> and <strong>-zar</strong> change one letter, but <em>only in the yo form</em>, so the word still sounds the way a Spanish reader expects. Every verb you'll use today &mdash; <em>buscar, llegar, jugar, pagar, empezar</em> &mdash; you already know from earlier in the course. The only thing that's new is what happens to its spelling when you say &ldquo;I did it.&rdquo;</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why -car, -gar, and -zar verbs change spelling in the <em>yo</em> form of the pret&eacute;rito &mdash; and only in that form.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> correctly write and say the <em>yo</em> pret&eacute;rito form of common -car, -gar, and -zar verbs (busqu&eacute;, llegu&eacute;, empec&eacute;, and more).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use these forms to describe something I really did recently &mdash; continuing this m&oacute;dulo's <em>lo que hice</em> thread.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Listen for the sound, not just the letter</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Say this out loud: <em>llegar</em>. Notice the hard &ldquo;g&rdquo; sound, like in <em>gato</em>. Now imagine writing &ldquo;I arrived&rdquo; by just swapping the ending: <em>lleg&eacute;</em>. In Spanish spelling, a lone <strong>g</strong> before <strong>e</strong> sounds like the &ldquo;h&rdquo; in <em>gente</em> &mdash; completely different. Spanish keeps the sound of the verb stable by adjusting the spelling instead. That's the whole idea behind today's lesson.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">You want to write &ldquo;I arrived at school at 7 a.m.&rdquo; Which spelling looks right for the <em>yo</em> form of <em>llegar</em>?</div>
+            <div class="widget-options">
+                <button data-response="Close — but a lone 'g' before 'e' changes sound in Spanish. To keep the hard 'g' of llegar, you need a silent 'u': llegué, not llegé. Part 3 shows exactly why.">lleg&eacute;</button>
+                <button data-response="¡Exacto! You've spotted it — the silent 'u' keeps that hard 'g' sound before é. That's precisely today's pattern, and it applies the same way to buscar, jugar, and pagar.">llegu&eacute;</button>
+                <button data-response="That's actually the él/ella form ('he/she arrived'), not yo. For 'I arrived' you want llegué — stick around for Part 3 to see why the spelling shifts just for yo.">lleg&oacute;</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; VERBOS QUE YA CONOCES <span class="pill-time">9 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Same verbs, new yo form &mdash; listen and repeat</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Every infinitive below is one you already use in the present tense. Click <strong>&#128266;</strong> to hear the new part &mdash; the <em>yo</em> pret&eacute;rito form &mdash; and repeat it aloud.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/busque.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">buscar &rarr; <span class="pron">busqu&eacute;</span></span><span class="v-en">to look for &rarr; I looked for</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/llegue.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">llegar &rarr; <span class="pron">llegu&eacute;</span></span><span class="v-en">to arrive &rarr; I arrived</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/jugue.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">jugar &rarr; <span class="pron">jugu&eacute;</span></span><span class="v-en">to play &rarr; I played</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/pague.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">pagar &rarr; <span class="pron">pagu&eacute;</span></span><span class="v-en">to pay &rarr; I paid</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/empece.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">empezar &rarr; <span class="pron">empec&eacute;</span></span><span class="v-en">to begin &rarr; I began</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/comence.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">comenzar &rarr; <span class="pron">comenc&eacute;</span></span><span class="v-en">to begin &rarr; I began</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/practique.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">practicar &rarr; <span class="pron">practiqu&eacute;</span></span><span class="v-en">to practice &rarr; I practiced</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/toque.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tocar &rarr; <span class="pron">toqu&eacute;</span></span><span class="v-en">to play (an instrument) &rarr; I played</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/saque.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">sacar &rarr; <span class="pron">saqu&eacute;</span></span><span class="v-en">to take (out) &rarr; I took (out)</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +4 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Sort the nine verbs into three families by their last two letters: -car (buscar, practicar, tocar, sacar), -gar (llegar, jugar, pagar), -zar (empezar, comenzar). You'll see in Part 3 that everyone in a family changes the same way.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; EL CAMBIO ORTOGR&Aacute;FICO <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">One letter changes, only for yo</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">The pret&eacute;rito endings you already learned this m&oacute;dulo don't change at all &mdash; <em>t&uacute;, &eacute;l/ella, nosotros, ellos</em> stay perfectly regular. Only the <strong>yo</strong> form needs a spelling adjustment, and only because plain -c&eacute;, -g&eacute;, and -z&eacute; would sound wrong in Spanish:</p>
+        <table class="gtable">
+            <thead><tr><th>Ending</th><th>Change (yo only)</th><th>Infinitive &rarr; yo</th><th>Rest of pret&eacute;rito (regular)</th></tr></thead>
+            <tbody>
+                <tr><td>-car</td><td>c &rarr; <span class="pron">qu</span></td><td>buscar &rarr; <span class="pron">busqu&eacute;</span></td><td>buscaste, busc&oacute;, buscamos, buscaron</td></tr>
+                <tr><td>-gar</td><td>g &rarr; <span class="pron">gu</span></td><td>llegar &rarr; <span class="pron">llegu&eacute;</span></td><td>llegaste, lleg&oacute;, llegamos, llegaron</td></tr>
+                <tr><td>-zar</td><td>z &rarr; <span class="pron">c</span></td><td>empezar &rarr; <span class="pron">empec&eacute;</span></td><td>empezaste, empez&oacute;, empezamos, empezaron</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Why these three letters? In Spanish spelling, <strong>c</strong> and <strong>g</strong> sound soft before <em>e</em>/<em>i</em> (cerca, gente) but hard before <em>a/o/u</em> (casa, gato) &mdash; so -car and -gar verbs insert a silent <strong>u</strong> to keep the hard sound. And <strong>z</strong> almost never appears before <em>e</em> in Spanish, so -zar verbs simply switch to <strong>c</strong>. Same sound, adjusted spelling &mdash; every time, only in yo.</p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">9 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; choose the yo form</div>
+            <div class="widget-question">&ldquo;Ayer, yo ___ a las siete de la ma&ntilde;ana.&rdquo; (Yesterday, I arrived at 7 a.m.)</div>
+            <div class="widget-options">
+                <button data-correct="true">llegu&eacute;</button>
+                <button data-correct="false">lleg&eacute;</button>
+                <button data-correct="false">lleg&oacute;</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; choose the yo form</div>
+            <div class="widget-question">&ldquo;Anoche, yo ___ la cuenta en el mercado.&rdquo; (Last night, I paid the bill at the market.)</div>
+            <div class="widget-options">
+                <button data-correct="false">pago</button>
+                <button data-correct="true">pagu&eacute;</button>
+                <button data-correct="false">pag&oacute;</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; choose the yo form</div>
+            <div class="widget-question">&ldquo;El s&aacute;bado, yo ___ al f&uacute;tbol con mis amigos.&rdquo; (On Saturday, I played soccer with my friends.)</div>
+            <div class="widget-options">
+                <button data-correct="false">jug&oacute;</button>
+                <button data-correct="false">jugaste</button>
+                <button data-correct="true">jugu&eacute;</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: write one true sentence about something you did recently, using the <em>yo</em> pret&eacute;rito of one -car, -gar, or -zar verb from Part 2. Say it out loud, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Anoche empec&eacute; mi tarea de espa&ntilde;ol a las siete y practiqu&eacute; el vocabulario por veinte minutos.</strong> Yours will use your own moment &mdash; the frame is <em>[verbo en -qu&eacute;/-gu&eacute;/-c&eacute;] + cu&aacute;ndo/d&oacute;nde</em>.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        Ayer <strong>llegu&eacute;</strong> a Madrid muy temprano. <strong>Busqu&eacute;</strong> la Plaza Mayor en el mapa y <strong>empec&eacute;</strong> mi d&iacute;a all&iacute;, con un caf&eacute; y churros. <strong>Practiqu&eacute;</strong> mi espa&ntilde;ol con un vendedor amable y <strong>saqu&eacute;</strong> muchas fotos del Palacio Real. Por la tarde <strong>jugu&eacute;</strong> al f&uacute;tbol en el parque del Retiro con unos chicos del barrio, y <strong>toqu&eacute;</strong> la guitarra un momento con un m&uacute;sico callejero. <strong>Pagu&eacute;</strong> la entrada al museo y <strong>comenc&eacute;</strong> a explorar el Prado. &iexcl;Qu&eacute; d&iacute;a tan incre&iacute;ble!</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find all nine spelling-change verbs in the reading. Which family does each belong to &mdash; -car, -gar, or -zar? Notice every single one follows exactly the pattern from Part 3.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; ESPA&Ntilde;A</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El Retiro y el arte del paseo</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">The <strong>Parque del Retiro</strong>, once a royal garden and now Madrid's best-loved public park, is where the reading's narrator plays f&uacute;tbol and hears street musicians. Spaniards have long practiced <strong>el paseo</strong> &mdash; an unhurried evening walk through a park or plaza, meant for conversation rather than exercise. Sunday afternoons fill the Retiro's lake, rose garden, and wide avenues with families, friends, and performers &mdash; a rhythm of public life that has continued largely unchanged for over a century. When you describe what you did in Spain &mdash; where you walked, who you met, what you saw &mdash; you're describing exactly the kind of day this tradition is built for.</p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; LAS SIETE, JUNTAS</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Las siete, juntas</strong> &mdash; sometimes one small piece changes shape so the whole system still works smoothly, exactly like <em>busqu&eacute;, llegu&eacute;,</em> and <em>empec&eacute;</em>, where a spelling shift keeps the sound consistent. Noticing that kind of small, careful adjustment takes <strong>autogobierno</strong>, the discipline to slow down instead of rushing past an exception. That's the same discipline the seven Optima virtues need when they adjust to fit a new situation without losing what makes each of them true.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">6</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 8.06</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Next you'll put -car/-gar/-zar verbs to work in a longer, culture-rich reading about Espa&ntilde;a, alongside the regular pret&eacute;rito forms from earlier this m&oacute;dulo. Graded work &mdash; Vocabulary Check and Lengua en acci&oacute;n &mdash; opens on Day 7, so keep noticing these patterns as you go.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say all nine yo forms from Part 2 out loud one more time, from memory &mdash; busqu&eacute;, llegu&eacute;, jugu&eacute;, pagu&eacute;, empec&eacute;, comenc&eacute;, practiqu&eacute;, toqu&eacute;, saqu&eacute; &mdash; a little faster each time.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">One small spelling shift, and now nine familiar verbs are fully yours in the pret&eacute;rito. You didn't learn new vocabulary today &mdash; you synthesized what you already knew into one working system. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 8.05 &middot; Cambios ortogr&aacute;ficos: -car, -gar, -zar</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

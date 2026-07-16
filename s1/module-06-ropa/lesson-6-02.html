@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 6.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 6</div>
+        <div style="font-size: 12px; color: #666;">La ropa y las compras</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 6.02 &middot; Day 2 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Las compras (vocab set B)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">La ropa y las compras</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 6.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Ir de compras &mdash; la tienda, el mercado y la ganga</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Yesterday you named the clothes. Today you learn to go get them.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Day 1 gave you the <strong>ropa</strong> &mdash; the shirts, shoes, and jackets. Today we add the words you need to actually <strong>go shopping</strong> for them: where you shop (<em>la tienda, el mercado</em>), how to ask a price (<em>&iquest;cu&aacute;nto cuesta?</em>), how to say something fits (<em>me queda bien</em>), and how you'll pay. No new grammar today &mdash; just a fresh set of words layered onto the clothing you already own, dropped straight into real shopping conversations.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> name where and how I shop &mdash; <em>la tienda, el mercado, el probador, la talla, el n&uacute;mero</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> ask a price and comment on fit &mdash; <em>&iquest;cu&aacute;nto cuesta?</em> and <em>me queda bien / grande</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> talk about deals and payment &mdash; <em>la ganga, el descuento, pagar en efectivo / con tarjeta</em>.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">You already shop &mdash; now name it in Spanish</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Think about the last time you bought clothes. You compared prices, you checked a size, maybe you found a deal. Every one of those moves has a Spanish word &mdash; and today you collect them. Quick warm-up: picture yourself walking into a store. Which of yesterday's words might you say first? (<em>la camisa, los zapatos, la chaqueta</em>&hellip;) Keep them handy &mdash; today's new words wrap around them.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">When you shop for clothes, what do you usually check first?</div>
+            <div class="widget-options">
+                <button data-response="&iexcl;Muy pr&aacute;ctico! The price &mdash; el precio &mdash; is where many shoppers start. You'll learn to ask &iquest;cu&aacute;nto cuesta? in Part 2, plus la ganga (a bargain) and el descuento (a discount).">El precio (the price)</button>
+                <button data-response="&iexcl;Buena idea! The size &mdash; la talla for clothing, el n&uacute;mero for shoes. Part 2 gives you both, and el probador (the fitting room) where you check that it fits.">La talla (the size)</button>
+                <button data-response="&iexcl;Claro! The style and look matter to you &mdash; that's the ropa you named yesterday. Today you add the words to find it, try it on, and pay for it.">El estilo (the style)</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; LAS PALABRAS DE LAS COMPRAS <span class="pill-time">11 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Listen, then say each one back</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Click the <strong>&#128266;</strong> and repeat aloud. These are the words that turn "I have clothes" into "I can go buy clothes." Notice the two size words: <em>la talla</em> is for clothing, <em>el n&uacute;mero</em> is for shoes.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-tienda.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la tienda</span><span class="v-en">the store / shop</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-mercado.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el mercado</span><span class="v-en">the (open-air) market</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-probador.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el probador</span><span class="v-en">the fitting room</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-talla.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la talla</span><span class="v-en">the size (clothing)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-numero.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el n&uacute;mero</span><span class="v-en">the size (shoes)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-precio.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el precio</span><span class="v-en">the price</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-ganga.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la ganga</span><span class="v-en">the bargain / great deal</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-descuento.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el descuento</span><span class="v-en">the discount</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/ir-de-compras.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">ir de compras</span><span class="v-en">to go shopping</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/probarse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">probarse</span><span class="v-en">to try on</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/quedar-bien.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">quedar bien</span><span class="v-en">to fit well / look good</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/quedar-grande.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">quedar grande</span><span class="v-en">to be too big</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/pagar-en-efectivo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">pagar en efectivo</span><span class="v-en">to pay in cash</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/pagar-con-tarjeta.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">pagar con tarjeta</span><span class="v-en">to pay by card</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/cuanto-cuesta.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">&iquest;cu&aacute;nto cuesta?</span><span class="v-en">how much does it cost?</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +5 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Sort the fifteen words into three piles by where they'd come up: <strong>d&oacute;nde compras</strong> (la tienda, el mercado, el probador), <strong>qu&eacute; preguntas</strong> (la talla, el n&uacute;mero, el precio, &iquest;cu&aacute;nto cuesta?), and <strong>c&oacute;mo pagas</strong> (la ganga, el descuento, en efectivo, con tarjeta). Say one full pile out loud without looking.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; FRASES PARA LA TIENDA <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Dropping the words into ready-made frames</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">No new grammar today &mdash; every frame below uses verbs you already own. <em>Cuesta</em> and <em>cuestan</em> come from <strong>costar</strong> (the o&rarr;ue stem-changer from M&oacute;dulo 2). <em>Me queda</em> works just like <em>me gusta</em> &mdash; the thing does the "fitting," so it's <em>queda</em> for one item, <em>quedan</em> for more. <em>Me lo pruebo</em> is <strong>probarse</strong>, a reflexive like the ones from M&oacute;dulo 4. Read each frame aloud and swap in your own clothing word:</p>
+        <table class="gtable">
+            <thead><tr><th>You want to&hellip;</th><th>Say (frame)</th><th>Example with today's + yesterday's words</th></tr></thead>
+            <tbody>
+                <tr><td>ask a price</td><td><span class="pron">&iquest;Cu&aacute;nto cuesta / cuestan</span> &hellip;?</td><td>&iquest;Cu&aacute;nto <span class="pron">cuesta</span> esta camisa? &iquest;Cu&aacute;nto <span class="pron">cuestan</span> los zapatos?</td></tr>
+                <tr><td>ask to try it on</td><td>&iquest;Puedo <span class="pron">probarme</span> &hellip;?</td><td>&iquest;Puedo <span class="pron">probarme</span> la chaqueta? &iquest;D&oacute;nde est&aacute; el probador?</td></tr>
+                <tr><td>comment on the fit</td><td>Me <span class="pron">queda</span> bien / grande / peque&ntilde;o</td><td>El su&eacute;ter me <span class="pron">queda</span> grande. Necesito otra talla.</td></tr>
+                <tr><td>ask about a deal</td><td>&iquest;Hay un <span class="pron">descuento</span>? &iexcl;Es una <span class="pron">ganga</span>!</td><td>&iquest;Hay un <span class="pron">descuento</span> hoy? &mdash;S&iacute;, cuesta menos. &iexcl;Es una <span class="pron">ganga</span>!</td></tr>
+                <tr><td>say how you'll pay</td><td>Pago <span class="pron">en efectivo</span> / <span class="pron">con tarjeta</span></td><td>&iquest;Puedo pagar <span class="pron">con tarjeta</span>? &mdash;Solo aceptamos <span class="pron">efectivo</span>.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">All present tense &mdash; nothing new. You're just aiming familiar verbs at a new topic. The comparing words (<em>m&aacute;s barato que</em>&hellip;) arrive in Lesson 6.03; today, stay in the frames above.</p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">9 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; ask the price</div>
+            <div class="widget-question">You want to know the price of a shirt. You ask the vendor&hellip;</div>
+            <div class="widget-options">
+                <button data-correct="false">&iquest;C&oacute;mo est&aacute;s?</button>
+                <button data-correct="true">&iquest;Cu&aacute;nto cuesta?</button>
+                <button data-correct="false">&iquest;De d&oacute;nde eres?</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; name the deal</div>
+            <div class="widget-question">The jeans are marked 50% off &mdash; a fantastic deal. In Spanish that's&hellip;</div>
+            <div class="widget-options">
+                <button data-correct="false">una talla</button>
+                <button data-correct="false">un probador</button>
+                <button data-correct="true">una ganga</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; how you'll pay</div>
+            <div class="widget-question">You don't have any bills or coins with you, so you'll pay&hellip;</div>
+            <div class="widget-options">
+                <button data-correct="true">con tarjeta</button>
+                <button data-correct="false">en efectivo</button>
+                <button data-correct="false">con la talla</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: in one breath, ask a price, say how one clothing item fits, and say how you'll pay. Say it out loud, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>&iquest;Cu&aacute;nto cuesta esta chaqueta? Me queda bien. Pago con tarjeta, por favor.</strong> Yours will use your own item and choice &mdash; the frame is <em>&iquest;cu&aacute;nto cuesta&hellip;? + me queda&hellip; + pago en efectivo / con tarjeta</em>.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:16px;color:#6b7a99;margin:0 0 8px 0;">En un mercado de La Paz, Bolivia. Marisol quiere comprar un su&eacute;ter de lana de alpaca.</p>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        &mdash;Buenas tardes. &iquest;<strong>Cu&aacute;nto cuesta</strong> este su&eacute;ter?<br>
+        &mdash;Cuesta 120 bolivianos, se&ntilde;orita.<br>
+        &mdash;&iquest;Hay un <strong>descuento</strong> hoy?<br>
+        &mdash;S&iacute;, hoy cuesta 100. &iexcl;Es una <strong>ganga</strong>!<br>
+        &mdash;&iquest;Puedo <strong>probarme</strong>lo? &iquest;D&oacute;nde est&aacute; el <strong>probador</strong>?<br>
+        &mdash;All&iacute;, a la derecha&hellip; &iquest;C&oacute;mo le <strong>queda</strong>?<br>
+        &mdash;Me <strong>queda grande</strong>. &iquest;Tiene una <strong>talla</strong> m&aacute;s peque&ntilde;a?<br>
+        &mdash;Aqu&iacute; tiene. &iquest;Y ahora?<br>
+        &mdash;&iexcl;Ahora me <strong>queda bien</strong>! &iquest;Puedo <strong>pagar con tarjeta</strong>?<br>
+        &mdash;En el mercado solo aceptamos <strong>efectivo</strong>.<br>
+        &mdash;Est&aacute; bien, <strong>pago en efectivo</strong>. Muchas gracias.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Answer in your head: What was the original price, and the price after the descuento? Why does Marisol ask for a different talla? How does she end up paying &mdash; and why not with tarjeta? Notice how she closes with <em>gracias</em> &mdash; hold onto that word for the virtue note below.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; BOLIVIA</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El aguayo: comprar una historia tejida</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">In a Bolivian <em>mercado</em>, one of the most striking things for sale is the <strong>aguayo</strong> (also spelled <em>awayu</em>) &mdash; a rectangular handwoven cloth the Aymara and Quechua have made for centuries, used to carry babies, goods, and market purchases on the back. Its bold stripes and figures aren't just decoration: in the weaving of the <strong>Jalq'a</strong> and <strong>Tarabuco</strong> communities near Sucre, the patterns encode animals, spirits, and stories, and a single fine piece can take weeks on a backstrap loom. When those traditional designs were fading, the <strong>ASUR</strong> textile project and its <em>Museo de Arte Ind&iacute;gena</em> in Sucre helped revive them, and today weavers sell their work directly to visitors. So when you ask <em>&iquest;cu&aacute;nto cuesta?</em> at a Bolivian stall, remember the <em>precio</em> reflects not machine output but many careful hours of a person's hands. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short gallery of Jalq'a and Tarabuco textiles.)</span></p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; HONESTY</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Jaime Escalante</strong> (La Paz, Bolivia, 1930&ndash;2010), the Bolivian-born math teacher whose honest, hard-nosed teaching turned Garfield High School into a calculus powerhouse (<em>Stand and Deliver</em>, 1988), refused to let a student fake understanding just to move a lesson along. He'd rather hear an honest <em>&laquo;No entiendo&raquo;</em> than a nod that wasn't true. Today, as you learn the verbs for <em>ir de compras</em>, carry that same honesty into the market: ask clearly for the <em>talla</em> and <em>precio</em> you actually need, instead of guessing to avoid an awkward question.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 6.03 &mdash; Comparativos: m&aacute;s&hellip; que, menos&hellip; que</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Now that you have the clothing (Day 1) and the shopping words (today), tomorrow adds the grammar that ties them together: <strong>comparing</strong> &mdash; which shirt is <em>cheaper</em>, which is <em>the most expensive</em>. Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then role-play the market scene out loud &mdash; ask <em>&iquest;cu&aacute;nto cuesta?</em>, try something on, say whether it <em>te queda bien</em>, and pay. Do it twice, a little faster the second time.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You can now walk into a <em>tienda</em> or a <em>mercado</em>, ask what something costs, try it on, say how it fits, spot a <em>ganga</em>, and pay &mdash; all wrapped around the clothing you already knew. No new grammar was needed; you just pointed familiar verbs at a new corner of the world. <em>&iexcl;Hasta ma&ntilde;ana &mdash; y gracias por tu trabajo de hoy!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 6.02 &middot; Las compras (vocab set B)</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

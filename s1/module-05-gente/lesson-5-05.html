@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 5.05</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 5</div>
+        <div style="font-size: 12px; color: #666;">La gente y las cosas</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 5.05 &middot; Day 5 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Grammar 2: direct object pronouns (lo, la, los, las, me, te, nos)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">La gente y las cosas</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5.05</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Lo, la, los, las &mdash; d&iacute;galo sin repetirlo</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Once you've named a thing or a person, you don't have to keep saying it &mdash; Spanish gives you a tiny word that stands in for it.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Listen to yourself in English: &ldquo;I have the keys. Do you need the keys? I'll bring the keys.&rdquo; After the first time, we swap in a pronoun &mdash; &ldquo;I have <strong>them</strong>.&rdquo; Spanish does exactly the same with <strong>direct object pronouns</strong>: <em>lo, la, los, las</em> for things and people already named, plus <em>me, te, nos</em> for me, you, and us. This is the module's <strong>second grammar point</strong>, and it works on the very words you already own from Days 1&ndash;2 &mdash; <em>las cosas</em> (the keys, the charger, the headphones) and <em>la gente</em> (your neighbor, your classmate). <strong>No new vocabulary today</strong> &mdash; just a smarter, less repetitive way to talk about the words you already have.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> replace a thing or person I already named with the direct object pronoun that <em>agrees</em> in gender and number &mdash; <em>lo, la, los,</em> or <em>las</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use <em>me, te,</em> and <em>nos</em> to say that someone knows, sees, or helps <em>me, you,</em> or <em>us</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> place the pronoun correctly &mdash; <em>before</em> a conjugated verb, or <em>attached to the end</em> of an infinitive.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Warm-up + check-in ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Stop repeating yourself</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Read this little exchange out loud, in English: <em>&ldquo;&mdash;Do you have your headphones? &mdash;Yes, I have my headphones. I always carry my headphones.&rdquo;</em> By the third time, your ear rebels &mdash; nobody talks like that. We'd say &ldquo;Yes, I have <strong>them</strong>. I always carry <strong>them</strong>.&rdquo; That little word <em>them</em> is a <strong>direct object pronoun</strong>. Spanish leans on the same trick, and today you'll learn its four flavors for things &mdash; <em>lo, la, los, las</em> &mdash; plus <em>me, te, nos</em> for people.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">In &ldquo;I always carry <strong>them</strong>,&rdquo; the word <em>them</em> stands in for something already mentioned. What did it replace?</div>
+            <div class="widget-options">
+                <button data-response="&iexcl;Eso es! 'Them' replaced 'the headphones' (los aud&iacute;fonos) &mdash; a thing already named. In Spanish that becomes los: 'Siempre los llevo.' You'll build the full set in Part 3.">The headphones &mdash; a thing already named</button>
+                <button data-response="Good noticing. It does point back to something &mdash; specifically to 'the headphones.' Because that noun was already said once, we can shrink it to a pronoun. Spanish calls it a direct object pronoun; Part 3 lines them all up.">Whatever was said just before</button>
+                <button data-response="Fair &mdash; and that's exactly the instinct behind today's grammar: we shorten what we'd otherwise repeat. In Spanish the short word has to match the noun's gender and number, which is the one new twist. Part 3 makes it simple.">Something, so we don't say it twice</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Listen & refresh (established vocab, audio) ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; ESC&Uacute;CHALO OTRA VEZ <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Your Days 1&ndash;2 words &mdash; and the gender tag that matters today</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Nothing new here &mdash; every word below came up earlier this module. Click the <strong>&#128266;</strong> and say each aloud <em>with its article</em>. The article is the whole trick today: <em>el/los</em> point you to <strong>lo/los</strong>, and <em>la/las</em> point you to <strong>la/las</strong>. Notice the gender and number as you listen.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-cargador.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el cargador</span><span class="v-en">charger <span style="color:#9a7b1e;">(m. sing. &rarr; lo)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-mochila.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la mochila</span><span class="v-en">backpack <span style="color:#9a7b1e;">(f. sing. &rarr; la)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/los-audifonos.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">los aud&iacute;fonos</span><span class="v-en">headphones <span style="color:#9a7b1e;">(m. pl. &rarr; los)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/las-llaves.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">las llaves</span><span class="v-en">keys <span style="color:#9a7b1e;">(f. pl. &rarr; las)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-cartera.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la cartera</span><span class="v-en">wallet / purse <span style="color:#9a7b1e;">(f. sing. &rarr; la)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-paraguas.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el paraguas</span><span class="v-en">umbrella <span style="color:#9a7b1e;">(m. sing. &rarr; lo)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-vecino.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el vecino / la vecina</span><span class="v-en">neighbor <span style="color:#9a7b1e;">(person &rarr; lo / la)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-companero.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el compa&ntilde;ero / la compa&ntilde;era</span><span class="v-en">classmate <span style="color:#9a7b1e;">(person &rarr; lo / la)</span></span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; F&Iacute;JATE &middot; optional &middot; +3 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Say each word, then say its pronoun right after it: <em>el cargador &rarr; lo; la mochila &rarr; la; los aud&iacute;fonos &rarr; los; las llaves &rarr; las.</em> When you can do that automatically, the grammar in Part 3 is basically already done &mdash; the pronoun just copies the gender and number of the article.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; LOS PRONOMBRES DE OBJETO DIRECTO <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The full set &mdash; and where the pronoun goes</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 6px 0;">First, what does <em>&ldquo;direct object&rdquo;</em> mean? It's the thing or person that <strong>receives the action</strong> &mdash; the answer to <em>&ldquo;what?&rdquo;</em> or <em>&ldquo;whom?&rdquo;</em> after the verb. <em>Tengo <u>las llaves</u></em> &rarr; I have <em>what?</em> the keys. <em>Conozco <u>a Camila</u></em> &rarr; I know <em>whom?</em> Camila. Once you've said it, you can replace it with one of these:</p>
+        <table class="gtable">
+            <thead><tr><th>Pronoun</th><th>Stands for&hellip;</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td><span class="pron">me</span></td><td>me</td><td>Mi vecina <span class="pron">me</span> ayuda.</td></tr>
+                <tr><td><span class="pron">te</span></td><td>you (informal)</td><td>Yo <span class="pron">te</span> conozco bien.</td></tr>
+                <tr><td><span class="pron">lo</span></td><td>him / it (masculine)</td><td>&iquest;El cargador? <span class="pron">Lo</span> tengo.</td></tr>
+                <tr><td><span class="pron">la</span></td><td>her / it (feminine)</td><td>&iquest;La mochila? <span class="pron">La</span> llevo.</td></tr>
+                <tr><td><span class="pron">nos</span></td><td>us</td><td>El profesor <span class="pron">nos</span> conoce.</td></tr>
+                <tr><td><span class="pron">los</span></td><td>them (masculine / mixed)</td><td>&iquest;Los aud&iacute;fonos? <span class="pron">Los</span> comparto.</td></tr>
+                <tr><td><span class="pron">las</span></td><td>them (feminine)</td><td>&iquest;Las llaves? <span class="pron">Las</span> devuelvo.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 12px;">The four &ldquo;thing&rdquo; pronouns must <strong>agree</strong> with the noun they replace: match its <em>gender</em> (m/f) <em>and</em> its <em>number</em> (singular/plural). <em>El cargador</em> is masculine singular &rarr; <em>lo</em>. <em>Las llaves</em> is feminine plural &rarr; <em>las</em>. The same <em>lo/la/los/las</em> also replace <strong>people</strong> in the third person: <em>Veo a Diego &rarr; <span class="pron">Lo</span> veo. Veo a Camila &rarr; <span class="pron">La</span> veo.</em></p>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 16px 0 6px 0;">Noun &rarr; pronoun: watch the swap</h3>
+        <table class="gtable">
+            <thead><tr><th>Full sentence</th><th>Replace&hellip;</th><th>With the pronoun</th></tr></thead>
+            <tbody>
+                <tr><td>Presto <em>el cargador</em>.</td><td>el cargador (m. sing.)</td><td><span class="pron">Lo</span> presto.</td></tr>
+                <tr><td>Devuelvo <em>la cartera</em>.</td><td>la cartera (f. sing.)</td><td><span class="pron">La</span> devuelvo.</td></tr>
+                <tr><td>Comparto <em>los aud&iacute;fonos</em>.</td><td>los aud&iacute;fonos (m. pl.)</td><td><span class="pron">Los</span> comparto.</td></tr>
+                <tr><td>Tengo <em>las llaves</em>.</td><td>las llaves (f. pl.)</td><td><span class="pron">Las</span> tengo.</td></tr>
+                <tr><td>Conozco <em>a mi vecina</em>.</td><td>a mi vecina (person, f.)</td><td><span class="pron">La</span> conozco.</td></tr>
+            </tbody>
+        </table>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 16px 0 6px 0;">Where does it go?</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 6px 0;">This is the one placement rule to hold on to &mdash; and it's short:</p>
+        <table class="gtable">
+            <thead><tr><th>When the verb is&hellip;</th><th>The pronoun goes&hellip;</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>a single conjugated verb</td><td><strong>right before</strong> it</td><td><span class="pron">Las</span> tengo. / No <span class="pron">lo</span> conozco.</td></tr>
+                <tr><td>a conjugated verb + infinitive<br><span style="font-size:13px;color:#6b7a99;">(voy a&hellip;, quiero&hellip;, tengo que&hellip;, puedo&hellip;)</span></td><td><strong>either</strong> before the first verb <strong>or</strong> attached to the end of the infinitive &mdash; both are correct</td><td>Voy a prestar<span class="pron">lo</span>. = <span class="pron">Lo</span> voy a prestar.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Two details: (1) In a negative sentence, <em>no</em> comes first, then the pronoun: <em>No <span class="pron">las</span> tengo.</em> (2) When you attach the pronoun to an infinitive, it becomes one word &mdash; <em>devolver + las &rarr; devolverlas</em>. Everything else you already know stays the same; you're only adding a two-letter word in the right spot.</p>
+    </div>
+
+    <!-- ===== PART 4 · Practice ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">12 min</span></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 4px 0;">Ask two questions each time: <em>what gender and number is the noun?</em> (that picks <em>lo/la/los/las</em>) and <em>where does the pronoun go?</em> Pick the best answer, read the feedback, and <strong>Reset</strong> to try again.</p>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; pick the pronoun for a thing</div>
+            <div class="widget-question">&laquo;Necesito <em>el cargador</em>.&raquo; Replace <em>el cargador</em>: &laquo;___ necesito.&raquo;</div>
+            <div class="widget-options">
+                <button data-correct="false">La</button>
+                <button data-correct="true">Lo</button>
+                <button data-correct="false">Los</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; agree in gender AND number</div>
+            <div class="widget-question">&laquo;&iquest;Tienes <em>las llaves</em>?&raquo; &mdash; &laquo;S&iacute;, ___ tengo.&raquo;</div>
+            <div class="widget-options">
+                <button data-correct="true">las</button>
+                <button data-correct="false">los</button>
+                <button data-correct="false">la</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; attach it to the infinitive</div>
+            <div class="widget-question">&laquo;Quiero ver <em>a mi vecina</em> hoy.&raquo; Say it another way: &laquo;Quiero ___.&raquo;</div>
+            <div class="widget-options">
+                <button data-correct="false">verlo</button>
+                <button data-correct="false">verlos</button>
+                <button data-correct="true">verla</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Commit-then-reveal -->
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: your classmate asks <em>&laquo;&iquest;Me prestas los aud&iacute;fonos y la mochila?&raquo;</em> Answer &ldquo;Yes, I'll lend <strong>them</strong> and I'll share <strong>it</strong> too&rdquo; &mdash; using a pronoun for each thing. Say it out loud first, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>S&iacute;, <span class="pron">los</span> presto y <span class="pron">la</span> comparto tambi&eacute;n.</strong> <em>Los aud&iacute;fonos</em> is masculine plural &rarr; <em>los</em>; <em>la mochila</em> is feminine singular &rarr; <em>la</em>; each pronoun sits right before its conjugated verb. (You could also add a second pronoun &mdash; <em>&laquo;te los presto&raquo;</em> &mdash; and you'll do exactly that officially in 5.06.)</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · Reading ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        &mdash;Oye, Camila, &iquest;tienes mi <strong>paraguas</strong>? Llueve otra vez en Valpara&iacute;so.<br>
+        &mdash;S&iacute;, <strong>lo</strong> tengo en mi <strong>mochila</strong>. Te <strong>lo</strong> devuelvo ahora.<br>
+        &mdash;Gracias. Y las <strong>llaves</strong> del edificio, &iquest;<strong>las</strong> tienes t&uacute; tambi&eacute;n?<br>
+        &mdash;No, no <strong>las</strong> tengo. Creo que <strong>las</strong> tiene do&ntilde;a Rosa &mdash; ya sabes, la <strong>vecina</strong> del primer piso.<br>
+        &mdash;Ah, &iexcl;claro! <strong>La</strong> conozco bien; siempre <strong>nos</strong> ayuda. Voy a buscar<strong>la</strong>.<br>
+        &mdash;Perfecto. Y tus <strong>aud&iacute;fonos</strong>&hellip; &iquest;me <strong>los</strong> prestas para el bus?<br>
+        &mdash;&iexcl;Claro que s&iacute;! <strong>Los</strong> comparto contigo. Para eso somos compa&ntilde;eros.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find every <em>lo, la, los, las</em> and say what each one replaces (the umbrella? the keys? do&ntilde;a Rosa?). Then spot the one attached to an infinitive &mdash; <em>buscar<strong>la</strong></em> &mdash; and notice how it could just as well be <em>&laquo;la voy a buscar.&raquo;</em> Same meaning, both correct.</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; CHILE</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Valpara&iacute;so y sus ascensores</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">The port city of <strong>Valpara&iacute;so</strong> climbs more than forty steep hills (<em>cerros</em>), and since the late 1800s residents have ridden up and down them on <strong>ascensores</strong> &mdash; funicular railways that are half elevator, half tiny mountain train. Several are over 120 years old and still running; the historic quarter they serve is a <strong>UNESCO World Heritage Site</strong>. Around them, the hillsides are famous for open-air <em>murales</em> that turn whole staircases and walls into art. To really know Valpara&iacute;so you have to <em>conocer</em> it on foot &mdash; ride an <em>ascensor</em>, get lost among the murals, and you'll understand why Chileans say the city has to be walked, not just described. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short photo tour of the <em>ascensor Concepci&oacute;n</em> and a mural gallery.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; RESPONSIBILITY</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Gabriela Mistral</strong> (Chile, 1889&ndash;1957) &mdash; teacher, diplomat, and the first Latin American to win the <strong>Nobel Prize in Literature</strong> (1945) &mdash; took responsibility for being understood, choosing every word so her reader was never left guessing. Today's grammar asks the same of you: a pronoun like <em>lo</em> or <em>las</em> only works if your listener can tell what it replaces, so using it well is a responsibility you owe the person you're speaking to. Trim the repetition, but never at the cost of clarity &mdash; that trade-off is yours to manage.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">6</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 5.06 &mdash; Los pronombres de objeto indirecto + una lectura chilena</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Today you learned the pronoun for <em>what</em> receives the action (the direct object). Tomorrow brings its partner &mdash; the <strong>indirect object pronoun</strong>, for <em>to whom</em> or <em>for whom</em> (<em>me, te, le, nos, les</em>) &mdash; woven into a culture-rich reading from Chile. Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7; you're building toward it now.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then pick up three real objects near you, name each one aloud with its article, and immediately swap in the pronoun: <em>&laquo;el cargador &rarr; lo tengo; la mochila &rarr; la llevo; las llaves &rarr; las busco.&raquo;</em></div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You can now talk about the things and people in your world without repeating their names: <em>lo, la, los, las</em> to match a noun's gender and number, <em>me, te, nos</em> for people, placed before the verb or hung on the end of an infinitive. Your Spanish just got shorter and smoother. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 5.05 &middot; Grammar 2: direct object pronouns</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

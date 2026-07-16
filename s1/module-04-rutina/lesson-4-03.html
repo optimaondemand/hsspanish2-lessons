@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 4.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 4</div>
+        <div style="font-size: 12px; color: #666;">La rutina diaria</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 4.03 &middot; Day 3 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Reflexive verbs deepened: pronouns &amp; placement</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">La rutina diaria</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 4.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Los verbos reflexivos (a fondo) &mdash; el pronombre y d&oacute;nde va</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">You already know the words. Today we open the engine that makes them move.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">For two days you've been collecting routine verbs and eyeing that little <strong>-se</strong> tag on the end. Today it finally does something. A <strong>reflexive verb</strong> describes an action the subject does <em>to or for themselves</em> &mdash; and that idea rides on a <strong>reflexive pronoun</strong>: <strong>me, te, se, nos, os, se</strong>. Three things to nail down today: (1) match the pronoun to the subject, (2) tell a reflexive verb from its non-reflexive twin (<em>lavar</em> vs. <em>lavarse</em>, <em>acostar</em> vs. <em>acostarse</em>), and (3) know <em>where</em> the pronoun goes &mdash; right before a conjugated verb, or hooked onto the end of an infinitive. No new vocabulary today; just the machinery.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> match each reflexive pronoun (<em>me / te / se / nos / os / se</em>) to its subject and place it right before the conjugated verb.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> tell a reflexive verb from its non-reflexive twin (<em>lavar</em> vs. <em>lavarse</em>, <em>acostar</em> vs. <em>acostarse</em>) by asking who receives the action.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> attach the pronoun to an infinitive after <em>voy a, necesito,</em> or <em>tengo que</em> (<em>voy a levantarme = me voy a levantar</em>).</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Para empezar ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Two sentences, one tiny word of difference</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Read both aloud and feel the difference: <em>Ana <strong>despierta</strong> a su hermano.</em> (Ana wakes up her brother.) vs. <em>Ana <strong>se despierta</strong>.</em> (Ana wakes up &mdash; herself.) The only change is <strong>se</strong>. In the first, the action lands on <em>someone else</em>; in the second, it bends back on <em>Ana</em>. That "bending back" is the whole idea of a reflexive verb &mdash; and today you'll learn exactly how to build and place it.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">In English we hardly ever say "I wash <em>myself</em>" or "I wake <em>myself</em> up" &mdash; we just say "I wash up" or "I get up." What's your honest first reaction to Spanish spelling that "self" out every time?</div>
+            <div class="widget-options">
+                <button data-response="Great mindset. That little me/te/se is doing a real job — it tells you the action loops back on the doer. Once you see the pattern, it stops feeling extra and starts feeling precise.">It seems like an extra step, but I'll get it</button>
+                <button data-response="You've spotted it exactly. English hides the 'self'; Spanish shows it. Seeing the logic up front is half the battle — the pronoun always matches the subject.">Actually it's kind of logical &mdash; it shows who the action is for</button>
+                <button data-response="Totally fair — it can feel fussy at first. Here's the reframe: the pronoun isn't decoration, it's information. By the end of this lesson it'll feel automatic.">Honestly it feels a little fussy</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Vocab reactivation with audio ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; CALIENTA EL O&Iacute;DO <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The verbs we'll set in motion</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Nothing new here &mdash; these are the routine verbs you already met in Lessons 4.01 and 4.02. Click the <strong>&#128266;</strong> and say each infinitive back once, listening for that <strong>-se</strong> at the end. In a moment you'll watch the <em>-se</em> turn into <em>me, te, se&hellip;</em> and jump to the front of the verb.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/despertarse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">despertarse</span><span class="v-en">to wake up <span style="color:#9a7b1e;">(e&rarr;ie)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/levantarse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">levantarse</span><span class="v-en">to get up</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/ducharse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">ducharse</span><span class="v-en">to shower</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/lavarse-los-dientes.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">lavarse los dientes</span><span class="v-en">to brush one's teeth</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/vestirse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">vestirse</span><span class="v-en">to get dressed <span style="color:#9a7b1e;">(e&rarr;i)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/acostarse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">acostarse</span><span class="v-en">to go to bed <span style="color:#9a7b1e;">(o&rarr;ue)</span></span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; F&Iacute;JATE &middot; a preview of today's move</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Watch just one verb transform: <em>levantar<strong>se</strong></em> (dictionary form) &rarr; <em><strong>me</strong> levanto</em> (I get up). The <em>-se</em> didn't disappear &mdash; it became <em>me</em> and moved to the front. Every reflexive verb does this. That's the pattern Part 3 lays out in full.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar: pronouns, conjugation, contrast, placement ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; EL PRONOMBRE Y SU LUGAR <span class="pill-time">12 min</span></div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">1 &middot; The full pronoun set &mdash; it must match the subject</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Every reflexive verb travels with a partner pronoun, and the pronoun changes with the subject. The <em>verb</em> conjugates exactly as it normally would; the <strong>pronoun</strong> is what makes it reflexive. In the present tense it sits <strong>right before</strong> the conjugated verb.</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>Pronoun</th><th>levantarse (regular <em>-ar</em>)</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">me</span></td><td><span class="pron">me</span> levanto</td></tr>
+                <tr><td>t&uacute;</td><td><span class="pron">te</span></td><td><span class="pron">te</span> levantas</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td><span class="pron">se</span></td><td><span class="pron">se</span> levanta</td></tr>
+                <tr><td>nosotros/as</td><td><span class="pron">nos</span></td><td><span class="pron">nos</span> levantamos</td></tr>
+                <tr><td>vosotros/as <span style="color:#6b7a99;">(Espa&ntilde;a)</span></td><td><span class="pron">os</span></td><td><span class="pron">os</span> levant&aacute;is</td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td><span class="pron">se</span></td><td><span class="pron">se</span> levantan</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 14px;">Notice <em>se</em> does double duty &mdash; it covers the third person singular <strong>and</strong> plural. And the stem changes you learned in Module 2 still apply: <em>despertarse</em> &rarr; <em>me despierto</em> (e&rarr;ie), <em>acostarse</em> &rarr; <em>me acuesto</em> (o&rarr;ue), <em>vestirse</em> &rarr; <em>me visto</em> (e&rarr;i). The pronoun never stops the boot.</p>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 16px 0 8px 0;">2 &middot; Reflexive vs. non-reflexive &mdash; the same verb, two jobs</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 8px 0;">Many verbs come in a pair: one form for doing the action <em>to yourself</em> (reflexive, with the pronoun) and one for doing it <em>to someone or something else</em> (no pronoun). Ask one question: <strong>who receives the action?</strong></p>
+        <table class="gtable">
+            <thead><tr><th>Reflexive &mdash; action bends back on you</th><th>Non-reflexive &mdash; action lands on someone/something else</th></tr></thead>
+            <tbody>
+                <tr><td><em>Yo <span class="pron">me</span> lavo.</em> (I wash up / wash myself.)</td><td><em>Yo lavo <strong>el coche</strong>.</em> (I wash the car.)</td></tr>
+                <tr><td><em>Ella <span class="pron">se</span> despierta.</em> (She wakes up.)</td><td><em>Ella despierta <strong>a su hijo</strong>.</em> (She wakes up her son.)</td></tr>
+                <tr><td><em>Nosotros <span class="pron">nos</span> acostamos.</em> (We go to bed.)</td><td><em>Nosotros acostamos <strong>al beb&eacute;</strong>.</em> (We put the baby to bed.)</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 14px;">The shortcut: if the doer and the receiver are the <em>same</em> person &rarr; reflexive pronoun. If the receiver is <em>someone else</em> &rarr; drop the pronoun. That's the whole difference between <em>lavarse</em> and <em>lavar</em>, or <em>acostarse</em> and <em>acostar</em>.</p>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 16px 0 8px 0;">3 &middot; Where the pronoun goes</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 8px 0;">There are two legal spots for the pronoun. When there's <strong>one conjugated verb</strong>, the pronoun goes <em>right in front</em> of it. When an <strong>infinitive</strong> is in the sentence (after <em>voy a, necesito, quiero, tengo que</em>&hellip;), you get a choice: put the pronoun before the conjugated verb, <strong>or</strong> attach it to the end of the infinitive &mdash; both are correct.</p>
+        <table class="gtable">
+            <thead><tr><th>Situation</th><th>Where the pronoun goes</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>One conjugated verb</td><td>before the verb <span style="color:#6b7a99;">(only option)</span></td><td><span class="pron">Me</span> ducho por la ma&ntilde;ana.</td></tr>
+                <tr><td><em>voy a</em> + infinitive</td><td>attached to the infinitive&hellip;</td><td>Voy a duchar<span class="pron">me</span> ahora.</td></tr>
+                <tr><td><em>voy a</em> + infinitive</td><td>&hellip;<em>or</em> before the conjugated verb</td><td><span class="pron">Me</span> voy a duchar ahora.</td></tr>
+                <tr><td><em>necesito / tengo que</em> + infinitive</td><td>attached to the infinitive</td><td>Necesito levantar<span class="pron">me</span> temprano.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Two rules to keep straight: the pronoun still has to <em>match the subject</em> (you say <em>voy a levantar<strong>me</strong></em>, never <em>voy a levantar<strong>se</strong></em> for "I"), and you can't leave it floating between the two verbs (&#10007; <em>voy me a duchar</em>). Front of the conjugated verb, or hooked to the infinitive &mdash; nowhere in between.</p>
+    </div>
+
+    <!-- ===== PART 4 · Practícalo ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">10 min</span></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 6px 0;">Pick the best answer and read the feedback. You can <strong>Reset</strong> and try again as many times as you like.</p>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; match the pronoun to the subject</div>
+            <div class="widget-question">&ldquo;Nosotros ___ levantamos a las siete.&rdquo; (We get up at seven.)</div>
+            <div class="widget-options">
+                <button data-correct="false">me</button>
+                <button data-correct="false">se</button>
+                <button data-correct="true">nos</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; reflexive or not&#63;</div>
+            <div class="widget-question">&ldquo;Todas las ma&ntilde;anas mi mam&aacute; ___ a mi hermanito.&rdquo; (Every morning my mom wakes up my little brother.)</div>
+            <div class="widget-options">
+                <button data-correct="false">se despierta</button>
+                <button data-correct="true">despierta</button>
+                <button data-correct="false">me despierto</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; where does the pronoun go&#63;</div>
+            <div class="widget-question">&ldquo;Antes de dormir, necesito ___.&rdquo; (Before sleeping, I need to brush my teeth.)</div>
+            <div class="widget-options">
+                <button data-correct="true">lavarme los dientes</button>
+                <button data-correct="false">me lavo los dientes</button>
+                <button data-correct="false">lavar los dientes</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Commit-then-reveal -->
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: say <em>"I'm going to go to bed early"</em> <strong>two different ways</strong>, moving the pronoun. Say both out loud first, then reveal.</p>
+            <button class="reveal-btn">Reveal both answers</button>
+            <div class="reveal-body"><strong>Voy a acostarme temprano.</strong> &nbsp;=&nbsp; <strong>Me voy a acostar temprano.</strong> Same meaning, two legal placements: the pronoun <em>me</em> (matching "I") either hooks onto the end of the infinitive <em>acostar</em>, or jumps in front of the conjugated verb <em>voy</em>. What you can't do is drop it in the middle (&#10007; <em>voy me a acostar</em>).</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · A leer ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:16px;color:#6b7a99;margin:0 0 8px 0;">Diana lives in <strong>Lima, Per&uacute;</strong>. Read her morning and hunt for two things: the reflexive verbs (she does the action to herself) and the one verb that lands on someone else.</p>
+        <p style="font-size:17px;color:#1a2340;line-height:1.8;">
+        &laquo;Hola, me llamo Diana. Entre semana <strong>me despierto</strong> a las seis, pero no <strong>me levanto</strong> en seguida &mdash; me quedo cinco minutos m&aacute;s en la cama. Luego <strong>me ducho</strong>, <strong>me visto</strong> con el uniforme y <strong>me lavo los dientes</strong>. Mi hermana peque&ntilde;a no se despierta sola, as&iacute; que yo <strong>la despierto a ella</strong>. Antes de salir, tengo que <strong>peinarme</strong> muy r&aacute;pido, porque el autob&uacute;s no espera. Por la noche <strong>voy a acostarme</strong> temprano&hellip; casi siempre.&raquo;</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Answer in your head: Why is it <em>me despierto</em> (Diana) but <em>la despierto a ella</em> (her sister)? &mdash; because the receiver changes: herself vs. someone else. And find the infinitives with a pronoun hooked on: <em>peinar<strong>me</strong></em> after <em>tengo que</em>, and <em>acostar<strong>me</strong></em> after <em>voy a</em>. Both could also be written <em>me tengo que peinar</em> / <em>me voy a acostar</em>.</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; PER&Uacute;</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Despertarse bajo la gar&uacute;a de Lima</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Diana <em>se despierta</em> in <strong>Lima</strong>, one of the largest desert cities on earth &mdash; it almost never rains there. Yet for much of the year (roughly May to November) the capital wakes up under a thick, gray coastal fog called <strong>la gar&uacute;a</strong>. The sky stays so low and colorless that Lime&ntilde;os affectionately call it <em>&laquo;cielo panza de burro&raquo;</em> &mdash; "donkey-belly sky." Waking up, <em>levantarse</em>, and getting going under that soft gray light is simply what a Lima morning feels like. A small reminder that the same verb, <em>me despierto</em>, describes mornings that look and feel completely different across the Spanish-speaking world. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short photo set of Lima's coast at dawn.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; SELF-GOVERNMENT</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Santa Rosa de Lima</strong> (Per&uacute;, 1586&ndash;1617), the first person born in the Americas to be canonized a saint and the patroness of Lima and of Per&uacute;, is remembered for <em>self-government</em> &mdash; the quiet work of ruling oneself. She ordered her whole day by hand: fixed hours for prayer, for work in her small garden that helped support her family, and for caring for the sick and the poor. Today's grammar is a fitting mirror of that virtue. A reflexive verb, after all, is the grammar of things you do <em>to yourself</em> &mdash; <em>me levanto, me acuesto</em> &mdash; and building a good routine is exactly the daily, self-directed work self-government asks of us. The pronoun says it out loud: the person shaping your day is <em>you</em>.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">4</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 4.04 &mdash; Tu rutina, en orden</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Now that the pronouns move and land in the right place, tomorrow you'll put reflexive verbs to work narrating a <em>whole</em> routine in order &mdash; stringing them together with <em>primero, luego, despu&eacute;s, finalmente</em> and reading a longer passage. Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7; this week is for building the habit.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say three true sentences about yourself out loud: one with a reflexive verb before a conjugated verb (<em>Me despierto a las&hellip;</em>), one with the pronoun attached to an infinitive (<em>Voy a acostarme a las&hellip;</em>), and one non-reflexive contrast (<em>&hellip;y despierto a mi hermano/a</em>).</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The engine is open. You can match the pronoun to the subject, tell <em>lavarse</em> from <em>lavar</em>, and place the pronoun either before the verb or hooked onto the infinitive. The routine words you collected are officially moving. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 4.03 &middot; Reflexive verbs deepened: pronouns &amp; placement</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

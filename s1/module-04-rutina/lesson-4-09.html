@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 4.09</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 4</div>
+        <div style="font-size: 12px; color: #666;">La rutina diaria</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 4.09 &middot; Day 9 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Reading + culture consolidation; quiz prep</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">La rutina diaria</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 4.09</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Un d&iacute;a en el Per&uacute; &mdash; leer, comprender y preparar el quiz</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Read a whole Peruvian day &mdash; then tighten the three things the quiz will check.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">No new grammar and no new words today. This is a <strong>reading + consolidation</strong> day, and your last stop before tomorrow's <strong>Grammar Quiz</strong>. You'll read a longer, culture-rich account of a teenager's day in <strong>Lima, Per&uacute;</strong>, deepen what you know about the country, and then run a focused review of the exact three things the quiz targets: <strong>reflexive pronoun placement</strong>, <strong>stem-changes</strong> (<em>e&rarr;ie</em>, <em>o&rarr;ue</em>), and <strong>frequency-adverb placement</strong>. Read everything out loud &mdash; that's how consolidation sticks.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> read and understand a longer text about a daily routine set in Per&uacute;, identifying its reflexive verbs and frequency adverbs.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how Per&uacute;'s geography and history shape a daily rhythm &mdash; and connect it to the virtue of <em>templanza</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> place reflexive pronouns and frequency adverbs correctly and apply stem-changes &mdash; the three things the Grammar Quiz checks.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Para empezar ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Read to remember, not just to finish</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Tomorrow is the quiz, so today the goal is <em>quiet mastery</em>, not new material. Before you read the Peru text, warm up your eye: skim these three sentences aloud and notice which one <em>feels</em> off &mdash; <em>Me despierto a las seis. / Voy a duchar me. / Siempre me visto r&aacute;pido.</em> Trust that instinct; it's the same instinct the quiz rewards.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Going into tomorrow's Grammar Quiz, which piece do you most want today's review to lock in?</div>
+            <div class="widget-options">
+                <button data-response="Smart target. Part 3 lays out exactly where the pronoun goes &mdash; before a single conjugated verb, or attached to an infinitive after &lsquo;antes de / voy a&rsquo;. Watch for it in the reading too.">Where the reflexive pronoun goes</button>
+                <button data-response="Good instinct &mdash; the stem-changers trip everyone. Remember they change in every form except nosotros: me despierto, but nos despertamos. Part 3 has the full pattern.">The stem-changes (e&rarr;ie, o&rarr;ue)</button>
+                <button data-response="Very useful. Frequency adverbs usually sit right before the verb, and &lsquo;nunca&rsquo; has its own rule. Part 3 and the reading both give you clean models to copy.">Where the frequency adverb goes</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Vocab review with audio ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; REPASO EXPR&Eacute;S DEL VOCABULARIO <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Hear them once, so you catch them in the reading</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Nothing new here &mdash; these are the module's words. Click the <strong>&#128266;</strong> and say each one back. You'll meet every one of them in today's Peru text, so a quick refresh now makes the reading feel easy.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/despertarse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">despertarse</span><span class="v-en">to wake up (e&rarr;ie)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/levantarse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">levantarse</span><span class="v-en">to get up</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/ducharse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">ducharse</span><span class="v-en">to shower</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/vestirse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">vestirse</span><span class="v-en">to get dressed (e&rarr;i)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/peinarse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">peinarse</span><span class="v-en">to comb one's hair</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/acostarse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">acostarse</span><span class="v-en">to go to bed (o&rarr;ue)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/dormirse.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">dormirse</span><span class="v-en">to fall asleep (o&rarr;ue)</span></li>
+        </ul>
+        <p style="font-size:14px;color:#6b7a99;line-height:1.6;margin:12px 0 6px 0;">And how often &mdash; the frequency adverbs:</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/siempre.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">siempre</span><span class="v-en">always</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/a-menudo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">a menudo</span><span class="v-en">often</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/a-veces.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">a veces</span><span class="v-en">sometimes</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/nunca.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">nunca</span><span class="v-en">never</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/todos-los-dias.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">todos los d&iacute;as</span><span class="v-en">every day</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; AUTOEVALUACI&Oacute;N &middot; optional &middot; +3 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Cover the English column and read down the Spanish list aloud, giving the meaning from memory. Any word that makes you pause is your two-minute warm-up right before tomorrow's quiz.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar at-a-glance (quiz prep) ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; LO QUE EL QUIZ VA A REVISAR <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Three things, one page</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 12px 0;">The Grammar Quiz checks exactly three moves you've practiced all module. Here they are side by side &mdash; read each example aloud.</p>
+
+        <p style="font-size:15px;color:#0e1c42;line-height:1.6;margin:6px 0 4px;"><strong>1. Pronoun placement.</strong> With one conjugated verb, the pronoun goes <em>before</em> it. With a verb + infinitive (like <em>voy a&hellip;</em> or after <em>antes de</em>), it can go before the first verb <em>or</em> attach to the infinitive.</p>
+        <table class="gtable">
+            <thead><tr><th>Situation</th><th>Where the pronoun goes</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>One conjugated verb</td><td><strong>Before</strong> the verb</td><td><span class="pron">Me</span> despierto a las seis.</td></tr>
+                <tr><td>Verb + infinitive (<em>voy a&hellip;</em>)</td><td>Before the first verb <em>or</em> attached to the infinitive</td><td><span class="pron">Me</span> voy a duchar. = Voy a ducha<span class="pron">rme</span>.</td></tr>
+                <tr><td>After <em>antes de / despu&eacute;s de</em></td><td>Attached to the infinitive</td><td>Antes de acosta<span class="pron">rme</span>, leo un poco.</td></tr>
+            </tbody>
+        </table>
+
+        <p style="font-size:15px;color:#0e1c42;line-height:1.6;margin:14px 0 4px;"><strong>2. Stem-changes.</strong> Several routine verbs change their stem vowel in every form <em>except nosotros/as</em>. The pronoun still matches the subject.</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>despertarse (e&rarr;ie)</th><th>acostarse (o&rarr;ue)</th><th>vestirse (e&rarr;i)</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td>me desp<span class="pron">ie</span>rto</td><td>me ac<span class="pron">ue</span>sto</td><td>me v<span class="pron">i</span>sto</td></tr>
+                <tr><td>t&uacute;</td><td>te desp<span class="pron">ie</span>rtas</td><td>te ac<span class="pron">ue</span>stas</td><td>te v<span class="pron">i</span>stes</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td>se desp<span class="pron">ie</span>rta</td><td>se ac<span class="pron">ue</span>sta</td><td>se v<span class="pron">i</span>ste</td></tr>
+                <tr><td>nosotros/as</td><td>nos despertamos</td><td>nos acostamos</td><td>nos vestimos</td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td>se desp<span class="pron">ie</span>rtan</td><td>se ac<span class="pron">ue</span>stan</td><td>se v<span class="pron">i</span>sten</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Trap to avoid: <em>nosotros</em> keeps the plain stem (<em>nos acostamos</em>, not <s>nos acuestamos</s>).</p>
+
+        <p style="font-size:15px;color:#0e1c42;line-height:1.6;margin:14px 0 4px;"><strong>3. Frequency-adverb placement.</strong> Most sit right before the verb or at the start/end of the sentence. <em>Nunca</em> goes before the verb, <em>or</em> use <em>no</em> + verb + <em>nunca</em>.</p>
+        <table class="gtable">
+            <thead><tr><th>Adverb</th><th>Typical spot</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>siempre / a veces / a menudo</td><td>Before the verb</td><td>Siempre me peino por la ma&ntilde;ana.</td></tr>
+                <tr><td>todos los d&iacute;as</td><td>Start or end</td><td>Me levanto temprano todos los d&iacute;as.</td></tr>
+                <tr><td>nunca</td><td>Before the verb, <em>or</em> no&hellip; nunca</td><td>Nunca me duermo en clase. = No me duermo nunca en clase.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ===== PART 4 · Practice (quiz rehearsal) ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; ENSAYO DEL QUIZ <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">One question per target</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 6px;">One item for each of the three things above. Read every option before you commit &mdash; that's the habit that raises your quiz score.</p>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TARGET 1 &middot; pronoun placement</div>
+            <div class="widget-question">&ldquo;I'm going to shower before breakfast.&rdquo; Which is written correctly?</div>
+            <div class="widget-options">
+                <button data-correct="false">Voy a me duchar antes de desayunar.</button>
+                <button data-correct="true">Voy a ducharme antes de desayunar.</button>
+                <button data-correct="false">Voy duchar me antes de desayunar.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TARGET 2 &middot; stem-change</div>
+            <div class="widget-question">&ldquo;Mi hermano ___ a las diez de la noche.&rdquo; (goes to bed &mdash; <em>acostarse</em>, o&rarr;ue)</div>
+            <div class="widget-options">
+                <button data-correct="false">se acosta</button>
+                <button data-correct="false">se acostar</button>
+                <button data-correct="true">se acuesta</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TARGET 3 &middot; frequency-adverb placement</div>
+            <div class="widget-question">Which sentence places the frequency adverb naturally? (meaning: <em>I always wake up early</em>)</div>
+            <div class="widget-options">
+                <button data-correct="true">Siempre me despierto temprano.</button>
+                <button data-correct="false">Me despierto siempre nunca temprano.</button>
+                <button data-correct="false">Despierto me siempre temprano.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Commit-then-reveal -->
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn, out loud: describe <strong>three</strong> parts of your day, each with <strong>one reflexive verb + one frequency adverb</strong>. Say all three first &mdash; <em>then</em> reveal a model to check yourself.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Todos los d&iacute;as me despierto a las seis y media. A veces me visto antes de desayunar, pero normalmente desayuno primero. Nunca me acuesto despu&eacute;s de las once entre semana.</strong><br>Notice: the pronoun (<em>me</em>) stays glued to each verb, the stem-changers change (<em>me despierto, me visto</em>), and each frequency adverb sits before the verb. Yours uses your own times &mdash; that's all the quiz asks.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · A leer ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Un d&iacute;a con Diego, en Lima</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 8px 0;">Read it once for the story, then a second time hunting for every reflexive verb and frequency adverb. Everything here is from this module &mdash; think of it as the reading half of tomorrow's quiz.</p>
+        <p style="font-size:17px;color:#1a2340;line-height:1.75;">
+        Me llamo <strong>Diego</strong> y vivo en <strong>Lima</strong>, la capital del Per&uacute;, junto al oc&eacute;ano Pac&iacute;fico. Todos los d&iacute;as <strong>me despierto</strong> a las seis, pero casi siempre <strong>me levanto</strong> unos minutos despu&eacute;s &mdash; la neblina gris de Lima invita a quedarse en la cama. Primero <strong>me ducho</strong> r&aacute;pido; luego <strong>me visto</strong> con el uniforme del colegio y <strong>me peino</strong> frente al espejo. Casi nunca desayuno mucho: normalmente pan con palta y un vaso de jugo. Antes de <strong>salir</strong>, siempre me despido de mi abuela, que ya est&aacute; despierta. Por la tarde, despu&eacute;s de las clases, a veces me re&uacute;no con mis amigos cerca de la Plaza Mayor. Por la noche <strong>me acuesto</strong> a las diez y media y <strong>me duermo</strong> escuchando el mar a lo lejos. Ma&ntilde;ana, otra vez, la misma rutina &mdash; y me gusta que sea as&iacute;.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Answer out loud in Spanish: <em>&iquest;A qu&eacute; hora se despierta Diego? &iquest;Qu&eacute; hace primero, y qu&eacute; hace despu&eacute;s? &iquest;Con qu&eacute; frecuencia se re&uacute;ne con sus amigos?</em> Then count them &mdash; nine reflexive verbs and six frequency adverbs hide in Diego's day. Finding them <em>is</em> quiz practice.</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; PER&Uacute;</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Un pa&iacute;s, tres mundos: costa, sierra y selva</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Diego's foggy morning by the Pacific is only one Peruvian day. Per&uacute; is really <strong>three worlds in one country</strong>: the <em>costa</em> (the desert coast, where <strong>Lima</strong> sits under its famous winter <em>gar&uacute;a</em>, a gray sea-mist); the <em>sierra</em> (the high Andes, home to <strong>Cusco</strong> and <strong>Machu&nbsp;Picchu</strong>, the heart of the old Inca empire); and the <em>selva</em> (the vast Amazon rainforest to the east). A student's <em>rutina</em> looks different in each: coastal Lime&ntilde;os wake to cool gray light, Andean families rise in thin, bright mountain air, and Amazonian towns start the day with river heat by dawn. Same country, same language &mdash; and, in the highlands, often <strong>quechua</strong> too &mdash; but three very different mornings. When you read a Peruvian routine, you're reading a geography. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short authentic map-and-photo gallery of the three regions.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; SELF-GOVERNMENT</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Santa Rosa de Lima</strong> (Lima, Per&uacute;, 1586&ndash;1617) &mdash; the first person born in the Americas to be canonized a saint &mdash; is the patron of the very city where Diego wakes up. What people remembered about her was not one grand act but a <em>whole life ordered by her own hand</em>: she rose early, kept fixed hours for work, prayer, and caring for the sick and poor, and chose the steady, disciplined path over comfort. That is <em>self-government</em>: ruling yourself through small, repeated daily choices rather than dramatic ones. It's exactly the virtue hiding inside a good <em>rutina</em>, and inside good study habits. Reviewing calmly today, a day early, instead of cramming tomorrow, is self-government you can practice this very afternoon.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">10</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 4.10 &mdash; Repaso general &rarr; Grammar Quiz</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow is the last day of M&oacute;dulo 4: a full review and self-check, and then the <strong>Grammar Quiz</strong> (auto-graded, 2 attempts, includes a short listening section). Everything you consolidated today is exactly what it covers &mdash; walk in warmed up. If your <em>Tarea oral</em>, Vocabulary Check, or Lengua en acci&oacute;n aren't submitted yet, wrap those up too.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then read Diego's day out loud one more time, pausing to name each reflexive verb and frequency adverb &mdash; that quiet, unhurried review is your best prep for tomorrow.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You read a whole Peruvian day, saw how a country's geography shapes a morning, and tightened the three grammar moves the quiz will check. Nothing new tomorrow &mdash; just you, warmed up and ready. That calm, prepared feeling? That's <em>templanza</em>. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 4.09 &middot; Un d&iacute;a en el Per&uacute; &mdash; lectura y preparaci&oacute;n del quiz</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

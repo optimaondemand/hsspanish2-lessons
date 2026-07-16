@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 7.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 7</div>
+        <div style="font-size: 12px; color: #666;">Describir y comparar</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 7.01 &middot; Day 1 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Describir a la gente (adjetivos, repaso ampliado)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Describir y comparar</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 7.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Describir a la gente &mdash; adjetivos, repaso ampliado</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Before you compare two people, you have to be able to describe just one, precisely.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Welcome to <strong>M&oacute;dulo 7: Describir y comparar</strong>. Last module you compared clothes and prices; this module you'll compare <strong>people</strong> &mdash; but comparison only works if the description underneath it is accurate. Today is a pure <strong>vocabulary and review</strong> day: no new grammar. You'll widen your bank of physical-description adjectives (this is <em>vocab set A</em> &mdash; personality words return in 7.02), and you'll sharpen a rule you already know from Spanish 1: an adjective has to <strong>agree</strong>, in gender and number, with the person it describes. Getting that agreement automatic now is what will let you describe <em>and</em> compare fluently later this module.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> recognize and pronounce an expanded set of physical-description adjectives (height, build, hair, age).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> make an adjective agree correctly in gender and number with the person it describes (review + expansion).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe a real person's physical appearance in two or three accurate sentences with <em>ser</em>.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Para empezar ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Picture someone, then try to describe them</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Close your eyes for a second and picture a grandparent, a coach, or a close friend. Now try to describe them out loud in Spanish &mdash; height, hair, build &mdash; using only what you already know from Spanish 1. Notice where you run out of words. That gap is exactly what today's vocabulary fills.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">When you tried to describe that person just now, what happened?</div>
+            <div class="widget-options">
+                <button data-response="That's the normal Spanish 1 toolkit — alto/a, bajo/a, joven, and a color or two. Today's list adds several more precise words (fuerte, moreno/a, pelirrojo/a, calvo/a) so your description gets sharper, not just longer.">I had a few words (tall, short, young) but not much more</button>
+                <button data-response="Good instinct — but in Spanish, physical adjectives have to agree with the person: alto for a man, alta for a woman. Part 3's table is built exactly to make that automatic before you reach for English shortcuts.">I described them mostly in English, then translated</button>
+                <button data-response="Excellent — that's the muscle we're strengthening today. Even strong describers usually find one or two gaps (hair color terms, or a word for build) that today's twelve-word list closes.">I got pretty far, but paused on a word or two</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Vocabulario A ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; VOCABULARIO A &middot; EL ASPECTO F&Iacute;SICO <span class="pill-time">13 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Twelve words for describing how someone looks</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Some of these are a refresh from Spanish 1; several are new additions that let you be more precise. Click the <strong>&#128266;</strong> and say each one back &mdash; and notice the <em>/a</em> ending on most of them, which is exactly what Part 3 is about.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/alto.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">alto/a</span><span class="v-en">tall</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/bajo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">bajo/a</span><span class="v-en">short (height)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/de-estatura-mediana.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">de estatura mediana</span><span class="v-en">of average height</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/delgado.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">delgado/a</span><span class="v-en">thin, slim</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/fuerte.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">fuerte</span><span class="v-en">strong, sturdy</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/rubio.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">rubio/a</span><span class="v-en">blond(e)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/moreno.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">moreno/a</span><span class="v-en">dark-haired, dark-skinned</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/pelirrojo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">pelirrojo/a</span><span class="v-en">red-haired</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/calvo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">calvo/a</span><span class="v-en">bald</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/guapo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">guapo/a</span><span class="v-en">good-looking, attractive</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/joven.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">joven</span><span class="v-en">young</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/mayor.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">mayor</span><span class="v-en">older, elderly</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +4 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">For each word, say a sentence about a real person you know: <em>Mi abuelo es mayor y fuerte. Mi prima es rubia y delgada.</em> Saying the <em>-o/-a</em> ending out loud, attached to a real face, is what makes it stick.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Gram&aacute;tica (repaso) ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; REPASO &middot; LA CONCORDANCIA DE ADJETIVOS <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The rule you already know &mdash; now applied to a bigger list</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">No new grammar today &mdash; just the agreement rule from Spanish 1, reviewed so it's automatic before Module 7 asks you to compare people. Adjectives change their ending to match the person they describe:</p>
+        <table class="gtable">
+            <thead><tr><th>Adjective type</th><th>Masc. sing.</th><th>Fem. sing.</th><th>Plural</th></tr></thead>
+            <tbody>
+                <tr><td>ends in <span class="pron">-o</span></td><td>alt<span class="pron">o</span></td><td>alt<span class="pron">a</span></td><td>alt<span class="pron">os</span> / alt<span class="pron">as</span></td></tr>
+                <tr><td>ends in <span class="pron">-e</span> (no change)</td><td>fuert<span class="pron">e</span></td><td>fuert<span class="pron">e</span></td><td>fuert<span class="pron">es</span></td></tr>
+                <tr><td>ends in a consonant (no change)</td><td>jov<span class="pron">en</span></td><td>jov<span class="pron">en</span></td><td>j&oacute;ven<span class="pron">es</span></td></tr>
+                <tr><td>ends in <span class="pron">-dor</span> (adds -a)</td><td>trabaja<span class="pron">dor</span></td><td>trabaja<span class="pron">dora</span></td><td>trabajador<span class="pron">es</span> / trabajador<span class="pron">as</span></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">One-line reminder: <em>-o/-a</em> words change for gender; <em>-e</em> and most consonant endings don't &mdash; but everything adds <em>-s</em> or <em>-es</em> for plural. <strong>Mi hermana es alta y fuerte. Mis hermanos son altos y fuertes.</strong></p>
+    </div>
+
+    <!-- ===== PART 4 &middot; Pract&iacute;calo ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">9 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; agreement with a woman</div>
+            <div class="widget-question">&ldquo;Mi t&iacute;a es muy ___.&rdquo; (My aunt is very tall.)</div>
+            <div class="widget-options">
+                <button data-correct="false">alto</button>
+                <button data-correct="true">alta</button>
+                <button data-correct="false">altos</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; agreement with plural men</div>
+            <div class="widget-question">&ldquo;Mis primos son ___.&rdquo; (My cousins [male] are short.)</div>
+            <div class="widget-options">
+                <button data-correct="true">bajos</button>
+                <button data-correct="false">baja</button>
+                <button data-correct="false">bajas</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; pick the right word</div>
+            <div class="widget-question">&ldquo;Mi abuelo no tiene pelo. Es ___.&rdquo; (My grandfather has no hair.)</div>
+            <div class="widget-options">
+                <button data-correct="false">pelirrojo</button>
+                <button data-correct="false">rubio</button>
+                <button data-correct="true">calvo</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: describe one real person &mdash; a family member or friend &mdash; in two sentences using <em>ser</em> and at least two words from today's list, with correct agreement. Say it out loud, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Mi hermano es alto y delgado. Mi abuela es baja, pero es fuerte y todav&iacute;a muy activa para su edad.</strong> Yours will use your own family &mdash; the frame is <em>[persona] es [adjetivo] y [adjetivo]</em>, with every adjective agreeing with that person.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 &middot; A leer ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        &laquo;Me llamo <strong>Rocío</strong> y vivo en Montevideo, Uruguay, con mi familia. Mi pap&aacute; <strong>es</strong> <strong>alto</strong> y <strong>fuerte</strong>; trabaja en el puerto. Mi mam&aacute; <strong>es</strong> <strong>de estatura mediana</strong> y <strong>morena</strong>, con el pelo largo. Mi hermano menor, Tom&aacute;s, todav&iacute;a <strong>es</strong> muy <strong>joven</strong>, pero ya <strong>es</strong> tan <strong>alto</strong> como yo. Y mi abuelo, que <strong>es</strong> <strong>mayor</strong> y <strong>calvo</strong>, siempre tiene una historia nueva para contar. Los domingos tomamos mate juntos en el patio y escuchamos sus cuentos.&raquo;</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find every adjective describing a person and check its agreement: why <em>alto</em> for Pap&aacute; but <em>morena</em> for Mam&aacute;? Why does <em>joven</em> not change even though it describes Tom&aacute;s, a boy? (It ends in a consonant.)</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; URUGUAY</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El mate: una taza que pasa de mano en mano</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">In Uruguay, sharing <strong>mate</strong> (a hot, bitter infusion drunk from a shared gourd through a metal straw, the <em>bombilla</em>) is one of the most common daily rituals &mdash; on patios, on buses, at the beach, at every family gathering like Roc&iacute;o's Sunday afternoon. One person, the <em>cebador</em>, prepares the mate and passes it around a circle; everyone drinks from the same straw, then hands it back to be refilled and passed to the next person. It's slow on purpose: nobody rushes a round of mate. Grandparents like Roc&iacute;o's, who are <em>mayores</em> and full of stories, are often the ones holding the circle together, and the ritual only works if everyone pays close attention &mdash; whose turn is next, when the gourd is empty, when someone is telling a story worth hearing. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short video of a mate round and a map locating Uruguay and Paraguay, both mate-drinking countries.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; COURTESY</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Jos&eacute; Mujica</strong> (Uruguay, 1935&ndash;2025), the former president the world came to know as <em>&ldquo;el presidente m&aacute;s pobre,&rdquo;</em> described friend and stranger alike with the same plain, respectful attention &mdash; never mocking how tall, short, or simply someone was dressed. That's the courtesy behind today's vocabulary: words like <em>alta</em>, <em>bajo</em>, and <em>pelirrojo</em> are just honest description, offered kindly, never as insults. Courtesy &mdash; <em>la cortes&iacute;a</em> &mdash; means noticing someone's traits accurately and naming them with respect, exactly the balance Mujica modeled toward everyone he met.</p>
+    </div>
+
+    <!-- ===== What's next / assignment ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 7.02 &mdash; personality vocabulary (Vocab set B)</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow adds personality words to today's physical ones, so you can describe the whole person &mdash; body and character. Grammar stays quiet through Day 2; the module's real new grammar, the present progressive, starts around Day 3. Graded work (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then describe one more real person out loud &mdash; two adjectives, correct agreement &mdash; without looking at the list.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You widened your describing vocabulary and locked in a rule you already half-knew &mdash; adjectives agree with the person, every time. That precision is what will make your comparisons later this module actually mean something. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 7.01 &middot; Describir a la gente &mdash; adjetivos, repaso ampliado</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 0.10</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 0</div>
+        <div style="font-size: 12px; color: #666;">Repaso &middot; Re-entry</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 0.10 &middot; Day 10 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Repaso y autoevaluaci&oacute;n</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Repaso &middot; Re-entry</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 0.10</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Repaso y autoevaluaci&oacute;n &mdash; Pulling It All Together</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Today you don't learn anything new &mdash; you find out how much you already own.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is the last day of the <strong>repaso</strong>. Nothing new goes in today; instead you take everything Module 0 reactivated &mdash; the present tense of regular <em>-ar / -er / -ir</em> verbs plus your four workhorse verbs <strong>ser, estar, tener,</strong> and <strong>gustar</strong> &mdash; and check it against yourself. Work through each self-check honestly. Where you hesitate, that's your study list for the <strong>Grammar Quiz</strong>. Where you're quick, that's proof your Spanish is fully back on.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> conjugate a regular <em>-ar / -er / -ir</em> verb in every present-tense form without stopping to think.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> choose correctly between <em>ser</em> and <em>estar</em> and use <em>tener</em> and <em>gustar</em> in a full sentence.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> name exactly which points I still need to review before I open the Grammar Quiz.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Warm-up + check-in ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Take your own temperature</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A good review starts with an honest look at where you stand. Read this little self-portrait aloud and notice which pieces feel automatic: <em>Me llamo&hellip; <strong>Soy</strong> de&hellip; <strong>Estoy</strong> bien. <strong>Tengo</strong> diecis&eacute;is a&ntilde;os y me <strong>gusta</strong> la m&uacute;sica.</em> Four different verbs, one sentence about you. That's the whole module in miniature.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Reading that self-portrait, which part made you pause the longest?</div>
+            <div class="widget-options">
+                <button data-response="Good to notice. ser vs. estar is the classic re-entry sticking point — soy (who I am / where I'm from) vs. estoy (how I feel / where I am right now). Part 3's table lines them up side by side.">Choosing between <em>soy</em> and <em>estoy</em></button>
+                <button data-response="Smart flag. tener has a stubborn yo form (tengo) and shows up in age (tengo … años). You'll see it in the review table — practice the one where it surprised you.">The <em>tengo</em> form of <em>tener</em></button>
+                <button data-response="Honest answer — and a great sign. gustar works backwards from English (me gusta = 'it is pleasing to me'). Part 3 and the practice widgets give it a full pass before the quiz.">How <em>gustar</em> is built</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Vocab review with audio ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; REPASO DE VOCABULARIO <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">One more pass through the module's words</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Nothing new here &mdash; these are the anchor words from all ten days, gathered in one place. Click the <strong>&#128266;</strong>, say each one back, and let the sound remind your ear before the quiz. If any translation surprises you, that's a word to review tonight.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/mucho-gusto.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">mucho gusto</span><span class="v-en">nice to meet you</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/como-estas.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">&iquest;c&oacute;mo est&aacute;s?</span><span class="v-en">how are you? (informal)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/de-donde-eres.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">&iquest;de d&oacute;nde eres?</span><span class="v-en">where are you from?</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-computadora.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la computadora</span><span class="v-en">the computer</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-clase.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la clase</span><span class="v-en">the class</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-tarea.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la tarea</span><span class="v-en">the homework</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/estudiar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">estudiar</span><span class="v-en">to study</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/aprender.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">aprender</span><span class="v-en">to learn</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/escribir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">escribir</span><span class="v-en">to write</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tener.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tener</span><span class="v-en">to have</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/gustar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">gustar</span><span class="v-en">to be pleasing (to like)</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +4 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Cover the English column with your hand and say each meaning from the Spanish alone; then cover the Spanish and produce it from the English. The words you miss in <em>both</em> directions are your top study priority before the quiz.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar review tables ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; EL PRESENTE DE UN VISTAZO <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The whole present tense on two tables</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">First, the regular endings you drop onto any verb after you remove <em>-ar / -er / -ir</em>. Notice the <em>-er</em> and <em>-ir</em> columns are identical except for the <em>nosotros</em> form:</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>-ar (hablar)</th><th>-er (comer)</th><th>-ir (vivir)</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td>habl<span class="pron">o</span></td><td>com<span class="pron">o</span></td><td>viv<span class="pron">o</span></td></tr>
+                <tr><td>t&uacute;</td><td>habl<span class="pron">as</span></td><td>com<span class="pron">es</span></td><td>viv<span class="pron">es</span></td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td>habl<span class="pron">a</span></td><td>com<span class="pron">e</span></td><td>viv<span class="pron">e</span></td></tr>
+                <tr><td>nosotros/as</td><td>habl<span class="pron">amos</span></td><td>com<span class="pron">emos</span></td><td>viv<span class="pron">imos</span></td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td>habl<span class="pron">an</span></td><td>com<span class="pron">en</span></td><td>viv<span class="pron">en</span></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:14px 0 10px;">Then the four irregular verbs Module 0 leaned on. Keep this as your quick-reference &mdash; the third column is <em>when</em> you reach for each one:</p>
+        <table class="gtable">
+            <thead><tr><th>Verb</th><th>yo &middot; t&uacute; &middot; &eacute;l/ella forms</th><th>Use it for&hellip;</th></tr></thead>
+            <tbody>
+                <tr><td><strong>ser</strong> (to be)</td><td><span class="pron">soy &middot; eres &middot; es</span></td><td>identity, origin, what something <em>is</em>: <em>Soy de Texas. Ella es alta.</em></td></tr>
+                <tr><td><strong>estar</strong> (to be)</td><td><span class="pron">estoy &middot; est&aacute;s &middot; est&aacute;</span></td><td>feelings, location, condition right now: <em>Estoy cansado. El libro est&aacute; aqu&iacute;.</em></td></tr>
+                <tr><td><strong>tener</strong> (to have)</td><td><span class="pron">tengo &middot; tienes &middot; tiene</span></td><td>possession &amp; age: <em>Tengo un perro. Tengo quince a&ntilde;os.</em></td></tr>
+                <tr><td><strong>gustar</strong> (to please)</td><td><span class="pron">me / te / le gusta(n)</span></td><td>likes: <em>gusta</em> + one thing, <em>gustan</em> + more than one: <em>Me gusta el caf&eacute;. Me gustan los libros.</em></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">The one-line reminder for <em>ser</em> vs. <em>estar</em>: <strong>ser</strong> tells us <em>who/what</em> (permanent identity), <strong>estar</strong> tells us <em>how/where</em> (a state or place that can change).</p>
+    </div>
+
+    <!-- ===== PART 4 · Self-check practice ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; AUTOEVALUACI&Oacute;N <span class="pill-time">12 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Four checks &mdash; one for each verb family</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 4px;">Answer each one before you check it. A miss isn't a problem &mdash; it's a signpost pointing you to what to review tonight.</p>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; CHECK 1 &middot; regular present</div>
+            <div class="widget-question">&ldquo;Mis amigos y yo ___ espa&ntilde;ol todos los d&iacute;as.&rdquo; (My friends and I study Spanish every day.)</div>
+            <div class="widget-options">
+                <button data-correct="false">estudian</button>
+                <button data-correct="true">estudiamos</button>
+                <button data-correct="false">estudias</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; CHECK 2 &middot; ser vs. estar</div>
+            <div class="widget-question">&ldquo;Hoy yo ___ un poco cansada.&rdquo; (Today I'm a little tired.)</div>
+            <div class="widget-options">
+                <button data-correct="false">soy</button>
+                <button data-correct="false">tengo</button>
+                <button data-correct="true">estoy</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; CHECK 3 &middot; tener</div>
+            <div class="widget-question">&ldquo;&iquest;Cu&aacute;ntos a&ntilde;os ___ (t&uacute;)?&rdquo; (How old are you?)</div>
+            <div class="widget-options">
+                <button data-correct="true">tienes</button>
+                <button data-correct="false">tengo</button>
+                <button data-correct="false">eres</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; CHECK 4 &middot; gustar</div>
+            <div class="widget-question">&ldquo;A m&iacute; me ___ las clases de arte.&rdquo; (I like art classes.)</div>
+            <div class="widget-options">
+                <button data-correct="false">gusta</button>
+                <button data-correct="true">gustan</button>
+                <button data-correct="false">gusto</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Now put all four verbs to work at once. Describe yourself out loud in one sentence: your name, where you're <em>from</em>, how you <em>feel</em> today, one thing you <em>have</em>, and one thing you <em>like</em>. Say it first, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Me llamo Sof&iacute;a. Soy de Chicago, estoy contenta hoy, tengo dos hermanos y me gustan los deportes.</strong> Yours uses your own facts &mdash; the frame is <em>Soy de&hellip; (ser) + estoy&hellip; (estar) + tengo&hellip; (tener) + me gusta(n)&hellip; (gustar)</em>. If you produced all four cleanly, you're ready for the quiz.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · Reading ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        &laquo;Hola. Me llamo <strong>Diego</strong> y <strong>soy</strong> de Quito, la capital de Ecuador. Ahora mismo <strong>estoy</strong> en la biblioteca porque <strong>estudio</strong> para un examen. <strong>Tengo</strong> diecisiete a&ntilde;os y <strong>vivo</strong> con mi familia cerca del centro. En mi tiempo libre me <strong>gusta</strong> la m&uacute;sica y me <strong>gustan</strong> mucho los idiomas &mdash; <strong>aprendo</strong> espa&ntilde;ol, ingl&eacute;s y un poco de quechua. Los fines de semana mis amigos y yo <strong>comemos</strong> en el mercado y <strong>hablamos</strong> de todo. &iexcl;La vida en Quito me <strong>gusta</strong> mucho!&raquo;</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Every Module 0 verb is hiding in this paragraph. Find one example of each: a regular <em>-ar</em>, a regular <em>-er</em>, a regular <em>-ir</em>, <em>ser</em>, <em>estar</em>, <em>tener,</em> and <em>gustar</em>. Why is it <em>me gusta la m&uacute;sica</em> but <em>me gustan los idiomas</em>? (One thing vs. more than one.)</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; EL MUNDO HISPANO</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Del saludo al mundo entero</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Two weeks ago you started with a single <em>hola</em>. Today you can introduce yourself, describe how you feel, say what you have, and share what you like &mdash; and you can do it with speakers from Quito to Sevilla to San Juan. That reach is real: Spanish is official in <strong>21 countries</strong> and spoken by roughly <strong>500 million</strong> people, and the small differences you'll meet &mdash; <em>&iquest;c&oacute;mo est&aacute;s?</em> in one country, <em>&iquest;c&oacute;mo andas?</em> in another &mdash; are the texture of a living language, not obstacles. Every module this year drops you into a new corner of that world. This module was the doorway; keep walking through it. <span style="color:#6b7a99;font-size:14px;">(In the full course this closes with a short <em>mapa del mundo hispano</em> reflection before the Grammar Quiz.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; LAS SIETE VIRTUDES</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">You've now practiced pieces of <strong>las siete virtudes</strong> &mdash; <em>valor, cortes&iacute;a, honestidad, perseverancia, autogobierno, servicio,</em> and <em>responsabilidad</em> &mdash; across these ten days, usually without noticing it happening. Two weeks of small, steady sessions turned a rusty summer into a working present tense; that is <em>perseverancia</em> in practice. Bring the same habits into today's self-check and into Module 1 &mdash; the seven virtudes don't end with this module, they just keep showing up in new grammar.</p>
+    </div>
+
+    <!-- ===== What's next / assignment ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2A9D5C; color: #fff; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">&#128221;</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Take the Module 0 Grammar Quiz</strong> (30 pts &middot; auto-graded &middot; 2 attempts)</div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">It covers exactly what you reviewed today: regular present-tense verbs plus <em>ser, estar, tener,</em> and <em>gustar</em>, with a short listening section. Open it once you can say today's self-portrait sentence without stopping. You have <strong>two attempts</strong> &mdash; use the first to learn where you stand and the review tables above to close any gaps.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Then begin Lesson 1.01 &mdash; La tecnolog&iacute;a y la comunicaci&oacute;n</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Module 1 opens the real work of the year: you keep the present tense you just consolidated and start adding the <em>yo</em>-irregular verbs (<em>-go, -igo</em>), with a first stop in <strong>Guatemala</strong>. The re-entry is over &mdash; now we build.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say your full self-portrait aloud one last time &mdash; <em>name (ser) + feeling (estar) + something you have (tener) + something you like (gustar)</em> &mdash; and go open the Grammar Quiz while it's fresh.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Ten days ago your Spanish was asleep; today you can conjugate the present tense, switch between <em>ser</em> and <em>estar</em>, and say what you have and what you like &mdash; and you know exactly what to review before the quiz. That's what a good repaso does. <em>&iexcl;Mucha suerte, y hasta el M&oacute;dulo 1!</em></p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 0.10 &middot; Repaso y autoevaluaci&oacute;n</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

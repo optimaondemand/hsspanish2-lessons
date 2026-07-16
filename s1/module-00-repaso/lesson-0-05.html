@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 0.05</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 0</div>
+        <div style="font-size: 12px; color: #666;">Repaso &middot; Re-entry</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 0.05 &middot; Day 5 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Ser vs. estar (repaso)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Repaso &middot; Re-entry</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 0.05</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Ser o estar: dos maneras de decir &ldquo;to be&rdquo;</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">English has one verb for &ldquo;to be.&rdquo; Spanish gives you two &mdash; and the choice is never random.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">You already know both <strong>ser</strong> and <strong>estar</strong> from Spanish 1 &mdash; today we stop treating them as twins and line up <em>when</em> each one is the right call. The short version: <strong>ser</strong> tells us <em>who or what something essentially is</em>; <strong>estar</strong> tells us <em>how it feels or where it is right now</em>. Same English word, two very different jobs. By the end you'll pick the right one on purpose, not by luck.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use <em>ser</em> for identity, origin, and lasting characteristics.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use <em>estar</em> for location, feelings, and changing conditions.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> choose between <em>ser</em> and <em>estar</em> when the choice changes the meaning.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Same word, different meaning</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Read these two sentences aloud: <em>&mdash;Mi hermano <strong>es</strong> serio.</em> and <em>&mdash;Mi hermano <strong>est&aacute;</strong> serio hoy.</em> Both translate to English with &ldquo;is,&rdquo; but they don't mean the same thing. The first says seriousness is <em>part of who he is</em> (ser). The second says he's <em>acting serious right now</em>, maybe something happened (estar). Spanish makes you decide which you mean &mdash; that's the whole game today.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Before we sort the rules: which sentence sounds more like <em>a permanent trait</em> to your ear?</div>
+            <div class="widget-options">
+                <button data-response="Good instinct. 'Mi hermano es serio' does point to a lasting trait — that's the ser job. We'll confirm the pattern in Part 3.">Mi hermano <strong>es</strong> serio.</button>
+                <button data-response="Interesting — 'Mi hermano está serio hoy' actually reads as a temporary mood ('he's being serious today'). The permanent-trait version uses 'es.' No worries: that contrast is exactly what Part 3 lays out.">Mi hermano <strong>est&aacute;</strong> serio hoy.</button>
+                <button data-response="Totally fair to feel unsure — that's why the two verbs trip people up. Part 3 gives you a clean rule so you won't have to guess.">Honestly, I can't tell yet.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; PALABRAS PARA DESCRIBIR <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Adjectives you already own &mdash; listen and refresh</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Every one of these is a Spanish 1 word &mdash; we're not adding new vocabulary today, just waking these back up so you have something to describe. Click the <strong>&#128266;</strong> and repeat each aloud. Notice that most of them end in <em>-o</em> and change to <em>-a</em> for a female subject (<em>cansado / cansada</em>).</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/cansado.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">cansado / cansada</span><span class="v-en">tired</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/contento.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">contento / contenta</span><span class="v-en">happy, content</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/enfermo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">enfermo / enferma</span><span class="v-en">sick</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/ocupado.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">ocupado / ocupada</span><span class="v-en">busy</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/nervioso.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">nervioso / nerviosa</span><span class="v-en">nervous</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/enojado.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">enojado / enojada</span><span class="v-en">angry, mad</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/inteligente.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">inteligente</span><span class="v-en">intelligent</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/simpatico.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">simp&aacute;tico / simp&aacute;tica</span><span class="v-en">nice, friendly</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/trabajador.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">trabajador / trabajadora</span><span class="v-en">hardworking</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/aburrido.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">aburrido / aburrida</span><span class="v-en">bored / boring</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; F&Iacute;JATE &middot; optional &middot; +3 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Sort these into two mental buckets: which ones feel like <em>a personality trait</em> (inteligente, simp&aacute;tico, trabajador) and which feel like <em>a passing mood or state</em> (cansado, contento, enfermo, ocupado, nervioso, enojado)? Hold that split in mind &mdash; it's the same split ser and estar make.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; SER Y ESTAR &mdash; DOS TRABAJOS <span class="pill-time">9 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">First, the forms &mdash; then the rule</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">You've seen <strong>ser</strong> already this week (Lesson 0.01). Here it is next to <strong>estar</strong>. Read across each row &mdash; and watch the accent marks on <em>estar</em>: they're not optional, they change the word.</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>ser (who/what)</th><th>estar (how/where)</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">soy</span></td><td><span class="pron">estoy</span></td></tr>
+                <tr><td>t&uacute;</td><td><span class="pron">eres</span></td><td><span class="pron">est&aacute;s</span></td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td><span class="pron">es</span></td><td><span class="pron">est&aacute;</span></td></tr>
+                <tr><td>nosotros/as</td><td><span class="pron">somos</span></td><td><span class="pron">estamos</span></td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td><span class="pron">son</span></td><td><span class="pron">est&aacute;n</span></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:14px 0 8px 0;">Now the important part &mdash; <strong>when</strong> you reach for each one:</p>
+        <table class="gtable">
+            <thead><tr><th>Use it for&hellip;</th><th>Verb</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>Identity / who someone is</td><td><span class="pron">ser</span></td><td>Ella <span class="pron">es</span> profesora.</td></tr>
+                <tr><td>Origin / where you're from</td><td><span class="pron">ser</span></td><td>Nosotros <span class="pron">somos</span> de M&eacute;xico.</td></tr>
+                <tr><td>Lasting characteristics</td><td><span class="pron">ser</span></td><td>Mis amigos <span class="pron">son</span> simp&aacute;ticos.</td></tr>
+                <tr><td>Location / where something is</td><td><span class="pron">estar</span></td><td>La escuela <span class="pron">est&aacute;</span> en el centro.</td></tr>
+                <tr><td>Feelings / emotions</td><td><span class="pron">estar</span></td><td>Yo <span class="pron">estoy</span> contenta hoy.</td></tr>
+                <tr><td>Conditions that change</td><td><span class="pron">estar</span></td><td>Los estudiantes <span class="pron">est&aacute;n</span> cansados.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">A shortcut that works most of the time: if it's a <em>trait</em> that would stay true tomorrow &rarr; <strong>ser</strong>. If it's a <em>mood, health, or location</em> that could be different tomorrow &rarr; <strong>estar</strong>.</p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">9 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; ser or estar?</div>
+            <div class="widget-question">&ldquo;Madrid ___ en Espa&ntilde;a.&rdquo; (location) Which verb?</div>
+            <div class="widget-options">
+                <button data-correct="false">es</button>
+                <button data-correct="true">est&aacute;</button>
+                <button data-correct="false">son</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; pick the right form</div>
+            <div class="widget-question">&ldquo;Mis amigos ___ contentos hoy.&rdquo; (a feeling, right now) Which fits?</div>
+            <div class="widget-options">
+                <button data-correct="false">son</button>
+                <button data-correct="false">somos</button>
+                <button data-correct="true">est&aacute;n</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; trait or state?</div>
+            <div class="widget-question">&ldquo;Mi hermana ___ muy inteligente.&rdquo; (a lasting characteristic) Which verb?</div>
+            <div class="widget-options">
+                <button data-correct="true">es</button>
+                <button data-correct="false">est&aacute;</button>
+                <button data-correct="false">est&aacute;n</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: say <strong>one lasting trait</strong> about yourself with <em>ser</em>, and <strong>how you feel right now</strong> with <em>estar</em> &mdash; in one breath. Say it out loud, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Yo soy trabajadora, pero hoy estoy un poco cansada.</strong> (&ldquo;I'm hardworking, but today I'm a little tired.&rdquo;) Yours will use your own trait and mood &mdash; the frame is <em>Soy&hellip; pero hoy estoy&hellip;</em></div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        Me llamo <strong>Valeria</strong> y <strong>soy</strong> de Quito, Ecuador. <strong>Soy</strong> estudiante y tambi&eacute;n <strong>soy</strong> muy trabajadora &mdash; siempre tengo mucho que hacer. Hoy <strong>estoy</strong> un poco nerviosa porque tengo un examen, pero tambi&eacute;n <strong>estoy</strong> contenta: mi mejor amiga <strong>est&aacute;</strong> aqu&iacute; conmigo. Nuestra escuela <strong>est&aacute;</strong> cerca de la plaza central, y a esta hora la plaza <strong>est&aacute;</strong> llena de gente. Mis profesores <strong>son</strong> simp&aacute;ticos y pacientes. &iexcl;La vida <strong>es</strong> buena!</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Go back through the passage and label each <em>ser</em>/<em>estar</em>: is it identity/origin/trait (ser) or feeling/location/condition (estar)? Notice that Valeria is <em>trabajadora</em> with <strong>ser</strong> (a trait) but <em>nerviosa</em> with <strong>estar</strong> (today's mood). Same girl, two verbs.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; EL MUNDO HISPANO</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>La plaza: el coraz&oacute;n del pueblo</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Notice where Valeria's school <em>est&aacute;</em> &mdash; near the <strong>plaza central</strong>. In most Spanish and Latin American towns, the central square (the <em>plaza mayor</em> in Spain, the <em>z&oacute;calo</em> in Mexico, the <em>Plaza de Armas</em> across much of South America) is the true heart of the community. The main church and the town hall usually face it, and in the evenings families, friends, and neighbors gather there simply to walk, talk, and be together &mdash; a stroll known as the <em>paseo</em>. It's the perfect place for <em>estar</em>: it answers <em>where people are</em> and captures a rhythm of daily life you'll find from Madrid to Quito to Lima. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short photo tour &mdash; <em>Plazas del mundo hispano</em>.)</span></p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; LAS SIETE VIRTUDES</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Choosing between <em>ser</em> and <em>estar</em> is really a small act of <em>honestidad</em>, one of <strong>las siete virtudes</strong>: pausing to ask what's actually true &mdash; a lasting trait or a passing state &mdash; instead of guessing and moving on. That same honest attention to precise meaning is what Optima asks of you in every subject, not only Spanish. Get in the habit here, and it travels with you.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">6</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 0.06 &mdash; Tener y sus expresiones</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll refresh the verb <em>tener</em> and the everyday expressions built on it (<em>tener hambre, tener a&ntilde;os, tener que&hellip;</em>). Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7 &mdash; these first days are for rebuilding your foundation.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say three sentences about yourself out loud: one with <em>ser</em> (a trait), one with <em>estar</em> (how you feel), and one with <em>estar</em> (where you are right now).</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Two verbs, one job each: <strong>ser</strong> for who and what you essentially are, <strong>estar</strong> for how you feel and where you are right now. You can conjugate both, and &mdash; the hard part &mdash; you can <em>choose</em> between them on purpose. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 0.05 &middot; Ser vs. estar (repaso)</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

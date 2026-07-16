@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 5.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 5</div>
+        <div style="font-size: 12px; color: #666;">La gente y las cosas</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 5.02 &middot; Day 2 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Vocab B: las cosas (everyday objects &amp; possessions) + light usage</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">La gente y las cosas</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Las cosas &mdash; lo que llevas, prestas y compartes</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Yesterday you named the <em>people</em> around you. Today you name the <em>things</em> that pass between them.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Every day you carry, lose, lend, and borrow a small pile of objects &mdash; <strong>las llaves</strong>, <strong>el cargador</strong>, <strong>los aud&iacute;fonos</strong>. This is the second half of M&oacute;dulo 5's theme: <em>las cosas</em> &mdash; everyday objects, possessions, and gadgets. There is <strong>no new grammar</strong> today. We're stocking your shelves with fresh words and putting them to work with verbs you already own from Spanish 1 (<em>tener, llevar, prestar, devolver, compartir</em>). Tomorrow, in 5.03, we'll add the first real grammar of the module &mdash; <em>saber</em> vs. <em>conocer</em>.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> recognize and pronounce everyday-object words like <em>el cargador</em>, <em>las llaves</em>, <em>el aparato</em>, and <em>el recuerdo</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> talk about carrying, lending, returning, and sharing my things using <em>llevar</em>, <em>prestar</em>, <em>devolver</em>, and <em>compartir</em> (verbs I already own).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> combine today's objects with yesterday's people words to say who shares what with whom.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Empty your pockets</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Take a second and picture what's in your backpack or your pockets right now. Phone, keys, a charger, headphones, maybe a wallet or a little keepsake you carry around. These are <em>las cosas</em> &mdash; the things of daily life &mdash; and every one of them has a Spanish name you're about to learn. Some you'll even recognize before I say them.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">If you had to leave the house with just <em>one</em> object besides your phone, which would it be? Pick the closest &mdash; you'll learn its exact Spanish word in Part 2.</div>
+            <div class="widget-options">
+                <button data-response="&iexcl;Claro! You can't get far without them. Keys are las llaves &mdash; always plural in Spanish, like &lsquo;the keys.&rsquo; Watch for it in Part 2.">Keys</button>
+                <button data-response="A modern essential. A charger is el cargador &mdash; from the verb cargar, &lsquo;to charge/load.&rsquo; It's coming up in the vocabulary below.">Charger</button>
+                <button data-response="Good thinking. A wallet is la cartera. You'll add it to your list in Part 2 &mdash; keep an eye out.">Wallet</button>
+                <button data-response="Sweet choice. A small keepsake or souvenir is un recuerdo &mdash; the same word Spanish uses for a &lsquo;memory.&rsquo; You'll meet it below.">A keepsake / souvenir</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; VOCAB B &mdash; LAS COSAS <span class="pill-time">12 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Listen, then say each one back</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Click the <strong>&#128266;</strong> and repeat aloud. First, the <strong>objects and gadgets</strong> you carry &mdash; notice each one's article (<em>el / la / los / las</em>), because that gender will matter all module.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-aparato.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el aparato</span><span class="v-en">device, gadget</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-cargador.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el cargador</span><span class="v-en">charger</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/los-audifonos.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">los aud&iacute;fonos</span><span class="v-en">headphones, earbuds</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/las-llaves.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">las llaves</span><span class="v-en">keys</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-cartera.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la cartera</span><span class="v-en">wallet</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-recuerdo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el recuerdo</span><span class="v-en">souvenir, keepsake (also: memory)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-mochila.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la mochila</span><span class="v-en">backpack</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-paraguas.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el paraguas</span><span class="v-en">umbrella</span></li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 16px 0 6px 0;">Now the <strong>verbs</strong> for what we <em>do</em> with our things &mdash; every one is a present-tense verb you already know how to conjugate.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/llevar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">llevar</span><span class="v-en">to carry, to take (along)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/prestar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">prestar</span><span class="v-en">to lend</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/devolver.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">devolver (o&rarr;ue)</span><span class="v-en">to return, to give back</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/compartir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">compartir</span><span class="v-en">to share</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/guardar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">guardar</span><span class="v-en">to keep, to put away</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +4 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Two of today's words are a matched pair: <em>prestar</em> (to lend &mdash; you hand it over) and <em>devolver</em> (to give it back). If your <em>colega</em> lends you a charger, the polite thing is to <em>devolver el cargador</em> the next day. Keep that pair in mind &mdash; you'll use it in the reading and in tomorrow's grammar.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; PON LAS PALABRAS A TRABAJAR <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">A quick refresher, not a new rule</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">To put these objects to work you just need present-tense verbs you already own. Here they are lined up with today's things &mdash; notice how the object keeps its own article, and how <em>devolver</em> stem-changes (<em>o&rarr;ue</em>) in the singular, exactly like <em>poder</em> and <em>volver</em> from Spanish 1:</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>llevar / prestar / compartir</th><th>devolver (o&rarr;ue)</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">llevo</span> / <span class="pron">presto</span> / <span class="pron">comparto</span></td><td><span class="pron">devuelvo</span></td></tr>
+                <tr><td>t&uacute;</td><td><span class="pron">llevas</span> / <span class="pron">prestas</span> / <span class="pron">compartes</span></td><td><span class="pron">devuelves</span></td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td><span class="pron">lleva</span> / <span class="pron">presta</span> / <span class="pron">comparte</span></td><td><span class="pron">devuelve</span></td></tr>
+                <tr><td>nosotros/as</td><td><span class="pron">llevamos</span> / <span class="pron">prestamos</span> / <span class="pron">compartimos</span></td><td><span class="pron">devolvemos</span></td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td><span class="pron">llevan</span> / <span class="pron">prestan</span> / <span class="pron">comparten</span></td><td><span class="pron">devuelven</span></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Build a sentence the simple way &mdash; <em>subject + verb + the thing</em> &mdash; and add a person with <em>a</em> or <em>con</em>: <em>Llevo el paraguas en la mochila. Presto el cargador a mi compa&ntilde;ero. Comparto los aud&iacute;fonos con mi hermana.</em> This is all review. <span style="color:#0e1c42;">Tomorrow you'll learn the shortcut words (<em>lo, la, le</em>) that let you avoid repeating the thing's name &mdash; but not today.</span></p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">9 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; name the object</div>
+            <div class="widget-question">Tu tel&eacute;fono est&aacute; casi sin bater&iacute;a. Necesitas&hellip;</div>
+            <div class="widget-options">
+                <button data-correct="false">las llaves</button>
+                <button data-correct="false">el paraguas</button>
+                <button data-correct="true">el cargador</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; pick the right verb</div>
+            <div class="widget-question">Tu colega no tiene bol&iacute;grafo y necesita uno por un minuto. Yo ___ el bol&iacute;grafo a mi colega.</div>
+            <div class="widget-options">
+                <button data-correct="true">presto</button>
+                <button data-correct="false">guardo</button>
+                <button data-correct="false">devuelvo</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; the right form of devolver</div>
+            <div class="widget-question">&ldquo;Mi hermano y yo ___ los aud&iacute;fonos a nuestro vecino ma&ntilde;ana.&rdquo; Choose the <em>nosotros</em> form.</div>
+            <div class="widget-options">
+                <button data-correct="false">devuelvo</button>
+                <button data-correct="true">devolvemos</button>
+                <button data-correct="false">devuelven</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: say one true sentence out loud about a thing you share or lend &mdash; use one object from today + one verb + a person from yesterday (<em>vecino, compa&ntilde;ero, colega, hermano/a</em>). Then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Comparto mi cargador con mi compa&ntilde;era de clase, y ella comparte sus aud&iacute;fonos conmigo.</strong> Yours will use your own thing and person &mdash; the frame is <em>[Yo] + [verbo] + [la cosa] + con / a + [persona]</em>. Keep the object's article: <em>el</em> cargador, <em>las</em> llaves, <em>los</em> aud&iacute;fonos.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        Me llamo Tom&aacute;s y estudio en Santiago de <strong>Chile</strong>. En mi mochila siempre llevo lo mismo: <strong>las llaves</strong> de casa, <strong>el cargador</strong> del tel&eacute;fono y <strong>los aud&iacute;fonos</strong>. Mi <strong>compa&ntilde;ero</strong> Beno siempre olvida sus cosas, as&iacute; que yo <strong>presto</strong> el cargador a Beno casi todos los d&iacute;as &mdash; y Beno siempre <strong>devuelve</strong> el cargador al final de la clase. Mi <strong>vecina</strong> do&ntilde;a Rosa tiene un peque&ntilde;o <strong>recuerdo</strong> de lapisl&aacute;zuli, una piedra azul t&iacute;pica de Chile; yo <strong>guardo</strong> un recuerdo igual en la <strong>cartera</strong> como amuleto. Cuando llueve, mi hermana y yo <strong>compartimos</strong> el <strong>paraguas</strong> hasta el metro. Cosas peque&ntilde;as, pero dicen mucho de la gente que uno tiene cerca.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Which three things does Tom&aacute;s always carry in his backpack? What does he lend to Beno &mdash; and what does Beno do at the end of class? Notice how the verbs from Part 3 (<em>prestar, devolver, compartir, guardar</em>) each show up with a real object and a real person from yesterday's list.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; CHILE</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El lapisl&aacute;zuli &mdash; la piedra azul de Chile</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Of all the <em>recuerdos</em> a visitor brings home from Chile, few are as Chilean as <strong>lapisl&aacute;zuli</strong> &mdash; a deep-blue semiprecious stone mined high in the Andes. Chile is one of only <strong>two</strong> countries in the world (with Afghanistan) that produce it in quantity, and Chileans consider it a national stone. In the artisan markets of Santiago, whole stalls sell rings, pendants, and small carved objects in that unmistakable blue. When a Chilean gives you a piece of <em>lapisl&aacute;zuli</em>, they aren't just handing you an <em>aparato</em> or a trinket &mdash; they're giving you a <em>recuerdo</em>, a keepsake meant to carry a memory. Objects, in every culture, are quietly about the people attached to them. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short clip &mdash; a walk through a lapisl&aacute;zuli stall in Santiago.)</span></p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; RESPONSIBILITY</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Gabriela Mistral</strong> (Chile, 1889&ndash;1957), the Nobel-winning poet and teacher, lived responsibly with what she had &mdash; she famously directed the proceeds of her writing toward children in need rather than keeping them for herself. Responsibility with <em>las cosas</em> means the same for you: when you <em>pides prestado</em> (borrow) something, you own returning it; when you <em>compartes</em> (share) what's yours, you're using it well. Today's small vocabulary carries a real habit &mdash; being someone others can trust with what belongs to them.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 5.03 &mdash; Saber o conocer: dos maneras de decir &ldquo;to know&rdquo;</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">With both halves of the theme now in hand &mdash; the people (5.01) and the things (5.02) &mdash; tomorrow you meet the module's first real grammar: the two Spanish verbs for &ldquo;to know,&rdquo; <em>saber</em> and <em>conocer</em>. Graded work (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7; Days 1&ndash;6 are for building the words and the habit.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then look inside your own bag or pockets and name three real objects out loud in Spanish &mdash; with their articles &mdash; and say one thing you do with each (<em>llevo&hellip;, presto&hellip;, comparto&hellip;</em>).</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You now have both halves of M&oacute;dulo 5's theme: yesterday's <em>gente</em> and today's <em>cosas</em>. You can name the objects you carry, keep their articles straight, and say how you lend, return, and share them &mdash; all with present-tense verbs you already knew. Hold on to <em>prestar</em> and <em>devolver</em> especially: tomorrow's <em>saber</em> vs. <em>conocer</em> is where the module's grammar really begins. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 5.02 &middot; La gente y las cosas</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

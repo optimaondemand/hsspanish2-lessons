@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 7.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 7</div>
+        <div style="font-size: 12px; color: #666;">Describir y comparar</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 7.04 &middot; Day 4 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">El progresivo: -iendo e irregulares (leyendo, durmiendo)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Describir y comparar</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 7.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> El progresivo con -er/-ir: leyendo, durmiendo y m&aacute;s</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Not every verb turns into &ldquo;-ando&rdquo; &mdash; and a few refuse to follow the rule at all.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Yesterday you built <strong>estar + -ando</strong> for -ar verbs (hablando, jugando). Today you finish the picture: -er and -ir verbs take <strong>-iendo</strong> (comiendo, viviendo), and a handful of very common verbs bend the spelling &mdash; <strong>leer &rarr; leyendo</strong>, <strong>dormir &rarr; durmiendo</strong>. These aren't random exceptions; they follow two small, predictable patterns you'll use constantly this year.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> form the present progressive of regular -er/-ir verbs with <em>-iendo</em> (comiendo, viviendo, escribiendo).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use the two irregular-gerund patterns correctly: vowel-stem verbs like <em>leer &rarr; leyendo</em>, <em>o&iacute;r &rarr; oyendo</em>, <em>traer &rarr; trayendo</em>; and stem-changing -ir verbs like <em>dormir &rarr; durmiendo</em>, <em>pedir &rarr; pidiendo</em>, <em>decir &rarr; diciendo</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> read a short passage describing what several people are doing right now and identify each gerund correctly.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Half the pattern is already yours</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In Lesson 7.03 you built <em>estar + -ando</em> for -ar verbs: <em>estoy hablando, est&aacute; jugando, estamos trabajando.</em> The frame &mdash; a form of <strong>estar</strong> plus a gerund &mdash; doesn't change today. Only the ending for -er/-ir verbs changes, and a few very common verbs change their spelling along the way.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Right now, in this lesson, what are you doing?</div>
+            <div class="widget-options">
+                <button data-response="Exacto — 'leyendo' is the -iendo form of leer, and it's one of today's two star irregulars. You'll see exactly why it isn't 'leendo' in Part 3.">Estoy leyendo esta p&aacute;gina.</button>
+                <button data-response="Bien — 'escribiendo' is a regular -iendo form (escribir → escribiendo), no surprises there. Compare it to 'leyendo' in Part 3 and you'll see the difference.">Estoy escribiendo mis respuestas.</button>
+                <button data-response="¡Cierto también! 'Pensando' is a regular -ando form since pensar is an -ar verb. Today's lesson is about the -er/-ir side of the pattern — Part 3 lines it all up.">Estoy pensando en espa&ntilde;ol.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; VERBOS QUE YA CONOCES <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Listen and say each infinitive &mdash; you'll turn these into gerunds next</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Every verb below is one you already use in the present tense. Click <strong>&#128266;</strong>, repeat it aloud, and picture yourself doing each action &mdash; you're about to describe it happening <em>right now</em>.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/leer.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">leer</span><span class="v-en">to read</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/comer.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">comer</span><span class="v-en">to eat</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/escribir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">escribir</span><span class="v-en">to write</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/vivir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">vivir</span><span class="v-en">to live</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/dormir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">dormir</span><span class="v-en">to sleep</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/pedir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">pedir</span><span class="v-en">to ask for / order</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/servir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">servir</span><span class="v-en">to serve</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/decir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">decir</span><span class="v-en">to say / tell</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/oir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">o&iacute;r</span><span class="v-en">to hear</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/traer.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">traer</span><span class="v-en">to bring</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +5 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Sort these ten infinitives into two piles before you read Part 3: verbs you think will be perfectly regular in the gerund, and verbs you suspect will change spelling. Check your guesses against the table.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; -IENDO Y SUS DOS PATRONES IRREGULARES <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">One ending, two small exceptions</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">For -er and -ir verbs, drop the ending and add <strong>-iendo</strong> &mdash; the same <strong>estar</strong> frame from yesterday:</p>
+        <table class="gtable">
+            <thead><tr><th>Verb</th><th>Gerund</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>comer</td><td><span class="pron">comiendo</span></td><td>Estoy <span class="pron">comiendo</span> un s&aacute;ndwich.</td></tr>
+                <tr><td>vivir</td><td><span class="pron">viviendo</span></td><td>Ella est&aacute; <span class="pron">viviendo</span> en Montevideo.</td></tr>
+                <tr><td>escribir</td><td><span class="pron">escribiendo</span></td><td>Estamos <span class="pron">escribiendo</span> la tarea.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:14px 0 6px 0;"><strong>Pattern 1 &mdash; vowel-stem verbs:</strong> when the stem ends in a vowel, the unstressed <em>-i-</em> of <em>-iendo</em> becomes a <strong>y</strong> so two vowels don't collide.</p>
+        <table class="gtable">
+            <thead><tr><th>Verb</th><th>Gerund</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>leer</td><td><span class="pron">leyendo</span></td><td>&iquest;Qu&eacute; est&aacute;s <span class="pron">leyendo</span>?</td></tr>
+                <tr><td>o&iacute;r</td><td><span class="pron">oyendo</span></td><td>Estamos <span class="pron">oyendo</span> m&uacute;sica paraguaya.</td></tr>
+                <tr><td>traer</td><td><span class="pron">trayendo</span></td><td>Mi abuela est&aacute; <span class="pron">trayendo</span> mate.</td></tr>
+                <tr><td>construir</td><td><span class="pron">construyendo</span></td><td>Ellos est&aacute;n <span class="pron">construyendo</span> una casa.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:14px 0 6px 0;"><strong>Pattern 2 &mdash; stem-changing -ir verbs:</strong> -ir verbs that stem-change in the present (e&rarr;i, o&rarr;u) carry that same change into the gerund &mdash; even verbs like <em>dormir</em> that don't stem-change everywhere in the present tense.</p>
+        <table class="gtable">
+            <thead><tr><th>Verb</th><th>Gerund</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>dormir (o&rarr;u)</td><td><span class="pron">durmiendo</span></td><td>El beb&eacute; est&aacute; <span class="pron">durmiendo</span> la siesta.</td></tr>
+                <tr><td>pedir (e&rarr;i)</td><td><span class="pron">pidiendo</span></td><td>&iexcl;Est&aacute; <span class="pron">pidiendo</span> m&aacute;s tereré!</td></tr>
+                <tr><td>servir (e&rarr;i)</td><td><span class="pron">sirviendo</span></td><td>Nos est&aacute;n <span class="pron">sirviendo</span> mate.</td></tr>
+                <tr><td>decir (e&rarr;i)</td><td><span class="pron">diciendo</span></td><td>&iquest;Qu&eacute; est&aacute;s <span class="pron">diciendo</span>?</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Two rules, ten verbs, no need to memorize each one separately: vowel stem &rarr; <strong>y</strong>; stem-changing -ir &rarr; carry the change into <strong>-iendo</strong>.</p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">10 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; which gerund is correct?</div>
+            <div class="widget-question">&ldquo;&iquest;Qu&eacute; est&aacute;s ___ ?&rdquo; (leer &mdash; What are you reading?)</div>
+            <div class="widget-options">
+                <button data-correct="false">leendo</button>
+                <button data-correct="true">leyendo</button>
+                <button data-correct="false">liendo</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; pick the correct sentence</div>
+            <div class="widget-question">The baby fell asleep an hour ago and hasn't woken up. Right now he&hellip;</div>
+            <div class="widget-options">
+                <button data-correct="true">est&aacute; durmiendo</button>
+                <button data-correct="false">est&aacute; dormiendo</button>
+                <button data-correct="false">est&aacute; durmendo</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; complete with estar + gerundio</div>
+            <div class="widget-question">&ldquo;Los meseros nos ___ mate ahora mismo.&rdquo; (servir &mdash; The waiters are serving us mate right now.)</div>
+            <div class="widget-options">
+                <button data-correct="false">sirven</button>
+                <button data-correct="false">servendo</button>
+                <button data-correct="true">est&aacute;n sirviendo</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: describe what someone in your house is doing right now, using at least one -iendo verb from today (regular or irregular). Say it out loud, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Mi hermano est&aacute; leyendo un libro y mi madre est&aacute; durmiendo la siesta.</strong> Yours can use any verb from Part 2 &mdash; the frame is always <em>estar</em> + gerundio.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">6 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        Son las cuatro de la tarde en una casa en Montevideo. Toda la familia est&aacute; en el patio. El abuelo est&aacute; <strong>sirviendo</strong> mate y su nieta le est&aacute; <strong>pidiendo</strong> m&aacute;s az&uacute;car. La madre est&aacute; <strong>leyendo</strong> el peri&oacute;dico y, de vez en cuando, est&aacute; <strong>diciendo</strong> algo sobre las noticias. El perro est&aacute; <strong>durmiendo</strong> debajo de la mesa, tranquilo. En la cocina, el padre est&aacute; <strong>escribiendo</strong> una lista para el supermercado mientras est&aacute; <strong>oyendo</strong> la radio. Nadie est&aacute; <strong>comiendo</strong> todav&iacute;a &mdash; solo est&aacute;n <strong>tomando</strong> mate y disfrutando la tarde juntos.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find one regular -iendo verb, one vowel-stem irregular (like leyendo), and one stem-changing irregular (like durmiendo or pidiendo) in the paragraph. Notice how much the scene depends on <em>mate</em> &mdash; the culture note below explains why.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; URUGUAY Y PARAGUAY</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El mate: una taza que se comparte</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">In both <strong>Uruguay</strong> and <strong>Paraguay</strong>, few scenes are as common as the one in today's reading: a group passing a single gourd of <em>yerba mate</em> from hand to hand, refilled again and again by whoever is holding the thermos. Uruguayans drink more mate per person than any other country in the world &mdash; you'll see people carrying a thermos under one arm on the street, at school, even at the beach. In Paraguay, the same herb is often drunk cold, as <strong>tereré</strong>, to fight the heat, and Guaran&iacute;, the indigenous language spoken alongside Spanish by most Paraguayans, gave mate culture many of its words. The ritual is never really about the drink itself &mdash; it's about the circle of people paying attention to one another while it's passed around.</p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; COURTESY</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Jos&eacute; Mujica</strong> (Uruguay, 1935&ndash;2025) kept a small personal library on his chacra outside Montevideo, and visitors often found him <em>leyendo</em> philosophy or <em>oyendo</em> a guest out fully before responding &mdash; two simple, courteous habits: reading closely and listening well. Those are exactly today's irregular gerunds. Real courtesy often looks like patience with a book or a person &mdash; <em>est&aacute; leyendo</em>, <em>est&aacute; oyendo</em> &mdash; giving your full attention is itself a form of respect.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">5</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 7.05</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Next you'll put the full progressive &mdash; -ando and -iendo together, regular and irregular &mdash; to work describing a whole scene at once. Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7, so keep building fluency with both patterns until then.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say three sentences aloud describing what people around you are doing right now &mdash; try to use at least one irregular gerund from today (leyendo, durmiendo, pidiendo, sirviendo, diciendo, oyendo, trayendo).</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You now have the whole present progressive &mdash; regular -ando and -iendo, plus the two small patterns that turn <em>leer</em> into <em>leyendo</em> and <em>dormir</em> into <em>durmiendo</em>. That's a complete tool for describing any moment as it happens. <em>&iexcl;Hasta la pr&oacute;xima lecci&oacute;n!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 7.04 &middot; El progresivo: -iendo e irregulares</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the gerund pattern: regular -er/-ir → -iendo, vowel-stem verbs → -yendo (leyendo), stem-changing -ir verbs carry their change into -iendo (durmiendo, pidiendo).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 0.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 0</div>
+        <div style="font-size: 12px; color: #666;">Repaso &middot; Re-entry</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 0.04 &middot; Day 4 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">El presente: verbos en -er / -ir</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Repaso &middot; Re-entry</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 0.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> El presente: verbos en <em>-er</em> / <em>-ir</em></div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Yesterday you switched the <em>-ar</em> engine back on. Today the other two verb families come along &mdash; and they're nearly identical.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Spanish has exactly <strong>three</strong> regular verb families, sorted by the last two letters of the infinitive: <strong>-ar</strong> (Lesson 0.03), and today <strong>-er</strong> and <strong>-ir</strong>. Here's the good news you may have forgotten over the summer: <em>-er</em> and <em>-ir</em> verbs are conjugated <strong>almost exactly the same way</strong> &mdash; they differ in only two forms. Master one and you've nearly mastered both. Today we reactivate familiar verbs like <em>comer, leer, vivir,</em> and <em>escribir</em> so you can say what you eat, read, and write, and where you live.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> conjugate regular <em>-er</em> verbs in the present tense (<em>comer &rarr; como, comes, come&hellip;</em>).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> conjugate regular <em>-ir</em> verbs and name the <strong>only two forms</strong> (<em>nosotros</em> and <em>vosotros</em>) where <em>-er</em> and <em>-ir</em> differ.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe everyday activities &mdash; what I eat, read, and write, and where I live &mdash; using <em>-er</em> and <em>-ir</em> verbs.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Warm-up + check-in ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">You already know the pattern</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Yesterday you conjugated <em>-ar</em> verbs by dropping the ending and adding <em>-o, -as, -a, -amos, -&aacute;is, -an</em>. The <em>-er</em> and <em>-ir</em> families work the very same way &mdash; drop the ending, add new endings. Read these aloud and feel how natural they still are: <em>Yo <strong>como</strong> pan. T&uacute; <strong>lees</strong> un libro. Nosotros <strong>vivimos</strong> aqu&iacute;.</em></p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Which of these everyday actions do you do most on a normal day?</div>
+            <div class="widget-options">
+                <button data-response="Comer = to eat. It's an -er verb: yo como, tú comes… You'll conjugate the whole family in Part 3.">Eat with my family</button>
+                <button data-response="Leer = to read. Another -er verb: yo leo, tú lees… Part 3 lines up every form.">Read something</button>
+                <button data-response="Escribir = to write (texts, notes, homework). That's an -ir verb: yo escribo, tú escribes… — nearly identical to the -er pattern, as you'll see.">Write messages</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Vocab with audio (review -er/-ir verbs) ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; VERBOS CONOCIDOS <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Familiar verbs, sorted into two families</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">You met all of these in Spanish 1 &mdash; today we simply reactivate them and notice each one's ending. Click the <strong>&#128266;</strong> and say each infinitive back. First, the <strong>-er</strong> family:</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/comer.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">comer</span><span class="v-en">to eat</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/beber.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">beber</span><span class="v-en">to drink</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/leer.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">leer</span><span class="v-en">to read</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/aprender.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">aprender</span><span class="v-en">to learn</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/comprender.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">comprender</span><span class="v-en">to understand</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/correr.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">correr</span><span class="v-en">to run</span></li>
+        </ul>
+        <p style="font-size: 15px; color: #6b7a99; line-height: 1.6; margin: 12px 0 6px 0;">And the <strong>-ir</strong> family:</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/vivir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">vivir</span><span class="v-en">to live</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/escribir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">escribir</span><span class="v-en">to write</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/abrir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">abrir</span><span class="v-en">to open</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/compartir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">compartir</span><span class="v-en">to share</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/recibir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">recibir</span><span class="v-en">to receive</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +5 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Sort each verb by its last two letters into its family in your head: <em>comer, beber, leer, aprender, comprender, correr</em> are <strong>-er</strong>; <em>vivir, escribir, abrir, compartir, recibir</em> are <strong>-ir</strong>. Knowing the family is the first step to conjugating it &mdash; that's exactly what Part 3 is for.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar: -er / -ir endings ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; LAS TERMINACIONES <span class="pill-time">9 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Two families, almost one pattern</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">To conjugate, <strong>drop the <em>-er</em> or <em>-ir</em></strong> from the infinitive and add the ending that matches the subject. Look at <em>comer</em> and <em>vivir</em> side by side &mdash; the endings are identical <strong>except</strong> in the <em>nosotros</em> and <em>vosotros</em> forms (highlighted):</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>comer <span style="color:#9fb0d0;">(-er)</span></th><th>vivir <span style="color:#9fb0d0;">(-ir)</span></th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">como</span></td><td><span class="pron">vivo</span></td></tr>
+                <tr><td>t&uacute;</td><td><span class="pron">comes</span></td><td><span class="pron">vives</span></td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td><span class="pron">come</span></td><td><span class="pron">vive</span></td></tr>
+                <tr><td>nosotros/as</td><td><span class="pron">com<span style="text-decoration:underline;">emos</span></span></td><td><span class="pron">viv<span style="text-decoration:underline;">imos</span></span></td></tr>
+                <tr><td>vosotros/as <span style="color:#6b7a99;">(Espa&ntilde;a)</span></td><td><span class="pron">com<span style="text-decoration:underline;">&eacute;is</span></span></td><td><span class="pron">viv<span style="text-decoration:underline;">&iacute;s</span></span></td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td><span class="pron">comen</span></td><td><span class="pron">viven</span></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 14px;">Four of the six forms are <em>letter-for-letter the same</em>. Only <em>nosotros</em> (<em>-emos</em> vs. <em>-imos</em>) and <em>vosotros</em> (<em>-&eacute;is</em> vs. <em>-&iacute;s</em>) tell the two families apart. Learn <em>-er</em> and you've all but learned <em>-ir</em>.</p>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 14px 0 8px 0;">The endings on their own</h3>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>-er endings</th><th>-ir endings</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td>-o</td><td>-o</td></tr>
+                <tr><td>t&uacute;</td><td>-es</td><td>-es</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td>-e</td><td>-e</td></tr>
+                <tr><td>nosotros/as</td><td><span class="pron">-emos</span></td><td><span class="pron">-imos</span></td></tr>
+                <tr><td>vosotros/as</td><td><span class="pron">-&eacute;is</span></td><td><span class="pron">-&iacute;s</span></td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td>-en</td><td>-en</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Example in action: <em>Yo <strong>leo</strong> y <strong>escribo</strong> todos los d&iacute;as. Ella <strong>aprende</strong> espa&ntilde;ol. Nosotros <strong>compartimos</strong> la comida.</em></p>
+    </div>
+
+    <!-- ===== PART 4 · Practice ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">9 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; the nosotros form</div>
+            <div class="widget-question">&ldquo;Mi familia y yo ___ en Chicago.&rdquo; (My family and I live in Chicago.)</div>
+            <div class="widget-options">
+                <button data-correct="true">vivimos</button>
+                <button data-correct="false">viv&iacute;s</button>
+                <button data-correct="false">viven</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; the t&uacute; form</div>
+            <div class="widget-question">&ldquo;&iquest;Qu&eacute; ___ (t&uacute;) en la clase de historia?&rdquo; (What do you learn in history class?)</div>
+            <div class="widget-options">
+                <button data-correct="false">aprendo</button>
+                <button data-correct="true">aprendes</button>
+                <button data-correct="false">aprende</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; the ellos form</div>
+            <div class="widget-question">&ldquo;Mis amigos ___ mensajes todos los d&iacute;as.&rdquo; (My friends write messages every day.)</div>
+            <div class="widget-options">
+                <button data-correct="false">escribimos</button>
+                <button data-correct="false">escrib&iacute;s</button>
+                <button data-correct="true">escriben</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: how would you say <em>&ldquo;We read and write in class&rdquo;</em>? Say it out loud first, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Leemos y escribimos en clase.</strong> Both verbs take the <em>nosotros</em> ending &mdash; but watch the families: <em>leer</em> is <em>-er</em> &rarr; <em>le<span style="text-decoration:underline;">emos</span></em>, while <em>escribir</em> is <em>-ir</em> &rarr; <em>escrib<span style="text-decoration:underline;">imos</span></em>. That's the one spot the two families part ways.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · Reading ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        &laquo;Hola, me llamo <strong>Valentina</strong> y <strong>vivo</strong> en Montevideo, Uruguay. Los domingos mi familia <strong>come</strong> en la casa de mi abuela. Nosotros <strong>compartimos</strong> un asado enorme y despu&eacute;s <strong>bebemos</strong> mate juntos. Mientras los adultos conversan, mi primo y yo <strong>leemos</strong> las revistas viejas de la abuela y yo <strong>escribo</strong> en mi cuaderno. As&iacute; <strong>aprendo</strong> palabras nuevas cada semana. &iquest;Y t&uacute;? &iquest;Con qui&eacute;n <strong>comes</strong> los domingos?&raquo;</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find every <em>-er</em> and <em>-ir</em> verb in the paragraph (there are seven). Which one is in the <em>nosotros</em> form, and how can you tell whether it belongs to the <em>-er</em> or the <em>-ir</em> family? (Hint: look at the ending &mdash; <em>-emos</em> or <em>-imos</em>.)</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; EL MUNDO HISPANO</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>La sobremesa: comer es solo el principio</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Across the Spanish-speaking world &mdash; from Spain to Uruguay to Mexico &mdash; the meal doesn't end when the plates are empty. The <strong>sobremesa</strong> (literally &ldquo;over the table&rdquo;) is the cherished stretch of time when families stay seated and simply talk, sometimes for hours. People keep <em>bebiendo</em> coffee or <em>mate</em>, they <em>comparten</em> stories, and no one is in a hurry to leave. Notice how many of today's verbs power that scene: you <em>comer</em>, you <em>beber</em>, you <em>compartir</em>. In much of the Hispanic world, sharing a table is less about the food than about the people around it. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short clip of a family sobremesa and a reflection prompt.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; LAS SIETE VIRTUDES</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Today's endings ask for the same virtue as yesterday's: <em>perseverancia</em>, one of Optima's siete virtudes, shown in going back over <em>-er</em> and <em>-ir</em> verbs even after you thought you already knew the pattern. There's also a small <em>valor</em> in speaking a new ending out loud before you're sure it's right &mdash; language learning rewards students willing to risk the mistake. Both habits belong to <strong>las siete virtudes</strong> this course keeps coming back to.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">5</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 0.05 &mdash; Ser vs. estar</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll sort out the two verbs that both mean &ldquo;to be&rdquo; &mdash; <em>ser</em> and <em>estar</em> &mdash; and when each one is used. Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7; this week is for waking your Spanish back up.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say three true sentences about yourself out loud &mdash; each with a different <em>-er</em> or <em>-ir</em> verb (<em>Yo como&hellip; / Yo leo&hellip; / Yo vivo en&hellip;</em>).</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">All three regular verb families are back online. You can conjugate <em>-ar, -er,</em> and <em>-ir</em> verbs in the present &mdash; and you know the two families only ever part ways in <em>nosotros</em> and <em>vosotros</em>. That's most of the present tense already in your hands. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 0.04 &middot; El presente: verbos en -er / -ir</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the subject and the family: -er and -ir share every ending except nosotros (-emos / -imos) and vosotros (-éis / -ís).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

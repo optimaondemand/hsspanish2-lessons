@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 2.05</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 2</div>
+        <div style="font-size: 12px; color: #666;">Mi horario y la hora</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 2.05 &middot; Day 5 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">M&aacute;s cambios de ra&iacute;z: e&rarr;i y u&rarr;ue</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Mi horario y la hora</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 2.05</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Pido, sirvo, juego &mdash; los cambios e&rarr;i y u&rarr;ue</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Two more members of the boot family &mdash; and now you can see the whole system at once.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">On Day 3 you met the first two &ldquo;boot&rdquo; changes: <strong>e&rarr;ie</strong> (<em>empezar&rarr;emp<span class="pron">ie</span>zo, querer&rarr;qu<span class="pron">ie</span>ro</em>) and <strong>o&rarr;ue</strong> (<em>poder&rarr;p<span class="pron">ue</span>do, almorzar&rarr;alm<span class="pron">ue</span>rzo</em>). Today we complete the picture with the last two: <strong>e&rarr;i</strong> in verbs like <em>pedir, servir, repetir</em> and <em>seguir</em>, and the one lonely <strong>u&rarr;ue</strong> verb, <em>jugar</em>. Same boot shape, same rule about <em>nosotros</em> &mdash; only the vowel is different. <strong>No new vocabulary today</strong>; we keep using the schedule and everyday verbs you already own.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> conjugate <em>e&rarr;i</em> verbs (<em>pedir, servir, repetir, seguir</em>) in the present tense.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> conjugate <em>jugar</em> (u&rarr;ue) and explain why <em>nosotros</em> never changes its stem.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> sort any stem-changing verb into its family: <em>e&rarr;ie, o&rarr;ue, e&rarr;i,</em> or <em>u&rarr;ue</em>.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Remember the &ldquo;boot&rdquo;</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">On Day 3 you learned the trick that makes stem-changers easy to picture. Line up the six forms and the ones that change &mdash; <em>yo, t&uacute;, &eacute;l/ella,</em> and <em>ellos/ellas</em> &mdash; make the shape of a <strong>boot</strong>. The two forms left <em>outside</em> the boot, <em>nosotros</em> (and <em>vosotros</em>), keep the original vowel. Today's new families follow the exact same boot; only the vowel change is different. Picture the boot before you answer.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">In a present-tense boot verb, which subject form is <em>left out</em> of the boot &mdash; the one that does <strong>not</strong> change its stem?</div>
+            <div class="widget-options">
+                <button data-response="Not quite &mdash; yo is inside the boot, so it changes: p&iacute;do, emp&iacute;ezo, ju&eacute;go. The form left outside is nosotros. Keep that in mind for today's tables.">yo</button>
+                <button data-response="&iexcl;Exacto! nosotros stands outside the boot, so it keeps the original vowel: pedimos, jugamos, servimos. Every form you'll see today obeys this same rule.">nosotros</button>
+                <button data-response="Careful &mdash; ellos is inside the boot and does change: piden, juegan, sirven. The form that stays regular is nosotros. Watch for it in every table today.">ellos</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; REPASO DE VOCABULARIO <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The verbs we'll bend today &mdash; all words you already know</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Nothing new here &mdash; these are the verbs and schedule words from earlier this week. Click the <strong>&#128266;</strong> and repeat each infinitive aloud, listening for the vowel we're about to change. In Part 3 you'll watch that vowel shift inside the boot.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/pedir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">pedir</span><span class="v-en">to ask for / to order</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/servir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">servir</span><span class="v-en">to serve</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/repetir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">repetir</span><span class="v-en">to repeat</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/seguir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">seguir</span><span class="v-en">to follow / to keep on</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/jugar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">jugar</span><span class="v-en">to play (a sport / game)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-horario.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el horario</span><span class="v-en">schedule</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-almuerzo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el almuerzo</span><span class="v-en">lunch</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-cafeteria.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la cafeter&iacute;a</span><span class="v-en">cafeteria</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +3 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Say each verb, then whisper its <em>yo</em> form the way you think it sounds: <em>pedir &rarr; p<span class="pron">i</span>do, jugar &rarr; j<span class="pron">ue</span>go.</em> Don't worry about being right yet &mdash; you're training your ear to expect the change. Part 3 confirms every form.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; LA GRAM&Aacute;TICA: e&rarr;i Y u&rarr;ue <span class="pill-time">11 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">First the twist: e&rarr;i</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Here's the new idea, in plain English. In one group of <strong>-ir</strong> verbs, the stem <strong>e</strong> doesn't grow into <em>ie</em> like on Day 3 &mdash; it simply tightens to a single <strong>i</strong>. That's the whole twist: <em>e&rarr;i</em>. It happens in exactly the boot forms (<em>yo, t&uacute;, &eacute;l/ella, ellos/ellas</em>) and skips <em>nosotros</em>. Listen to the <em>yo</em> form:</p>
+
+        <p style="font-size:16px;color:#0e1c42;margin:0 0 4px 0;"><strong>pedir</strong> &mdash; to ask for / to order <button class="say" data-audio="grammar/pido.mp3" aria-label="Escuchar pido">&#128266;</button></p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>pedir</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">pido</span></td><td>Yo <span class="pron">pido</span> el almuerzo a la una.</td></tr>
+                <tr><td>t&uacute;</td><td><span class="pron">pides</span></td><td>&iquest;Qu&eacute; <span class="pron">pides</span> en la cafeter&iacute;a?</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td><span class="pron">pide</span></td><td>Ella <span class="pron">pide</span> una limonada.</td></tr>
+                <tr><td>nosotros/as</td><td>pedimos</td><td>Nosotros <strong>pedimos</strong> lo mismo siempre.</td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td><span class="pron">piden</span></td><td>Ellos <span class="pron">piden</span> pupusas.</td></tr>
+            </tbody>
+        </table>
+
+        <p style="font-size:16px;color:#0e1c42;margin:14px 0 4px 0;"><strong>servir</strong> &mdash; to serve</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>servir</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">sirvo</span></td><td>Yo <span class="pron">sirvo</span> el desayuno a mi hermano.</td></tr>
+                <tr><td>t&uacute;</td><td><span class="pron">sirves</span></td><td>T&uacute; <span class="pron">sirves</span> la comida caliente.</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td><span class="pron">sirve</span></td><td>La se&ntilde;ora <span class="pron">sirve</span> el almuerzo r&aacute;pido.</td></tr>
+                <tr><td>nosotros/as</td><td>servimos</td><td>Nosotros <strong>servimos</strong> a las doce.</td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td><span class="pron">sirven</span></td><td>Ellas <span class="pron">sirven</span> pupusas revueltas.</td></tr>
+            </tbody>
+        </table>
+
+        <div style="background:#EEF1F8;border-left:5px solid #0E1C42;border-radius:7px;padding:14px 18px;margin-top:14px;">
+            <div style="font-size:12px;color:#0e1c42;letter-spacing:.4px;margin-bottom:6px;">&#128161; ENGLISH SCAFFOLD &mdash; THE e&rarr;i TWIST</div>
+            <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 8px;">In English, <em>pedir</em> means &ldquo;to ask for / to order&rdquo; &mdash; think of ordering food (<em>pido pupusas</em>) or asking for a favor. Don't confuse it with <em>preguntar</em>, which means &ldquo;to ask a question.&rdquo; And notice the boot: the <em>e</em> becomes <em>i</em> everywhere except <em>nosotros</em>, where it stays <em>e</em>: <em>ped<span style="text-decoration:underline">i</span>mos, serv<span style="text-decoration:underline">i</span>mos.</em></p>
+            <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Two spelling notes.</strong> <em>repetir</em> follows pedir exactly (<em>rep<span class="pron">i</span>to, rep<span class="pron">i</span>tes, rep<span class="pron">i</span>te, repetimos, rep<span class="pron">i</span>ten</em>). <em>seguir</em> also changes e&rarr;i, but its <em>yo</em> form drops the silent <em>u</em>: <em>s<span class="pron">i</span>go</em> (not &ldquo;siguo&rdquo;) &mdash; then <em>s<span class="pron">i</span>gues, s<span class="pron">i</span>gue, seguimos, s<span class="pron">i</span>guen.</em></p>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Then the loner: u&rarr;ue</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">There is exactly <strong>one</strong> verb in Spanish whose <em>u</em> changes to <em>ue</em> in the boot: <strong>jugar</strong>, &ldquo;to play&rdquo; (a sport or game). It behaves just like an o&rarr;ue verb &mdash; same boot, same skip of <em>nosotros</em>:</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>jugar</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">juego</span></td><td>Yo <span class="pron">juego</span> al f&uacute;tbol despu&eacute;s de clase.</td></tr>
+                <tr><td>t&uacute;</td><td><span class="pron">juegas</span></td><td>&iquest;A qu&eacute; hora <span class="pron">juegas</span>?</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td><span class="pron">juega</span></td><td>&Eacute;l <span class="pron">juega</span> en el recreo.</td></tr>
+                <tr><td>nosotros/as</td><td>jugamos</td><td>Nosotros <strong>jugamos</strong> al baloncesto los lunes.</td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td><span class="pron">juegan</span></td><td>Ellas <span class="pron">juegan</span> despu&eacute;s del almuerzo.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Note: <em>jugar</em> is almost always followed by <em>a</em> before a sport &mdash; <em>jugar <strong>al</strong> f&uacute;tbol, jugar <strong>a</strong> las cartas.</em></p>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 18px 0 6px 0;">The whole stem-changing system, in one place</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 6px 0;">Here is the complete map you have now built &mdash; all four boot families side by side, each shown in the <em>yo</em> form:</p>
+        <table class="gtable">
+            <thead><tr><th>Change</th><th>Example verb</th><th>yo form</th><th>Met on</th></tr></thead>
+            <tbody>
+                <tr><td><span class="pron">e&rarr;ie</span></td><td>empezar (to begin)</td><td>emp<span class="pron">ie</span>zo</td><td>Day 3</td></tr>
+                <tr><td><span class="pron">e&rarr;ie</span></td><td>querer (to want)</td><td>qu<span class="pron">ie</span>ro</td><td>Day 3</td></tr>
+                <tr><td><span class="pron">o&rarr;ue</span></td><td>poder (to be able)</td><td>p<span class="pron">ue</span>do</td><td>Day 3</td></tr>
+                <tr><td><span class="pron">o&rarr;ue</span></td><td>almorzar (to eat lunch)</td><td>alm<span class="pron">ue</span>rzo</td><td>Day 3</td></tr>
+                <tr><td><span class="pron">e&rarr;i</span></td><td>pedir (to ask for / order)</td><td>p<span class="pron">i</span>do</td><td>today</td></tr>
+                <tr><td><span class="pron">e&rarr;i</span></td><td>servir (to serve)</td><td>s<span class="pron">i</span>rvo</td><td>today</td></tr>
+                <tr><td><span class="pron">u&rarr;ue</span></td><td>jugar (to play)</td><td>j<span class="pron">ue</span>go</td><td>today</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Everything here is <strong>present tense</strong> &mdash; the only tense we work in this module. In every family the change happens inside the boot and skips <em>nosotros</em>. Once you see the boot, you know the pattern.</p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">10 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; conjugate <em>pedir</em></div>
+            <div class="widget-question">&ldquo;Yo ___ el almuerzo en la cafeter&iacute;a a la una.&rdquo; (I order lunch in the cafeteria at one.)</div>
+            <div class="widget-options">
+                <button data-correct="false">pedimos</button>
+                <button data-correct="true">pido</button>
+                <button data-correct="false">pide</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; watch <em>nosotros</em></div>
+            <div class="widget-question">&ldquo;Nosotros ___ al f&uacute;tbol despu&eacute;s del almuerzo.&rdquo; (We play soccer after lunch.)</div>
+            <div class="widget-options">
+                <button data-correct="false">juegamos</button>
+                <button data-correct="false">juego</button>
+                <button data-correct="true">jugamos</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; SORT IT &middot; which stem-change type?</div>
+            <div class="widget-question">The form <em>pido</em> comes from <em>pedir</em>. Which family of stem change is it?</div>
+            <div class="widget-options">
+                <button data-correct="true">e&rarr;i</button>
+                <button data-correct="false">o&rarr;ue</button>
+                <button data-correct="false">e&rarr;ie</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; SORT IT &middot; spot the loner</div>
+            <div class="widget-question">Which of these is the <strong>only</strong> u&rarr;ue verb &mdash; the one whose <em>u</em> becomes <em>ue</em>?</div>
+            <div class="widget-options">
+                <button data-correct="false">dormir</button>
+                <button data-correct="true">jugar</button>
+                <button data-correct="false">servir</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: say <strong>two true sentences about you</strong> &mdash; one with <em>pido</em> (something you order or ask for) and one with <em>juego</em> (a sport or game you play, and when). Say them out loud first, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>En la cafeter&iacute;a yo pido una ensalada y agua. Los martes juego al baloncesto despu&eacute;s de clase.</strong> Yours will name your own food and your own game &mdash; the frames are <em>Yo pido&hellip;</em> and <em>Yo juego al&hellip;</em></div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:16px;color:#6b7a99;margin:0 0 8px 0;">Two students compare their lunch hour. Watch every e&rarr;i verb (<em>pedir, servir, repetir, seguir</em>) and the u&rarr;ue verb <em>jugar</em> &mdash; and notice which forms stay regular in <em>nosotros</em>.</p>
+        <p style="font-size:17px;color:#1a2340;line-height:1.8;">
+        &mdash;&iquest;Qu&eacute; haces a la hora del almuerzo?<br>
+        &mdash;A la una <strong>sigo</strong> mi horario: voy a la cafeter&iacute;a. Yo siempre <strong>pido</strong> pupusas, y mi amiga <strong>pide</strong> una baleada. La cocinera las <strong>sirve</strong> calientes.<br>
+        &mdash;&iquest;Y despu&eacute;s?<br>
+        &mdash;Despu&eacute;s <strong>jugamos</strong> al f&uacute;tbol un rato. Si alguien no entiende las reglas, yo <strong>repito</strong> las instrucciones.<br>
+        &mdash;&iexcl;Qu&eacute; buen horario! Nosotros <strong>seguimos</strong> casi el mismo &mdash; comemos y luego <strong>jugamos</strong>.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find <em>sigo</em> and <em>seguimos</em>. Why does one have <em>i</em> and the other <em>e</em>? (Answer: <em>sigo</em> is <em>yo</em> &mdash; inside the boot, so e&rarr;i; <em>seguimos</em> is <em>nosotros</em> &mdash; outside the boot, so it keeps the <em>e</em>.) Then find both <em>jugamos</em> and confirm the <em>u</em> stays put in <em>nosotros</em>.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; EL SALVADOR / HONDURAS</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Lo que se pide y se sirve: pupusas y baleadas</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">In El Salvador, when you <em>pides</em> lunch you almost certainly <em>pides</em> a <strong>pupusa</strong> &mdash; a thick hand-made corn tortilla stuffed with cheese, beans, or <em>chicharr&oacute;n</em>, griddled and <em>servida</em> hot with <em>curtido</em> (a tangy cabbage slaw) and salsa. Salvadorans love them so much that the second Sunday of November is the official <strong>D&iacute;a Nacional de la Pupusa</strong>. Cross the border into Honduras and the everyday favorite is the <strong>baleada</strong>: a warm flour tortilla folded over beans, cream, and cheese. Both are street-corner staples that families and school friends <em>piden</em>, <em>sirven</em>, and happily <em>repiten</em> for seconds. Food vocabulary and today's verbs meet at the same table. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short menu clip from a <em>pupuser&iacute;a</em>.)</span></p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; COURAGE</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>&Oacute;scar Romero</strong> (El Salvador, 1917&ndash;1980) <em>repet&iacute;a</em> &mdash; repeated, week after week &mdash; his plea for the poor and oppressed of San Salvador from the pulpit, knowing it could cost him his life. He <em>sigui&oacute;</em> speaking anyway, and was assassinated in 1980 while saying Mass; in 2018 he was declared a saint. His courage, like the verb <em>seguir</em> itself, was not a single act but something he kept doing, again and again.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">6</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 2.06 &mdash; Los verbos con cambio de ra&iacute;z en acci&oacute;n</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll put all four boot families to work in a culture-rich reading about a school day in Honduras and El Salvador &mdash; no new grammar, just fluent use. Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say the four boot changes out loud with one <em>yo</em> form each, twice: <em>e&rarr;ie quiero, o&rarr;ue puedo, e&rarr;i pido, u&rarr;ue juego</em> &mdash; a little faster the second time.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The stem-changing system is complete. You can bend the <em>e&rarr;i</em> verbs (<em>pido, sirvo, repito, sigo</em>), you know the one lonely <em>u&rarr;ue</em> verb (<em>juego</em>), and you can sort any boot verb into its family &mdash; all while remembering that <em>nosotros</em> stays outside the boot. Tomorrow you'll simply <em>use</em> them. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 2.05 &middot; M&aacute;s cambios de ra&iacute;z: e&rarr;i y u&rarr;ue</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

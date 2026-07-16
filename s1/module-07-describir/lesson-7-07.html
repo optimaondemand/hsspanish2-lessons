@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 7.07</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 7</div>
+        <div style="font-size: 12px; color: #666;">Describir y comparar</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 7.07 &middot; Day 7 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Integraci&oacute;n &mdash; describe con detalle</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Describir y comparar &middot; Progresivo</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 7.07</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Integraci&oacute;n &mdash; describe con detalle</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A good description isn't a list &mdash; it's attention paid, in words.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Everything you've built this module &mdash; the present progressive, comparatives, ser vs. estar &mdash; is really one skill: <strong>noticing carefully and saying what you notice</strong>. Today you pull it together to describe a scene in real time, with detail. This is also the day the module's graded work opens: the <strong>Vocabulary Check</strong> and <strong>Lengua en acci&oacute;n</strong> are now available in Canvas.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> form and use the present progressive (<em>estar</em> + -ando/-iendo, including irregular gerunds) to describe an action happening right now.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use precise adverbs of manner (<em>cuidadosamente, con atenci&oacute;n, todav&iacute;a&hellip;</em>) to add real detail to a description.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> combine progressive + descriptive detail in a short written passage about a scene.</div>
+        </div>
+    </div>
+
+    <!-- Graded work notice -->
+    <div class="opt-strip" style="margin-top:0; margin-bottom:20px;">
+        <div class="lbl">&#128202; GRADED WORK OPENS TODAY</div>
+        <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Two graded items are now live in Canvas: the <strong>Vocabulary Check</strong> (20 pts, listening, auto-graded) and <strong>Lengua en acci&oacute;n</strong> (20 pts, written production). Complete today's lesson first &mdash; it's the practice you need for both.</div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">What's happening right now?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Look around the room you're in. Someone is doing something &mdash; typing, reading, waiting. In Spanish, the moment you notice an action <em>in progress</em>, you reach for <strong>estar + -ando/-iendo</strong>. Say aloud one true sentence about what's happening near you right now: <em>&mdash;Estoy escribiendo. Mi perro est&aacute; durmiendo.</em></p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Which sentence describes an action happening <em>right now</em>, in progress?</div>
+            <div class="widget-options">
+                <button data-response="Exactly — 'está leyendo' is the progressive: an action caught in the middle of happening. That's today's whole lesson.">Mi hermana est&aacute; leyendo un libro ahora mismo.</button>
+                <button data-response="That one is simple present (a habit/routine — 'lee todos los días'), not the progressive. Compare it with the option that uses 'está + -iendo.'">Mi hermana lee todos los d&iacute;as.</button>
+                <button data-response="That's a completed past action, which is out of scope this module (preterite arrives in Módulo 8). The progressive option is the one built with 'está + -iendo.'">Mi hermana ley&oacute; el libro ayer.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; PALABRAS PARA DESCRIBIR CON DETALLE <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The words that add detail</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">You've met these expressions across the module. Click <strong>&#128266;</strong> and say each one back &mdash; today you'll use them to sharpen a description.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/cuidadosamente.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">cuidadosamente</span><span class="v-en">carefully</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/con-atencion.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">con atenci&oacute;n</span><span class="v-en">attentively / carefully</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/rapidamente.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">r&aacute;pidamente</span><span class="v-en">quickly</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/lentamente.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">lentamente</span><span class="v-en">slowly</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/claramente.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">claramente</span><span class="v-en">clearly</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/detallado.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">detallado / detallada</span><span class="v-en">detailed</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/ahora-mismo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">ahora mismo</span><span class="v-en">right now</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/todavia.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">todav&iacute;a</span><span class="v-en">still</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/mientras-tanto.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">mientras tanto</span><span class="v-en">meanwhile</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/en-este-momento.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">en este momento</span><span class="v-en">at this moment</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/de-nuevo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">de nuevo</span><span class="v-en">again</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/por-ejemplo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">por ejemplo</span><span class="v-en">for example</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +5 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Combine one adverb with the progressive: <em>Estoy escuchando con atenci&oacute;n.</em> / <em>Mi amigo est&aacute; trabajando lentamente.</em> Notice the adverb usually follows the verb phrase.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; EL PRESENTE PROGRESIVO, CONSOLIDADO <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">One more look at the whole pattern</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">You built this across the module: <strong>estar</strong> (conjugated) + a gerund (<strong>-ando</strong> for -ar verbs, <strong>-iendo</strong> for -er/-ir verbs). A handful of common -ir verbs change their stem in the gerund &mdash; memorize them as a set.</p>
+        <table class="gtable">
+            <thead><tr><th>estar</th><th>Regular gerundio</th><th>Irregular gerundio</th></tr></thead>
+            <tbody>
+                <tr><td>yo <span class="pron">estoy</span></td><td>habl<span class="pron">ando</span> (hablar)</td><td>le<span class="pron">yendo</span> (leer)</td></tr>
+                <tr><td>t&uacute; <span class="pron">est&aacute;s</span></td><td>com<span class="pron">iendo</span> (comer)</td><td>d<span class="pron">iciendo</span> (decir)</td></tr>
+                <tr><td>usted/&eacute;l/ella <span class="pron">est&aacute;</span></td><td>escrib<span class="pron">iendo</span> (escribir)</td><td>durm<span class="pron">iendo</span> (dormir)</td></tr>
+                <tr><td>nosotros/as <span class="pron">estamos</span></td><td>viv<span class="pron">iendo</span> (vivir)</td><td>pid<span class="pron">iendo</span> (pedir)</td></tr>
+                <tr><td>ustedes/ellos/ellas <span class="pron">est&aacute;n</span></td><td>mir<span class="pron">ando</span> (mirar)</td><td>sirv<span class="pron">iendo</span> (servir)</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Quick test: does the action feel <em>caught in the middle of happening</em>? If yes, you want the progressive, not the simple present.</p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">10 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; choose the gerund</div>
+            <div class="widget-question">&ldquo;Mi hermano ___ (hablar) por tel&eacute;fono ahora mismo.&rdquo;</div>
+            <div class="widget-options">
+                <button data-correct="true">est&aacute; hablando</button>
+                <button data-correct="false">est&aacute; hablendo</button>
+                <button data-correct="false">est&aacute; hablado</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; pick the form of estar</div>
+            <div class="widget-question">&ldquo;Nosotros ___ describiendo el mercado de Asunci&oacute;n en este momento.&rdquo;</div>
+            <div class="widget-options">
+                <button data-correct="false">estoy</button>
+                <button data-correct="false">est&aacute;n</button>
+                <button data-correct="true">estamos</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; irregular gerund</div>
+            <div class="widget-question">&ldquo;Ella todav&iacute;a est&aacute; ___ (leer) un libro sobre Paraguay.&rdquo;</div>
+            <div class="widget-options">
+                <button data-correct="false">leendo</button>
+                <button data-correct="true">leyendo</button>
+                <button data-correct="false">liendo</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: write two sentences describing what's happening in a photo you can picture right now &mdash; use the progressive <strong>and</strong> at least one adverb from Part 2 (<em>cuidadosamente, con atenci&oacute;n, todav&iacute;a&hellip;</em>). Write them out, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>En la foto, dos amigas est&aacute;n tomando mate con atenci&oacute;n, mientras tanto un perro est&aacute; durmiendo lentamente al lado de ellas.</strong> Yours will use your own scene &mdash; the frame is <em>estar + -ando/-iendo &hellip; + un adverbio de detalle</em>.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        <strong>Sof&iacute;a</strong> vive en Montevideo, Uruguay, y habla por video con su prima <strong>Renata</strong>, que vive en Asunci&oacute;n, Paraguay.<br><br>
+        &mdash;&iexcl;Hola, Renata! &iquest;Qu&eacute; est&aacute;s haciendo ahora mismo?<br>
+        &mdash;Estoy tomando tereré con mi abuela &mdash; ella est&aacute; contando una historia con mucho detalle, y yo estoy escuchando con atenci&oacute;n. &iquest;Y t&uacute;, qu&eacute; est&aacute;s haciendo?<br>
+        &mdash;Aqu&iacute; en Montevideo estamos tomando mate, como siempre. Mi hermano todav&iacute;a est&aacute; durmiendo &mdash; es domingo. Mientras tanto, mi madre est&aacute; leyendo el peri&oacute;dico lentamente en el patio.<br>
+        &mdash;&iexcl;Qu&eacute; tranquilo! Uruguay y Paraguay son m&aacute;s peque&ntilde;os que Argentina, pero cada uno tiene su propia manera de tomar las cosas con calma.<br>
+        &mdash;Es verdad. Bueno, sigue describi&eacute;ndome la historia de tu abuela &mdash; quiero o&iacute;r cada detalle.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find every progressive verb in the conversation (there are six). Then find the one comparative sentence &mdash; it's reviewing a structure from M&oacute;dulo 6.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; URUGUAY Y PARAGUAY</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Dos vecinos peque&ntilde;os, dos maneras de compartir</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Uruguay and Paraguay are two of South America's smaller countries, but each has a ritual built around slowing down and paying attention to the people around you. In <strong>Uruguay</strong>, almost everyone carries a <em>mate</em> gourd and thermos &mdash; sharing it, cup by cup, in a circle is a daily social habit. In <strong>Paraguay</strong>, the cold version, <em>tereré</em>, serves the same purpose, and Paraguay is also one of the few fully bilingual countries in the Americas: <strong>Guaran&iacute;</strong>, an indigenous language, has equal official status with Spanish, and most Paraguayans speak both. Neither country has a coastline &mdash; Paraguay is landlocked entirely, and Uruguay looks out onto the R&iacute;o de la Plata rather than the open sea &mdash; yet both built a national culture of unhurried, attentive conversation. That habit is exactly today's grammar in action: describing, in detail, what is happening right in front of you. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short listening clip comparing mate and tereré customs.)</span></p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; COURTESY</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Jos&eacute; Mujica</strong> (Uruguay, 1935&ndash;2025) was known for speaking to everyone &mdash; presidents and passersby alike &mdash; in the same calm, respectful tone, never raising his voice or talking down to anyone. That's courtesy expressed through manner, exactly what today's detail-adverbs capture: <em>est&aacute; hablando cort&eacute;smente</em>, <em>est&aacute; escuchando pacientemente</em>. As you finish your graded work today, notice how a single adverb can turn a plain action into a courteous one.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">8</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 7.08 &mdash; Describe tu mundo</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll build a longer spoken description using everything from this module, then draft and record your <strong>Tarea oral</strong>. Today, be sure to finish the Vocabulary Check and Lengua en acci&oacute;n now that they're open in Canvas.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then go complete the <strong>Vocabulary Check</strong> and <strong>Lengua en acci&oacute;n</strong> &mdash; both are open now.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You just pulled together a whole module's worth of description into one skill: catching an action in progress and naming it with real detail. Quiroga would approve &mdash; you looked closely, and you said exactly what you saw. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 7.07 &middot; Integraci&oacute;n &mdash; describe con detalle</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the ending (-ando for -ar verbs, -iendo for -er/-ir) or the subject of estar.';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

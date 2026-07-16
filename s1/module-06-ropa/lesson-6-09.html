@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 6.09</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 6</div>
+        <div style="font-size: 12px; color: #666;">La ropa y las compras</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 6.09 &middot; Day 9 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Reading + culture consolidation; Quiz prep</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">La ropa y las compras</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 6.09</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Hecho a mano &mdash; una lectura boliviana y repaso para el quiz</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Behind every piece of handmade clothing there is a maker, a tradition, and a reason to be grateful.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is <strong>Day 9</strong> &mdash; a consolidation day. There is <strong>no new grammar and no new vocabulary</strong>. Instead you'll pull the whole module together: reactivate your clothing-and-shopping words, run one clean review of <strong>comparatives / superlatives</strong> and <strong>ser vs. estar</strong>, and read a short Spanish text about a Bolivian weaver and her <em>aguayo</em>. Along the way we return to this module's virtue &mdash; <strong>gratitude</strong> &mdash; the practice of noticing the hands and heritage behind the things we wear. Tomorrow (Day 10) you take the <strong>Grammar Quiz</strong>; today gets you ready.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> read a short Spanish text about a Bolivian market and understand it using context and the vocabulary I already know.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> review and self-check <em>m&aacute;s/menos&hellip; que</em>, <em>tan&hellip; como</em>, the superlative (<em>el/la m&aacute;s&hellip; de</em>), and the choice between <em>ser</em> and <em>estar</em> before the Grammar Quiz.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why handmade craft, its makers, and the heritage behind it deserve gratitude.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Who made what you're wearing?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Look at what you have on right now. Almost all of it was made by <em>someone</em> &mdash; often far away, often by hand at some stage. We rarely stop to think about them. This module's virtue, <strong>gratitude</strong> (<em>la gratitud</em>), starts exactly there: noticing the person behind the object. Hold that thought &mdash; today's reading is about one such maker in Bolivia.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Think of something you own that was clearly made by a <em>person</em>, not just a machine. What makes it feel different from a mass-produced version?</div>
+            <div class="widget-options">
+                <button data-response="Yes &mdash; time and skill. A handmade piece carries hours of a real person's attention. That's part of why, in today's reading, an aguayo hecho a mano cuesta m&aacute;s que uno de f&aacute;brica: you're paying for a maker's craft, not just cloth.">The time and skill it took</button>
+                <button data-response="Beautiful reason. When someone you know made it, the object holds a relationship. Gratitude works the same way at a distance &mdash; today you'll meet a maker you don't know and still feel it.">Someone I know made it</button>
+                <button data-response="Exactly &mdash; it's one of a kind. In Bolivian weaving, no two aguayos are identical; the colors and patterns tell each maker's own story. That uniqueness is part of what we learn to be grateful for.">It can't be exactly copied</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; PALABRAS CLAVE &mdash; REACTIVACI&Oacute;N <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Warm up the words you'll see today</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">These are <strong>not new</strong> &mdash; they're the clothing-and-shopping words from earlier this module, the ones you'll meet again in the reading and on tomorrow's quiz. Click the <strong>&#128266;</strong> and say each one aloud to bring it back to the front of your mind.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-mercado.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el mercado</span><span class="v-en">the market</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-tienda.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la tienda</span><span class="v-en">the store / shop</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tejer.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tejer</span><span class="v-en">to weave / to knit</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-aguayo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el aguayo</span><span class="v-en">Andean woven carrying-cloth</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-pollera.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la pollera</span><span class="v-en">traditional layered skirt</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-lana.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la lana</span><span class="v-en">wool</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-tela.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la tela</span><span class="v-en">cloth / fabric</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-precio.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el precio</span><span class="v-en">the price</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/caro.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">caro / cara</span><span class="v-en">expensive</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/barato.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">barato / barata</span><span class="v-en">cheap / inexpensive</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/regatear.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">regatear</span><span class="v-en">to bargain / haggle</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/hecho-a-mano.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">hecho a mano</span><span class="v-en">handmade</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +3 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Say a mini-comparison out loud with two of these words: <em>Un aguayo <strong>hecho a mano</strong> es m&aacute;s <strong>caro</strong> que uno de f&aacute;brica.</em> You just reused a comparative <em>and</em> two theme words &mdash; exactly the kind of sentence the quiz asks you to build.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; REPASO DE GRAM&Aacute;TICA <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">One clean pass before the quiz</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Nothing new here &mdash; just the two grammar systems from this module, side by side. Read each row and say the example aloud. First, <strong>comparatives and superlatives</strong>:</p>
+        <table class="gtable">
+            <thead><tr><th>What you're saying</th><th>Structure</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>more &hellip; than</td><td><span class="pron">m&aacute;s</span> + adj. + <span class="pron">que</span></td><td>El aguayo es <span class="pron">m&aacute;s</span> caro <span class="pron">que</span> la camisa.</td></tr>
+                <tr><td>less &hellip; than</td><td><span class="pron">menos</span> + adj. + <span class="pron">que</span></td><td>La tela de f&aacute;brica es <span class="pron">menos</span> valiosa <span class="pron">que</span> la tela tejida.</td></tr>
+                <tr><td>as &hellip; as (equal)</td><td><span class="pron">tan</span> + adj. + <span class="pron">como</span></td><td>Este su&eacute;ter es <span class="pron">tan</span> bonito <span class="pron">como</span> ese.</td></tr>
+                <tr><td>the most &hellip; (of)</td><td><span class="pron">el/la m&aacute;s</span> + adj. + <span class="pron">de</span></td><td>Es <span class="pron">el m&aacute;s</span> hermoso <span class="pron">del</span> mercado.</td></tr>
+                <tr><td>irregular pair</td><td>mejor / peor</td><td>Su trabajo es <span class="pron">mejor</span> que el de la f&aacute;brica.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:14px 0 10px;">Now <strong>ser vs. estar</strong> &mdash; both mean &ldquo;to be,&rdquo; but they answer different questions:</p>
+        <table class="gtable">
+            <thead><tr><th>Use <span style="color:#55c8e8;">SER</span> for&hellip;</th><th>Example</th><th>Use <span style="color:#55c8e8;">ESTAR</span> for&hellip;</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>identity / what something is</td><td>Rosa <span class="pron">es</span> tejedora.</td><td>location</td><td>El mercado <span class="pron">est&aacute;</span> en Tarabuco.</td></tr>
+                <tr><td>origin (<em>de</em>)</td><td>La lana <span class="pron">es</span> de alpaca.</td><td>feelings / conditions</td><td>Rosa <span class="pron">est&aacute;</span> orgullosa.</td></tr>
+                <tr><td>lasting qualities</td><td>El aguayo <span class="pron">es</span> hermoso.</td><td>a changed / current state</td><td>Sus manos <span class="pron">est&aacute;n</span> cansadas.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Quiz tip: superlatives and comparisons of <em>what something is</em> use <strong>ser</strong> (<em>Es el m&aacute;s caro</em>). Save <strong>estar</strong> for <em>where</em> it is and <em>how</em> someone feels right now.</p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 4 &middot; A LEER <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Do&ntilde;a Rosa y su aguayo</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.75;">
+        En <strong>Tarabuco</strong>, un pueblo peque&ntilde;o en el sur de Bolivia, hay un mercado famoso los domingos. Do&ntilde;a Rosa <strong>es</strong> tejedora. Ella <strong>est&aacute;</strong> sentada con su trabajo entre muchos colores: rojo, negro, verde y dorado.<br><br>
+        Do&ntilde;a Rosa teje un <strong>aguayo</strong> &mdash; una <strong>tela</strong> de <strong>lana</strong> con dibujos peque&ntilde;os. Cada aguayo <strong>es</strong> diferente, porque los colores y los dibujos cuentan una historia de su familia y de su regi&oacute;n. &ldquo;Este aguayo <strong>es</strong> el <strong>m&aacute;s</strong> importante <strong>de</strong> todos,&rdquo; dice Rosa. &ldquo;<strong>Est&aacute;</strong> lleno de mi historia.&rdquo;<br><br>
+        Un aguayo <strong>hecho a mano</strong> <strong>es</strong> <strong>m&aacute;s caro que</strong> uno de f&aacute;brica, pero tambi&eacute;n <strong>es</strong> mucho <strong>m&aacute;s</strong> valioso. Un solo aguayo necesita muchas semanas de trabajo. Por eso los turistas <strong>est&aacute;n</strong> sorprendidos con el <strong>precio</strong>. Do&ntilde;a Rosa no <strong>est&aacute;</strong> nerviosa; ella <strong>est&aacute;</strong> orgullosa. &ldquo;Mi arte <strong>es</strong> <strong>tan</strong> antiguo <strong>como</strong> las monta&ntilde;as,&rdquo; dice. &ldquo;Yo tejo lo que mi abuela me ense&ntilde;a.&rdquo;</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">In the text, find: one <em>superlative</em> (&ldquo;the most&hellip;&rdquo;), one <em>comparative</em> with <em>m&aacute;s&hellip; que</em>, and one <em>tan&hellip; como</em>. Then decide <em>why</em> each highlighted verb is <em>ser</em> or <em>estar</em> &mdash; is it identity/quality (ser) or feeling/state (estar)? These are exactly the choices the quiz will test.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 5 &middot; PREP&Aacute;RATE PARA EL QUIZ <span class="pill-time">10 min</span></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 4px;">Self-check. Pick the answer, get instant feedback, and reset to try again. If any of these feel shaky, re-read Part 3 before tomorrow.</p>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; comparative</div>
+            <div class="widget-question">&ldquo;Un aguayo hecho a mano ___ uno de f&aacute;brica.&rdquo; (a handmade aguayo is <em>more expensive than</em> a factory one)</div>
+            <div class="widget-options">
+                <button data-correct="false">es tan caro como</button>
+                <button data-correct="true">es m&aacute;s caro que</button>
+                <button data-correct="false">es menos caro que</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; ser or estar?</div>
+            <div class="widget-question">&ldquo;Los turistas ___ sorprendidos con el precio.&rdquo; (a reaction / feeling right now)</div>
+            <div class="widget-options">
+                <button data-correct="true">est&aacute;n</button>
+                <button data-correct="false">son</button>
+                <button data-correct="false">es</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; superlative</div>
+            <div class="widget-question">&ldquo;Para Rosa, este aguayo es ___ importante ___ todos.&rdquo; (the <em>most</em> important <em>of</em> all)</div>
+            <div class="widget-options">
+                <button data-correct="false">tan&hellip; como</button>
+                <button data-correct="false">menos&hellip; que</button>
+                <button data-correct="true">el m&aacute;s&hellip; de</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn, out loud: say <strong>three</strong> sentences about the market in the reading &mdash; (1) a comparison with <em>m&aacute;s&hellip; que</em>, (2) one with <em>ser</em> describing what something is, and (3) one with <em>estar</em> describing how Rosa feels. Commit to your three before you reveal the models.</p>
+            <button class="reveal-btn">Reveal models</button>
+            <div class="reveal-body"><strong>(1) El aguayo es m&aacute;s valioso que la tela de f&aacute;brica. (2) Do&ntilde;a Rosa es tejedora y su arte es hermoso. (3) Rosa est&aacute; orgullosa de su trabajo.</strong> Notice: <em>ser</em> for identity/quality (<em>es tejedora, es hermoso</em>), <em>estar</em> for a feeling (<em>est&aacute; orgullosa</em>), and the comparative frame <em>m&aacute;s&hellip; que</em>. Yours can use different clothing words &mdash; the structures are what count.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; BOLIVIA</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El aguayo: colores que hablan</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">The <strong>aguayo</strong> (also called <em>q'ipina</em> or <em>lliklla</em>) is a rectangular woven cloth that Andean women fold across their backs to carry goods, market purchases, or a baby. It is one of the most recognizable objects in Bolivian daily life &mdash; and it is never just decoration. Its bands of color and its <em>pallay</em> (patterned designs) vary by <strong>region</strong>: the weavers of <strong>Tarabuco</strong>, near Sucre, are known for figures woven in red on a dark ground, while the nearby <strong>Jalq'a</strong> fill their cloth with <em>khurus</em>, mysterious dark creatures. You can watch these textiles change hands at the huge Sunday market in Tarabuco or at <strong>La Cancha</strong> in Cochabamba, one of the largest open-air markets in South America. When you buy an aguayo <em>hecho a mano</em>, you're carrying weeks of one person's skill &mdash; and a design passed down for generations. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short clip &mdash; <em>Un d&iacute;a en el mercado de Tarabuco</em>.)</span></p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; HONESTY</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Jaime Escalante</strong> (La Paz, Bolivia, 1930&ndash;2010) was scrupulously honest about crediting the people who helped him become a teacher, never claiming success he hadn't honestly earned or hadn't been given. That same honesty matters when you look at handmade clothing: an honest label tells the truth about who made something and how &mdash; a hand-woven aguayo is not the same as a factory imitation, and honesty means not pretending otherwise. Today, as you read about the maker and the tradition behind a garment, practice describing it honestly, giving real credit to the hands behind it.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">10</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 6.10 &mdash; Repaso del m&oacute;dulo + autoevaluaci&oacute;n &rarr; Grammar Quiz</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow is the last day of Module 6: a full self-check, then the <strong>Grammar Quiz</strong> (comparatives / superlatives + ser vs. estar, with a listening section). Today's review is your best preparation &mdash; if the widgets above went smoothly, you're ready.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then reread Do&ntilde;a Rosa's paragraph once more and say aloud <em>one</em> thing you're grateful for in something you're wearing &mdash; in Spanish if you can: <em>Estoy agradecido/a por&hellip;</em></div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You read a real Spanish text and understood it, you ran comparatives, superlatives, and <em>ser</em>/<em>estar</em> one more clean time, and you met a maker worth being grateful for. That's Module 6 nearly complete &mdash; one self-check and the quiz stand between you and the finish line. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 6.09 &middot; Reading + culture consolidation; Quiz prep</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

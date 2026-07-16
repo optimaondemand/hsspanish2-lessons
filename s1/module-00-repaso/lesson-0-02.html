@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 0.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 0</div>
+        <div style="font-size: 12px; color: #666;">Repaso &middot; Re-entry</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 0.02 &middot; Day 2 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">La clase y la tecnolog&iacute;a (vocabulary refresh)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Repaso &middot; Re-entry</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 0.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> La clase y la tecnolog&iacute;a &mdash; Your tools, back in Spanish</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">The room you learn in has a name for everything &mdash; and today you get those names back.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Yesterday you switched your Spanish back on with greetings. Today we refresh the words for the <strong>things around you</strong> when you study &mdash; both the classic classroom objects (<em>el cuaderno, la mochila</em>) and the <strong>technology</strong> you actually reach for (<em>la computadora port&aacute;til, los aud&iacute;fonos, la contrase&ntilde;a</em>). No new grammar today: we're stocking your vocabulary shelf and re-using verbs you already know &mdash; <em>hay, usar, necesitar</em> &mdash; to talk about what's in the room. Naming your world in Spanish is the first step to living part of your day in it.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> name common classroom objects and technology tools in Spanish with the correct article (<em>el / la</em>).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use familiar verbs (<em>hay, usar, necesitar</em>) to say what's in the room and what I use to study.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe the tools I reach for most, combining classroom and technology words in short present-tense sentences.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Para empezar ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Look up from the screen</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Take ten seconds and look around wherever you're studying right now. How many of those objects can you already name in Spanish? Probably more than you'd guess &mdash; <em>el libro, la silla, el tel&eacute;fono</em>&hellip; Today we fill the gaps and add the words for the devices Spanish 1 barely touched.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">When you study, which tool do you reach for the most?</div>
+            <div class="widget-options">
+                <button data-response="La computadora (portátil) — el aparato clásico para estudiar. You'll get 'la computadora' and 'la computadora portátil' (laptop) in Part 2.">A computer or laptop</button>
+                <button data-response="El teléfono (celular) — most of us reach for it first. In Part 2 you'll learn 'el teléfono celular' and the words for its screen and headphones too.">My phone</button>
+                <button data-response="¡El cuaderno y el bolígrafo nunca fallan! The classic notebook-and-pen. Part 2 refreshes those alongside the tech words.">Paper — a notebook and pen</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Vocab with audio ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; EN LA CLASE Y CON LA TECNOLOG&Iacute;A <span class="pill-time">12 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Listen, then say each one back</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Click the <strong>&#128266;</strong> and repeat aloud. Learn each noun <em>with its article</em> &mdash; the little <em>el</em> or <em>la</em> is part of the word and tells you its gender. First, the classroom:</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-cuaderno.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el cuaderno</span><span class="v-en">notebook</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-boligrafo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el bol&iacute;grafo</span><span class="v-en">pen</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-lapiz.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el l&aacute;piz</span><span class="v-en">pencil</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-mochila.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la mochila</span><span class="v-en">backpack</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-escritorio.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el escritorio</span><span class="v-en">desk</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-silla.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la silla</span><span class="v-en">chair</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-pizarra.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la pizarra</span><span class="v-en">(chalk/white)board</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-reloj.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el reloj</span><span class="v-en">clock / watch</span></li>
+        </ul>
+        <p style="font-size: 15px; color: #6b7a99; line-height: 1.6; margin: 12px 0 6px 0;">And now the technology &mdash; the words you'll use every single day this year:</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-computadora.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la computadora</span><span class="v-en">computer</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-computadora-portatil.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la computadora port&aacute;til</span><span class="v-en">laptop</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-tableta.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la tableta</span><span class="v-en">tablet</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-telefono-celular.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el tel&eacute;fono celular</span><span class="v-en">cell phone</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-teclado.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el teclado</span><span class="v-en">keyboard</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-pantalla.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la pantalla</span><span class="v-en">screen</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/los-audifonos.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">los aud&iacute;fonos</span><span class="v-en">headphones / earbuds</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-contrasena.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la contrase&ntilde;a</span><span class="v-en">password</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +5 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Sort the sixteen words into two piles out loud: <em>la clase</em> (classroom objects) and <em>la tecnolog&iacute;a</em> (devices). Then say each one with its article and point to it if it's near you. Saying <em>la</em> mochila, <em>el</em> teclado &mdash; article and all &mdash; is how the gender sticks.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Light present usage (recycled) ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; PON LAS PALABRAS A TRABAJAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Three verbs you already own</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">You don't need any new grammar to start using today's words &mdash; just three verbs from Spanish 1. Slot your new nouns into these familiar frames:</p>
+        <table class="gtable">
+            <thead><tr><th>Frame (review)</th><th>Meaning</th><th>Example with today's words</th></tr></thead>
+            <tbody>
+                <tr><td><span class="pron">hay</span> + noun</td><td>there is / there are</td><td>En la clase <span class="pron">hay</span> una pizarra y un reloj.</td></tr>
+                <tr><td><span class="pron">uso</span> (usar)</td><td>I use</td><td>Yo <span class="pron">uso</span> la computadora port&aacute;til todos los d&iacute;as.</td></tr>
+                <tr><td><span class="pron">necesito</span> (necesitar)</td><td>I need</td><td>Para la clase <span class="pron">necesito</span> un cuaderno y un bol&iacute;grafo.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">A quick reminder from Spanish 1: <em>hay</em> never changes &mdash; it means both "there is" and "there are." And the article shifts with number: <em>un</em> cuaderno &rarr; <em>unos</em> cuadernos, <em>la</em> silla &rarr; <em>las</em> sillas. That's all the machinery you need for this lesson &mdash; the real grammar refresh starts tomorrow.</p>
+    </div>
+
+    <!-- ===== PART 4 · Practice ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">10 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; pick the right tool</div>
+            <div class="widget-question">You have to type a long essay for class. Which tool do you use most?</div>
+            <div class="widget-options">
+                <button data-correct="false">el l&aacute;piz</button>
+                <button data-correct="false">la pizarra</button>
+                <button data-correct="true">el teclado</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; complete the sentence</div>
+            <div class="widget-question">&ldquo;Para entrar en la plataforma del colegio, necesito mi ___.&rdquo; (To log in to the school platform, I need my ___.)</div>
+            <div class="widget-options">
+                <button data-correct="true">contrase&ntilde;a</button>
+                <button data-correct="false">silla</button>
+                <button data-correct="false">mochila</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; el o la&#63;</div>
+            <div class="widget-question">Which article goes with the word for &ldquo;screen&rdquo;? &ldquo;___ pantalla&rdquo;</div>
+            <div class="widget-options">
+                <button data-correct="false">el</button>
+                <button data-correct="true">la</button>
+                <button data-correct="false">los</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: how would you say <em>&ldquo;There are two computers in the classroom&rdquo;</em>? Say it out loud first, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Hay dos computadoras en la clase.</strong> <em>Hay</em> covers "there are"; <em>computadora</em> becomes <em>computadoras</em> for the plural. Swap in your own numbers and objects &mdash; the frame stays the same.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · A leer ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        &laquo;Esta es mi mesa de estudio. En mi mochila siempre <strong>hay</strong> un cuaderno, un bol&iacute;grafo y un l&aacute;piz. Sobre el escritorio tengo mi computadora port&aacute;til y una tableta. Para las tareas, <strong>uso</strong> mucho el teclado y la pantalla grande. Cuando escucho m&uacute;sica o un p&oacute;dcast en espa&ntilde;ol, <strong>necesito</strong> mis aud&iacute;fonos. Y para entrar en la plataforma del colegio, siempre necesito mi contrase&ntilde;a. Me gusta la tecnolog&iacute;a, pero el cuaderno y el bol&iacute;grafo nunca fallan.&raquo;</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Make two lists from the paragraph: the <em>classroom</em> words and the <em>technology</em> words. Then find the three review verbs doing the work &mdash; <em>hay, uso, necesito</em>. Which one tells you what she <em>has</em>? Which tells you what she <em>uses</em>?</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; EL MUNDO HISPANO</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Un idioma muy conectado</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Spanish is one of the most-used languages on the internet &mdash; roughly the <strong>third</strong>, after English and Mandarin, by number of users online. But here's the twist for the words you just learned: technology vocabulary shifts from country to country. In much of Latin America a computer is <em>la computadora</em>; in Spain it's <strong><em>el ordenador</em></strong>. Your phone is <em>el celular</em> across the Americas but <strong><em>el m&oacute;vil</em></strong> in Spain, and the little clicker is <em>el rat&oacute;n</em> in some places and <em>el mouse</em> in others. Same language, many keyboards &mdash; part of what makes 21 countries feel like one big, noisy group chat. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short clip comparing tech words across regions.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; LAS SIETE VIRTUDES</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Among <strong>las siete virtudes</strong> that anchor Optima's character thread this year, today's habit is <em>responsabilidad</em>: taking care of your own <em>mochila</em>, <em>computadora port&aacute;til</em>, and <em>cuaderno</em> before class starts. A student who names their tools and keeps them in order is practicing <em>autogobierno</em> too &mdash; managing yourself so the real work goes smoothly. Small, ordinary care like this is exactly how the seven virtues get practiced, one class period at a time.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 0.03 &mdash; El presente de los verbos -ar</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow the real grammar refresh begins: the present tense of regular <em>-ar</em> verbs (<em>estudiar, usar, hablar, trabajar</em>) &mdash; and you'll put them straight to work with today's classroom and technology words. Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7; this week is for reactivation.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then look around you and name <strong>five</strong> objects out loud in Spanish &mdash; each one <em>with</em> its article (<em>la mochila, el teclado&hellip;</em>). Bonus: put two of them into a <em>hay</em> sentence.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Your study space now has a full Spanish vocabulary &mdash; from <em>el cuaderno</em> to <em>la contrase&ntilde;a</em> &mdash; and you can say what's in the room and what you use, all with verbs you already had. Tomorrow those verbs get their proper refresh. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 0.02 &middot; La clase y la tecnolog&iacute;a</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

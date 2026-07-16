@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 0.07</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 0</div>
+        <div style="font-size: 12px; color: #666;">Repaso &middot; Re-entry</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 0.07 &middot; Day 7 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Gustar y verbos parecidos</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Repaso &middot; Re-entry</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 0.07</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Lo que te gusta &mdash; y c&oacute;mo decirlo bien</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;"><em>Gustar</em> doesn't work like &ldquo;to like.&rdquo; It works backwards &mdash; and once you see the trick, it's easy.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">You've said <em>me gusta</em> since Spanish 1. Today we look under the hood: <strong>gustar</strong> literally means <em>to be pleasing</em>, so the thing you like is really the subject, and a little pronoun (<em>me, te, le, nos, les</em>) says <em>to whom</em>. Master that one pattern and you unlock a whole family of verbs &mdash; <strong>encantar</strong> and <strong>interesar</strong> behave exactly the same way. No new theme vocabulary today; we reuse words you already own and aim the spotlight at the structure.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> choose <em>gusta</em> vs. <em>gustan</em> depending on whether one thing or several things is liked.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> attach the right indirect object pronoun (<em>me, te, le, nos, les</em>) to say <em>who</em> likes something.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use <em>encantar</em> and <em>interesar</em> the same way, and clarify with <em>a m&iacute; / a ti / a</em> + a name.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">You already do this &mdash; let's notice how</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Read these two aloud: <em>Me gusta la m&uacute;sica.</em> and <em>Me gustan los videojuegos.</em> Same feeling, but the verb changed &mdash; <em>gusta</em> became <em>gustan</em>. Why? Because the second sentence is about <strong>several things</strong>. In English &ldquo;I like&rdquo; never changes; in Spanish the verb agrees with the <em>thing being liked</em>, not with you. That's the whole puzzle for today.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Before we dig in: which sounds more natural to your ear right now?</div>
+            <div class="widget-options">
+                <button data-response="Good instinct &mdash; and it's correct here. 'Los libros' is plural, so the verb matches it: me gustan. Notice you heard the agreement even before we explained it.">Me gustan los libros</button>
+                <button data-response="That's the pattern many of us reach for first because English never changes the verb. Spanish does, though: 'los libros' is plural, so it's 'me gustan los libros.' Part 3 makes this automatic.">Me gusta los libros</button>
+                <button data-response="Totally fair &mdash; if it's fuzzy right now, that's exactly why this lesson exists. By Part 4 you'll pick 'me gustan los libros' without stopping to think.">Honestly, I'm not sure yet</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; LO QUE NOS GUSTA (REPASO) <span class="pill-time">9 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The things we'll talk about liking</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">These are all words you already know from Spanish 1 &mdash; we're just gathering the ones people most often say they like, so you have material to plug into today's structure. Click the <strong>&#128266;</strong>, repeat aloud, and notice which are <em>singular</em> and which are <em>plural</em> &mdash; that's what will decide <em>gusta</em> vs. <em>gustan</em>.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-musica.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la m&uacute;sica</span><span class="v-en">music <em>(singular)</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-deporte.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el deporte</span><span class="v-en">sport <em>(singular)</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-comida.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la comida</span><span class="v-en">food <em>(singular)</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/los-videojuegos.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">los videojuegos</span><span class="v-en">video games <em>(plural)</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/las-peliculas.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">las pel&iacute;culas</span><span class="v-en">movies <em>(plural)</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/los-animales.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">los animales</span><span class="v-en">animals <em>(plural)</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/viajar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">viajar</span><span class="v-en">to travel <em>(infinitive)</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/cocinar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">cocinar</span><span class="v-en">to cook <em>(infinitive)</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/bailar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">bailar</span><span class="v-en">to dance <em>(infinitive)</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/leer.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">leer</span><span class="v-en">to read <em>(infinitive)</em></span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +4 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Sort the list in your head into three buckets: <em>singular things</em> (la m&uacute;sica, el deporte, la comida), <em>plural things</em> (los videojuegos, las pel&iacute;culas, los animales), and <em>actions</em> (viajar, cocinar, bailar, leer). Keep this map handy &mdash; singular things and actions take <em>gusta</em>; plural things take <em>gustan</em>.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; C&Oacute;MO FUNCIONA <em>GUSTAR</em> <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The backwards verb, made simple</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Think of <em>gustar</em> as <strong>&ldquo;to be pleasing to.&rdquo;</strong> So <em>Me gusta la m&uacute;sica</em> literally says <em>&ldquo;Music is pleasing to me.&rdquo;</em> The music is the subject; <strong>me</strong> is a little pronoun that answers <em>to whom?</em> Here is the full set of those pronouns:</p>
+        <table class="gtable">
+            <thead><tr><th>&iquest;A qui&eacute;n?</th><th>Pronoun</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>(a m&iacute;)</td><td><span class="pron">me</span></td><td><span class="pron">Me</span> gusta el caf&eacute;.</td></tr>
+                <tr><td>(a ti)</td><td><span class="pron">te</span></td><td>&iquest;<span class="pron">Te</span> gusta el caf&eacute;?</td></tr>
+                <tr><td>(a &eacute;l / ella / usted)</td><td><span class="pron">le</span></td><td>A ella <span class="pron">le</span> gusta el caf&eacute;.</td></tr>
+                <tr><td>(a nosotros/as)</td><td><span class="pron">nos</span></td><td><span class="pron">Nos</span> gusta el caf&eacute;.</td></tr>
+                <tr><td>(a ellos / ellas / ustedes)</td><td><span class="pron">les</span></td><td>A ellos <span class="pron">les</span> gusta el caf&eacute;.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 12px;">(In Spain you'll also hear <em>os</em> for <em>a vosotros</em>. Across Latin America &mdash; the Spanish we model this year &mdash; <em>les</em> covers the whole &ldquo;you all&rdquo; group.)</p>
+
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 8px 0;">Now the part everyone trips on &mdash; <strong>gusta</strong> or <strong>gustan?</strong> The verb agrees with the <em>thing</em>, not the person:</p>
+        <table class="gtable">
+            <thead><tr><th>Use&hellip;</th><th>When the thing liked is&hellip;</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td><span class="pron">gusta</span></td><td>one thing (singular)</td><td>Me <span class="pron">gusta</span> la comida.</td></tr>
+                <tr><td><span class="pron">gusta</span></td><td>an action / verb (infinitive)</td><td>Me <span class="pron">gusta</span> viajar. / Me <span class="pron">gusta</span> cocinar y leer.</td></tr>
+                <tr><td><span class="pron">gustan</span></td><td>several things (plural)</td><td>Me <span class="pron">gustan</span> los animales.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:15px;color:#1a2340;line-height:1.6;margin:6px 0 10px;">Same exact machine for two more verbs you can start using today:</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="grammar/encantar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">encantar</span><span class="v-en">to love / really like &mdash; <em>Me encanta bailar. Me encantan las pel&iacute;culas.</em></span></li>
+            <li class="vocab-item"><button class="say" data-audio="grammar/interesar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">interesar</span><span class="v-en">to interest &mdash; <em>Me interesa la historia. Me interesan los deportes.</em></span></li>
+        </ul>
+        <p style="font-size:14px;color:#6b7a99;margin:8px 0 0;">Tip: to make any of these negative, just put <em>no</em> in front &mdash; <em>No me gusta cocinar. A &eacute;l no le interesan los videojuegos.</em></p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">10 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; gusta or gustan?</div>
+            <div class="widget-question">&ldquo;Me ___ los animales.&rdquo; (I like animals.) Which form fits?</div>
+            <div class="widget-options">
+                <button data-correct="false">gusta</button>
+                <button data-correct="true">gustan</button>
+                <button data-correct="false">gustas</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; pick the pronoun</div>
+            <div class="widget-question">You want to say <em>&ldquo;Ana likes to cook.&rdquo;</em> Fill the blank: &ldquo;A Ana ___ gusta cocinar.&rdquo;</div>
+            <div class="widget-options">
+                <button data-correct="false">me</button>
+                <button data-correct="false">te</button>
+                <button data-correct="true">le</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; the whole pattern</div>
+            <div class="widget-question">Which sentence is written correctly?</div>
+            <div class="widget-options">
+                <button data-correct="true">Me encantan las pel&iacute;culas.</button>
+                <button data-correct="false">Me encantan bailar.</button>
+                <button data-correct="false">A ellos le interesa los deportes.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: say <strong>three</strong> true sentences about yourself out loud &mdash; one with <em>me gusta</em> + a singular thing or an action, one with <em>me gustan</em> + a plural thing, and one with <em>me encanta(n)</em>. Commit to yours before you reveal the model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Me gusta cocinar. Me gustan las pel&iacute;culas de acci&oacute;n. &iexcl;Me encanta la m&uacute;sica!</strong> Yours will use your own favorites &mdash; just keep the check: singular thing or action &rarr; <em>gusta/encanta</em>; plural things &rarr; <em>gustan/encantan</em>.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        Me llamo <strong>Camila</strong> y soy de Bogot&aacute;, Colombia. A m&iacute; <strong>me encanta</strong> la m&uacute;sica &mdash; toco la guitarra todos los d&iacute;as. Tambi&eacute;n <strong>me gustan</strong> los animales; tengo dos perros. A mi hermano Diego <strong>le interesan</strong> los videojuegos m&aacute;s que nada, pero no <strong>le gusta</strong> leer. A nosotros dos <strong>nos gusta</strong> cocinar juntos los domingos: preparamos arepas para toda la familia. &iquest;Y a ti? &iquest;Qu&eacute; <strong>te gusta</strong> hacer?</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find every gustar-type verb in the passage. Which ones are <em>gusta/encanta/interesa</em> (singular or action) and which are <em>gustan/interesan</em> (plural)? Notice how <em>le</em> switches to <em>nos</em> when Camila talks about herself <em>and</em> Diego.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; EL MUNDO HISPANO</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>&iquest;Qu&eacute; le gusta al mundo hispano?</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Ask across the Spanish-speaking world what people love, and one answer comes back almost everywhere: <strong>el f&uacute;tbol</strong>. It's the most popular sport in nearly every Spanish-speaking country, and national teams from <strong>Argentina</strong>, <strong>Espa&ntilde;a</strong>, and <strong>Uruguay</strong> have all lifted the World Cup. But taste is beautifully local too: to a family in Bogot&aacute; <em>les encanta</em> the accordion-driven rhythms of <em>vallenato</em>; in Mexico <em>les gusta</em> a Sunday of <em>tacos</em> and <em>mariachi</em>; in Spain <em>les interesa</em> the late-evening ritual of <em>tapas</em>. Learning to say precisely <em>what</em> pleases <em>whom</em> &mdash; the exact grammar of today's lesson &mdash; is how you start trading favorites with 500 million people. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short listening clip of regional music styles.)</span></p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; LAS SIETE VIRTUDES</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><em>Gustar</em> asks you to talk about what pleases <em>you</em> &mdash; and really listening for what pleases someone else is <em>cortes&iacute;a</em>, one of <strong>las siete virtudes</strong> woven through this course. Today also opens your first graded work this module; approaching it carefully rather than rushing is <em>responsabilidad</em> in action. Courtesy toward others and responsibility toward your own work &mdash; the seven virtudes ask for both, all year.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">8</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 0.08 &mdash; Describe tu mundo</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll pull the whole module together to describe your world &mdash; who you are, what you have, and what you like &mdash; and start drafting your <strong>Tarea oral</strong> (recorded speaking task). <strong>Graded work is now open:</strong> the <strong>Vocabulary Check</strong> and <strong>Lengua en acci&oacute;n</strong> for Module 0 unlock today (Day 7). Do them any time before the module closes.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then open the two graded items that just unlocked &mdash; the <strong>Vocabulary Check</strong> (listening) and <strong>Lengua en acci&oacute;n</strong> (short writing) &mdash; and read the directions so you know what's coming. Say one last <em>me gusta / me gustan / me encanta</em> sentence out loud before you close the tab.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You cracked the backwards verb. You know <em>gusta</em> goes with one thing or an action and <em>gustan</em> goes with several, that <em>me/te/le/nos/les</em> says who, and that <em>encantar</em> and <em>interesar</em> ride the same rails. That's real control over one of the most-used patterns in the language. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 0.07 &middot; Gustar y verbos parecidos</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

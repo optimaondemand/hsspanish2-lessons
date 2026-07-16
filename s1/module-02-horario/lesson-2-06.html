@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 2.06</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 2</div>
+        <div style="font-size: 12px; color: #666;">Mi horario y la hora</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 2.06 &middot; Day 6 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Rutinas y horarios centroamericanos &mdash; lectura cultural (Honduras/El Salvador)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Mi horario y la hora</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 2.06</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Un d&iacute;a de escuela: horarios en Honduras y El Salvador</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Nada nuevo hoy &mdash; los verbos &ldquo;bota&rdquo; se ponen a trabajar en una lectura real.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">No new rule and no new word list today. Instead you'll watch the <strong>boot verbs</strong> you already know &mdash; especially the <strong>e&rarr;i</strong> (<em>pedir, servir, seguir</em>) and <strong>u&rarr;ue</strong> (<em>jugar</em>) ones from the last lesson &mdash; do their job inside a culture-rich reading about a <strong>real school day and daily rhythm in Honduras and El Salvador</strong>: split-shift schedules, the big midday <em>almuerzo</em>, the unhurried <em>sobremesa</em>, and how kids get to school. Expect more Spanish and lighter English than usual &mdash; you're ready for it.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use e&rarr;i and u&rarr;ue stem-changing verbs correctly inside full sentences about a school day and schedule.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> read an authentic-style text about daily life in Honduras and El Salvador and identify who does what, and when.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how the <em>doble jornada</em>, the midday <em>almuerzo</em>, and the <em>sobremesa</em> shape the daily schedule in Central America.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">&iquest;A qu&eacute; hora empieza tu d&iacute;a?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">All module long you've been telling time and naming your <em>horario</em>. In many schools in Honduras and El Salvador the first class <em>empieza</em> at <strong>7:00 a.m.</strong> &mdash; earlier than a lot of U.S. schools. Before you read about their day, think about your own. Say it out loud: <em>Mi primera clase empieza a las&hellip;</em></p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">&iquest;A qu&eacute; hora <em>empieza</em> tu primera clase, m&aacute;s o menos?</div>
+            <div class="widget-options">
+                <button data-response="&iexcl;Madrugador! 'Mi primera clase empieza antes de las ocho.' Eso se parece mucho al turno matutino salvadore&ntilde;o que vas a leer &mdash; empiezan a las siete.">Antes de las 8:00</button>
+                <button data-response="Muy com&uacute;n: 'Mi primera clase empieza a las ocho, m&aacute;s o menos.' Fíjate en 'empieza' &mdash; es un verbo bota (e&rarr;ie), justo el tipo de verbo que protagoniza la lectura de hoy.">A las 8:00, m&aacute;s o menos</button>
+                <button data-response="Perfectamente v&aacute;lido: 'Mi primera clase empieza despu&eacute;s de las ocho.' Compara ese horario con el turno matutino de las siete que leer&aacute;s abajo &mdash; el reloj cambia de un pa&iacute;s a otro.">Despu&eacute;s de las 8:00</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; REPASO EXPRESS <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Your toolkit for the reading &mdash; nothing new</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">These are all words and verbs from earlier this module &mdash; <strong>nothing new to memorize</strong>. Click the <strong>&#128266;</strong>, say each one back, and get your ear ready. The verbs are the <strong>e&rarr;i</strong> and <strong>u&rarr;ue</strong> boot verbs you just met; the nouns are your schedule words.</p>
+        <p style="font-size:14px;color:#6b7a99;margin:0 0 4px 0;font-weight:600;">Verbos con cambio e&rarr;i / u&rarr;ue (infinitivo)</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/pedir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">pedir</span><span class="v-en">to ask for, to order &middot; e&rarr;i (pido)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/servir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">servir</span><span class="v-en">to serve &middot; e&rarr;i (sirve)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/seguir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">seguir</span><span class="v-en">to follow, to keep on &middot; e&rarr;i (sigue)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/repetir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">repetir</span><span class="v-en">to repeat &middot; e&rarr;i (repite)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/jugar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">jugar</span><span class="v-en">to play &middot; u&rarr;ue (juega)</span></li>
+        </ul>
+        <p style="font-size:14px;color:#6b7a99;margin:10px 0 4px 0;font-weight:600;">Palabras del horario (repaso)</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-horario.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el horario</span><span class="v-en">schedule</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-clase.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la clase</span><span class="v-en">class</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-recreo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el recreo</span><span class="v-en">recess, break</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-almuerzo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el almuerzo</span><span class="v-en">lunch, midday meal</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +4 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Say the <em>yo</em> and <em>&eacute;l/ella</em> form of each boot verb aloud: <em>pido / pide</em>, <em>sirvo / sirve</em>, <em>sigo / sigue</em>, <em>repito / repite</em>, <em>juego / juega</em>. Notice the stem changes in both &mdash; that's the &ldquo;boot&rdquo; at work.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; LA BOTA, OTRA VEZ <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Where the stem changes &mdash; and where it doesn't</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Quick refresher before you read. In an <strong>e&rarr;i</strong> or <strong>u&rarr;ue</strong> verb, the stem changes in every form <em>except</em> <strong>nosotros/as</strong> (and <em>vosotros/as</em>). Draw a line around the forms that change and you get the shape of a <strong>boot</strong> &mdash; the two &ldquo;we/you-all&rdquo; forms stay outside it, unchanged.</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>pedir (e&rarr;i)</th><th>servir (e&rarr;i)</th><th>jugar (u&rarr;ue)</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td>p<span class="pron">i</span>do</td><td>s<span class="pron">i</span>rvo</td><td>j<span class="pron">ue</span>go</td></tr>
+                <tr><td>t&uacute;</td><td>p<span class="pron">i</span>des</td><td>s<span class="pron">i</span>rves</td><td>j<span class="pron">ue</span>gas</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td>p<span class="pron">i</span>de</td><td>s<span class="pron">i</span>rve</td><td>j<span class="pron">ue</span>ga</td></tr>
+                <tr><td>nosotros/as</td><td>pedimos</td><td>servimos</td><td>jugamos</td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td>p<span class="pron">i</span>den</td><td>s<span class="pron">i</span>rven</td><td>j<span class="pron">ue</span>gan</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">The two forms that <em>don't</em> change &mdash; <em>pedimos, servimos, jugamos</em> &mdash; are the sole of the boot. Every other form takes the change. As you read the passage below, that's the pattern you'll be spotting.</p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">10 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; u&rarr;ue in action</div>
+            <div class="widget-question">Completa: &ldquo;En el recreo los estudiantes ___ al f&uacute;tbol.&rdquo; (jugar)</div>
+            <div class="widget-options">
+                <button data-correct="false">jugan</button>
+                <button data-correct="true">juegan</button>
+                <button data-correct="false">jugen</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; spot the u&rarr;ue verb</div>
+            <div class="widget-question">&iquest;Cu&aacute;l oraci&oacute;n contiene un verbo con cambio <strong>u&rarr;ue</strong>?</div>
+            <div class="widget-options">
+                <button data-correct="true">Los ni&ntilde;os juegan en el patio.</button>
+                <button data-correct="false">La profesora repite la pregunta.</button>
+                <button data-correct="false">Mateo vuelve a casa a mediod&iacute;a.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; e&rarr;i in the yo form</div>
+            <div class="widget-question">Completa: &ldquo;Yo siempre ___ ayuda cuando no entiendo.&rdquo; (pedir)</div>
+            <div class="widget-options">
+                <button data-correct="false">pide</button>
+                <button data-correct="false">pedimos</button>
+                <button data-correct="true">pido</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: say <strong>two</strong> true sentences about your own school day &mdash; each one using an e&rarr;i or u&rarr;ue boot verb (<em>pedir, servir, seguir, repetir, jugar</em>). Say them out loud, then reveal a model.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>En el almuerzo pido una ensalada y un jugo. Despu&eacute;s del colegio juego al b&aacute;squetbol con mis amigos.</strong> Yours will use your own schedule &mdash; the frame is <em>[yo] + [verbo bota] + [detalle]</em>.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER &middot; UN D&Iacute;A EN CENTROAM&Eacute;RICA <span class="pill-time">8 min</span></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.7;">Le&eacute;lo una vez para la idea general y otra vez para los detalles. Every verb is present tense and the boot verbs are in <strong>bold</strong> so you can spot them. New words are glossed in parentheses.</p>
+        <div style="background:#F4F9FC;border:1px solid #D0D9E8;border-radius:8px;padding:16px 20px;font-size:17px;color:#1a2340;line-height:1.75;">
+        <p style="margin:0 0 10px 0;">En El Salvador y en Honduras muchos colegios funcionan con <strong>doble jornada</strong>: unos estudiantes van por la ma&ntilde;ana (el turno matutino) y otros por la tarde (el turno vespertino). As&iacute;, un mismo edificio sirve al doble de alumnos. Sof&iacute;a vive en San Salvador y <strong>prefiere</strong> el turno de la ma&ntilde;ana. Su primera clase <strong>empieza</strong> a las siete en punto, as&iacute; que se despierta temprano, se viste r&aacute;pido y toma el bus &mdash; en la ciudad la gente lo llama <em>la ruta</em>.</p>
+        <p style="margin:0 0 10px 0;">Durante la ma&ntilde;ana los profesores <strong>repiten</strong> las explicaciones y los alumnos <strong>piden</strong> ayuda cuando no entienden. En el recreo casi todos <strong>juegan</strong> al f&uacute;tbol en el patio, y despu&eacute;s <strong>vuelven</strong> a clase con una <em>pupusa</em> caliente <em>(una tortilla gruesa rellena de queso o frijoles, el plato t&iacute;pico salvadore&ntilde;o)</em>.</p>
+        <p style="margin:0;">En Tegucigalpa, la capital de Honduras, Mateo <strong>vuelve</strong> a casa al mediod&iacute;a porque el <strong>almuerzo</strong> es la comida principal del d&iacute;a. Su mam&aacute; <strong>sirve</strong> baleadas <em>(una tortilla de harina con frijoles, queso y crema)</em>, y despu&eacute;s toda la familia <strong>sigue</strong> en la mesa un rato m&aacute;s. Ese momento de conversaci&oacute;n despu&eacute;s de comer se llama <strong>la sobremesa</strong>: nadie tiene prisa. As&iacute;, el ritmo del d&iacute;a <strong>sigue</strong> a la familia, no solo al reloj.</p>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#128214; COMPRENSI&Oacute;N &middot; interpretive reading</div>
+            <div class="widget-question">Seg&uacute;n el texto, &iquest;por qu&eacute; hay un turno matutino y un turno vespertino en muchos colegios?</div>
+            <div class="widget-options">
+                <button data-correct="false">Porque el almuerzo es la comida principal del d&iacute;a.</button>
+                <button data-correct="false">Porque los estudiantes prefieren jugar al f&uacute;tbol por la tarde.</button>
+                <button data-correct="true">Porque funcionan con doble jornada: reciben a unos alumnos por la ma&ntilde;ana y a otros por la tarde.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#128269; A CAZAR VERBOS &middot; grammar spotting</div>
+            <div class="widget-question">En el texto, <em>los alumnos <strong>piden</strong> ayuda</em>. El verbo <em>pedir</em> tiene un cambio de ra&iacute;z de tipo&hellip;</div>
+            <div class="widget-options">
+                <button data-correct="true">e&rarr;i (pedir &rarr; piden)</button>
+                <button data-correct="false">o&rarr;ue (como poder &rarr; puede)</button>
+                <button data-correct="false">u&rarr;ue (como jugar &rarr; juega)</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#128214; COMPRENSI&Oacute;N &middot; interpretive reading</div>
+            <div class="widget-question">&iquest;Qu&eacute; es <em>la sobremesa</em>, seg&uacute;n la lectura?</div>
+            <div class="widget-options">
+                <button data-correct="false">El nombre del turno de la tarde en el colegio.</button>
+                <button data-correct="false">Un plato t&iacute;pico de Honduras.</button>
+                <button data-correct="true">El rato de conversaci&oacute;n que la familia pasa en la mesa despu&eacute;s de comer.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find every boot verb in the reading and label its change: <em>prefiere</em> (e&rarr;ie), <em>empieza</em> (e&rarr;ie), <em>repiten</em> (e&rarr;i), <em>piden</em> (e&rarr;i), <em>juegan</em> (u&rarr;ue), <em>vuelven / vuelve</em> (o&rarr;ue), <em>sirve</em> (e&rarr;i), <em>sigue</em> (e&rarr;i). Eight verbs, four different changes &mdash; all in three short paragraphs.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; HONDURAS Y EL SALVADOR</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El horario escolar y la doble jornada</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 10px 0;">Because public schools serve so many students, many in El Salvador and Honduras run a <strong>doble jornada</strong> &mdash; two shifts sharing one building. Here is an authentic-style morning schedule (<em>turno matutino</em>), the kind posted at the classroom door:</p>
+        <div style="background:#FFFFFF;border:1px dashed #C7922C;border-radius:6px;padding:12px 16px;font-size:15px;color:#1a2340;line-height:1.7;">
+            <div style="font-weight:700;color:#9a7b1e;letter-spacing:.5px;font-size:12px;margin-bottom:6px;">&mdash; HORARIO &middot; TURNO MATUTINO &mdash;</div>
+            7:00 &middot; Formaci&oacute;n y saludo<br>
+            7:15 &middot; Matem&aacute;tica<br>
+            8:00 &middot; Estudios Sociales<br>
+            8:45 &middot; Lenguaje y Literatura<br>
+            9:30 &middot; <strong>Recreo</strong><br>
+            9:50 &middot; Ciencias Naturales<br>
+            10:35 &middot; Ingl&eacute;s<br>
+            11:20 &middot; Educaci&oacute;n F&iacute;sica<br>
+            12:00 &middot; Salida
+        </div>
+        <p style="font-size:14px;color:#6b7a99;line-height:1.55;margin:10px 0 0;">Notice the day ends at midday &mdash; students head home for the big <em>almuerzo</em>, and the afternoon shift (<em>turno vespertino</em>) takes their seats. The unhurried <em>sobremesa</em> after lunch, which you read about above, is where the family reconnects. In Central America the schedule bends around the meal, not the other way around.</p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; COURAGE</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>&Oacute;scar Romero</strong> (El Salvador, 1917&ndash;1980), archbishop of San Salvador, built his defense of the poor and oppressed into the weekly <em>rutina</em> of the whole country: a Sunday radio homily that reached homes across El Salvador, even as threats against him grew. He was assassinated in 1980 while saying Mass and was declared a saint in 2018. Just as Salvadorans and Hondurans structure their day around a shared <em>horario</em>, Romero showed that courage can become part of a life's steady rhythm.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">7</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 2.07 &mdash; Integraci&oacute;n: mi horario completo</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you pull the whole module together and <strong>graded work opens</strong>: the <em>Vocabulary Check</em> (listening) and <em>Lengua en acci&oacute;n</em> (written production). Everything you rehearsed today &mdash; boot verbs plus your schedule words &mdash; is exactly what those tasks will ask you to show.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then describe your school day out loud one more time &mdash; two sentences with an e&rarr;i or u&rarr;ue boot verb &mdash; a little faster each time.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You didn't learn a new rule today &mdash; you watched the boot verbs you already own carry a real reading. You can spot an e&rarr;i or u&rarr;ue change on sight, and you read genuine Central American daily life: the seven o'clock <em>turno matutino</em>, pupusas and baleadas at the break, the big midday <em>almuerzo</em>, and the unhurried <em>sobremesa</em>. And in &Oacute;scar Romero you met <em>valor</em> lived out loud. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 2.06 &middot; Horarios y rutinas &middot; Honduras / El Salvador</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

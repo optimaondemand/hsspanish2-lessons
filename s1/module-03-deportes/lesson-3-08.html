@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 3.08</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 3</div>
+        <div style="font-size: 12px; color: #666;">Deportes y pasatiempos</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 3.08 &middot; Day 8 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Production practice &rarr; Tarea oral</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Deportes y pasatiempos</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 3.08</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Mi deporte favorito &mdash; en mi propia voz</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Everything you built this module now comes together &mdash; out loud, in your voice.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today is a <strong>production day</strong>: <em>no</em> new grammar and <em>no</em> new words. You already own the sports-and-pastimes vocabulary and the module's verbs &mdash; the <strong>-zco</strong> group (<em>conozco, conduzco, ofrezco</em>) plus <em>voy, doy,</em> and <em>veo</em>. Now you'll put them together into a short, first-person presentation about your <strong>favorite sport or pastime</strong> and <strong>someone you know</strong> in it, rehearse it, and record it &mdash; that recording is your graded <strong>Tarea oral</strong>. We scaffold it step by step so that when you hit &ldquo;record,&rdquo; you already know exactly what you want to say.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> present, in the first person, my favorite sport or pastime and a person I know in it, using <em>conozco (a&hellip;), voy a&hellip;,</em> and <em>veo&hellip;</em></div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> assemble correct sentences from sentence frames and link them into one smooth spoken paragraph.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> draft, rehearse, self-check, and record my Tarea oral to the presentational rubric &mdash; then reflect on my delivery.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Warm up your voice before you record</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A recording sounds far more confident when you've said the words out loud first. Read this line aloud twice, a little smoother each time: <em>&mdash;Mi deporte favorito es el f&uacute;tbol; los s&aacute;bados <strong>voy</strong> a la cancha y <strong>veo</strong> los partidos.</em> That one sentence already uses two of today's verbs. Now think about your own life before we build.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Which sport or pastime would you most enjoy talking about?</div>
+            <div class="widget-options">
+                <button data-response="&iexcl;Perfecto! You can open with 'Mi deporte favorito es el f&uacute;tbol.' Hold that thought &mdash; it becomes the first line of your Tarea oral in Part 4.">Un deporte de equipo (f&uacute;tbol, b&eacute;isbol&hellip;)</button>
+                <button data-response="&iexcl;Muy bien! Say 'Mi pasatiempo favorito es&hellip;' &mdash; for an individual sport like la nataci&oacute;n or el ciclismo you can add 'Voy al gimnasio' or 'Doy un paseo en bicicleta.'">Un deporte individual (nataci&oacute;n, ciclismo&hellip;)</button>
+                <button data-response="&iexcl;Genial! A pastime works perfectly: 'Mi pasatiempo favorito es&hellip;' Then 'Conozco a&hellip;' introduces the person you share it with. Keep it for your draft.">Un pasatiempo (m&uacute;sica, videojuegos, leer&hellip;)</button>
+                <button data-response="That counts too! You might say 'Veo los partidos en la tele' or 'Conozco a un jugador famoso.' Watching and following a sport is great material for this task.">Ver o seguir un deporte</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; LAS PALABRAS QUE YA TIENES <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Reactivate the words you'll reach for</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Nothing new here &mdash; these are words from earlier this module. Click the <strong>&#128266;</strong> and repeat each one aloud so it's fresh and ready when you record.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-deporte.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el deporte</span><span class="v-en">sport</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-pasatiempo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el pasatiempo</span><span class="v-en">pastime / hobby</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-equipo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el equipo</span><span class="v-en">team</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-partido.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el partido</span><span class="v-en">game / match</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-cancha.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la cancha</span><span class="v-en">court / field</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-gimnasio.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el gimnasio</span><span class="v-en">gym</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-jugador.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el/la jugador(a)</span><span class="v-en">player</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-entrenador.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el/la entrenador(a)</span><span class="v-en">coach / trainer</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/practicar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">practicar</span><span class="v-en">to practice / to play (a sport)</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/ganar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">ganar</span><span class="v-en">to win</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#127908; FON&Eacute;TICA &middot; play before you record &middot; the <em>-zco</em> sound</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">The trickiest sound in your verbs is the <strong>zc</strong> in the <em>yo</em> forms. In Latin American Spanish it's simply <strong>&ldquo;s + k&rdquo;</strong> &mdash; not one letter, but two clean sounds run together: <button class="say" data-audio="grammar/conozco.mp3" aria-label="Escuchar">&#128266;</button> <em>co&middot;NOS&middot;co</em>, <button class="say" data-audio="grammar/conduzco.mp3" aria-label="Escuchar">&#128266;</button> <em>con&middot;DUS&middot;co</em>, <button class="say" data-audio="grammar/ofrezco.mp3" aria-label="Escuchar">&#128266;</button> <em>o&middot;FRES&middot;co</em>. Say each one back slowly, then at a natural pace &mdash; feel the little &ldquo;k&rdquo; land before the final <em>-co</em>.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; TUS VERBOS DE HOY <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The yo-forms your presentation leans on</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">These are the module's verbs &mdash; nothing new. Since your Tarea oral is all about <em>you</em>, the <em>yo</em> form is exactly what you need. The top three add a surprise <strong>-zco</strong>; the bottom three are the short, high-frequency <em>voy, doy, veo</em>. Click each one and say it aloud.</p>
+        <table class="gtable">
+            <thead><tr><th>Verb</th><th>yo form</th><th>Hear it</th><th>Use it to say&hellip;</th></tr></thead>
+            <tbody>
+                <tr><td>conocer (to know a person/place)</td><td><span class="pron">conozco</span></td><td><button class="say" data-audio="grammar/conozco.mp3" aria-label="Escuchar">&#128266;</button></td><td>Conozco <strong>a</strong> mi entrenadora.</td></tr>
+                <tr><td>ofrecer (to offer)</td><td><span class="pron">ofrezco</span></td><td><button class="say" data-audio="grammar/ofrezco.mp3" aria-label="Escuchar">&#128266;</button></td><td>Le ofrezco ayuda a mi equipo.</td></tr>
+                <tr><td>conducir (to drive)</td><td><span class="pron">conduzco</span></td><td><button class="say" data-audio="grammar/conduzco.mp3" aria-label="Escuchar">&#128266;</button></td><td>Todav&iacute;a no conduzco al partido.</td></tr>
+                <tr><td>ir (to go)</td><td><span class="pron">voy</span></td><td><button class="say" data-audio="grammar/voy.mp3" aria-label="Escuchar">&#128266;</button></td><td>Voy a la cancha los s&aacute;bados.</td></tr>
+                <tr><td>dar (to give)</td><td><span class="pron">doy</span></td><td><button class="say" data-audio="grammar/doy.mp3" aria-label="Escuchar">&#128266;</button></td><td>Doy un paseo en bicicleta.</td></tr>
+                <tr><td>ver (to see / watch)</td><td><span class="pron">veo</span></td><td><button class="say" data-audio="grammar/veo.mp3" aria-label="Escuchar">&#128266;</button></td><td>Veo los partidos con mi familia.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Two reminders for your recording: after <em>conocer</em> a <strong>person</strong>, add the &ldquo;personal <em>a</em>&rdquo; &mdash; <em>conozco <strong>a</strong> mi entrenadora</em>. And <em>voy a</em> + an activity means &ldquo;I'm going to&hellip;&rdquo;: <em>voy a jugar, voy a ver el partido.</em></p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; ARMA TU PRESENTACI&Oacute;N <span class="pill-time">12 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Assemble the right sentence, then build your own lines</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.6;margin:0 0 10px 0;">First, three quick checks so the verbs feel automatic. Each one asks you to pick the piece that makes the sentence correct. Then you'll draft your own presentation with the frames below.</p>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; assemble the sentence</div>
+            <div class="widget-question">&ldquo;Yo ___ a mi entrenador de f&uacute;tbol; es una buena persona.&rdquo; (I know my soccer coach&hellip;)</div>
+            <div class="widget-options">
+                <button data-correct="false">conduzco</button>
+                <button data-correct="true">conozco</button>
+                <button data-correct="false">veo</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; assemble the sentence</div>
+            <div class="widget-question">&ldquo;Este s&aacute;bado ___ jugar un partido importante con mi equipo.&rdquo; (This Saturday I'm going to play&hellip;)</div>
+            <div class="widget-options">
+                <button data-correct="false">doy</button>
+                <button data-correct="false">veo a</button>
+                <button data-correct="true">voy a</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; assemble the sentence</div>
+            <div class="widget-question">&ldquo;Todos los domingos ___ los partidos de b&eacute;isbol en la tele.&rdquo; (Every Sunday I watch&hellip;)</div>
+            <div class="widget-options">
+                <button data-correct="true">veo</button>
+                <button data-correct="false">conozco</button>
+                <button data-correct="false">doy</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="background:#F4F9FC;border:1px solid #D0D9E8;border-radius:8px;padding:14px 18px;margin-top:16px;">
+            <div style="font-size:13px;color:#1B6A94;letter-spacing:.4px;margin-bottom:10px;">&#9998; SENTENCE FRAMES &middot; fill each one for yourself, then say it aloud</div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><button class="say" data-audio="modelo/frame-1.mp3" aria-label="Escuchar">&#128266;</button><span style="font-size:16px;color:#1a2340;">1. Mi deporte/pasatiempo favorito es _______, y normalmente <em>voy</em> a _______. <span style="color:#6b7a99;">(your sport + where you go)</span></span></div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><button class="say" data-audio="modelo/frame-2.mp3" aria-label="Escuchar">&#128266;</button><span style="font-size:16px;color:#1a2340;">2. <em>Conozco a</em> _______, que _______; los fines de semana <em>veo</em> _______. <span style="color:#6b7a99;">(someone you know + what you watch)</span></span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><button class="say" data-audio="modelo/frame-3.mp3" aria-label="Escuchar">&#128266;</button><span style="font-size:16px;color:#1a2340;">3. Este fin de semana <em>voy a</em> _______. <span style="color:#6b7a99;">(what you're going to do &mdash; voy a + activity)</span></span></div>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Now say your <strong>whole presentation</strong> out loud &mdash; all three frames in a row, as one smooth paragraph. When you're happy with it, reveal a full model to compare.</p>
+            <button class="reveal-btn">Reveal a model presentation</button>
+            <div class="reveal-body"><button class="say" data-audio="modelo/modelo-1.mp3" aria-label="Escuchar" style="vertical-align:middle;">&#128266;</button> <strong>Me llamo Daniela y mi deporte favorito es el f&uacute;tbol. Normalmente <em>voy</em> a la cancha del parque y practico con mi equipo. <em>Conozco a</em> mi entrenadora, la se&ntilde;ora R&iacute;os, que siempre nos <em>ofrece</em> buenos consejos. Los fines de semana <em>veo</em> los partidos en la tele con mi familia. Este s&aacute;bado <em>voy a</em> jugar un partido importante.</strong> &mdash; Yours will use your own sport, person, and plans; the frame is what matters.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">A student's model &mdash; read it, then borrow its shape</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        Mateo tiene diecis&eacute;is a&ntilde;os y vive en la Ciudad de Panam&aacute;. &Eacute;l presenta su pasatiempo as&iacute;:<br><br>
+        &laquo;Me llamo Mateo. Mi deporte favorito es el b&eacute;isbol. Todos los s&aacute;bados <strong>voy</strong> al parque con mi equipo y practicamos toda la ma&ntilde;ana. <strong>Conozco a</strong> mi entrenador, el se&ntilde;or Justavino, que juega desde ni&ntilde;o y siempre nos <strong>ofrece</strong> buenos consejos. Cuando no juego, <strong>veo</strong> los partidos de las Grandes Ligas en la tele, porque muchos jugadores paname&ntilde;os famosos empezaron como yo. Este domingo <strong>voy a</strong> jugar la final &mdash; &iexcl;quiero ganar!&raquo;</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find Mateo's <em>voy, conozco, ofrece,</em> and <em>veo</em>. Notice how short his sentences are &mdash; you do <em>not</em> need long, complicated Spanish to score well. Where does he use the personal <em>a</em>, and why? (Because he knows a <em>person</em>: <em>conozco <strong>a</strong> mi entrenador</em>.)</div>
+        </div>
+    </div>
+
+    <!-- TAREA ORAL — graded task -->
+    <div style="background:#FDF7E9;border:1px solid #C7922C;border-left:5px solid #C7922C;border-radius:8px;padding:20px 24px;margin-bottom:20px;">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:8px;">&#127908; GRADED &middot; TAREA ORAL (20 pts) &middot; presentational speaking</div>
+        <div style="font-size:20px;color:#0e1c42;margin-bottom:8px;"><strong>Record: &ldquo;Mi deporte favorito y alguien que conozco&rdquo;</strong></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Record a <strong>45&ndash;75 second</strong> spoken presentation about your favorite sport or pastime and <strong>someone you know</strong> in it. Speak in the first person and use, correctly and at least once each, <strong>conozco (a&hellip;)</strong>, <strong>voy a&hellip;</strong>, and <strong>veo&hellip;</strong> Submit the recording in the <strong>Tarea oral &mdash; M&oacute;dulo 3</strong> assignment in Canvas.</p>
+        <div style="font-size:15px;color:#1a2340;line-height:1.7;margin-bottom:12px;">
+            <strong>Before you record:</strong><br>
+            &bull; Fill in the three frames from Part 4 with your real life.<br>
+            &bull; Say the whole thing aloud <strong>twice</strong> &mdash; once slowly, once at a natural pace.<br>
+            &bull; Record in a quiet spot. It's fine to glance at your notes, but don't read word-for-word &mdash; speak.
+        </div>
+
+        <!-- Self-check accordion -->
+        <div style="margin:4px 0 14px;">
+            <button class="reveal-btn">&#9745; Open the self-check before you record</button>
+            <div class="reveal-body">
+                <strong>Run through this list out loud before your final take:</strong><br>
+                &bull; Did I say my favorite sport/pastime in the first sentence?<br>
+                &bull; Did I use <em>conozco <strong>a</strong></em> + a <strong>person</strong> (with the personal <em>a</em>)?<br>
+                &bull; Did I use <em>voy a</em> + an activity (something I'm going to do)?<br>
+                &bull; Did I use <em>veo</em> + something I watch or follow?<br>
+                &bull; Is the <em>-zco</em> sound clean (&ldquo;s + k&rdquo;) in <em>conozco / ofrezco</em>?<br>
+                &bull; Am I between 45 and 75 seconds, speaking clearly &mdash; not rushing?
+            </div>
+        </div>
+
+        <table class="gtable">
+            <thead><tr><th>Rubric (5 pts each)</th><th>What earns full marks</th></tr></thead>
+            <tbody>
+                <tr><td>Task &amp; content</td><td>Clearly presents your favorite sport/pastime and a person you know; meets the time; on topic.</td></tr>
+                <tr><td>Vocabulary</td><td>Uses module sports/pastime words accurately and with some variety.</td></tr>
+                <tr><td>Grammar (target verbs)</td><td>Uses <em>conozco (a&hellip;), voy a&hellip;,</em> and <em>veo&hellip;</em> correctly in the <em>yo</em> form.</td></tr>
+                <tr><td>Pronunciation &amp; delivery</td><td>Clear, steady, understandable; the <em>-zco</em> sound under control (Part 2).</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">This is <em>presentational</em> speaking &mdash; you prepared and rehearsed it. You may re-record until you're proud of it, then submit your best take.</p>
+    </div>
+
+    <!-- Delivery reflection -->
+    <div class="optima-widget ow-reflect">
+        <div class="widget-kicker">&#128173; REFLECTS ON DELIVERY &middot; no wrong answer</div>
+        <div class="widget-question">After your best take, which part of your <em>delivery</em> felt strongest?</div>
+        <div class="widget-options">
+            <button data-response="&iexcl;Excelente! Clear pronunciation is exactly what the rubric rewards. If the -zco sound felt smooth, you've mastered the hardest part of this module's verbs.">My pronunciation was clear</button>
+            <button data-response="&iexcl;Muy bien! A steady, unrushed pace makes you easier to understand than fast, tangled Spanish. Judges (and teachers) love clarity over speed.">I kept a calm, natural pace</button>
+            <button data-response="&iexcl;Buen&iacute;simo! Speaking from your notes without reading word-for-word is real production. That's the goal &mdash; you're presenting, not reciting.">I spoke without reading it word-for-word</button>
+            <button data-response="That's honest &mdash; and useful. Pick the one thing you'll improve on your next take (pace? the personal 'a'? the -zco sound?) and record once more. Re-recording is allowed and smart.">Honestly, I want one more take</button>
+        </div>
+        <div class="widget-feedback"></div>
+        <button class="widget-reset">Reset</button>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; PANAM&Aacute;</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El b&eacute;isbol &mdash; la pasi&oacute;n nacional</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">In Panam&aacute;, the favorite pastime isn't f&uacute;tbol &mdash; it's <strong>b&eacute;isbol</strong>. Kids play <em>b&eacute;isbol callejero</em> (street baseball) in neighborhoods and coastal towns, sometimes with a broomstick and a taped-up ball, and the country of just over four million people has sent dozens of players to the Major Leagues. The legend <strong>Rod Carew</strong> and the great <strong>Mariano Rivera</strong> both grew up here, and every child who says <em>&laquo;voy a la cancha&raquo;</em> is stepping into that tradition. When you talk about your own sport, you're joining a conversation Panamanians have every single day. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short clip of a street-baseball game in Panam&aacute;.)</span></p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; PERSEVERANCE</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Mariano Rivera</strong> (Panam&aacute;, b. 1969) grew up in the small fishing village of <em>Puerto Caimito</em>, playing baseball with a glove made from a milk carton. He signed for just a few thousand dollars, spent years working his way up, and reinvented his whole game around a single pitch when his career nearly stalled. He became the greatest closer in baseball history &mdash; and in 2019 the first player <em>ever</em> voted into the Hall of Fame unanimously. <em>&Eacute;l nunca se rinde.</em> His story is <em>perseverancia</em> in one word: showing up, day after day, and improving one small thing at a time &mdash; exactly what re-recording your Tarea oral until it's right asks of you.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">9</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 3.09 &mdash; Lectura y cultura: Panam&aacute;</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll read a longer piece about Panam&aacute; &mdash; its canal, its coasts, and its love of the game &mdash; and pull the whole module together. It's also your <strong>Grammar Quiz prep</strong>. Make sure your Tarea oral recording is submitted before you move on.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then go to the <strong>Tarea oral &mdash; M&oacute;dulo 3</strong> assignment and submit your recording &mdash; the presentation you just built, rehearsed, and self-checked.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You took this module's words and verbs and turned them into a presentation about something you love &mdash; out loud, in Spanish, on the record. That's real production. Mariano Rivera would tell you it works exactly like this: show up, say your piece clearly, and improve one small thing each time. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 3.08 &middot; Production practice &rarr; Tarea oral</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

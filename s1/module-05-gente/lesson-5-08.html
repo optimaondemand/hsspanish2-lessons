@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 5.08</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 5</div>
+        <div style="font-size: 12px; color: #666;">La gente y las cosas</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 5.08 &middot; Day 8 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Production practice &rarr; Tarea oral</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">La gente y las cosas</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5.08</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Habla de tu gente y tus cosas</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">You already have every piece &mdash; today you assemble them into something you can say out loud.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>Nothing new today.</strong> No new words and no new grammar &mdash; this is a <em>production</em> day. You'll take the module's two &ldquo;knowing&rdquo; verbs (<strong>saber</strong> and <strong>conocer</strong>) and its object pronouns &mdash; direct <em>(lo, la, los, las)</em> and indirect <em>(me, te, le, nos, les)</em> &mdash; and use them to <strong>describe the people and the things in your own life</strong>. We rehearse with sentence frames and a full model, and then you draft and record your <strong>Tarea oral</strong>: a short spoken presentation worth <strong>20 points</strong> on the presentational rubric.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> build spoken sentences about the people I know using <em>saber</em> and <em>conocer</em> correctly.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use direct <em>(lo/la/los/las)</em> and indirect <em>(me/te/le/nos/les)</em> object pronouns to talk about the things I give, lend, and send.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> plan, rehearse, and record a short <em>Tarea oral</em> presentation describing the people and things in my life.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">6 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Warm up your speaking voice</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Today is about <em>saying</em>, not just recognizing. Before you plan anything, warm up: think of <strong>one real person</strong> in your life &mdash; a <em>vecino</em>, a <em>compa&ntilde;era de clase</em>, a family member &mdash; and say one true sentence about them out loud right now, mixing a &ldquo;knowing&rdquo; verb with something you give or send them. Something like <em>Conozco a mi vecina y le presto libros.</em> Don't aim for perfect &mdash; aim for <em>out loud</em>. That first sentence is the hardest; after it, the rest flow.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">When you picture recording yourself in Spanish, what's your honest reaction right now?</div>
+            <div class="widget-options">
+                <button data-response="Great energy &mdash; channel it. You already built every tool this module; today just points them at your own life. The frames in Part 3 will keep you on track.">&iexcl;Listo! Tengo ganas de hablar.</button>
+                <button data-response="Completely normal &mdash; almost everyone feels this before recording. That's exactly why today gives you frames and a full model first. You'll rehearse until it feels routine, then hit record.">Un poco nervioso&hellip; pero puedo.</button>
+                <button data-response="Honest and fair. Here's the good news: you don't invent anything today. You fill in frames you've already practiced all week. Read the model in Part 5 twice and it stops feeling blank.">No s&eacute; qu&eacute; decir todav&iacute;a.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; TUS PALABRAS, A LA MANO <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Your word banks, ready to speak</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">All words from earlier this module &mdash; <strong>nothing new</strong>. Click the <strong>&#128266;</strong> and say each one back <em>as you'll say it on the recording</em>: clearly, at a calm pace. Pick the three or four you'll actually use about your own people and things.</p>
+        <p style="font-size:14px;color:#6b7a99;margin:0 0 4px 0;font-weight:600;">La gente &middot; people</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-gente.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la gente</span><span class="v-en">people</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-vecino.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el vecino / la vecina</span><span class="v-en">neighbor</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-companera-de-clase.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la compa&ntilde;era de clase</span><span class="v-en">classmate</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/alguien.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">alguien</span><span class="v-en">someone</span></li>
+        </ul>
+        <p style="font-size:14px;color:#6b7a99;margin:10px 0 4px 0;font-weight:600;">Las cosas &middot; things you give, lend &amp; send</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-regalo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el regalo</span><span class="v-en">gift</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-carta.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la carta</span><span class="v-en">letter</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-mensaje.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el mensaje</span><span class="v-en">message</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/prestar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">prestar</span><span class="v-en">to lend</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/mandar.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">mandar</span><span class="v-en">to send</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +3 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Jot a tiny word list on paper: <strong>two people</strong> you'll mention and <strong>two things</strong> you give or send them. That four-word list is the whole skeleton of your Tarea oral &mdash; everything else is just frames wrapped around it.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; TUS ANDAMIOS &middot; SENTENCE FRAMES <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Frames you fill in &mdash; no grammar to invent</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">These are <em>andamios</em> (scaffolds): ready-made sentence shapes from this module's grammar. Drop your own people and things into the blanks and you have a presentation. Nothing here is new &mdash; it's the same <em>saber</em>/<em>conocer</em> and object pronouns you've used all week.</p>
+        <table class="gtable">
+            <thead><tr><th>To say&hellip;</th><th>Frame (fill in the blank)</th><th>Ejemplo</th></tr></thead>
+            <tbody>
+                <tr><td>who you're familiar with</td><td>Conozco a <span class="pron">___</span>.</td><td>Conozco <span class="pron">a</span> mi vecina Carmen.</td></tr>
+                <tr><td>a fact / know-how</td><td>S&eacute; que <span class="pron">___</span>. / S&eacute; <span class="pron">___</span> (+ infinitive).</td><td>S&eacute; que ella vive cerca. / S&eacute; cocinar.</td></tr>
+                <tr><td>replace a <em>thing</em> (direct)</td><td>&iquest;El/La <span class="pron">___</span>? <span class="pron">Lo/La</span> + verb.</td><td>&iquest;El regalo? <span class="pron">Lo</span> tengo aqu&iacute;.</td></tr>
+                <tr><td>who you give/send it <em>to</em> (indirect)</td><td>A <span class="pron">___</span>, <span class="pron">le</span> + verb.</td><td>A mi abuela <span class="pron">le</span> mando una carta.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:8px 0 0;">Two reminders you already know: the pronoun sits <em>right before the conjugated verb</em> (<em>le escribo</em>) or attaches to an infinitive (<em>voy a mandarle una foto</em>). And use them <strong>one at a time</strong> &mdash; stacking a direct <em>and</em> an indirect pronoun together is a next-semester move, so keep it simple today.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; ARMA TU GUI&Oacute;N &middot; build your script</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Say each frame out loud once with your own words filled in. String four of them together and you've spoken your whole Tarea oral before you ever hit record. Aim for <strong>5&ndash;6 sentences</strong> total.</div>
+        </div>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">11 min</span></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 8px 0;">Quick pressure-test before you record: pick the version that would be <em>correct on your recording</em>.</p>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; replace the thing (direct object)</div>
+            <div class="widget-question">You want to say &ldquo;The messages? I send <em>them</em> every day.&rdquo; (los mensajes &rarr; ?)</div>
+            <div class="widget-options">
+                <button data-correct="false">&iquest;Los mensajes? Le mando cada d&iacute;a.</button>
+                <button data-correct="true">&iquest;Los mensajes? Los mando cada d&iacute;a.</button>
+                <button data-correct="false">&iquest;Los mensajes? Les mando cada d&iacute;a.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; saber o conocer?</div>
+            <div class="widget-question">In your presentation you introduce a person: &ldquo;___ a mi compa&ntilde;era de clase, Sof&iacute;a.&rdquo;</div>
+            <div class="widget-options">
+                <button data-correct="false">S&eacute;</button>
+                <button data-correct="false">Sabes</button>
+                <button data-correct="true">Conozco</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; who you give it to (indirect object)</div>
+            <div class="widget-question">&ldquo;To my grandmother I send a letter&rdquo; &mdash; which is the clean, correct sentence?</div>
+            <div class="widget-options">
+                <button data-correct="true">A mi abuela le mando una carta.</button>
+                <button data-correct="false">A mi abuela la mando una carta.</button>
+                <button data-correct="false">A mi abuela lo mando una carta.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Now the real thing: say your <strong>whole draft</strong> out loud &mdash; 5 or 6 sentences describing your people and your things, using at least one <em>saber</em>/<em>conocer</em> verb, one direct object pronoun, and one indirect object pronoun. Say it once start-to-finish, <em>then</em> reveal a full model to compare.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Hola. Me llamo Daniel. Conozco a mi vecina Carmen; es muy simp&aacute;tica y s&eacute; que le gusta la m&uacute;sica. A veces le presto discos, y ella siempre me da las gracias. Tambi&eacute;n tengo una amiga en Chile. No la veo en persona, pero le mando mensajes cada semana. &iquest;Las fotos de mi ciudad? Las comparto con ella.</strong> Yours will use your own people and things. Keep the check: <em>conocer</em> for people/places, <em>saber</em> for facts &amp; know-how; <em>lo/la/los/las</em> for the thing, <em>me/te/le/nos/les</em> for the person you give it to &mdash; and use just <em>one</em> pronoun at a time.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER &middot; UN MODELO <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Read a finished model, then record yours</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 8px 0;">Here is a complete Tarea oral, written out. Read it aloud twice &mdash; the second time at recording pace. Notice how short and natural it is: six sentences, each one built from a frame you just practiced.</p>
+        <p style="font-size:17px;color:#1a2340;line-height:1.8;background:#F4F9FC;border:1px solid #D0D9E8;border-radius:6px;padding:14px 18px;">
+        Hola, me llamo Marisol. Voy a hablar de la gente y las cosas de mi vida.<br>
+        <strong>Conozco</strong> muy bien a mi vecino, el se&ntilde;or Ram&iacute;rez. <strong>S&eacute;</strong> que es de Chile y que le encanta el f&uacute;tbol.<br>
+        Los fines de semana <strong>le</strong> presto mis revistas de deportes, y &eacute;l siempre <strong>me</strong> da las gracias.<br>
+        Tambi&eacute;n tengo una amiga, Camila. No <strong>la</strong> veo mucho porque vive lejos, pero <strong>le</strong> mando mensajes cada semana.<br>
+        &iquest;Las fotos de mi familia? <strong>Las</strong> comparto con ella tambi&eacute;n.<br>
+        Esa es mi gente, y esas son las cosas que compartimos. Gracias.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#127908; TAREA ORAL &middot; graded &middot; 20 pts &middot; presentational rubric</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Open <strong>Tarea oral &mdash; Module 5</strong> in Canvas and record a <strong>45&ndash;60 second</strong> presentation describing the people and things in your life. Include, at minimum: one <em>saber</em> or <em>conocer</em> sentence, one <strong>direct</strong> object pronoun (<em>lo/la/los/las</em>), and one <strong>indirect</strong> object pronoun (<em>me/te/le/nos/les</em>). You'll be scored on <em>how much you communicate</em>, accuracy of these forms, and clear pronunciation &mdash; not on being flawless. Rehearse two or three times, then record in one take. It opened alongside your Vocabulary Check and Lengua en acci&oacute;n on Day 7.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; CHILE</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Hablar de la gente con cari&ntilde;o</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">When Chileans talk about the people in their lives, they reach constantly for <strong>diminutives</strong> &mdash; those warm <em>-ito / -ita</em> endings. A grandmother isn't just <em>abuela</em>, she's <em>abuelita</em>; a coffee break isn't <em>caf&eacute;</em>, it's the beloved afternoon <em>onces</em> shared with friends and family. Chilean Spanish is famous across Latin America for this softness and for fast, affectionate speech. You don't need to master diminutives today &mdash; just notice that describing <em>tu gente</em> is, in every Spanish-speaking culture, an act of warmth. As you record your Tarea oral, let a little of that care come through in your voice: you're not listing people, you're introducing the ones who matter to you. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short audio clip of a Chilean <em>once</em> conversation.)</span></p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; RESPONSIBILITY</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Gabriela Mistral</strong> (Chile, 1889&ndash;1957), the first Latin American to win the Nobel Prize in Literature, took her responsibility as a teacher and a public voice seriously &mdash; she prepared her words with care, as a poet, a teacher, and a diplomat, because she knew people would be listening. Today you practiced a small version of that same responsibility: drafting and rehearsing your presentation instead of improvising blindly, then recording only once you were ready to stand behind what you said. Responsibility means owning your work before anyone else hears it.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">9</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 5.09 &mdash; Gabriela Mistral y el alma de Chile</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll read a longer culture-rich passage about Chile and its great poet, and begin your <strong>Grammar Quiz prep</strong>. If your <em>Tarea oral</em> isn't recorded yet, finish it &mdash; it, the Vocabulary Check, and Lengua en acci&oacute;n are all open now and due before the module closes.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then do the thing that matters most today: <strong>record your Tarea oral</strong>, or &mdash; if you're out of time &mdash; say your full draft out loud one more time so it's ready to record tomorrow. You've already built every sentence; now let your voice carry them.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You turned a module's worth of grammar into your own voice &mdash; describing <strong>la gente y las cosas</strong> of your real life with <em>saber</em>, <em>conocer</em>, and object pronouns, all the way to a recorded presentation. That's the whole point of learning a language: not to pass a quiz, but to say something true about your world to someone who will understand it. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 5.08 &middot; Habla de tu gente y tus cosas</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

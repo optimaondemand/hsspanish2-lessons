@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 7.06</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; M&oacute;dulo 7</div>
+        <div style="font-size: 12px; color: #666;">Describir y comparar</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 7.06 &middot; Day 6 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Comparar al describir (m&aacute;s/menos que) &mdash; cultura</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Describir y comparar &middot; Progresivo + comparativos</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 7.06</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Comparar al describir: m&aacute;s, menos, tan&hellip; como</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Ahora mismo, alguien est&aacute; haciendo algo &mdash; y ahora sabes c&oacute;mo compararlo.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Bienvenido de nuevo a M&oacute;dulo 7. Ya usas el progresivo (<em>estar</em> + -ando/-iendo) para describir lo que pasa en este momento, y en el M&oacute;dulo 6 aprendiste a comparar con <strong>m&aacute;s/menos&hellip; que</strong> y <strong>tan&hellip; como</strong>. Hoy juntamos las dos herramientas: vas a describir una escena en progreso <strong>y</strong> compararla con otra &mdash; as&iacute; se habla de verdad. Terminamos con una mirada comparativa a dos pa&iacute;ses vecinos: <strong>Uruguay y Paraguay</strong>.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> combine the present progressive with comparative expressions (<em>m&aacute;s/menos&hellip; que, tan&hellip; como</em>) to describe and compare people, places, or actions happening right now.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> build accurate comparisons of quantity and equality (<em>m&aacute;s que, menos que, tan&hellip; como, mejor/peor, mayor/menor</em>) &mdash; no new vocabulary, just sharper control of what you already know.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> read and understand a cultural comparison of Uruguay and Paraguay that uses both the progressive and the comparative in context.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Dos escenas, una comparaci&oacute;n</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Mira estas dos acciones en progreso: <strong>Mateo est&aacute; corriendo</strong> cinco kil&oacute;metros; <strong>Valentina est&aacute; corriendo</strong> dos kil&oacute;metros. Las dos frases usan el progresivo &mdash; pero &iquest;qui&eacute;n corre m&aacute;s? Esa es la capa que a&ntilde;adimos hoy: el comparativo.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Mateo corre 5&nbsp;km y Valentina corre 2&nbsp;km. &iquest;C&oacute;mo lo dir&iacute;as?</div>
+            <div class="widget-options">
+                <button data-response="Casi &mdash; 'tan... como' compara cantidades iguales. Aqu&iacute; las distancias no son iguales, as&iacute; que 'm&aacute;s/menos que' encaja mejor. La Parte 2 repasa las dos.">Mateo corre tan r&aacute;pido como Valentina.</button>
+                <button data-response="&iexcl;Exacto! 'M&aacute;s que' compara una cantidad mayor &mdash; perfecto para 5 km frente a 2 km.">Mateo corre m&aacute;s que Valentina.</button>
+                <button data-response="&iexcl;S&iacute; se puede! Cualquier par de cantidades se compara con m&aacute;s/menos que o tan... como. Eso es justo lo que repasamos hoy.">No se puede comparar esto.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; HERRAMIENTAS PARA COMPARAR <span class="pill-time">9 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">No son nuevas &mdash; son tuyas</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Estas expresiones las viste en el M&oacute;dulo 6. Hoy las recuperamos para usarlas junto con el progresivo. Escucha cada una y rep&iacute;tela en voz alta.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/mas-que.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">m&aacute;s&hellip; que</span><span class="v-en">more... than</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/menos-que.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">menos&hellip; que</span><span class="v-en">less... than</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tan-como.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tan&hellip; como</span><span class="v-en">as... as</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tanto-como.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tanto como</span><span class="v-en">as much as</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/mejor-que.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">mejor que</span><span class="v-en">better than</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/peor-que.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">peor que</span><span class="v-en">worse than</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/mayor-que.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">mayor que</span><span class="v-en">older / greater than</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/menor-que.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">menor que</span><span class="v-en">younger / lesser than</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/tranquilo.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">tranquilo/a</span><span class="v-en">calm, quiet</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/animado.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">animado/a</span><span class="v-en">lively, bustling</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +5 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Piensa en dos amigos o familiares tuyos. Escribe una oraci&oacute;n con <em>tan&hellip; como</em> que sea verdadera para ellos &mdash; por ejemplo, &ldquo;Mi hermano es tan alto como mi padre.&rdquo;</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; EL PROGRESIVO + EL COMPARATIVO, EN RESUMEN <span class="pill-time">10 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Dos estructuras, una sola oraci&oacute;n</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Repasa r&aacute;pido las dos piezas antes de unirlas. Primero, el progresivo:</p>
+        <table class="gtable">
+            <thead><tr><th>Sujeto</th><th>estar</th><th>Gerundio</th><th>Ejemplo</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">estoy</span></td><td>hablando</td><td>Estoy <span class="pron">hablando</span> con mi amiga.</td></tr>
+                <tr><td>t&uacute;</td><td><span class="pron">est&aacute;s</span></td><td>comiendo</td><td>&iquest;Qu&eacute; est&aacute;s <span class="pron">comiendo</span>?</td></tr>
+                <tr><td>&eacute;l/ella/usted</td><td><span class="pron">est&aacute;</span></td><td>escribiendo</td><td>Ella est&aacute; <span class="pron">escribiendo</span> una carta.</td></tr>
+                <tr><td>nosotros/as</td><td><span class="pron">estamos</span></td><td>leyendo</td><td>Estamos <span class="pron">leyendo</span> el mismo libro.</td></tr>
+                <tr><td>ellos/ellas/ustedes</td><td><span class="pron">est&aacute;n</span></td><td>jugando</td><td>Est&aacute;n <span class="pron">jugando</span> al f&uacute;tbol ahora mismo.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:14px 0 10px 0;">Ahora el comparativo:</p>
+        <table class="gtable">
+            <thead><tr><th>Tipo</th><th>Estructura</th><th>Ejemplo</th></tr></thead>
+            <tbody>
+                <tr><td>Desigualdad (+)</td><td><span class="pron">m&aacute;s</span> + adj./sust. + <span class="pron">que</span></td><td>Uruguay es <span class="pron">m&aacute;s</span> peque&ntilde;o <span class="pron">que</span> Paraguay.</td></tr>
+                <tr><td>Desigualdad (&minus;)</td><td><span class="pron">menos</span> + adj./sust. + <span class="pron">que</span></td><td>Uruguay tiene <span class="pron">menos</span> habitantes <span class="pron">que</span> Paraguay.</td></tr>
+                <tr><td>Igualdad</td><td><span class="pron">tan</span> + adj. + <span class="pron">como</span></td><td>El mate es <span class="pron">tan</span> popular en Uruguay <span class="pron">como</span> en Paraguay.</td></tr>
+                <tr><td>Irregulares</td><td>mejor/peor, mayor/menor + <span class="pron">que</span></td><td>Para muchos, el clima de verano es <span class="pron">peor que</span> el de Uruguay.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">&iquest;Ves el patr&oacute;n? Cuando describes algo que est&aacute; pasando <strong>ahora</strong> y lo comparas con otra cosa, simplemente pones las dos estructuras en la misma oraci&oacute;n: <em>&ldquo;Uruguay est&aacute; creciendo m&aacute;s r&aacute;pido que hace diez a&ntilde;os.&rdquo;</em></p>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">9 min</span></div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; comparar cantidades</div>
+            <div class="widget-question">Mateo corre 5&nbsp;km cada d&iacute;a; Valentina corre 2&nbsp;km. &iquest;Cu&aacute;l oraci&oacute;n es correcta?</div>
+            <div class="widget-options">
+                <button data-correct="false">Mateo corre tan r&aacute;pido como Valentina.</button>
+                <button data-correct="true">Mateo corre m&aacute;s que Valentina.</button>
+                <button data-correct="false">Mateo corre menos que Valentina.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; progresivo + comparativo</div>
+            <div class="widget-question">Ana est&aacute; leyendo un libro de 300 p&aacute;ginas; Luis est&aacute; leyendo uno de 100 p&aacute;ginas. &iquest;Cu&aacute;l oraci&oacute;n describe la escena correctamente?</div>
+            <div class="widget-options">
+                <button data-correct="false">Luis est&aacute; leyendo un libro tan largo como el de Ana.</button>
+                <button data-correct="false">Luis est&aacute; leyendo un libro m&aacute;s largo que el de Ana.</button>
+                <button data-correct="true">Ana est&aacute; leyendo un libro m&aacute;s largo que el de Luis.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; comparar culturas</div>
+            <div class="widget-question">Paraguay tiene aproximadamente 7 millones de habitantes; Uruguay tiene aproximadamente 3.5 millones. &iquest;Cu&aacute;l oraci&oacute;n es correcta?</div>
+            <div class="widget-options">
+                <button data-correct="true">Paraguay tiene m&aacute;s habitantes que Uruguay.</button>
+                <button data-correct="false">Uruguay tiene m&aacute;s habitantes que Paraguay.</button>
+                <button data-correct="false">Los dos pa&iacute;ses tienen el mismo n&uacute;mero de habitantes.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Tu turno: escribe una oraci&oacute;n que describa algo que est&aacute; pasando ahora mismo <strong>y</strong> lo compare con otra cosa. D&iacute;la en voz alta, luego revela un modelo.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Mi hermano est&aacute; jugando videojuegos m&aacute;s tiempo que yo esta semana.</strong> El tuyo puede describir cualquier cosa &mdash; solo aseg&uacute;rate de usar el progresivo (est&aacute; + -ando/-iendo) y una estructura comparativa (m&aacute;s/menos/tan&hellip;) en la misma oraci&oacute;n.</div>
+        </div>
+    </div>
+
+    <!-- PART 5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        En la Plaza Independencia de Montevideo, un grupo de amigos <strong>est&aacute; tomando</strong> mate bajo un &aacute;rbol; hablan m&aacute;s despacio que en Asunci&oacute;n, donde todo parece m&aacute;s animado.<br>
+        En la Plaza de los H&eacute;roes de Asunci&oacute;n, varias vendedoras <strong>est&aacute;n ofreciendo</strong> &ntilde;anduti &mdash; un encaje tradicional paraguayo &mdash; y <strong>est&aacute;n hablando</strong> tanto en guaran&iacute; como en espa&ntilde;ol.<br>
+        Uruguay es m&aacute;s peque&ntilde;o que Paraguay, y tiene menos habitantes &mdash; pero los dos comparten la misma costumbre: el mate se pasa en c&iacute;rculo, nunca solo.</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">&iquest;Qu&eacute; pa&iacute;s se describe hablando dos idiomas a la vez? &iquest;Qu&eacute; frase del texto es un comparativo de igualdad (tan&hellip; como) y cu&aacute;l es de desigualdad (m&aacute;s/menos)? Busca los dos en el mismo p&aacute;rrafo.</div>
+        </div>
+    </div>
+
+    <!-- Culture -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; URUGUAY Y PARAGUAY</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>Dos vecinos, dos historias distintas</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Uruguay y Paraguay comparten frontera con Argentina y Brasil, pero se parecen poco entre s&iacute;. <strong>Paraguay</strong> es uno de los pocos pa&iacute;ses de Am&eacute;rica donde una lengua ind&iacute;gena, el <strong>guaran&iacute;</strong>, es cooficial junto al espa&ntilde;ol y la habla la mayor&iacute;a de la poblaci&oacute;n &mdash; no solo las comunidades ind&iacute;genas. Tambi&eacute;n es sede de <strong>Itaip&uacute;</strong>, una de las represas hidroel&eacute;ctricas m&aacute;s grandes del mundo, compartida con Brasil. <strong>Uruguay</strong>, mucho m&aacute;s peque&ntilde;o y con menos habitantes, tiene una de las tasas de alfabetizaci&oacute;n m&aacute;s altas de Am&eacute;rica Latina y fue pionero en derechos sociales bajo su fundador, <strong>Jos&eacute; Gervasio Artigas</strong>. Lo que los une: el <strong>mate</strong>, la infusi&oacute;n de yerba que casi todo el mundo lleva consigo en termo y calabaza, compartida en c&iacute;rculo de mano en mano. Comparar estos dos pa&iacute;ses &mdash; en tama&ntilde;o, en idioma, en costumbre &mdash; es tambi&eacute;n una forma de entenderlos mejor.</p>
+    </div>
+
+    <!-- Virtue -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; COURTESY</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Jos&eacute; Mujica</strong> (Uruguay, 1935&ndash;2025) lived in a house that was smaller and simpler than almost any other head of state's residence in the world &mdash; menos lujosa, m&aacute;s modesta &mdash; yet he never used comparisons to put other leaders down. That's an important lesson about comparatives: <em>m&aacute;s/menos/tan&hellip; como</em> can measure honestly without turning cruel or arrogant. As you read about Uruguay and Paraguay today, practice comparing the two countries the way Mujica compared people &mdash; accurately, and with courtesy toward both.</p>
+    </div>
+
+    <!-- What's next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">7</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 7.07 &mdash; Vocabulary Check + Lengua en acci&oacute;n</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Ma&ntilde;ana el trabajo calificado de este m&oacute;dulo se abre: el Vocabulary Check y Lengua en acci&oacute;n pondr&aacute;n a prueba el progresivo y el comparativo juntos, incluyendo lo que le&iacute;ste hoy sobre Uruguay y Paraguay.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then mira alrededor tuyo ahora mismo y di en voz alta una oraci&oacute;n que describa algo en progreso <strong>y</strong> lo compare con otra cosa &mdash; usa el progresivo y m&aacute;s/menos/tan&hellip; como.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Ya puedes describir lo que est&aacute; pasando ahora mismo <strong>y</strong> compararlo con otra cosa en la misma oraci&oacute;n &mdash; y ya sabes algo real sobre dos pa&iacute;ses que comparten el mate pero casi nada m&aacute;s. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 7.06 &middot; Comparar al describir: m&aacute;s, menos, tan&hellip; como</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 1.05</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 1</div>
+        <div style="font-size: 12px; color: #666;">La tecnolog&iacute;a y la comunicaci&oacute;n</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 1.05 &middot; Day 5 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Grammar 2 &mdash; verbos &laquo;-igo&raquo; + decir (traigo, digo)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Technology &amp; Communication</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 1.05</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> <em>Traigo</em> y <em>digo</em> &mdash; el club &laquo;-igo&raquo; completa el cuadro</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Two more verbs join the irregular-<em>yo</em> family &mdash; and one of them has a second surprise hiding inside.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">On Day 3 you cracked the <strong>-go</strong> club (<em>tengo, hago, pongo, salgo</em>). Today we finish the picture with two verbs whose <strong>yo</strong> form does something slightly fancier. <strong>Traer</strong> (to bring) doesn't just add <em>-go</em>; it slips an <strong>i</strong> in first &mdash; <em>traer &rarr; <span class="pron">traigo</span></em>. That's the <strong>-igo</strong> pattern. And <strong>decir</strong> (to say / to tell) does <em>two</em> things at once: it stem-changes <strong>e&rarr;i</strong> (like verbs you already met) <em>and</em> takes the <strong>-go</strong> &mdash; <em>decir &rarr; <span class="pron">digo</span></em>. Same big rule as Tuesday: <strong>only the <em>yo</em> form is irregular</strong>. No new vocabulary today &mdash; these are verbs and words you already own.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> produce the <em>-igo</em> yo-form of <em>traer</em> (<em>traigo</em>) and explain why it isn't just <em>-go</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> produce <em>digo</em> and recognize the two things happening in it &mdash; the <em>e&rarr;i</em> stem change and the <em>-go</em> ending.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> sort a verb into the right group &mdash; plain <em>-go</em> vs. <em>-igo</em> &mdash; and keep the other persons regular.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Para empezar ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">You've already heard both of these</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Yesterday's reading already slipped <em>traigo</em> and <em>digo</em> past you &mdash; <em>&laquo;traigo el port&aacute;til al colegio&raquo;</em>, <em>&laquo;les digo buenas noches&raquo;</em>. So these aren't strangers; today we simply name the pattern. Say this pair out loud and listen for the little <strong>i</strong>: <em>traer &rarr; <strong>traigo</strong></em>. Then say <em>decir &rarr; <strong>digo</strong></em> and notice the vowel is no longer an <em>e</em>. Trust your ear first.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">You want to say &ldquo;I bring my laptop to class.&rdquo; You already know <em>t&uacute; traes</em>. Which <em>yo</em> form sounds right to your ear?</div>
+            <div class="widget-options">
+                <button data-response="&iexcl;Buen o&iacute;do! &laquo;Yo traigo&raquo; is exactly right &mdash; that extra i before the -go is today's -igo pattern. Part 3 shows it clearly.">Yo traigo</button>
+                <button data-response="Logical guess &mdash; &laquo;trago&raquo; would follow the plain -go pattern, but traer sneaks an i in first: yo traigo. That's the whole point of the -igo group.">Yo trago</button>
+                <button data-response="Totally fair to be unsure &mdash; that's what today is for. The answer is &laquo;yo traigo,&raquo; and after Part 3 the -igo pattern will feel natural.">I'm not sure yet</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Vocab review (recycled, audio) ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; REPASO DE VOCABULARIO <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">The tech words you'll pair with today's verbs</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">No new words today &mdash; just a quick listen to the technology and communication vocabulary from Lessons 1.01&ndash;1.02, because <em>traer</em> and <em>decir</em> are most useful when you point them at real objects and messages. Click the <strong>&#128266;</strong> and say each one back.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-movil.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el m&oacute;vil / el celular</span><span class="v-en">cell phone</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-portatil.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el port&aacute;til</span><span class="v-en">laptop</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/el-mensaje.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">el mensaje</span><span class="v-en">message / text</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-videollamada.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la videollamada</span><span class="v-en">video call</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-aplicacion.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la aplicaci&oacute;n (la app)</span><span class="v-en">app</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-contrasena.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la contrase&ntilde;a</span><span class="v-en">password</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/la-verdad.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">la verdad</span><span class="v-en">the truth</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +4 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">For each word, whisper a <strong>yo</strong> sentence that joins it to today's verbs: <em>Traigo el port&aacute;til a clase. Traigo el m&oacute;vil en la mochila. Siempre digo la verdad en el chat.</em> That pairing is exactly what today builds.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar: -igo + decir ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; EL PATR&Oacute;N &laquo;-IGO&raquo; Y <em>DECIR</em> <span class="pill-time">12 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">First, the two new <em>yo</em> forms</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 8px 0;">Click to hear each infinitive and its <strong>yo</strong> form. Say the pair aloud &mdash; <em>traer &rarr; traigo</em>, <em>decir &rarr; digo</em>.</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/traer.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">traer</span><span class="v-en">to bring &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/traigo.mp3" aria-label="Escuchar traigo" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo traigo</strong> <span style="color:#9a7b1e;">(&laquo;-igo&raquo;)</span></span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/decir.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">decir</span><span class="v-en">to say / to tell &nbsp;&rarr;&nbsp; <button class="say" data-audio="grammar/digo.mp3" aria-label="Escuchar digo" style="min-width:34px;height:30px;font-size:14px;">&#128266;</button> <strong style="color:#C7922C;">yo digo</strong> <span style="color:#9a7b1e;">(e&rarr;i + &laquo;-go&raquo;)</span></span></li>
+        </ul>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 18px 0 8px 0;">The <em>-igo</em> pattern: <em>traer &rarr; traigo</em></h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 8px 0;">Where the Day-3 verbs just tacked <strong>-go</strong> onto the stem (<em>pon&rarr;pon<strong>go</strong></em>), <em>traer</em> adds an <strong>i</strong> first: <em>tra&rarr;tra<strong>igo</strong></em>. Everything past <em>yo</em> is a completely regular <em>-er</em> verb:</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>traer</th><th>Example (recycled vocab)</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">traigo</span> &nbsp;&larr; &laquo;-igo&raquo;</td><td>Yo <span class="pron">traigo</span> el port&aacute;til a clase.</td></tr>
+                <tr><td>t&uacute;</td><td>traes</td><td>&iquest;Traes el m&oacute;vil a la escuela?</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td>trae</td><td>Ella trae sus apuntes en la tablet.</td></tr>
+                <tr><td>nosotros/as</td><td>traemos</td><td>Nosotros traemos los cargadores.</td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td>traen</td><td>Ellos traen el m&oacute;vil a todas partes.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Two other everyday verbs join this same <em>-igo</em> club &mdash; <em>o&iacute;r &rarr; <strong>oigo</strong></em> (to hear) and <em>caer &rarr; <strong>caigo</strong></em> (to fall). You only need to <em>recognize</em> those two for now; <em>traigo</em> is the one to master today.</p>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 18px 0 8px 0;"><em>decir &rarr; digo</em>: two changes in one form</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 8px 0;"><em>Decir</em> is the show-off of the group. Its <strong>yo</strong> form does <em>both</em> tricks at once: the stem vowel changes <strong>e&rarr;i</strong> (dec&rarr;dic) <em>and</em> it takes the <strong>-go</strong> &rarr; <span class="pron">digo</span>. Notice the <em>e&rarr;i</em> stem change also shows up in <em>t&uacute;, &eacute;l,</em> and <em>ellos</em> &mdash; but <strong>nosotros</strong> keeps the original <em>e</em>:</p>
+        <table class="gtable">
+            <thead><tr><th>Subject</th><th>decir</th><th>Example (recycled vocab)</th></tr></thead>
+            <tbody>
+                <tr><td>yo</td><td><span class="pron">digo</span> &nbsp;&larr; e&rarr;i + &laquo;-go&raquo;</td><td>Yo <span class="pron">digo</span> la verdad en mis mensajes.</td></tr>
+                <tr><td>t&uacute;</td><td>dices</td><td>&iquest;Qu&eacute; dices en la videollamada?</td></tr>
+                <tr><td>usted / &eacute;l / ella</td><td>dice</td><td>Ella dice &laquo;hola&raquo; por el chat.</td></tr>
+                <tr><td>nosotros/as</td><td>decimos</td><td>Nosotros decimos la contrase&ntilde;a en voz baja.</td></tr>
+                <tr><td>ustedes / ellos / ellas</td><td>dicen</td><td>Ellos dicen muchas cosas en la red social.</td></tr>
+            </tbody>
+        </table>
+
+        <h3 style="font-size: 18px; color: #0e1c42; margin: 18px 0 8px 0;">The whole irregular-<em>yo</em> picture, at last</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 8px 0;">Put today's two beside Tuesday's four and the family is complete. Every one is irregular <em>only</em> in <strong>yo</strong>:</p>
+        <table class="gtable">
+            <thead><tr><th>Group</th><th>Infinitive &rarr; yo</th><th>What happens</th></tr></thead>
+            <tbody>
+                <tr><td>plain &laquo;-go&raquo;</td><td>tener&rarr;<span class="pron">tengo</span>, hacer&rarr;<span class="pron">hago</span>, poner&rarr;<span class="pron">pongo</span>, salir&rarr;<span class="pron">salgo</span></td><td>stem + <strong>-go</strong></td></tr>
+                <tr><td>&laquo;-igo&raquo;</td><td>traer&rarr;<span class="pron">traigo</span></td><td>stem + <strong>i</strong> + <strong>-go</strong></td></tr>
+                <tr><td>e&rarr;i + &laquo;-go&raquo;</td><td>decir&rarr;<span class="pron">digo</span></td><td>stem change <em>and</em> <strong>-go</strong></td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:8px 0 0;"><strong>Spiral reminder:</strong> all of this is still the <em>present tense</em> &mdash; the same present you consolidated in the <em>repaso</em>. Nothing here is a new tense; it's just the <em>yo</em> corner of the present, filled in.</p>
+    </div>
+
+    <!-- ===== PART 4 · Practice ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; PRACT&Iacute;CALO <span class="pill-time">9 min</span></div>
+        <p style="font-size:17px;color:#1a2340;line-height:1.6;margin:0 0 4px 0;">Watch the subject each time &mdash; only <strong>yo</strong> takes the irregular form. Commit to an answer, then read the feedback.</p>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; the yo form of traer</div>
+            <div class="widget-question">&ldquo;Todos los d&iacute;as yo ___ el port&aacute;til a clase para tomar apuntes.&rdquo; (Every day I bring my laptop to class to take notes.)</div>
+            <div class="widget-options">
+                <button data-correct="false">traes</button>
+                <button data-correct="true">traigo</button>
+                <button data-correct="false">trae</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; the yo form of decir</div>
+            <div class="widget-question">&ldquo;En mis mensajes yo siempre ___ la verdad.&rdquo; (In my messages I always tell the truth.)</div>
+            <div class="widget-options">
+                <button data-correct="false">dice</button>
+                <button data-correct="false">dices</button>
+                <button data-correct="true">digo</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; TRY IT &middot; careful &mdash; who's the subject?</div>
+            <div class="widget-question">&ldquo;Mi hermano ___ muchas cosas en la videollamada, pero yo digo poco.&rdquo; Which fits the blank for <em>mi hermano</em>?</div>
+            <div class="widget-options">
+                <button data-correct="true">dice</button>
+                <button data-correct="false">digo</button>
+                <button data-correct="false">dices</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Commit-then-reveal -->
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Your turn: say <em>&ldquo;I bring my laptop and I always tell the truth&rdquo;</em> in Spanish. One <em>-igo</em> verb and one <em>e&rarr;i + -go</em> verb are hiding in there. Say it out loud first, then reveal.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Traigo el port&aacute;til y siempre digo la verdad.</strong> Two irregular <em>yo</em>-forms side by side: <em>traer &rarr; <strong>traigo</strong></em> (the extra <em>i</em>, the <em>-igo</em> pattern) and <em>decir &rarr; <strong>digo</strong></em> (e&rarr;i <em>plus</em> the <em>-go</em>). If a friend did it, it would be <em>trae el port&aacute;til y dice la verdad</em> &mdash; regular endings again.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · A leer ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER <span class="pill-time">5 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Lo que traigo y lo que digo</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.7;">
+        &laquo;Me llamo <strong>Diego</strong> y estudio en Antigua, Guatemala. A clase siempre <strong>traigo</strong> el port&aacute;til y el m&oacute;vil en la mochila. Cuando el profesor hace una pregunta, yo <strong>digo</strong> la respuesta en voz alta &mdash; y si no s&eacute; algo, tambi&eacute;n lo <strong>digo</strong>: &laquo;No estoy seguro.&raquo; Mi amigo Marcos <strong>trae</strong> una tablet y <strong>dice</strong> que es m&aacute;s ligera. Por la tarde hacemos una videollamada para estudiar; nosotros <strong>decimos</strong> las respuestas en voz baja para no molestar a la familia. Al final del d&iacute;a, siempre <strong>digo</strong> la verdad en mis mensajes: es m&aacute;s f&aacute;cil que recordar una mentira.&raquo;</p>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Find every <strong>yo</strong> verb (<em>traigo, digo</em>) and compare it to the same verb with a different subject: <em>Marcos <strong>trae</strong></em>, <em>Marcos <strong>dice</strong></em>, <em>nosotros <strong>decimos</strong></em>. Why does Diego say <em>digo</em> but the group says <em>decimos</em>? Same verb &mdash; only <em>yo</em> gets the irregular form.</div>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; GUATEMALA</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>El <em>Popol Vuh</em>: lo que se dice se guarda</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">Long before phones and video calls, the K'iche' Maya of the Guatemalan highlands passed their history <em>by voice</em> &mdash; storyteller to listener, generation to generation. Around 1550 that oral tradition was written down as the <strong><em>Popol Vuh</em></strong> (&laquo;Book of the Community&raquo;), the great K'iche' account of creation and the hero twins. It survives today because someone chose to record what elders <em>said</em> &mdash; <em>lo que dec&iacute;an</em> &mdash; so it would not be lost. That's the deep version of this module's theme: every technology, from a written book to a videollamada, is really a way to carry <em>what we say</em> across distance and time. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short read-aloud of an opening line of the <em>Popol Vuh</em>.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; SERVICE</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Rigoberta Mench&uacute; Tum</strong> (Guatemala, b.&nbsp;1959) turned the simple act of <em>saying</em> into a lifetime of service to her people. Her 1983 testimony began with her own name &mdash; <em>&laquo;Me llamo Rigoberta Mench&uacute;&raquo;</em> &mdash; and then told the world what was happening to indigenous Guatemalans, work honored with the Nobel Peace Prize in 1992. Today's verb <em>decir</em> carries that same spirit: to tell the truth on someone else's behalf is a form of service, and when you practice <em>digo, traigo</em>, you're rehearsing the words that let you speak up for others, not just yourself.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">6</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 1.06 &mdash; los irregulares en uso + lectura cultural</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you'll put all six irregular-<em>yo</em> verbs to work together in a longer, culture-rich reading about staying connected in Guatemala. Graded work in this module (Vocabulary Check + Lengua en acci&oacute;n) opens on Day 7 &mdash; these early days lock in the pattern.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page in Canvas so your progress is recorded. Then say three true sentences about yourself out loud &mdash; two starting with <em>Traigo&hellip;</em> and one with <em>Digo&hellip;</em> Feel the <strong>-igo</strong> in <em>traigo</em> and the two changes inside <em>digo</em>.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The irregular-<em>yo</em> picture is complete. You added the <strong>-igo</strong> pattern (<em>traigo</em>) and cracked <em>decir</em>'s double move (<em>digo</em> = e&rarr;i + <em>-go</em>) &mdash; and through it all, the rule never changed: <strong>only <em>yo</em> is irregular</strong>, everyone else stays regular. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 1.05 &middot; Los verbos &laquo;-igo&raquo; + decir (traigo, digo)</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Remember: only the yo form is irregular (traer → traigo with the extra i; decir → digo, e→i plus -go). Other subjects use the regular endings.';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>

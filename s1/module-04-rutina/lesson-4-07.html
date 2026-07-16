@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish 2 &mdash; Lesson 4.07</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+    .widget-options button.incorrect { background: #C0392B; color: #fff; border-color: #C0392B; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .reveal-btn { background: #0E1C42; color:#fff; border:none; border-radius:6px; padding:8px 14px; font-size:14px; cursor:pointer; font-family:inherit; }
+    .reveal-body { display:none; margin-top:10px; background:#fff; border-left:3px solid #2A9D5C; padding:10px 14px; border-radius:4px; font-size:15px; color:#1a2340; }
+    .reveal-body.show { display:block; }
+    .vocab-list { list-style: none; margin: 14px 0 0 0; padding: 0; }
+    .vocab-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: #F4F9FC; border: 1px solid #D0D9E8; border-radius: 6px; margin-bottom: 8px; }
+    .say { background: #0E1C42; color: #fff; border: none; border-radius: 6px; min-width: 40px; height: 34px; font-size: 16px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+    .say:hover { background: #1B3A6B; }
+    .say.playing { background: #C7922C; }
+    .say.err { background: #C0392B; }
+    .v-es { font-weight: 600; color: #0E1C42; min-width: 190px; font-size: 17px; }
+    .v-en { color: #6b7a99; font-size: 15px; }
+    .pill-time { display: inline-block; background: #C7922C; color: #fff; font-size: 12px; border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+    .opt-strip { background: #FDF7E9; border: 1px dashed #C7922C; border-radius: 8px; padding: 14px 18px; margin-top: 14px; }
+    .opt-strip .lbl { font-size: 11px; color: #9a7b1e; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .markdone { background: #EAF6EE; border: 1px solid #2A9D5C; border-left: 5px solid #2A9D5C; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    .markdone .lbl { font-size: 11px; color: #1A6B3D; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .gtable { width:100%; border-collapse:collapse; font-size:15px; margin:12px 0; }
+    .gtable th { background:#0E1C42; color:#fff; text-align:left; padding:8px 12px; font-size:13px; }
+    .gtable td { padding:8px 12px; border-bottom:1px solid #D0D9E8; }
+    .gtable tr:nth-child(even) td { background:#F4F9FC; }
+    .pron { color:#C7922C; font-weight:700; }
+    .culture-box { background:#FBF4EE; border:1px solid #E4C9A8; border-left:5px solid #C7922C; border-radius:8px; padding:16px 20px; margin:18px 0; }
+    .virtue-box { background:#F5E7E8; border:1px solid #E0B8BD; border-left:5px solid #AA1E2D; border-radius:8px; padding:14px 18px; margin:18px 0; }
+    .gualda { display:flex; height:6px; width:100%; border-bottom:1px solid #D0D9E8; }
+    .gualda i { display:block; }
+    .gualda .r { flex:1; background:#AA1E2D; }
+    .gualda .g { flex:2; background:#C79A1E; }
+    .sol { color:#C79A1E; font-style:normal; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SPANISH 2 <span style="font-size:22px;">&#127758;</span></div>
+</div>
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; M&oacute;dulo 4</div>
+        <div style="font-size: 12px; color: #666;">La rutina diaria</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 4.07 &middot; Day 7 of 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Integration + graded work opens</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">La rutina diaria</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 4.07</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;"><span class="sol">&#9733;</span> Integraci&oacute;n: mi rutina completa</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; about 40 minutes</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Nothing new to learn today &mdash; you put the whole module together, and your first two graded tasks open.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Halfway through the module, everything you need is already in your hands: the <strong>reflexive routine verbs</strong> (<em>me despierto, me ducho, me acuesto</em>), the <strong>sequencers</strong> that put them in order (<em>primero, luego, despu&eacute;s, finalmente</em>), and the <strong>adverbs of frequency</strong> that say how often (<em>siempre, normalmente, a veces, nunca</em>). Today we weave the three strands into one complete routine &mdash; <strong>no new grammar, no new words</strong>. Then two graded tasks go live: the <strong>Vocabulary Check</strong> (a listening quiz, 20 pts) and <strong>Lengua en acci&oacute;n</strong> (a short written routine, 20 pts). This lesson <em>rehearses both</em> before you attempt them.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> weave reflexive verbs, sequencers, and frequency adverbs into one connected description of my daily routine.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> understand spoken routine vocabulary in context &mdash; the exact skill the <em>Vocabulary Check</em> measures.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> write a short, well-ordered paragraph about my <em>rutina diaria</em> using frequency adverbs &mdash; the <em>Lengua en acci&oacute;n</em> task.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 1 · Warm-up + check-in ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9200; PART 1 &middot; PARA EMPEZAR <span class="pill-time">7 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">You already own everything today needs</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Six days in, take a breath and notice how much is already yours. Say this out loud without stopping: <em>Primero me despierto, normalmente me levanto enseguida, luego me ducho, despu&eacute;s me visto y a veces desayuno con prisa.</em> That single sentence uses all three tools of the module at once &mdash; and you built each one this week. Today isn't about adding; it's about <strong>connecting</strong>.</p>
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#128173; QUICK CHECK-IN &middot; no wrong answer</div>
+            <div class="widget-question">Two graded tasks open today &mdash; a listening quiz and a short writing task. Which feels more like &ldquo;you&rdquo; right now?</div>
+            <div class="widget-options">
+                <button data-response="Great &mdash; listening is where you're strongest, so the Vocabulary Check should feel friendly. Use today's Part 4 to warm up your ear before you open it in Canvas.">Listening &mdash; I catch words when I hear them</button>
+                <button data-response="Perfect &mdash; then Lengua en acci&oacute;n is your moment to shine. The writing scaffold in Part 4 gives you a frame so a blank page never stops you.">Writing &mdash; I like time to build a sentence</button>
+                <button data-response="Honest and totally fine. Both tasks reuse only what you already practiced this module &mdash; and today rehearses each one step by step before you submit anything.">Neither yet &mdash; I want more practice first</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ===== PART 2 · Vocab review with audio ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; REPASO GENERAL <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">All three toolkits, one last pass (nothing new)</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Everything below is from earlier this module. Click the <strong>&#128266;</strong> and say each one back &mdash; this is the same audio the <em>Vocabulary Check</em> will use, so a careful listen now is direct exam prep. First, the routine verbs (shown in the <em>yo</em> form, ready to drop into a sentence about yourself):</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/me-despierto.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">me despierto</span><span class="v-en">I wake up</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/me-levanto.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">me levanto</span><span class="v-en">I get up</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/me-ducho.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">me ducho</span><span class="v-en">I shower</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/me-visto.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">me visto</span><span class="v-en">I get dressed</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/me-acuesto.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">me acuesto</span><span class="v-en">I go to bed</span></li>
+        </ul>
+        <p style="font-size:14px;color:#6b7a99;margin:10px 0 4px 0;font-weight:600;">Secuenciadores &middot; sequencers</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/primero.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">primero</span><span class="v-en">first</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/luego.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">luego</span><span class="v-en">then / next</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/despues.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">despu&eacute;s</span><span class="v-en">afterward</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/finalmente.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">finalmente</span><span class="v-en">finally</span></li>
+        </ul>
+        <p style="font-size:14px;color:#6b7a99;margin:10px 0 4px 0;font-weight:600;">Frecuencia &middot; adverbs of frequency</p>
+        <ul class="vocab-list">
+            <li class="vocab-item"><button class="say" data-audio="vocab/siempre.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">siempre</span><span class="v-en">always</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/normalmente.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">normalmente</span><span class="v-en">usually / normally</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/a-veces.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">a veces</span><span class="v-en">sometimes</span></li>
+            <li class="vocab-item"><button class="say" data-audio="vocab/nunca.mp3" aria-label="Escuchar">&#128266;</button><span class="v-es">nunca</span><span class="v-en">never</span></li>
+        </ul>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; PARA IR M&Aacute;S LEJOS &middot; optional &middot; +4 min</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Close your eyes and play three clips at random. Can you say what each one means <em>before</em> you read the English? That's exactly the move the Vocabulary Check asks for &mdash; hear it, understand it, choose it.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 3 · Grammar: integration table ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; LAS TRES PIEZAS EN UNA FRASE <span class="pill-time">8 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">How the three tools stack in one sentence</h3>
+        <p style="font-size:17px;color:#1a2340;line-height:1.65;margin:0 0 10px 0;">Nothing here is new &mdash; it's the <em>order</em> that makes a routine sound smooth. Each sentence stacks the same pieces in the same slots: a <strong>sequencer</strong> to say <em>when</em>, an optional <strong>frequency adverb</strong> to say <em>how often</em>, then the <strong>reflexive verb</strong> (pronoun glued to its front) plus a detail like a time.</p>
+        <table class="gtable">
+            <thead><tr><th>Sequencer</th><th>(Frequency)</th><th>Reflexive verb + detail</th></tr></thead>
+            <tbody>
+                <tr><td><span class="pron">Primero</span>,</td><td>siempre</td><td>me despierto a las seis.</td></tr>
+                <tr><td><span class="pron">Luego</span></td><td>normalmente</td><td>me levanto y me ducho.</td></tr>
+                <tr><td><span class="pron">Despu&eacute;s</span>,</td><td>&mdash;</td><td>me visto y desayuno.</td></tr>
+                <tr><td><span class="pron">Por la noche</span>,</td><td>a veces</td><td>me acuesto tarde.</td></tr>
+                <tr><td><span class="pron">Finalmente</span>,</td><td>nunca</td><td>me duermo con el tel&eacute;fono.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#6b7a99;margin:4px 0 0;">Two rules you already know, side by side: the <strong>pronoun stays glued to its verb</strong> (<em>me&nbsp;levanto</em>, never <span style="text-decoration:line-through;">me siempre levanto</span>), and the <strong>frequency word wraps around that pair</strong> &mdash; at the start of the sentence or right before the verb, but never between them. Get those two right and a whole paragraph holds together.</p>
+    </div>
+
+    <!-- ===== PART 4 · Practice: rehearse both graded tasks ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 4 &middot; ENSAYA LAS DOS TAREAS <span class="pill-time">11 min</span></div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">A dry run of each graded task</h3>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 6px 0;">The first two widgets sound like the <strong>Vocabulary Check</strong> (listen, then choose the meaning). The last one and the writing box rehearse <strong>Lengua en acci&oacute;n</strong>. Do these first &mdash; then open the real tasks below with confidence.</p>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#128266; VOCABULARY CHECK STYLE &middot; listen &amp; choose</div>
+            <div class="widget-question">Press play, then choose what you hear. <button class="say" data-audio="vocab/me-acuesto.mp3" aria-label="Escuchar el audio">&#128266;</button></div>
+            <div class="widget-options">
+                <button data-correct="true">I go to bed</button>
+                <button data-correct="false">I wake up</button>
+                <button data-correct="false">I get dressed</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#128266; VOCABULARY CHECK STYLE &middot; listen &amp; choose</div>
+            <div class="widget-question">Press play. Which routine action is this? <button class="say" data-audio="vocab/lavarse-los-dientes.mp3" aria-label="Escuchar el audio">&#128266;</button></div>
+            <div class="widget-options">
+                <button data-correct="false">to shower</button>
+                <button data-correct="false">to comb your hair</button>
+                <button data-correct="true">to brush your teeth</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-eval">
+            <div class="widget-kicker">&#9989; LENGUA EN ACCI&Oacute;N STYLE &middot; which sentence is fully correct?</div>
+            <div class="widget-question">You're drafting your paragraph. Which sentence would earn full accuracy marks?</div>
+            <div class="widget-options">
+                <button data-correct="false">Normalmente acuesto me a las diez.</button>
+                <button data-correct="true">Normalmente me acuesto a las diez.</button>
+                <button data-correct="false">Me normalmente acuesto a las diez.</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- Commit-then-reveal -->
+        <div style="margin-top:16px;">
+            <p style="font-size:16px;color:#1a2340;margin-bottom:8px;">Now a mini version of the writing task: draft <strong>two</strong> sentences about your own morning &mdash; each with a frequency adverb + a reflexive verb. Write them (or say them) first, <em>then</em> reveal a model to check your placement.</p>
+            <button class="reveal-btn">Reveal a model</button>
+            <div class="reveal-body"><strong>Normalmente me despierto a las seis y media y me levanto enseguida. A veces me ducho por la noche, no por la ma&ntilde;ana.</strong><br>Notice the frame: (frequency) &rarr; <em>me</em> + verb &rarr; detail. The pronoun never leaves its verb, and the frequency word sits in front of the pair. That's the whole recipe for a full-marks paragraph.</div>
+        </div>
+    </div>
+
+    <!-- ===== PART 5 · Reading ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; PART 5 &middot; A LEER &middot; UNA RUTINA COMPLETA <span class="pill-time">6 min</span></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 8px 0;">Here's a complete routine that uses all three tools together &mdash; a model of exactly what your written task should look like. Read it once for the gist, then again to spot each sequencer, frequency adverb, and reflexive verb. It's set in Arequipa, Per&uacute;.</p>
+        <div style="background:#F4F9FC;border:1px solid #D0D9E8;border-radius:8px;padding:16px 20px;font-size:17px;color:#1a2340;line-height:1.75;">
+        <p style="margin:0;">&laquo;Me llamo Camila y vivo en <strong>Arequipa</strong>, una ciudad al sur del Per&uacute;. Entre semana <strong>siempre</strong> <em>me despierto</em> a las seis, porque el colegio empieza temprano. <strong>Primero</strong> <em>me levanto</em> y abro la ventana &mdash; desde mi casa se ve <strong>El Misti</strong> <span style="color:#6b7a99;">(un volc&aacute;n)</span>. <strong>Luego</strong> <em>me ducho</em> r&aacute;pido y <strong>normalmente</strong> <em>me visto</em> con el uniforme. <strong>Despu&eacute;s</strong> desayuno pan con queso y a veces un jugo. Por la tarde <strong>casi siempre</strong> hago la tarea antes de descansar. Por la noche <strong>nunca</strong> <em>me acuesto</em> muy tarde &mdash; <strong>finalmente</strong> <em>me duermo</em> a las diez, porque ma&ntilde;ana el d&iacute;a vuelve a empezar temprano.&raquo;</p>
+        </div>
+        <div class="opt-strip">
+            <div class="lbl">&#11088; COMPRUEBA &middot; optional</div>
+            <div style="font-size:16px;color:#1a2340;line-height:1.6;">Count them: Camila uses <strong>five sequencers</strong>, <strong>four frequency adverbs</strong>, and <strong>six reflexive verbs</strong> in one short paragraph. That's your target for Lengua en acci&oacute;n &mdash; and every piece is a word you already own.</div>
+        </div>
+    </div>
+
+    <!-- ===== GRADED WORK OPENS ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128221; GRADED WORK OPENS TODAY</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0 0 6px 0;">You just rehearsed both of these. Open them in Canvas now while everything is fresh &mdash; there's nothing on either task you haven't already practiced this module.</p>
+
+        <!-- Vocabulary Check assignment -->
+        <div style="background:#EAF3FB; border:2px solid #2196D0; border-radius:10px; padding:18px 22px; margin-top:16px;">
+            <div style="font-size:12px; color:#1B6A94; letter-spacing:.4px; margin-bottom:8px;">&#128266; VOCABULARY CHECK &middot; M&Oacute;DULO 4 &middot; 20 PUNTOS &middot; auto-graded in Canvas</div>
+            <div style="font-size:19px; color:#0e1c42; margin-bottom:8px;"><strong>&laquo;La rutina diaria: &iquest;qu&eacute; escuchas?&raquo;</strong></div>
+            <p style="font-size:16px; color:#1a2340; line-height:1.6; margin:0 0 10px 0;">A short <strong>interpretive listening</strong> quiz built on the module's audio &mdash; the very clips you reviewed in Part 2. For each item you'll <strong>hear a routine word or short sentence</strong> and choose its meaning (or the English match). It grades itself the moment you submit.</p>
+            <ul style="font-size:16px; color:#1a2340; line-height:1.6; margin:0 0 12px 1.2em; padding:0;">
+                <li>listen to reflexive routine verbs (<em>me ducho, me acuesto&hellip;</em>) and choose the meaning,</li>
+                <li>catch frequency adverbs (<em>siempre, a veces, nunca&hellip;</em>) inside a spoken sentence,</li>
+                <li>match a short spoken routine to the right order of actions.</li>
+            </ul>
+            <p style="font-size:15px; color:#6b7a99; line-height:1.6; margin:0;">Play each clip as many times as you need. Trust your ear &mdash; you've heard all of these before.</p>
+        </div>
+
+        <!-- Lengua en accion assignment -->
+        <div style="background:#FDF7E9; border:2px solid #C7922C; border-radius:10px; padding:18px 22px; margin-top:16px;">
+            <div style="font-size:12px; color:#9a7b1e; letter-spacing:.4px; margin-bottom:8px;">&#9998; LENGUA EN ACCI&Oacute;N &middot; M&Oacute;DULO 4 &middot; 20 PUNTOS &middot; written production in Canvas</div>
+            <div style="font-size:19px; color:#0e1c42; margin-bottom:8px;"><strong>&laquo;Mi rutina diaria&raquo;</strong></div>
+            <p style="font-size:16px; color:#1a2340; line-height:1.6; margin:0 0 10px 0;">Write a short paragraph (<strong>5&ndash;6 sentences</strong>) describing your own daily routine, following Camila's model above. To earn full marks, include <strong>all</strong> of these:</p>
+            <ul style="font-size:16px; color:#1a2340; line-height:1.6; margin:0 0 12px 1.2em; padding:0;">
+                <li>at least <strong>five reflexive verbs</strong> (<em>me despierto, me levanto, me ducho, me visto, me acuesto&hellip;</em>),</li>
+                <li>the four <strong>sequencers</strong> to order your day &mdash; <em>primero, luego, despu&eacute;s, finalmente</em>,</li>
+                <li>at least <strong>three frequency adverbs</strong> (<em>siempre, normalmente, a veces, nunca&hellip;</em>),</li>
+                <li>a real <strong>time</strong> for at least two actions (<em>a las seis y media&hellip;</em>).</li>
+            </ul>
+            <div style="font-size:12px; color:#9a7b1e; letter-spacing:.4px; margin:14px 0 6px;">&#128203; HOW IT'S GRADED &middot; light-touch rubric</div>
+            <table class="gtable">
+                <thead><tr><th>Criterion</th><th>Full marks look like&hellip;</th></tr></thead>
+                <tbody>
+                    <tr><td>Task Completion (8)</td><td>all required elements present: 5 verbs, 4 sequencers, 3+ adverbs, times</td></tr>
+                    <tr><td>Language Accuracy (8)</td><td>pronoun glued to its verb; frequency word placed correctly; correct present forms</td></tr>
+                    <tr><td>Order &amp; Clarity (4)</td><td>the day flows in a logical sequence a reader can follow</td></tr>
+                </tbody>
+            </table>
+            <p style="font-size:14px; color:#6b7a99; line-height:1.55; margin:6px 0 0;">Write it in your own words about your real day &mdash; that's what makes it yours, and it's the easiest way to hit every element naturally.</p>
+        </div>
+    </div>
+
+    <!-- ===== Culture spotlight ===== -->
+    <div class="culture-box">
+        <div style="font-size:11px;color:#9a7b1e;letter-spacing:.4px;margin-bottom:6px;">&#127758; CULTURA &middot; PER&Uacute;</div>
+        <div style="font-size:18px;color:#0e1c42;margin-bottom:6px;"><strong>&laquo;Allin p&#8217;unchay&raquo;: la rutina en dos idiomas</strong></div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;">In much of the Peruvian Andes, the day doesn't begin in Spanish alone. Millions of Peruvians speak <strong>quechua</strong> &mdash; the language of the Inca, still spoken today &mdash; alongside Spanish, and a routine often opens with the Quechua greeting <em>&laquo;Allin p&#8217;unchay&raquo;</em> (&ldquo;good morning / good day&rdquo;), answered in Spanish moments later. In Cusco, Puno, and Arequipa you'll hear both woven through the same morning: <em>me levanto</em>, a warm drink, a word of Quechua to a grandparent, a <em>&laquo;buenos d&iacute;as&raquo;</em> to a neighbor. Naming your own routine in Spanish this week joins you, in a small way, to households that carry <strong>two languages through one ordinary day</strong>. <span style="color:#6b7a99;font-size:14px;">(In the full course this pairs with a short clip of a bilingual Andean morning.)</span></p>
+    </div>
+
+    <!-- ===== Virtue sidebar ===== -->
+    <div class="virtue-box">
+        <div style="font-size:11px;color:#AA1E2D;letter-spacing:.4px;margin-bottom:6px;">&#9733; LA VIRTUD &middot; SELF-GOVERNMENT</div>
+        <p style="font-size:16px;color:#1a2340;line-height:1.6;margin:0;"><strong>Santa Rosa de Lima</strong> (Per&uacute;, 1586&ndash;1617), the first saint of the Americas, is remembered for <em>self-government</em> &mdash; the quiet mastery of one's own hours and appetites. She kept a steady, self-chosen rhythm of work, prayer, and care for the poor. Today's lesson is a small echo of that virtue: you're not cramming something new, you're <em>integrating</em> what you already have and choosing to do the graded work well rather than in a rush. A routine you can name and order on purpose &mdash; <em>primero, luego, siempre, nunca</em> &mdash; is self-government made visible. Steady beats frantic, in Spanish and in life.</p>
+    </div>
+
+    <!-- ===== What's next ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">8</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Continue to Lesson 4.08 &mdash; Tu rutina, en voz alta (Tarea oral)</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tomorrow you take the same routine and <strong>say it out loud</strong>, recording your <em>Tarea oral</em> (20 pts). The paragraph you write today is the perfect script to speak from. Get the Vocabulary Check and Lengua en acci&oacute;n submitted first &mdash; both opened today.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mark as Done -->
+    <div class="markdone">
+        <div class="lbl">&#9989; BEFORE YOU LEAVE</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Open and complete the <strong>Vocabulary Check</strong> and start your <strong>Lengua en acci&oacute;n</strong> paragraph in Canvas, then click <strong>&ldquo;Mark as Done&rdquo;</strong> on this page so your progress is recorded. If time is short, at least draft your five-sentence routine while Camila's model is fresh &mdash; tomorrow you'll speak from it.</div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; &iexcl;LO LOGRASTE&#33;</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You didn't learn anything new today &mdash; you made three separate skills work as one, and you opened your first two graded tasks already knowing how to win their points. Reflexives, sequencers, frequency: woven into a routine that's unmistakably yours. That's <em>templanza</em> &mdash; a day you can name is a day you can choose. <em>&iexcl;Hasta ma&ntilde;ana!</em></p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="gualda" aria-hidden="true"><i class="r"></i><i class="g"></i><i class="r"></i></div>
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SPANISH 2 &#127758; &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 4.07 &middot; Integraci&oacute;n: mi rutina completa</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company &middot; v1</div>
+</div>
+
+</div>
+
+<!-- WIDGET RUNTIME -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected','correct','incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var eBtn = e.target.closest('.ow-eval .widget-options button');
+    if (eBtn) {
+      var ew = eBtn.closest('.optima-widget');
+      var correct = eBtn.dataset.correct === 'true';
+      eBtn.classList.add(correct ? 'correct' : 'incorrect');
+      var efb = ew.querySelector('.widget-feedback');
+      efb.textContent = correct
+        ? '¡Correcto! ' + eBtn.textContent + ' — that’s right.'
+        : 'Not quite — try again. Check the time of day (greetings) or the subject (ser: yo → soy, tú → eres, él/ella → es).';
+      efb.classList.add('show');
+      return;
+    }
+    var rev = e.target.closest('.reveal-btn');
+    if (rev) {
+      var body = rev.parentElement.querySelector('.reveal-body');
+      if (body) body.classList.toggle('show');
+    }
+  });
+})();
+</script>
+
+<!-- VOCAB AUDIO RUNTIME -->
+<script>
+(function () {
+  var AUDIO_BASE = '../../audio/';
+  var player = new Audio();
+  var active = null;
+  function clearActive() { if (active) { active.classList.remove('playing'); active = null; } }
+  player.addEventListener('ended', clearActive);
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-audio]');
+    if (!el) return;
+    e.preventDefault();
+    if (active === el && !player.paused) { player.pause(); clearActive(); return; }
+    clearActive();
+    el.classList.remove('err');
+    player.src = AUDIO_BASE + el.getAttribute('data-audio');
+    player.currentTime = 0;
+    var p = player.play();
+    if (p && p.catch) {
+      p.then(function () { el.classList.add('playing'); active = el; })
+       .catch(function () { el.classList.add('err'); el.setAttribute('title', 'Audio generated in the build phase'); });
+    } else { el.classList.add('playing'); active = el; }
+  });
+})();
+</script>
+
+</body>
+</html>
